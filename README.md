@@ -11,3 +11,4 @@
 - Jennifer Reynaga Cabrera
 - Arath Alejandro Ramirez Rivera
 - Josias Yah Monroy
+- Natalia Berenice Urzúa Ramos
