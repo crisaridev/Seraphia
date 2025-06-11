@@ -10,3 +10,4 @@
 - Miguel Angel Vergara Albarran
 - Jennifer Reynaga Cabrera
 - Arath Alejandro Ramirez Rivera
+- Josias Yah Monroy
