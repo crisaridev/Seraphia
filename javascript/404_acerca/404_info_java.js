@@ -1,7 +1,8 @@
 document.addEventListener("DOMContentLoaded", function() {
 
   const mediaQuery = window.matchMedia('(max-width: 991.98px)');
-  let observer; 
+  let observer;
+
   function setupObserver() {
     const elementosAnimados = document.querySelectorAll('.animada');
 
@@ -10,14 +11,12 @@ document.addEventListener("DOMContentLoaded", function() {
     const observerOptions = {
       root: null,
       rootMargin: '0px',
-      threshold: 0.1 
+      threshold: 0.4
     };
 
     observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        
         if (entry.isIntersecting) {
-          
           entry.target.classList.add('es-visible');
         } else {
           entry.target.classList.remove('es-visible');
@@ -36,13 +35,10 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   }
 
- 
   function handleDeviceChange(e) {
     if (e.matches) {
-     
       setupObserver();
     } else {
-     
       teardownObserver();
       document.querySelectorAll('.animada').forEach(el => el.classList.remove('es-visible'));
     }
@@ -50,7 +46,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
   handleDeviceChange(mediaQuery);
 
-  
   mediaQuery.addEventListener('change', handleDeviceChange);
-
 });
