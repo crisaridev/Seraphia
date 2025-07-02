@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos -->
+  <meta charset="utf-8">
+  <meta name="author" content="Seraphia">
+  <!--description se utilizará para describir brevemente el contenido de la página web, puede ayudar con el posicionamiento SEO y a decirle a google de que trata la pagina-->
+  <meta name="description" content="E-commerce de Seraphia: ropa artesanal con diseños únicos, bordados a mano y confeccionados con telas rescatadas. Moda ética y auténtica.">
+  <!--keywords ayuda en la busqueda SEO, aunque ya no son tan relevantes actualmente-->
+  <meta name="keywords" content="moda artesanal, ropa única, bordados a mano, telas rescatadas, e-commerce sustentable, Seraphia">
+  <!--meta name "robots" permite a google guardar la ecommerce (indexar) y luego encontrarla mas facilmente-->
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--Bootstrap-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<!--CSS-->
+<!--CSS
+styles.css es mi hoja de estilos
+preconect sirve para pre cargar las fuentes que voy a importar de google y esto puede ayudar a que el sitio carge mas rapido
+https://fonts.googleapis.com/css2?family=Lato esta importando la tipografia lato desde google-->
+<link href="/css/styles.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <title>Seraphia</title>
+</head>
+<body>
+
+  <!--Parte correspondiente al NAVBAR -->
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar-toggler" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-toggler">
+        <a class="navbar-brand" href="#">
+          <img src="assets/LOGO-BLANCO-seraphia.png" width="50" alt="Logo de Seraphia">
+        </a>
+        <ul class="navbar-nav d-flex justify-content-center align-items-center">
+          <li class="nav-item"><a class="nav-link active" href="#">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+          <!-- Buscador con icono de lupa-->
+<form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Buscar">
+          <button class="btn btn-buscar" type="submit">
+          <i class="bi bi-search"></i>
+          </button>
+</form>
+          <li class="nav-item"><a class="nav-link" href="#">Iniciar sesión</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Carrito</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Parte correspondiente al HERO DESLIZABLE-->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="assets/portada.jpg" class="d-block w-100 hero-img" alt="Portada 1">
+        <!--estoy agregando hero-img para darle estilo a las imagenes desde la hoja de css-->
+      </div>
+      <!--por el momento solo se muestra una imagen en el carrusel de hero-->
+    <!--  <div class="carousel-item">
+        <img src="assets/portada2.jpg" class="d-block w-100 hero-img" alt="Portada 2">
+      </div>
+     <div class="carousel-item">
+        <img src="assets/Banner_1600-800px.jpg" class="d-block w-100 hero-img" alt="Portada 3">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon"></span>
+    </button>
+   <!--tengo pensado cambiar el tipo de boton--> 
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon"></span>
+    </button>
+  </div>
+
+  <!-- MISIÓN -->
+  <section class="container text-center my-5 mision-block">
+    <h2 class="mb-3">Nuestra Misión</h2>
+    <p class="lead">
+        En Seraphia, creemos que la moda puede fluir en sintonía con el entorno y
+        evolucionar con conciencia.
+        Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que
+        buscan explorar su autenticidad y personalidad. Imaginamos un mundo donde la moda no genera desperdicio, sino que se expresa a través de lo que otros
+        descartan.
+</p>
+  </section>
+
+  <!-- Tarjetas para la parte de  INSPIRACIÓN DE LA TEMPORADA, quiero cambiar para que esta parte se agrege de forma automatica cuando se agregen nuevos productos a la ecommerce, usara la foto, el titulo del producto y la descripcion del producto-->
+  <section class="container my-5">
+    <h3 class="text-center mb-4">INSPIRACION DE LA TEMPORADA</h3>
+    <div class="row mb-5 align-items-center inspiracion-block">
+      <div class="col-md-6">
+        <img src="assets/blusa-corta-triangulos-frente.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa tipo top diseño de triangulos">
+      </div>
+      <div class="col-md-6">
+        <h4>Resalta tu feminidad y belleza</h4>
+        <p>Top corto confeccionado en algodón ligero con un llamativo patrón de líneas en zigzag color azul. Su diseño halter incorpora un cordón que se anuda detrás del cuello, dejando la espalda al descubierto para un acabado fresco y elegante. Como sugerencia puedes combinarlo con unos mom jeans de mezclilla deslavada.</p>
+      </div>
+    </div>
+
+    <div class="row mb-5 align-items-center flex-md-row-reverse inspiracion-block">
+      <div class="col-md-6">
+        <img src="assets/blusa-corta-bordado.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa corta con bordado de flores">
+      </div>
+      <div class="col-md-6">
+        <h4>Tranquilidad y naturalidad</h4>
+        <p>Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo con unos jeans para un look relajado.</p>
+      </div>
+    </div>
+
+    <div class="row mb-5 align-items-center inspiracion-block">
+      <div class="col-md-6">
+        <img src="assets/Blusa-negra-portada.jpg" class="img-fluid rounded" alt="Outfit 3">
+      </div>
+      <div class="col-md-6">
+        <h4>Elegancia en negro</h4>
+        <p>Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino. </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERÍA -->
+  <section class="container my-5 galeria-block">
+    <h3 class="text-center mb-4">Galería de Productos</h3>
+    <div class="row g-3">
+      <div class="col-6 col-md-3"><a href="tienda.html"><img src="assets/blusa-roja-sin-mangas.jpg" 
+        class="img-fluid rounded" alt="Producto 1"></a></div>
+      <div class="col-6 col-md-3"><a href="tienda.html"><img src="assets/blusa-rosa-sin-magas-portada.jpg" class="img-fluid rounded" alt="Producto 2"></a></div>
+      <div class="col-6 col-md-3"><a href="tienda.html"><img src="assets/blusa-estilo-vaquero-portada.jpg" class="img-fluid rounded" alt="Producto 3"></a></div>
+      <div class="col-6 col-md-3"><a href="tienda.html"><img src="assets/blusa-corta-triangulos.jpg" class="img-fluid rounded" alt="Producto 4"></a></div>
+    </div>
+  </section>
+
+  <!-- Parte para mostrar una breve historia acerca de la creadora de Seraphia, manda a la pagina sobre nosotros-->
+  <section class="container my-5 text-center diseñadora-block">
+    <h3>Conoce a la mente brillante detras de Seraphia</h3>
+    <div class="card mx-auto" style="max-width: 600px;">
+      <img src="assets/WuendyT.jpg" class="card-img-top" alt="Diseñadora principal">
+      <div class="card-body">
+        <h5 class="card-title">Wuendy Tarache</h5>
+        <p>Wuendy Tarache, es la diseñadora y artista textil detrás de Seraphia, con 35 años de experiencia. 
+        Todo es hecho a mano éticamente por ella.</p>
+        <a href="nosotros.html" class="btn btn-dark">Conócela</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- parte provisional para el FOOTER -->
+<footer class="bg-dark text-white text-center py-4">
+  <small>&copy; 2025 Seraphia. Moda sustentable y única</small>
+</footer>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/s
+   <script src="js/main.js"></script>
+     </body>
+</html>
+
