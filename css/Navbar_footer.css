@@ -1,0 +1,180 @@
+footer{
+    background-color: #1a1a1d;
+    color: #fff;
+    padding-top: 25px;
+    padding-bottom: 15px;
+}
+footer a{
+    color: #fff;
+    list-style: none;
+    text-decoration: none;
+}
+
+.align{
+    width:100%;
+    display: flex;
+    align-items: center;
+}
+#logo_footer{
+    height: auto;
+    width: 100px;
+}
+.flex_smlogo{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.sm_logo{
+    width: 45px;
+    height: auto;
+}
+.flex_col{
+    display: flex;
+    flex-direction: column;
+}
+.flex_new{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+.btn_footer{
+    width: fit-content;
+    background-color: #D28E5F;
+    
+}
+.form-text{
+    color: #fff;
+}
+
+
+.footer-toggle {
+    cursor: pointer;
+}
+
+.footer-links {
+    overflow: hidden; 
+    transition: height 0.4s ease-out; 
+    padding-left: 0; 
+    list-style: none; 
+}
+.footer-toggle {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    cursor: pointer;
+}
+
+.footer-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) { 
+
+    .footer-toggle::after {
+        content: '';
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        border-bottom: 2px solid white;
+        border-right: 2px solid white; 
+        transform: rotate(45deg);
+        transition: transform 0.4s ease-out;
+    }
+
+    .footer-toggle.active::after {
+        transform: rotate(-135deg);
+    }
+    footer{
+        padding-inline: 10px;
+    }
+    .space {
+        margin-bottom: 20px;
+    }
+}
+@media (min-width: 641px) and (max-width: 1023px){
+    footer{
+        padding-inline: 25px;
+    }
+}
+.navbar {
+  background-color: #1A1A1D;
+}
+
+/* 1) Buscador escritorio */
+.barraBusqueda {
+  max-width: 220px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+.barraBusqueda .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+.barraBusqueda .form-control::placeholder {
+  color: #ccc;
+}
+.barraBusqueda .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 1.1) Buscador móvil */
+.barraBusquedaMobile {
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+.barraBusquedaMobile .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+.barraBusquedaMobile .form-control::placeholder {
+  color: #ccc;
+}
+.barraBusquedaMobile .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 2) Botón Login */
+.botonLogin {
+  background-color: #D28E5F;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/* 3) Carrito */
+.botonCarrito {
+  border: 1px solid white;
+  color: white;
+}
+.botonCarrito i {
+  font-size: 20px;
+}
+
+/* 4) Link activo */
+.nav-link.active {
+  font-weight: 500;
+
+}
+
+
+/* 5) Forzar collapse oculto en desktop */
+@media (min-width: 992px) {
+  #contenidoNavbar {
+    display: none !important;
+  }
+}

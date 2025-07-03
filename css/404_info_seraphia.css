@@ -18,6 +18,9 @@ main{
 .nav-item{
     padding-right: 55px;
     padding-left: 35px;
+        display: flex;
+        justify-content: center;
+    align-items: center;;
 }
 #content{
     margin-left: 20px ;
@@ -35,6 +38,7 @@ main{
     padding: 1rem;
     text-align: center;
     z-index: 1000;
+    
 }
 .nav-toggler{
     background-color: white;
@@ -147,10 +151,14 @@ h3{
 }
 
 
-@media (max-width: 767.98px) {
+@media (max-width: 640px) {
  .carousel{
     margin-top: 30px;
  }
+ #navbtn{
+    font-size: 20px;
+    padding-inline: 10px;
+}
 }
 h2{
     font-size: 50px;
@@ -171,10 +179,11 @@ h2{
 }
 #navbtn{
     background-color: rgb(14, 101, 193);
+    padding-inline: 10px;
+    font-size: 25px;
 }
 .row{
     margin-top: 15px;
 }
-
 
 
