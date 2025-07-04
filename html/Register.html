@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro | Seraphia Studio</title>
+  <link rel="stylesheet" href="LoginStyle.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body class="bg-light">
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark py-3">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">Seraphia Studio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="galeria.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="Register.html">Registro</a></li>
+          <li class="nav-item"><a class="nav-link" href="Login.html">Login</a></li>
+        </ul>
+        <button class="btn btn-carrito ms-3">Carrito</button>
+        <button class="btn btn-outline-light ms-2">Salir</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Formulario de Registro -->
+  <div class="container vh-100 d-flex align-items-center justify-content-center">
+    <div class="row w-100">
+      <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <img src="LOGO-NEGRO-SIN-FONDO.png" alt="Seraphia logo" class="img-fluid" style="max-width: 600px;">
+      </div>
+      <div class="col-md-6 d-flex flex-column justify-content-center">
+        <h2 class="mb-4 text-center fw-bold">Regístrate</h2>
+        <form id="registroForm">
+          <div class="mb-3">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" id="nombre" class="form-control form-control-lg" placeholder="Nombre">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" class="form-control form-control-lg" placeholder="e-mail">
+          </div>
+          <div class="mb-3">
+            <label for="password" class="form-label">Contraseña</label>
+            <input type="password" id="password" class="form-control form-control-lg" placeholder="Contraseña">
+          </div>
+          <div class="mb-3">
+            <label for="confirm-password" class="form-label">Repite la Contraseña</label>
+            <input type="password" id="confirm-password" class="form-control form-control-lg" placeholder="Confirmar contraseña">
+          </div>
+          <div class="d-grid mb-4">
+            <button type="submit" class="btn btn-dark btn-lg rounded-pill shadow">REGISTRAR</button>
+          </div>
+          <p class="text-center mt-3">
+            ¿Ya tienes cuenta? <a href="login.html" class="text-decoration-none fw-semibold">Inicia sesión</a>
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById('registroForm').addEventListener('submit', function (event) {
+      const password = document.getElementById('password').value;
+      const confirm = document.getElementById('confirm-password').value;
+      if (password !== confirm) {
+        event.preventDefault();
+        alert('Las contraseñas no coinciden. Por favor, vuelve a intentarlo.');
+      }
+    });
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

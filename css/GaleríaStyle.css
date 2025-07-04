@@ -1,0 +1,130 @@
+body {
+  font-family: 'Alata', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar */
+.navbar {
+  background-color: #1a1a1a;
+  height: 69px; /* 15% más alto que el estándar */
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white !important;
+  font-size: 1.3rem;
+}
+
+.navbar-nav .nav-link {
+  color: white !important;
+  padding: 0 20px;
+  font-weight: 500;
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: #1a1a1a;
+}
+
+.navbar-nav .dropdown-item {
+  color: white;
+}
+
+.navbar-nav .dropdown-item:hover {
+  background-color: #333;
+}
+
+/* Botones de navbar */
+.btn-carrito {
+  background-color: #cb946b;
+  color: black;
+  border: none;
+  font-weight: 500;
+}
+
+.btn-outline-light {
+  border-color: white;
+  color: white;
+  font-weight: 500;
+}
+
+.btn-outline-light:hover {
+  background-color: white;
+  color: #1a1a1a;
+}
+
+/* Galería de productos */
+h2 {
+  font-size: 2.5rem;
+  font-weight: thin;
+}
+
+.producto-card {
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 15px;
+  text-align: center;
+  height: 100%;
+  background-color: white;
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.producto-card:hover {
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+.producto-card img {
+  height: 300px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+.producto-card h5 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.producto-card small {
+  color: #666;
+}
+
+/* Footer */
+footer {
+  background-color: #111;
+  color: white;
+  padding: 40px 0;
+  margin-top: 60px;
+  font-size: 0.95rem;
+}
+
+.footer-link {
+  color: white;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.footer-input {
+  width: 100%;
+  max-width: 300px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+@media (max-width: 768px) {
+  .navbar-nav .nav-link {
+    padding: 10px;
+  }
+
+  .producto-card img {
+    height: 250px;
+  }
+}
