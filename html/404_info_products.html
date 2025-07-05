@@ -5,13 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Seraphia - Shop</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"> <!--!bootstrap SI-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <!--!icons bootstrap CAMBIAR POR EL QUE YA ESTA FUSIONADO-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"> <!--!icons bootstrap-->
     <link rel="stylesheet" href="/css/404_info_products.css"> <!--!Estilos de productos-->
     <link rel="stylesheet" href="/css/styles.css"> <!--!Estilos de header-->
+    <link rel="stylesheet" href="/css/Navbar_footer.css"> <!--!Estilos footer migue-->
 
 </head>
 <body>
     <header>
+        <!-- Barra de navegación principal -->
+<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+  <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+
+    <!-- Sección 1: LOGO + NOMBRE -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img
+        src="/assets/images/404/product/LOGO-BLANCO-SIN-FONDO (1).png"
+        alt="Seraphia"
+        width="52" height="52"
+        class="me-2"
+      >
+      <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+    </a>
+
+    <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+      <li class="nav-item">
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Inicio</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+    </ul>
+
+    <!-- Sección 3: ACCIONES DERECHA -->
+    <div class="d-flex align-items-center gap-2 ms-auto">
+
+      <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+     <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+       <input
+         class="form-control"
+         type="search"
+         placeholder="Buscar"
+         aria-label="Buscar"
+       >
+       <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+     </form>
+
+      <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+      <a href="#" class="btn btn-outline-light botonCarrito">
+        <i class="bi bi-cart3"></i>
+      </a>
+
+      <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+      <button
+        class="navbar-toggler d-lg-none botonToggle"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#contenidoNavbar"
+        aria-controls="contenidoNavbar"
+        aria-expanded="false"
+        aria-label="Mostrar navegación móvil"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+    <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+      <ul class="navbar-nav w-100">
+        <!-- Enlaces móviles -->
+        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+
+        <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+        <li class="nav-item px-3 my-3">
+          <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+            <input class="form-control me-1"
+                   type="search"
+                   placeholder="Buscar"
+                   aria-label="Buscar">
+            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+        </li>
+
+        <!-- Botón de inicio de sesión al final -->
+        <li class="nav-item px-3 mt-3">
+          <a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
 
     </header>
 
@@ -35,15 +126,15 @@
                         <div class="col-12 mb-3"> <!--* TALLAS -->
                             <h5 class="fw-semibold fs-5 mb-2">Talla</h5>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="S" id="sizeS">
+                                <input class="form-check-input" type="checkbox" value="S" id="sizeS" data-filter-type="size">
                                 <label class="form-check-label" for="sizeS">S</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="M" id="sizeM">
+                                <input class="form-check-input" type="checkbox" value="M" id="sizeM" data-filter-type="size">
                                 <label class="form-check-label" for="sizeM">M</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="L" id="sizeL">
+                                <input class="form-check-input" type="checkbox" value="L" id="sizeL" data-filter-type="size">
                                 <label class="form-check-label" for="sizeL">L</label>
                             </div>
                         </div>
@@ -51,15 +142,15 @@
                         <div class="col-12 mb-3"> <!--* TIPO DE PRENDA -->
                             <h5 class="fw-semibold fs-5 mb-2">Tipo de Prenda</h5>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="shirt" id="typeShirt">
+                                <input class="form-check-input" type="checkbox" value="shirt" id="typeShirt" data-filter-type="type">
                                 <label class="form-check-label" for="typeShirt">Camisa</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="pants" id="typePants">
+                                <input class="form-check-input" type="checkbox" value="pants" id="typePants" data-filter-type="type">
                                 <label class="form-check-label" for="typePants">Blusa</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="dress" id="typeDress">
+                                <input class="form-check-input" type="checkbox" value="dress" id="typeDress" data-filter-type="type">
                                 <label class="form-check-label" for="typeDress">Vestido</label>
                             </div>
                         </div>
@@ -77,7 +168,7 @@
 
             <!--?Sección de Lista de Productos-->
             <div class="col-12 col-md-9 col-lg-10"> <!--ancho products-->
-                <div class="row row-cols-sm-2 row-cols-xl-4 g-4">
+                <div id="productsContainer" class="row row-cols-sm-2 row-cols-xl-4 g-4">
 
                     <!--?1-->
                      <div class="col">
@@ -206,6 +297,77 @@
     </main>
 
     <footer>
+        <div class="row align">
+
+            <div class="col-12 col-md-2 col-lg-2 space">
+                <div class="row">
+
+                    <!-- Area de informacion y redes sociales -->
+                    <div class="col-6 col-md-12 flex_smlogo">
+                        <img src="/assets/images/404/product/LOGO-BLANCO-SIN-FONDO (1).png" alt="Seraphia" id="logo_footer">
+                    </div>
+                    <div class="col-6 col-md-12 flex_col">
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <p>Queretaro, Mexico</p>
+                        </div>
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/404/product/instagram.png" alt="instagram" class="sm_logo"></a>
+                            <!-- Facebook Seraphia -->
+                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/404/product/facebook.png" alt="Facebook" class="sm_logo"></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            
+                <!-- Area de Menu secundario -->
+                <div class="col-12 col-md-4 col-lg-6">
+                <div class="row">
+
+
+                    <!-- Links menu secundario -->
+                    <div class="col-12 col-lg-6 ">
+                    <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Galería</a></li>
+                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li><a href="#">FAQ’s</a></li>
+                    </ul>
+                    </div>
+
+                    <!-- Links Cuidamos de ti -->
+                    <div class="col-12 col-lg-6">
+                    <h3 class="footer-toggle">CUIDAMOS DE TI</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Configuración de Cookies</a></li>
+                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+                    </ul>
+                    </div>
+
+                </div>
+                </div>
+
+
+            
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="row  ">
+                <form class="flex_new">
+                <div class="mb-3">
+                    <p>Conoce lo nuevo</p>
+                    <input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <button type="button" class="btn btn_footer">Enviar</button>
+                    <div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
+                </div>
+                </form>
+            </div></div>
+
+        </div>
+
 
     </footer>
 
@@ -218,10 +380,15 @@
 
 
  <script src="/javascript/404_acerca/404_info_products.js" ></script>
+ <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script> <!--!Arath header no se si dejarlo-->
+     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script> <!--!migue-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script><!--!migue-->
+        <script src="/javascript/navbar_footer.js"></script>
 
- <!-- Bootstrap JS -->
+ <!-- Bootstrap JS checar si se repiten creo que si links míos para el js product -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" xintegrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" xintegrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
 </body>
 </html>
