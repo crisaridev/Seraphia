@@ -25,8 +25,8 @@ body {
 
 
    /* Image Columns */
-
-        /* * Enfoque Artesanal */
+        
+        /* * Enfoque Artesanal */ 
         .col1 {
             position: relative;
             background-image: url(/assets/img/Artesanal.jpg);
@@ -37,12 +37,12 @@ body {
             color: white;
         }
 
-        /* * Originalidad */
+        /* * Originalidad */ 
         .col2 {
             position: relative;
             background-image: url(/assets/img/Originalidad.jpg);
             background-repeat:none;
-            background-size:cover;
+            background-size:cover; 
             height:300px;
             overflow:hidden;
             color: white;
@@ -69,9 +69,9 @@ body {
             overflow:hidden;
             color: white;
         }
-
+        
       /* image To Drop Down Text */
-
+        
         .drptxt {
           position: absolute;
           top: 0;
@@ -88,7 +88,7 @@ body {
           padding: 20px;
           text-align: center;
         }
-
+        
         .drptxt:hover {
         opacity: 1;
         }
