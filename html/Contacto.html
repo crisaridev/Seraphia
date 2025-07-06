@@ -48,6 +48,7 @@
          type="search"
          placeholder="Buscar"
          aria-label="Buscar"
+         name="Buscar"
        >
        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
      </form>
@@ -87,7 +88,8 @@
             <input class="form-control me-1"
                    type="search"
                    placeholder="Buscar"
-                   aria-label="Buscar">
+                   aria-label="Buscar"
+                   name="BuscarFooter">
             <button class="btn" type="submit"><i class="bi bi-search"></i></button>
           </form>
         </li>
@@ -134,8 +136,8 @@
                         </div>
 
                         <div class="mb-3">
-                            <label for="email" class="form-label">Correo electrónico</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" required>
+                            <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+                            <input type="email" class="form-control" id="exampleInputEmail1" name="email" autocomplete="on"  required>
                         </div>
 
                         <div class="mb-3">
