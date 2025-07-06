@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<link rel="stylesheet" href="../css/crear-producto.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <nav>NavBar</nav> -->
+		<nav><h1>NavBar</h1></nav>
+		<main>
+			<form id="form-container" class="needs-validation" novalidate>
+				<div class="mb-3">
+					<label for="title-input" class="form-label">Titulo</label>
+					<input type="text" class="form-control" id="title-input" name="title-input" aria-describedby="title-input" value="" required />
+				</div>
+				<div class="container">
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4">
+						<div class="mb-3">
+							<label for="price-input" class="form-label">Precio</label>
+							<div class="input-group">
+								<span class="input-group-text">$</span>
+								<input type="number" class="form-control" id="price-input" name="price-input" aria-describedby="price-input" value="" required />
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="color-input" class="form-label">Color</label>
+							<select type="text" class="form-select" name="color-input" id="color-input" aria-label="color-input" required>
+								<option value="" selected hidden>Selecciona un color</option>
+								<option value="Rojo">Rojo</option>
+								<option value="Verde">Verde</option>
+								<option value="Azul">Azul</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="size-input" class="form-label">Talla</label>
+							<select type="text" class="form-select" name="size-input" id="size-input" aria-label="size-input" required>
+								<option value="" selected hidden>Selecciona una talla</option>
+								<option value="Chica">Chica</option>
+								<option value="Mediana">Mediana</option>
+								<option value="Grande">Grande</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="category-input" class="form-label">Categoria</label>
+							<select type="text" class="form-select" name="category-input" id="category-input" aria-label="Default select example" required>
+								<option value="" selected hidden>Selecciona una categoria</option>
+								<option value="Pantalon">Pantalon</option>
+								<option value="Blusa">Blusa</option>
+								<option value="Vestido">Vestido</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="mb-3">
+					<label for="description-input" class="form-label">Descripcion</label>
+					<textarea type="text" class="form-control" id="description-input" name="description-input" aria-describedby="description-input" required></textarea>
+				</div>
+				<!-- Swiper -->
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="card">
+								<img src="https://placehold.co/410" class="card-img" alt="..." />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-1-selector" id="card-1-id" aria-label="Default select example" required>
+										<option value="" hidden>Selecciona Orden</option>
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card">
+								<img src="https://placehold.co/420" class="card-img" alt="..." />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-2-selector" id="card-2-id" aria-label="Default select example" required>
+										<option value="" selected hidden>Selecciona Orden</option>
+										<option value="1">1</option>
+										<option value="2" selected>2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="alert alert-danger alert-img-max hidden" role="alert">Puedes cargar un maximo de 6 imagenes por producto, borra una imagen e intenta nuevamente</div>
+				<label for="file-upload" class="custom-upload" id="file-drop-area">
+					<img src="../assets/images/crear-producto/upload-cloud-icon.svg" />
+					<span class="required-file" id="chosen-file">Cargar Imagenes</span>
+				</label>
+				<input type="file" id="file-upload" name="file-upload" accept="image/*" multiple />
+				<div class="alert alert-danger alert-submit hidden" role="alert">Error al intentar cargar el producto, <br /></div>
+				<!-- <div class="alert alert-danger alert-missing-data hidden" role="alert">
+					Error al cargar la imagen <br />
+					Solo puedes cargar un maximo de 6 imagenes por producto
+				</div> -->
+				<button type="submit" class="btn btn-primary submit-btn">Cargar Producto</button>
+			</form>
+		</main>
+
+		<!-- BootStrap Script -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<script src="../javascript/crear-producto.js"></script>
+	</body>
+</html>
