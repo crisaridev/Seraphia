@@ -89,6 +89,9 @@ body {
 hr {
   margin-bottom: 25px;
 }
+.container-content{
+  margin-top: 50px;
+}
 .hero {
   width: 60%;
   margin: 0 auto;
