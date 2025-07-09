@@ -1,4 +1,4 @@
- //js de responsive y filtro pero solo visualización
+ //js de responsive y filtro pero solo visualización nat
  document.addEventListener('DOMContentLoaded', function() {
             const filterToggleButton = document.getElementById('filterToggleButton');
             const filterPanel = document.getElementById('filterPanel');
@@ -27,7 +27,7 @@
 //js de productos
 
 // --- 1. DATOS DE PRODUCTOS DE MUESTRA ---
-// definir de donde vienen los datos AAAAAA
+// definir de donde vienen los datos AAAAAA de la base de datos
 const allProducts = [
     {
         id: '1',
