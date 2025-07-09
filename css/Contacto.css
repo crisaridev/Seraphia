@@ -1,10 +1,12 @@
 body{
     background-color: #f8f8f8;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+#x{
+    font-size: 15.2px;
 }
 .div_space{
     background-color: #f8f8f8;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 .logo_c{
     width: 250px;
