@@ -1,0 +1,295 @@
+/* =====================================================
+    ---------------------SIDEBAR------------------------
+   =====================================================
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #F8F8F8 !important;
+  font-family: "Lato", sans-serif !important;
+}
+
+/* Sidebar principal */
+.sidebar {
+  background-color: #1a1a1d;
+  min-height: 100vh;
+  transition: width 300ms ease-in-out;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.sidebar ul {
+  list-style: none;
+  font-weight: 600;
+}
+
+.sidebar_link {
+  text-decoration: none;
+}
+
+.sidebar_icon {
+  color: white;
+}
+
+/* Cada opción del sidebar */
+.sidebar_element {
+  font-size: 22px;
+  padding: 18px 25px;
+  border-radius: 5px;
+  align-items: center;
+  display: flex;
+  margin: 20px 30px;
+  text-decoration: none;
+}
+
+.sidebar_element i {
+  font-size: 40px;
+}
+
+/* Texto de cada opción que se oculta al colapsar */
+.sidebar_hide {
+  max-width: 220px;
+  transition: all 300ms ease-in-out;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  margin-left: 15px;
+  margin-bottom: 0 !important;
+  transition: opacity 300ms ease-in-out;
+  opacity: 1;
+  max-width: 200px;
+  white-space: nowrap;
+}
+
+/* Texto oculto al colapsar sidebar*/
+.expanded .sidebar_hide {
+  max-width: 0;
+  overflow: hidden;
+}
+
+.expanded .sidebar_hide .dashboard_label {
+  /* Oculta el texto al colapsar */
+  transition: all .3s ease-in-out;
+  max-width: 0;
+  margin-left: 0;
+}
+
+/* Sidebar colapsado */
+.expanded {
+  transition: all .3s ease-in-out;
+  min-width: 100px;
+  width: 150px;
+}
+
+.seraphia_logo {
+  max-width: 80px;
+  padding: 0;
+  position: relative;
+  align-items: center;
+  width: 100%;
+}
+
+/* Hover sobre opciones del sidebar */
+.sidebar_element:not(:has(.seraphia_logo)):hover {
+  background-color: #F8F8F8;
+  transition: all 100ms ease-in-out !important;
+  cursor: pointer;
+  color: #1a1a1d;
+}
+
+/* Pagina activa mostrada en sidebar */
+.active_page {
+  background-color: #F8F8F8;
+  color: #1a1a1d;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+/* Texto de la pagina activa */
+.sidebar_element.active_page h6 {
+  color: #1a1a1d;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+}
+
+/* Logo Seraphia 2 */
+.sidebar_element:has(.seraphia_logo) {
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: center;
+  padding: 2rem 0 !important;
+  margin: 0 auto;
+}
+
+/* Ícono de logout  */
+.sidebar_icon_logout {
+  position: absolute;
+  font-size: 28px;
+  bottom: 20px;
+}
+
+/* Texto de logout */
+.sidebar_label_logout {
+  font-size: 15px;
+  white-space: nowrap;
+  justify-content: center;
+}
+
+/* Botón para abrir y cerrar sidebar (Visible solo en movil) */
+.toggle-btn {
+  max-height: 50px;
+  max-width: 50px;
+  width: 100%;
+  margin: 10px;
+  border-radius: 50%;
+  font-size: 40px;
+  position: fixed;
+  left: 10px;
+  z-index: 3;
+  background: #fff;
+  box-shadow: 0 2px 10px #1a1a1d38;
+  transition: left 300ms ease-in-out;
+  border: 2px solid #1a1a1d;
+
+}
+
+.toggle-btn .bx {
+  vertical-align: 2.5px !important;
+}
+
+/* Mueve el boton de abrir y cerrar al mismo tiempo que el sidebar*/
+.expanded .toggle-btn {
+  left: 150px;
+}
+
+/* =====================================================
+   ----------------------NAVBAR-------------------------
+   =====================================================
+*/
+
+/* Navbar principal */
+.navbar {
+  background-color: #FFFFFF;
+  height: 70px;
+  flex: 1;
+  font-size: 25px;
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+  box-shadow: 0px 5px 90px -15px #1a1a1d38;
+}
+
+/* Botones del navbar */
+.nav_button a {
+  border: none;
+  color: #1a1a1d;
+  font-weight: 600;
+}
+
+/* Botónes principal del navbar */
+.nav_button .navbar_element {
+  border-radius: 50px;
+  background-color: #1a1a1d;
+  padding: 5px 20px;
+  color: white !important;
+  font-size: 20px;
+}
+
+.navbar .material-symbols-outlined, .navbar .bx {
+  vertical-align: -3px !important;
+}
+
+/* Ícono de notificación grande en la navbar */
+.nav_button .nav_notification i {
+  font-size: 35px;
+  vertical-align: -9px !important;
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 1,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 24
+}
+
+
+/*=====================================================
+   -------------------MEDIA QUERIES---------------------
+   =====================================================
+**/
+
+@media (max-width: 912px) {
+  .expanded {
+    transition: all .3s ease-in-out;
+    min-width: 50px;
+    width: 100px;
+  }
+  .sidebar .sidebar_element {
+    margin: 10px;
+    padding: 20px 20px;
+  }
+  .sidebar.expanded .toggle-btn {
+    left: 100px;
+  }
+} 
+
+
+@media (max-width: 768px) {
+  /* Sidebar: se vuelve flotante y colapsable */
+  .sidebar {
+    position: fixed;
+    z-index: 2;
+    transform: translateX(-300px);
+    transition: all 300ms ease-in-out;
+    max-width: 230px;
+  }
+  .expanded_mobile {
+    transform: translateX(0px);
+  }
+  .expanded_btn {
+    left: 230px;
+  }
+  .toggle-btn {
+    transition: all 300ms ease-in-out;
+    bottom: 10px;
+  }
+  /* Navbar: oculta botones secundarios y ajusta notificaciones */
+  .navbar .nav_button_hide {
+    display: none;
+  }
+  .navbar .nav_notification {
+    margin-left: 20px;
+  }
+
+  .expanded .sidebar_hide {
+    max-width: 100px;
+    overflow: visible;
+  }
+  .expanded .sidebar_hide .dashboard_label {
+    max-width: 100px;
+  }
+  .expanded {
+    min-width: 100px;
+    width: 300px;
+  }
+}
+
+@media (min-width: 769px) {
+  /* Sidebar: oculta botón de colapsar en desktop */
+  .toggle-btn {
+    display: none;
+  }
+}

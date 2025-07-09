@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart</title>
+
+    <!-- * Include Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <!-- ? Bootstrap Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+  >
+  <!-- * Include CSS -->
+  <link rel="stylesheet" href="/css/cart_shopping.css">
+
+    <!-- *FOOTER -->
+  <link rel="stylesheet" href="/css/Navbar_footer.css">
+
+
+</head>
+<body>
+
+  <!-- ! NAVBAR -->
+
+<!-- Barra de navegación principal -->
+<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+  <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+
+    <!-- Sección 1: LOGO + NOMBRE -->
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img
+        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
+        alt="Seraphia"
+        width="52" height="52"
+        class="me-2"
+      >
+      <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+    </a>
+
+    <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+      <li class="nav-item">
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="../index.html">Inicio</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="../html/Sobre_Nosotros.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+    </ul>
+
+    <!-- Sección 3: ACCIONES DERECHA -->
+    <div class="d-flex align-items-center gap-2 ms-auto">
+
+      <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+     <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+       <input
+         class="form-control"
+         type="search"
+         placeholder="Buscar"
+         aria-label="Buscar"
+       >
+       <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+     </form>
+
+      <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+        <i class="bi bi-cart3"></i>
+      </a>
+
+      <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+      <button
+        class="navbar-toggler d-lg-none botonToggle"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#contenidoNavbar"
+        aria-controls="contenidoNavbar"
+        aria-expanded="false"
+        aria-label="Mostrar navegación móvil"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+    <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+      <ul class="navbar-nav w-100">
+        <!-- Enlaces móviles -->
+        <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+
+        <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+        <li class="nav-item px-3 my-3">
+          <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+            <input class="form-control me-1"
+                   type="search"
+                   placeholder="Buscar"
+                   aria-label="Buscar">
+            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+        </li>
+
+        <!-- Botón de inicio de sesión al final -->
+        <li class="nav-item px-3 mt-3">
+          <a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+  <!-- ! SHOPPING CART -->
+
+<section class="h-100">
+  <div class="container h-100 py-5">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-10">
+
+        <div class="d-flex justify-content-between align-items-center mb-4">
+          <h3 class="fw-normal mb-0"> Mi carrito</h3>
+        </div>
+
+  <!-- ? UN PRODUCTO :) -->
+  <!-- Empieza el producto -->
+  <div class="card rounded-3 mb-4">
+    <div class="card-body p-4">
+      <div class="row d-flex justify-content-between align-items-center">
+
+        <div class="col-md-2 col-lg-2 col-xl-2">
+          <img
+            src="/assets/img/blusa-amarilla-con-bordado-fondo.jpg"
+            class="img-fluid rounded-3" alt="blusa-amarilla-con-bordado-fondo">
+        </div>
+
+        <div class="col-md-3 col-lg-3 col-xl-3">
+          <p class="lead fw-normal mb-2">Blusa Amarilla con Bordado Floral</p>
+          <p><span class="text-muted">Size: </span>S <span class="text-muted">Color: </span>Amarillo</p>
+        </div>
+
+        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+        <button class="btn btn-link px-2"
+          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+          <i class="fas fa-minus"></i>
+        </button>
+
+        <input min="0" name="quantity" value="2" type="number"
+            class="form-control form-control-sm" />
+
+        <button class="btn btn-link px-2"
+            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+            <i class="fas fa-plus"></i>
+        </button>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2">
+          <h5 class="mb-0">$499.00</h5>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 text-end">
+          <a href="#!" class="text-primary me-3">Modificar</a>
+          <a href="#!" class="text-danger">Eliminar</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+    <!-- Termina el producto -->
+
+   <!-- ? segundo producto :) -->
+  <div class="card rounded-3 mb-4">
+    <div class="card-body p-4">
+      <div class="row d-flex justify-content-between align-items-center">
+
+        <div class="col-md-2 col-lg-2 col-xl-2">
+          <img
+            src="/assets/img/Blusa Azul con Bordado Huipil-detalle.jpg"
+            class="img-fluid rounded-3" alt="Blusa Azul con Bordado Huipil-detalle">
+        </div>
+
+        <div class="col-md-3 col-lg-3 col-xl-3">
+          <p class="lead fw-normal mb-2">Blusa Azul con Bordado Huipil</p>
+          <p><span class="text-muted">Size:</span>M <span class="text-muted">Color: </span>Azul</p>
+        </div>
+
+        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
+        <button class="btn btn-link px-2"
+          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
+          <i class="fas fa-minus"></i>
+        </button>
+
+        <input min="0" name="quantity" value="2" type="number"
+            class="form-control form-control-sm" />
+
+        <button class="btn btn-link px-2"
+            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
+            <i class="fas fa-plus"></i>
+        </button>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2">
+          <h5 class="mb-0" >$499.00</h5>
+        </div>
+
+        <div class="col-md-2 col-lg-2 col-xl-2 text-end">
+          <a href="#!" class="text-primary me-3">Modificar</a>
+          <a href="#!" class="text-danger">Eliminar</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
+<!-- ? Parte de abajo del carrito :) -->
+          </div>
+        </div>
+        <div class="card mb-4">
+          <div class="card-body p-4 d-flex flex-row">
+            <div data-mdb-input-init class="form-outline flex-fill">
+              <input type="text" id="form1" class="form-control form-control-lg" />
+              <label class="form-label" for="form1">Código de descuento</label>
+            </div>
+            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-outline-warning btn-lg ms-3">Aplicar</button>
+          </div>
+        </div>
+
+      <!-- ? TOTAL DEL PRODUCTO-->
+      <div class="card mb-5">
+        <div class="card-body p-4">
+          <div class="float-end">
+            <p class="mb-0 me-5 d-flex align-items-center">
+              <span class="mb-0">TOTAL: </span>
+              <span class="fw-bold fs-4">$998.00</span>
+            </p>
+          </div>
+        </div>
+      </div>
+
+
+        <!-- ? COMPRAR BOTON-->
+        <div class="card">
+          <div class="card-body">
+            <button  type="button" data-mdb-button-init data-mdb-ripple-init class="btn btn-block btn-lg" style="background-color: #EBA56A; color: white; border: none;">   Confirmar Carrito </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ! FOOTER -->
+
+   <footer>
+        <div class="row align">
+
+            <div class="col-12 col-md-2 col-lg-2 space">
+                <div class="row">
+
+                    <!-- Area de informacion y redes sociales -->
+                    <div class="col-6 col-md-12 flex_smlogo">
+                        <img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer">
+                    </div>
+                    <div class="col-6 col-md-12 flex_col">
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <p>Queretaro, Mexico</p>
+                        </div>
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo"></a>
+                            <!-- Facebook Seraphia -->
+                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo"></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+
+                <!-- Area de Menu secundario -->
+                <div class="col-12 col-md-4 col-lg-6">
+                <div class="row">
+
+
+                    <!-- Links menu secundario -->
+                    <div class="col-12 col-lg-6 ">
+                    <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Galería</a></li>
+                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li><a href="#">FAQ’s</a></li>
+                    </ul>
+                    </div>
+
+                    <!-- Links Cuidamos de ti -->
+                    <div class="col-12 col-lg-6">
+                    <h3 class="footer-toggle">CUIDAMOS DE TI</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Configuración de Cookies</a></li>
+                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+                    </ul>
+                    </div>
+
+                </div>
+                </div>
+
+
+
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="row  ">
+                <form class="flex_new">
+                <div class="mb-3">
+                    <p>Conoce lo nuevo</p>
+                    <input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <button type="button" class="btn btn_footer">Enviar</button>
+                    <div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
+                </div>
+                </form>
+            </div></div>
+
+        </div>
+
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
+        <script src="/javascript/Seraphia/navbar_footer.js"></script>
+
+</body>
+</html>
