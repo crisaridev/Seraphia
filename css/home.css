@@ -11,33 +11,43 @@ section {
 /* *Ajustes para pantallas pequeñas */
 /*Muy importante para responsive*/
 @media (max-width: 768px) {
-  .hero-overlay {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+  .hero-img {
+ max-height: 45vh; /* Ajuste de hero en pantallas pequeñas*/
   }
+
 }
-.hero-overlay { /**Esta clase controla como y donde se verá el texto dentro de las imagenes de la seccion hero*/
+/*.hero-overlay { //Esta clase controla como y donde se verá el texto dentro de las imagenes de la seccion hero
   position:absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.336); /* semitransparente para que no sea dominante en la imagen*/
+  background-color: rgba(0, 0, 0, 0.336); //semitransparente para que no sea dominante en la imagen
   padding: 1rem 2rem;
-}
-
-.mision-block{ /**para agregar estilo a la seccion de la mision, fondo con transparencia para destacar pero que no desentone entre las demas secciones*/
-  background-color: #614b3e3f;
-  padding: 1.5rem;
-  border-radius: 0.5rem;  
-}
+  font-size: 0.8rem;
+}*/
 
 .hero-img { /**esta clase sirve para mantener el tamaño de las imagenes y que el carrusel no salte por los tamaños diferentes*/
   width: 100%;
-  height: 100vh; /* altura del viewport */
+  max-height: 60vh;/* altura del viewport */
   object-fit: cover; /* para que la imagen llene sin distorsionarse */
   object-position: center;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.mision-block{ /**para agregar estilo a la seccion de la mision, fondo con transparencia para destacar pero que no desentone entre las demas secciones*/
+  background-color: #614b3e3b;
+  padding: 1.5rem 1rem;
+
+}
+
+.mision-block p {
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 .text-hover {
@@ -50,9 +60,13 @@ section {
 }
 .galeria-imagen {
   position: relative;
-border:#1a1a1d91 solid 1px;
 }
 
+.img-inspiracion {
+  max-height: 450px;
+  width: 100%;
+  object-fit: contain;
+}
 .img-card {
   background-color: #8c7b7375;
   padding: 1.5rem;

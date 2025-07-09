@@ -20,7 +20,8 @@
 -styles.css es mi hoja de estilos
 -preconect sirve para pre cargar las fuentes que voy a importar de google y esto puede ayudar a que el sitio cargue mas rapido
 -https://fonts.googleapis.com/css2?family=Lato esta importando la tipografia lato desde google-->
-<link href="../css/home.css" rel="stylesheet">
+<link rel="stylesheet" href="/css/home.css" >
+<link href="/css/Navbar_footer.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -35,9 +36,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
 <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="index.html">
       <img
-        src="../assets/LOGO-BLANCO-seraphia.png"
+        src="./assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
         width="52" height="52"
         class="me-2"
@@ -49,10 +50,10 @@
       <li class="nav-item">
         <a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Inicio</a>
       </li>
-      <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
     </ul>
     <!-- Sección 3: ACCIONES DERECHA -->
     <div class="d-flex align-items-center gap-2 ms-auto">
@@ -67,7 +68,7 @@
        <button class="btn" type="submit"><i class="bi bi-search"></i></button>
      </form>
       <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="#" class="btn btn-outline-light botonCarrito">
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
         <i class="bi bi-cart3"></i>
       </a>
       <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
@@ -87,11 +88,11 @@
     <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
         <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
         <li class="nav-item px-3 my-3">
           <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
@@ -104,7 +105,7 @@
         </li>
         <!-- Botón de inicio de sesión al final -->
         <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
         </li>
       </ul>
     </div>
@@ -112,34 +113,37 @@
   </div>
 </nav>
 
+
  <!-- todo: Desarrollo para vista HOME "Abril"-->
   
   <!--? Parte correspondiente al HERO DESLIZABLE-->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel"> 
-  <!--data-bs-ride es para que el carrusel avance de forma automatica/position relative es para poder poner texto arriba funcionaria junto con hero-overlay, revisar si es funcional a futuro.-->
+  <div id="heroCarousel" class="carousel slide"> 
+  <!--position relative es para poder poner texto arriba funcionaria junto con hero-overlay, revisar si es funcional a futuro.-->
     <div class="carousel-inner">
 <div class="carousel-item active position-relative"> 
   <img src="../assets/Portada.jpg" class="d-block w-100 hero-img" alt="Portada  presentando blusa rosa con estampado">
-  <div class="hero-overlay">
+ <!-- <div class="hero-overlay">
     <h2>#Amantes de lo auténtico</h2>
     <p>Disfruta expresando la mejor versión de ti</p>
-    <!--revisar si esto se puede agregar de otra forma en la vista de administrador-->
-  </div>
+  </div>-->
 </div>
-<div class="carousel-item active position-relative"> 
+<div class="carousel-item position-relative"> 
         <img src="../assets/Portada-blusa-mao-perfil.jpg" class="d-block w-100 hero-img" alt="Portada presentado blusa con cuello mao">
-  <div class="hero-overlay">
+ <!-- <div class="hero-overlay">
     <h2>#Amantes de lo auténtico</h2>
-    <p>Disfruta siento la mejor versión de ti</p>
-  </div>
+    <p>Disfruta expresando la mejor versión de ti</p>
+  </div>-->
 </div>
-<div class="carousel-item active position-relative">
+
+<div class="carousel-inner"><div class="carousel-item position-relative"> 
         <img src="../assets/Portada-blusa-rosa.jpg" class="d-block w-100 hero-img" alt="Portada presentando el detalle de una blusa asimetrica en color rosa brillante">
-  <div class="hero-overlay">
+ <!-- <div class="hero-overlay">
     <h2>#Amantes de lo auténtico</h2>
-    <p>Disfruta siento la mejor versión de ti</p>
-  </div>
+    <p>Disfruta expresando la mejor versión de ti</p>
+  </div>-->
 </div>
+</div>
+
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon"></span>
     </button>
@@ -152,9 +156,9 @@
 
   <!--? MISIÓN -->
   <!-- mision-block es para agregar estilo a la seccion de mision, aun me gustaria cambiar para que sea mas llamativa sin desentonar , container text-center my-4 es de bootstrap, considero que con my-4 los margenes quedan bien sin empalmarse y sin estar tan separados-->  
-  <section class="container text-center my-4 mision-block"> 
+  <section class="container-fluid text-center mb-0 mision-block"> 
     <h2 class="mb-3">Nuestra Misión</h2>
-    <p class="lead">
+    <p class="fs-5">
         En Seraphia, creemos que la moda puede fluir en sintonía con el entorno y
         evolucionar con conciencia.
         Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que
@@ -166,38 +170,38 @@
 
   <!--? Tarjetas para la parte de  INSPIRACIÓN DE LA TEMPORADA-->
   <!--quiero cambiar esta parte para que se actualice de forma automatica cuando se agregen nuevos productos a la ecommerce, usara la foto, el titulo del producto y la descripcion del producto-->
-  <section class="container my-5">
+  <section class=" container-fluid my-5">
     <h3 class="text-center mb-4">INSPIRACION DE LA TEMPORADA</h3>
   <!-- uso row  para que mis cards se acomoden en filas, bootstrap lo necesita para que las cards  se ajusten como lo necesito en el grid, imagen fluid es necesario para que bootstrap funcione como responsive, shadow añade sombra a la card-->
- <div class="row mb-5 align-items-center img-card  bg-light p-4 rounded shadow">
+ <div class="row mb-5 align-items-center img-card  bg-light p-4 rounded ">
       <div class="col-md-6">
-        <img src="../assets/blusa-corta-triangulos-frente.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa tipo top diseño de triangulos">
+        <img src="../assets/blusa-corta-triangulos-frente.jpg" class="img-fluid rounded img-inspiracion" alt="Sugerencia de estilo para blusa tipo top diseño de triangulos">
       </div>
       <div class="col-md-6"> <!-- lo uso para dividir en dos mi espacio en la tarjeta, en un lado tengo la fotografia y en el otro el titulo y la descripcion-->
-        <h4>Resalta tu feminidad y belleza</h4>
-        <p>
+        <h4 class="fs-3">Resalta tu feminidad y belleza</h4>
+        <p class="fs-5">
           Top corto confeccionado en algodón ligero con un llamativo patrón de líneas en zigzag color azul. Su diseño halter incorpora un cordón que se anuda detrás del cuello, dejando la espalda al descubierto para un acabado fresco y elegante. Como sugerencia puedes combinarlo con unos mom jeans de mezclilla deslavada.
         </p>
       </div>
     </div>
- <div class="row mb-5 align-items-center  flex-md-row-reverse img-card rounded text-dark shadow p-4">
+ <div class="row mb-5 align-items-center  flex-md-row-reverse img-card rounded text-dark p-4">
  <!-- aqui agrego flex-md-row-reverse para que la fotografia este a la derecha y el texto a la izquierda  --> 
       <div class="col-md-6">
-        <img src="../assets/blusa-corta-bordado.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa corta con bordado de flores">
+        <img src="../assets/blusa-corta-bordado.jpg" class="img-fluid rounded img-inspiracion" alt="Sugerencia de estilo para blusa corta con bordado de flores">
       </div>
       <div class="col-md-6">
-        <h4>Tranquilidad y naturalidad</h4>
-        <p>Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo con unos jeans para un look relajado.</p>
+        <h4 class="fs-3">Tranquilidad y naturalidad</h4>
+        <p class="fs-5">Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo con unos jeans para un look relajado.</p>
       </div>
     </div>
   <!-- aqui  solo copie la parte de la primera tarjeta --> 
-    <div class="row mb-5 align-items-center img-card   bg-light p-4 rounded shadow">
+    <div class="row mb-5 align-items-center img-card   bg-light p-4 rounded ">
       <div class="col-md-6">
-        <img src="../assets/Blusa-negra-portada.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa estilo camiseta con bordado de flores a crochet">
+        <img src="../assets/Blusa-negra-portada.jpg" class="img-fluid rounded img-inspiracion" alt="Sugerencia de estilo para blusa estilo camiseta con bordado de flores a crochet">
       </div>
       <div class="col-md-6">
-        <h4>Elegancia en negro</h4>
-        <p>Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino. </p>
+        <h4 class="fs-3">Elegancia en negro</h4>
+        <p class="fs-5">Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino. </p>
       </div>
     </div>
   </section>
@@ -263,7 +267,7 @@
     </div>
   </section>
 
-  <!--? Parte para el FOOTER de Miguel-->
+   <!--? Parte para el FOOTER de Miguel-->
         <footer>
         <div class="row align">
 
@@ -272,7 +276,7 @@
 
                     <!-- Area de informacion y redes sociales -->
                     <div class="col-6 col-md-12 flex_smlogo">
-                        <img src="../assets/LOGO-BLANCO-seraphia.png" alt="Seraphia" id="logo_footer">
+                        <img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer">
                     </div>
                     <div class="col-6 col-md-12 flex_col">
                         <div class="col-6 col-md-12 flex_smlogo">
@@ -287,7 +291,7 @@
                     </div>
                 </div>
              </div>
-            
+
                 <!-- Area de Menu secundario -->
                 <div class="col-12 col-md-4 col-lg-6">
                 <div class="row">
@@ -297,9 +301,9 @@
                     <div class="col-12 col-lg-6 ">
                     <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Galería</a></li>
-                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+                        <li><a href="/html/Galeria.html">Galería</a></li>
+                        <li><a href="/html/Contacto.html">Contacto</a></li>
                         <li><a href="#">FAQ’s</a></li>
                     </ul>
                     </div>
@@ -335,7 +339,7 @@
   <!--? Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script src="../javascript/home.js"></script>
+<script src="../javascript/index.js"></script>
      </body>
 </html>
 
