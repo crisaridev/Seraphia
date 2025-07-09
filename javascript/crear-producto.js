@@ -1,6 +1,7 @@
 const swiperEl = document.querySelector('.swiper');
 const uploadBtn = document.querySelector('input');
 const submitBtn = document.querySelector('.submit-btn');
+const swiperWrapper = document.querySelector('.swiper-wrapper');
 
 // const formNames = [
 // 	'title-input',
@@ -15,12 +16,22 @@ const cardSelectorNames = ['card-1-selector', 'card-2-selector', 'card-3-selecto
 const cardSelectorPositions = ['1', '2', '3', '4', '5', '6'];
 // const formInputsNames = ['title-input', 'price-input', 'color-input', 'size-input', 'category-input', 'description-input'];
 
+const productOneDesc =
+	'Blusa amarilla vibrante con delicados bordados artesanales que aportan un toque único y elegante. Ideal para destacar en cualquier ocasión, combina frescura, estilo y comodidad. Perfecta para quienes buscan moda con personalidad y detalles hechos con amor.';
+const productOneImg = [
+	{ position: 2, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-fondo.jpg' },
+	{ position: 3, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-frente-fondo.jpg' },
+	{ position: 1, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-perfil-fondo.jpg' },
+	{ position: 4, img: '../assets/images/crear-producto/blusa-amarilla/Copia de blusa-amarilla-con-bordado-detalle-fondo.jpg' },
+];
+const dataFromServer = { title: 'Blusa Amarilla Con Bordado', price: 500, color: 'Azul', size: 'Grande', category: 'Pantalon', description: productOneDesc, img: productOneImg };
+
 //Initialize swiper (carousel wrapper)
 var swiper = new Swiper('.mySwiper', {
 	slidesPerView: 1,
 	breakpoints: {
 		//more than 700px
-		550: {
+		650: {
 			slidesPerView: 2,
 			spaceBetween: 30,
 		},
@@ -45,7 +56,7 @@ var swiper = new Swiper('.mySwiper', {
 });
 
 //Add eventlisteners to all the buttons that live inside the swiper's cards
-const initiateCardBtn = () => {
+const updateCardBtn = () => {
 	const cardBtn = document.querySelectorAll('.card-btn');
 	cardBtn.forEach(e => {
 		// When the button is clicked, delete the selected swiper-slide (card) and update the swiper
@@ -64,7 +75,7 @@ const initiateCardBtn = () => {
 	});
 };
 
-const initiateCardSelector = () => {
+const updateCardSelector = () => {
 	const cardSelectorElements = document.querySelectorAll('.card-select');
 	cardSelectorElements.forEach(cardSelectorEl => {
 		cardSelectorEl.addEventListener('change', e => {
@@ -94,9 +105,9 @@ const initiateCardSelector = () => {
 };
 
 //add event listeners to the buttons inside the carousel cards
-initiateCardBtn();
+updateCardBtn();
 //add event listeners to the selectors inside the carousel cards
-initiateCardSelector();
+updateCardSelector();
 
 //Get the form data
 const getSwiperFormData = () => {
@@ -129,7 +140,6 @@ const cardsData = getCardsData();
 document.addEventListener('DOMContentLoaded', () => {
 	const fileUploadElement = document.getElementById('file-upload');
 	const fileDropArea = document.getElementById('file-drop-area');
-	const swiperWrapper = document.querySelector('.swiper-wrapper');
 
 	// handle click event as well as the drop event, the latter is the result of dragging an element over the container and dropping it
 	const handleFileSelect = function (event) {
@@ -189,8 +199,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				);
 			}
 			swiper.update(); //update swiper with new card
-			initiateCardBtn(); //add event listener to all buttons inside the carousel cards
-			initiateCardSelector(); //add event listener to all selectors inside the carousel cards
+			updateCardBtn(); //add event listener to all buttons inside the carousel cards
+			updateCardSelector(); //add event listener to all selectors inside the carousel cards
 			// console.log(cardsData);
 		} else {
 			console.log('no file chosen');
@@ -208,6 +218,7 @@ document.addEventListener('DOMContentLoaded', () => {
 const validateFormContent = () => {
 	const allFormData = getSwiperFormData();
 	const alerSubmitEl = document.querySelector('.alert-submit');
+	const alertImgEl = document.querySelector('.alert-img-max');
 	const usedCardNames = cardSelectorNames.filter(cardName => cardsData.some(e => e.name === cardName));
 	let alertsNumber = 0;
 	let alertText = 'Error al mandar el formulario, ';
@@ -228,6 +239,8 @@ const validateFormContent = () => {
 			break;
 		}
 	}
+	// Quitar alerta sobre carga excesiva de imagenes (mas de 6) al darle submit
+	alertImgEl.classList.add('hidden');
 	// Si detectamos un error, desplegar el mensaje de error. Si no detectamos error, quitar el mensaje de error
 	if (alertsNumber > 0) {
 		alerSubmitEl.textContent = alertText;
@@ -237,6 +250,49 @@ const validateFormContent = () => {
 	}
 	return alertsNumber;
 };
+
+const fillFormAutomatically = input => {
+	const titleInputEl = document.querySelector('#title-input');
+	const priceInputEl = document.querySelector('#price-input');
+	const colorInputEl = document.querySelector('#color-input');
+	const sizeInputEl = document.querySelector('#size-input');
+	const categoryInputEl = document.querySelector('#category-input');
+	const descriptionInputEl = document.querySelector('#description-input');
+	titleInputEl.value = input.title;
+	priceInputEl.value = input.price;
+	colorInputEl.value = input.color;
+	sizeInputEl.value = input.size;
+	categoryInputEl.value = input.category;
+	descriptionInputEl.value = input.description;
+	for (const image of input.img) {
+		swiperWrapper.insertAdjacentHTML(
+			'beforeend',
+			`
+			    		<div class="swiper-slide">
+							<div class="card">
+								<img src="${image.img}" class="card-img" alt="Card Image" />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-${image.position}-selector" id="card-${image.position}-id" aria-label="Select Component" required>
+										<option value="${image.position}" selected hidden>${image.position}</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>`,
+		);
+	}
+	swiper.update(); //update swiper with new card
+	updateCardBtn(); //add event listener to all buttons inside the carousel cards
+	updateCardSelector(); //add event listener to all selectors inside the carousel cards
+};
+
+// fillFormAutomatically(dataFromServer);
 
 // Create json object and print it to the console
 const handleSubmit = () => {

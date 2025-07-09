@@ -30,20 +30,23 @@
 		<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
 			<div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
 				<!-- Sección 1: LOGO + NOMBRE -->
-				<a class="navbar-brand d-flex align-items-center" href="#">
-					<img src="../assets/LOGO-BLANCO-seraphia.png" alt="Seraphia" width="52" height="52" class="me-2" />
+				<a class="navbar-brand d-flex align-items-center" href="/index.html">
+					<img src="/assets/images/404/product/LOGO-BLANCO-SIN-FONDO (1).png" alt="Seraphia" width="52" height="52" class="me-2" />
 					<span class="fs-4 d-none d-sm-inline">Seraphia</span>
 				</a>
+
 				<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
 				<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
 					<li class="nav-item">
-						<a class="nav-link active rounded-pill bg-light text-dark px-3" href="/">Inicio</a>
+						<a class="nav-link" href="/index.html">Inicio</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-					<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-					<li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+					<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/pedidosdetalles.html">Mi cuenta</a></li>
 				</ul>
+
 				<!-- Sección 3: ACCIONES DERECHA -->
 				<div class="d-flex align-items-center gap-2 ms-auto">
 					<!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
@@ -51,10 +54,13 @@
 						<input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
 						<button class="btn" type="submit"><i class="bi bi-search"></i></button>
 					</form>
+
 					<!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-					<a href="#" class="btn btn-outline-light botonCarrito">
+					<a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
 						<i class="bi bi-cart3"></i>
 					</a>
+					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+					<a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block"> Iniciar sesión </a>
 					<!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
 					<button
 						class="navbar-toggler d-lg-none botonToggle"
@@ -68,15 +74,20 @@
 						<span class="navbar-toggler-icon"></span>
 					</button>
 				</div>
+
 				<!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
 				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
 					<ul class="navbar-nav w-100">
 						<!-- Enlaces móviles -->
-						<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-						<li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+						<li class="nav-item">
+							<a class="nav-link" href="/index.html">Inicio</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+						<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/Contacto.html">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/pedidosdetalles.html">Mi cuenta</a></li>
+
 						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
 						<li class="nav-item px-3 my-3">
 							<form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
@@ -84,9 +95,10 @@
 								<button class="btn" type="submit"><i class="bi bi-search"></i></button>
 							</form>
 						</li>
+
 						<!-- Botón de inicio de sesión al final -->
 						<li class="nav-item px-3 mt-3">
-							<a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+							<a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
 						</li>
 					</ul>
 				</div>
@@ -105,7 +117,8 @@
 							<label for="price-input" class="form-label">Precio</label>
 							<div class="input-group">
 								<span class="input-group-text">$</span>
-								<input type="number" class="form-control" id="price-input" name="price-input" aria-describedby="price-input" value="" required />
+								<input type="number" class="form-control" id="price-input" name="price-input" aria-describedby="price-input" value="" min="10" required />
+								<div class="invalid-feedback">Ingresa un precio minimo de 10 pesos</div>
 							</div>
 						</div>
 						<div class="mb-3">
@@ -142,11 +155,12 @@
 					<textarea type="text" class="form-control" id="description-input" name="description-input" aria-describedby="description-input" required></textarea>
 				</div>
 				<!-- Swiper -->
+				<label for="description-input" class="form-label">Imagenes</label>
 				<div class="swiper mySwiper">
 					<div class="swiper-wrapper">
 						<div class="swiper-slide">
 							<div class="card">
-								<img src="https://placehold.co/410" class="card-img" alt="..." />
+								<img src="../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-perfil-fondo.jpg" class="card-img" alt="..." />
 								<div class="card-footer">
 									<select class="form-select card-select" name="card-1-selector" id="card-1-id" aria-label="Default select example" required>
 										<option value="" hidden>Selecciona Orden</option>
@@ -163,13 +177,30 @@
 						</div>
 						<div class="swiper-slide">
 							<div class="card">
-								<img src="https://placehold.co/420" class="card-img" alt="..." />
+								<img src="../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-frente-fondo.jpg" class="card-img" alt="..." />
 								<div class="card-footer">
 									<select class="form-select card-select" name="card-2-selector" id="card-2-id" aria-label="Default select example" required>
 										<option value="" selected hidden>Selecciona Orden</option>
 										<option value="1">1</option>
 										<option value="2" selected>2</option>
 										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card">
+								<img src="../assets/images/crear-producto/blusa-amarilla/Copia de blusa-amarilla-con-bordado-detalle-fondo.jpg" class="card-img" alt="..." />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-3-selector" id="card-3-id" aria-label="Default select example" required>
+										<option value="" selected hidden>Selecciona Orden</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3" selected>3</option>
 										<option value="4">4</option>
 										<option value="5">5</option>
 										<option value="6">6</option>
