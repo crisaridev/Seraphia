@@ -1,183 +1,31 @@
-
-/* =====================================================
-   ---------------------PRODUCTOS-----------------------
-   =====================================================
+    /* 
+  =====================================================
+  -----------------------Navbar-----------------------
+  =====================================================    
 */
 
-/* Contenedor principal de la sección de productos (incluye título) */
-.main-content {
-  flex: 1;
-}
-
-/* Fondo y bordes del área de productos */
-.product_label {
-  background-color: #EBEBEB;
-  border-radius: 5px;
-  min-height: 80vh;
-  margin-top: 500px;
-}
-
-/* Título "Productos" */
-.product_label h1 {
-  font-weight: 600;
-}
-
-/* Línea divisoria entre cards de producto */
-.product_label .product_hr {
-  width: 97%;
-}
-
-/* Contenedor de la lista de cards de producto */
-.product_list {
-  min-height: 70vh;
-  background-color: #ffffff;
-  border-radius: 5px;
-}
-
-.new_button_mobile .new_button_link {
-  border-radius: 3px;
+.statistics_card_dark {
   background-color: #1a1a1d;
-  padding: 5px 17px;
-  color: white !important;
-  font-size: 20px;
-  text-decoration: none;
-  font-weight: 600;
+  color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.filters .filter_btn button {
-  background-color: #ffffff;
-  border: 2px solid #1a1a1d;
-  border-radius: 3px;
-  padding: 5px 17px;
-  font-size: 20px;
-  font-weight: bolder;
+.statistics_card {
+  background-color: #EBEBEB;
+  color: #1a1a1d;
+  padding: 20px;
+  border-radius: 5px;
 }
 
-.filters .search_bar {
-  background-color: #ffffff;
-  border-radius: 3px;
-  border: 2px solid #1a1a1d;
+.statistics_graph {
+  background-color: #EBEBEB;
 }
 
-.search_bar_focus:focus {
-  outline: none;
-  border-radius: 0;
+.statistics_label {
+  /* height: 20vh; */
 }
 
-.filters .search_bar_btn {
-  border: 0 !important;
-  font-weight: bolder;
-}
-
-.search_bar_mobile .search_bar {
-  background-color: #ffffff;
-  border-radius: 3px;
-  border: 2px solid #1a1a1d;
-}
-
-.search_bar_mobile .search_bar_btn {
-  border: 0 !important;
-  font-weight: bolder;
-  
-}
-
-/* Imagen de producto en la card (columna izquierda) */
-.product_list .product-img img {
-  width: 70px;
-  height: auto;
-
-}
-
-/* Nombre del producto en la card (columna central) */
-.product_name_label {
-  max-width: 350px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-
-/*=====================================================
-   -------------------MEDIA QUERIES---------------------
-   =====================================================
-**/
-
-
-/* --- 912px --- */
-@media (max-width: 912px) {
-  /* Productos: oculta botones de acción y reduce tamaño de imagen */
-  .product_label .edit_button, .product_label .date_label {
-    display: none;
-  }
-  .product_list .product-img img {
-    width: 45px;
-    height: auto;
-  }
-  .product_label .product_info {
-    font-size: 15px;
-  }
-  .product_list .product-img img {
-    width: 40px;
-    height: auto;
-  }
-  .product_list .product_name h6 {
-    font-size: 15px;
-  }
-
-  .product_list .product .product-img  {
-    display: none;
-  }
-
-  .filters .filter_btn {
-    font-size: 15px !important;
-  }
-
-  .new_button_mobile .new_button_link {
-  font-size: 15px;
-  } 
-}
-
-@media (max-width: 700px) {
-  /* Productos: reduce tamaño de info */
-  .product_label .product_info {
-    font-size: 17px;
-  }
-}
-
-@media (max-width: 550px) {
-  /* Productos: imagen y nombre más pequeños */
-  .product_list .product-img img {
-    width: 35px;
-    height: auto;
-  }
-  .product_label .product_info {
-    font-size: 15px;
-  }
-  .product_list .product_name h6 {
-    font-size: 15px;
-  }
-}
-
-@media (max-width: 500px) {
-  /* Productos: imagen y nombre aún más pequeños */
-  .product_list .product-img img {
-    width: 30px;
-    height: auto;
-  }
-  .product_label .product_info {
-    font-size: 10px;
-  }
-  .product_list .product_name h6 {
-    font-size: 12px;
-    margin-left: 10px;
-  }
-}
-/* --- 1200px min --- */
-@media (min-width: 1200px) {
-  /* Productos: nombre e info más grandes en pantallas grandes */
-  .product_list .product_name h6 {
-    font-size: 20px;
-  }
-  .product_label .product_info {
-    font-size: 20px;
-  }
+.statistics_graph {
+  /* height: 50vh; */
 }

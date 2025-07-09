@@ -13,7 +13,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
   >
   <!-- * Include CSS -->
-  <link rel="stylesheet" href="/css/cart_shopping.css">
+  <link rel="stylesheet" href="cart_shopping.css">
 
     <!-- *FOOTER -->
   <link rel="stylesheet" href="/css/Navbar_footer.css">
@@ -22,8 +22,7 @@
 </head>
 <body>
 
-  <!-- ! NAVBAR -->
-
+<!-- ! Section of Navbar-->
 <!-- Barra de navegación principal -->
 <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
   <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
@@ -31,7 +30,7 @@
     <!-- Sección 1: LOGO + NOMBRE -->
     <a class="navbar-brand d-flex align-items-center" href="/index.html">
       <img
-        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
+        src="/assets/img/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
         width="52" height="52"
         class="me-2"
@@ -40,13 +39,14 @@
     </a>
 
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
-    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
-        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
-
+      <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+      <li class="nav-item">
+        <a class="nav-link" href="/index.html">Inicio</a>
+      </li>
+      <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
     </ul>
 
     <!-- Sección 3: ACCIONES DERECHA -->
@@ -64,7 +64,7 @@
      </form>
 
       <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+      <a href="#" class="btn btn-outline-light botonCarrito">
         <i class="bi bi-cart3"></i>
       </a>
 
@@ -87,7 +87,7 @@
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
         <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3"" href="#">Nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
@@ -129,7 +129,7 @@
   <div class="card rounded-3 mb-4">
     <div class="card-body p-4">
       <div class="row d-flex justify-content-between align-items-center">
-
+        
         <div class="col-md-2 col-lg-2 col-xl-2">
           <img
             src="/assets/img/blusa-amarilla-con-bordado-fondo.jpg"
@@ -138,23 +138,9 @@
 
         <div class="col-md-3 col-lg-3 col-xl-3">
           <p class="lead fw-normal mb-2">Blusa Amarilla con Bordado Floral</p>
-          <p><span class="text-muted">Size: </span>S <span class="text-muted">Color: </span>Amarillo</p>
+          <p><span class="text-muted">Talla: </span>S </p>
         </div>
-
-        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-        <button class="btn btn-link px-2"
-          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-          <i class="fas fa-minus"></i>
-        </button>
-
-        <input min="0" name="quantity" value="2" type="number"
-            class="form-control form-control-sm" />
-
-        <button class="btn btn-link px-2"
-            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-            <i class="fas fa-plus"></i>
-        </button>
-        </div>
+        
 
         <div class="col-md-2 col-lg-2 col-xl-2">
           <h5 class="mb-0">$400.00</h5>
@@ -174,7 +160,7 @@
   <div class="card rounded-3 mb-4">
     <div class="card-body p-4">
       <div class="row d-flex justify-content-between align-items-center">
-
+        
         <div class="col-md-2 col-lg-2 col-xl-2">
           <img
             src="/assets/img/Blusa Azul con Bordado Huipil-detalle.jpg"
@@ -183,23 +169,10 @@
 
         <div class="col-md-3 col-lg-3 col-xl-3">
           <p class="lead fw-normal mb-2">Blusa Azul con Bordado Huipil</p>
-          <p><span class="text-muted">Size:</span>M <span class="text-muted">Color: </span>Azul</p>
+          <p><span class="text-muted">Talla:</span>M </p>
         </div>
+        
 
-        <div class="col-md-3 col-lg-3 col-xl-2 d-flex">
-        <button class="btn btn-link px-2"
-          onclick="this.parentNode.querySelector('input[type=number]').stepDown()">
-          <i class="fas fa-minus"></i>
-        </button>
-
-        <input min="0" name="quantity" value="2" type="number"
-            class="form-control form-control-sm" />
-
-        <button class="btn btn-link px-2"
-            onclick="this.parentNode.querySelector('input[type=number]').stepUp()">
-            <i class="fas fa-plus"></i>
-        </button>
-        </div>
 
         <div class="col-md-2 col-lg-2 col-xl-2">
           <h5 class="mb-0" >$450.00</h5>
@@ -250,13 +223,13 @@
 
       </div>
     </div>
-  </div>
+  </div>        
 </section>
 
 
   <!-- ! FOOTER -->
 
-        <footer>
+   <footer>
         <div class="row align">
 
             <div class="col-12 col-md-2 col-lg-2 space">
@@ -272,14 +245,14 @@
                         </div>
                         <div class="col-6 col-md-12 flex_smlogo">
                             <!-- Instagram -->
-                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="../assets/instagram.png" alt="instagram" class="sm_logo"></a>
+                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo"></a>
                             <!-- Facebook Seraphia -->
-                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="../assets/facebook.png" alt="Facebook" class="sm_logo"></a>
+                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo"></a>
                         </div>
                     </div>
                 </div>
              </div>
-
+            
                 <!-- Area de Menu secundario -->
                 <div class="col-12 col-md-4 col-lg-6">
                 <div class="row">
@@ -289,9 +262,9 @@
                     <div class="col-12 col-lg-6 ">
                     <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
                     <ul class="footer-links">
-                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-                        <li><a href="/html/Galeria.html">Galería</a></li>
-                        <li><a href="/html/Contacto.html">Contacto</a></li>
+                        <li><a href="#">Nosotros</a></li>
+                        <li><a href="#">Galería</a></li>
+                        <li><a href="Contacto.html">Contacto</a></li>
                         <li><a href="#">FAQ’s</a></li>
                     </ul>
                     </div>
@@ -309,6 +282,11 @@
 
                 </div>
                 </div>
+
+
+            
+
+
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="row  ">
                 <form class="flex_new">
@@ -322,10 +300,12 @@
             </div></div>
 
         </div>
+
+
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
         <script src="/javascript/Seraphia/navbar_footer.js"></script>
-
+  
 </body>
 </html>
