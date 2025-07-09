@@ -1,6 +1,102 @@
+/* Fondo de la navbar */
+.navbar {
+  background-color: #1A1A1D;
+}
+
+/* 1) Buscador escritorio */
+.barraBusqueda {
+  max-width: 220px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.barraBusqueda .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusqueda .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusqueda .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 1.1) Buscador móvil */
+.barraBusquedaMobile {
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.barraBusquedaMobile .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusquedaMobile .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusquedaMobile .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 2) Botón Login */
+.botonLogin {
+  background-color: #D28E5F;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/* 3) Carrito */
+.botonCarrito {
+  border: 1px solid white;
+  color: white;
+}
+
+.botonCarrito i {
+  font-size: 20px;
+}
+
+/* 4) Link activo */
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* 5) Forzar collapse oculto en desktop */
+@media (min-width: 992px) {
+  #contenidoNavbar {
+    display: none !important;
+  }
+}
+
 body {
   font-family: sans-serif;
-  display: flex;
+  /* display: flex; */
+}
+
+hr {
+  margin-bottom: 25px;
+}
+
+.container-content {
+  margin-top: 50px;
+}
+body {
+  font-family: sans-serif;
 }
 hr {
   margin-bottom: 25px;
@@ -8,6 +104,9 @@ hr {
 .hero {
   width: 60%;
   margin: 0 auto;
+}
+.container-content {
+  display: flex;
 }
 
 .form-datos-contrasena {
@@ -102,16 +201,19 @@ button:hover {
       margin-left: 5%;
       margin-right: 5%;
     }
-    button {
+    .save {
       width: 150px;
     }
   input {
     width: 65%;
   }
+    .navbar-toggler d-lg-none botonToggle {
+      width: 150px;
+    }
 
-  body {
-    flex-direction: column;
-  }
+    .container-content {
+      flex-direction: column;
+    }
   .mi-cuenta {
     width: 90%;
     margin: 0 auto;

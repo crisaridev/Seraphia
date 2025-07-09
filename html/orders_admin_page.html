@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Seraphia | Productos</title>
+  <title>Seraphia | Pedidos</title>
   <link rel="shortcut icon" href="../assets/images/Seraphia_img/logos/Seraphia-logo.png" type="image/x-icon">
   <!-- Fuentes, iconos y css de bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -46,7 +46,7 @@
             </div>
             </a>
           </li>
-          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon active_page">
+          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon ">
             <a class="d-flex text-decoration-none" href="/html/products_admin_page.html">
             <i class='bx bx-dress'></i>
             <div class="sidebar_hide">
@@ -54,7 +54,7 @@
             </div>
             </a>
           </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
+        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon active_page">
           <a class="d-flex text-decoration-none" href="/html/orders_admin_page.html">
           <i class='bx  bx-list-ul-square'></i>
           <div class="sidebar_hide p-0">
@@ -71,7 +71,7 @@
           </a>
         </li>
         <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon sidebar_icon_logout">
-          <a class="d-flex text-decoration-none" href="#">
+          <a class="d-flex text-decoration-none" href="">
           <i class='bx  bx-arrow-out-left-square-half'></i>
           <div class="sidebar_hide p-0 sidebar_label_logout">
             <p class="dashboard_label my-0">Cerrar Sesion</p>
@@ -105,8 +105,7 @@
       </ul>
       <!--! Fin de navbar -->
 
-
-      <!--
+<!--
   * =====================================================
   * ----------------Contenido principal------------------
   * =====================================================    
@@ -115,7 +114,7 @@
       <div class="product_label m-lg-4 p-lg-4 m-md-2 p-md-3 m-2 p-2">
 
         <div class="search py-3 me-1 me-lg-3 filter_btn d-flex row search_bar_mobile">
-          <h1 class="col mb-lg-4 mb-md-3 mb-1 mt-lg-0 mt-1">Productos</h1>
+          <h1 class="col mb-lg-4 mb-md-3 mb-1 mt-lg-0 mt-1">Pedidos</h1>
           <form
             class=" col-6 d-flex filter_btn search_bar mb-lg-4 mb-md-3 mb-3 mt-lg-0 mt-2 search_bar_mobile px-0  d-sm-none d-block"
             role="search">
@@ -131,10 +130,6 @@
           <!--? Filtros y busqueda -->
 
           <div class=" justify-content-lg-end justify-content-center filters d-flex">
-
-            <span class="new_button_mobile rounded-0 d-flex py-3 me-1 filterbtn">
-              <button class="new_button_link justify-content-center px-1 px-md-3" href="./crear-producto.html">Crear +</button>
-            </span>
             
               <div class="dropdown filter_btn justify-content-center d-flex py-3 me-1 me-lg-3">
               <button class="dropdown-toggle filter px-lg-3 px-1  filter_btn py-0" type="button" data-bs-toggle="dropdown"
@@ -177,33 +172,32 @@
                 <th scope="col" id="checkAllCheckboxContainer"><input type="checkbox" class="checkbox align-items-center" id="checkAllCheckbox"></th>
                 <th scope="col" class="ps-lg-4"><i class='bx bx-image-landscape'></i></th>
                 <th scope="col" class="text-start">Nombre</th>
-                <th scope="col" class="button_hide"></th>
-                <th scope="col" class="d-none d-sm-table-cell">Inventario</th>
-                <th scope="col" class="d-none d-sm-table-cell">Precio</th>
-                <th scope="col" class="button_hide">Publicado</th>
+                <th scope="col" class="d-none d-sm-table-cell">Cliente</th>
+                <th scope="col" class="d-none d-sm-table-cell">Num. de pedido</th>
+                <th scope="col" class="button_hide">Venta neta</th>
+                <th scope="col" class="button_hide">Fecha</th>
               </tr>
             </thead>
             <tbody class="fw-bold product_label" id="list-items">
             
 
-              <!-- <tr>
+              <tr>
                 <th scope="col"><input type="checkbox" class="checkbox"></th>
 
                 <td class="product-img"><img src="../assets/images/Products/1.jpg" alt=""></td>
-                <td class="product_label text-start">Vestido amarillo con bordado de tal
+                <td class="product_label text-start">Vestido amarillo con bordado
                   <div class="stock_price_mobile d-flex d-sm-none mt-2">
                     <p class="me-3">Disponible</p>
                     <p>•</p>
                     <p class="mx-3">$400</p>
                   </div>
                 </td>
-                <td class="button_hide fw-bolder"><a href="#"
-                    class="text-primary-emphasis d-none d-lg-table-cell">Editar</a></td>
-                <td class="d-none d-sm-table-cell">Disponible</td>
+                <td class="d-none d-sm-table-cell">Carlos de la cruz</td>
+                <td class="d-none d-sm-table-cell">00023</td>
                 <td class="d-none d-sm-table-cell">$400</td>
                 <td class="button_hide">06/07/2025</td>
-              </tr> -->
-
+              </tr>
+              
             </tbody>
           </table>
 
@@ -214,13 +208,14 @@
 
   <!--! Fin de contenido principal -->
 
+
+
     </div>
   </main>
 
 
-
   <script src="../javascript/Admin/admin_sidebar_navbar_js.js"></script>
-  <script src="../javascript/Admin/admin_page_productController.js"></script>
+  <!-- <script src="../javascript/Admin/admin_page_productController.js"></script> -->
   <script src="../javascript/Admin/admin_page_items.js"></script>
 
   <!-- Bootstrap -->

@@ -1,0 +1,252 @@
+
+/* =====================================================
+   ---------------------PRODUCTOS-----------------------
+   =====================================================
+*/
+
+/* Contenedor principal de la sección de productos (incluye título) */
+.main-content {
+  flex: 1;
+}
+
+/* Fondo y bordes del área de productos */
+.product_label {
+  background-color: #EBEBEB;
+  border-radius: 5px;
+  min-height: 80vh;
+  margin-top: 500px;
+}
+
+/* Título "Productos" */
+.product_label h1 {
+  font-weight: 600;
+}
+
+/* Línea divisoria entre cards de producto */
+.product_label .product_hr {
+  width: 97%;
+}
+
+/* Contenedor de la lista de cards de producto */
+.product_list {
+  min-height: 70vh;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.new_button_mobile .new_button_link {
+  transition: all 125ms ease-in;
+  border-radius: 3px;
+  background-color: #1a1a1d;
+  padding: 5px 17px;
+  color: white !important;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.filters .filter_btn button:hover  {
+  transition: all 125ms ease-in;
+  border-radius: 3px;
+  background-color: #1a1a1d;
+  padding: 5px 17px;
+  color: white !important;
+  font-size: 20px;
+  text-decoration: none;
+  font-weight: 600;
+  transform: translateX(0px) translateY(-3px) scale(1.05);
+}
+
+.filters .filter_btn button {
+  background-color: #ffffff;
+  border: 2px solid #1a1a1d;
+  border-radius: 3px;
+  padding: 5px 17px;
+  font-size: 20px;
+  font-weight: bolder;
+  transition: all 125ms ease-in;
+}
+
+.filters .search_bar {
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 2px solid #1a1a1d;
+}
+
+.search_bar_focus:focus {
+  outline: none;
+  border-radius: 0;
+}
+
+.filters .search_bar_btn {
+  border: 0 !important;
+  font-weight: bolder;
+}
+
+.search_bar_mobile .search_bar {
+  background-color: #ffffff;
+  border-radius: 3px;
+  border: 2px solid #1a1a1d;
+}
+
+.search_bar_mobile .search_bar_btn {
+  border: 0 !important;
+  font-weight: bolder;
+  
+}
+
+/* Imagen de producto en la card (columna izquierda) */
+.product_list .product-img img {
+  width: 70px;
+  height: auto;
+
+}
+
+/* Nombre del producto en la card (columna central) */
+.table .product_name {
+  border: 2px solid red;
+}
+
+.product_label .stock_price_mobile {
+  font-size: 13px;
+  color:#1a1a1db7;
+  font-weight: 700;
+}
+
+.product_row .edit_btn a{
+  transition: all 200ms ease-in-out;
+}
+
+.product_row .edit_btn a:hover {
+  transform: translateX(0px) translateY(-4px);
+}
+
+.search_bar_btn .bx {
+  transform: translateY(3px);
+  
+}
+
+
+
+/*=====================================================
+   -------------------MEDIA QUERIES---------------------
+   =====================================================
+**/
+
+@media (max-width: 1090px) {
+  .product_list .product-img img {
+    width: 45px;
+    height: auto;
+  }
+
+  .product_label {
+    font-size: 15px;
+  }
+
+  .table .button_hide {
+    display: none;
+  }
+}
+
+
+/* --- 912px --- */
+@media (max-width: 912px) {
+  /* Productos: oculta botones de acción y reduce tamaño de imagen */
+  .product_list .product-img img {
+    width: 45px;
+    height: auto;
+  }
+
+  .product_list .product-img img {
+    width: 40px;
+    height: auto;
+  }
+  .product_list .product_name h6 {
+    font-size: 15px;
+  }
+
+  .filters .filter_btn {
+    font-size: 15px !important;
+  }
+
+  .new_button_mobile .new_button_link {
+  font-size: 15px;
+  }
+}
+
+@media (max-width: 792px) {
+  .product_label {
+  margin-bottom: 4em !important;
+}
+}
+
+@media (max-width: 700px) {
+  /* Productos: reduce tamaño de info */
+.table  .product_label {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 576px) {
+  /* Productos: imagen y nombre más pequeños */
+  .product_list .product-img img {
+    width: 35px;
+    height: auto;
+  }
+  .product_label .product_info {
+    font-size: 15px;
+  }
+  .product_list .product_name h6 {
+    font-size: 15px;
+  }
+
+  .table .product_label {
+    font-size: 16px;
+  }
+
+    .filters .filter_btn {
+    font-size: 12px !important;
+  }
+
+  .new_button_link {
+    font-size: 12px !important;
+  }
+}
+
+@media (max-width: 500px) {
+  /* Productos: imagen y nombre aún más pequeños */
+  .product_list .product-img img {
+    width: 30px;
+    height: auto;
+  }
+  .product_label .product_info {
+    font-size: 10px;
+  }
+  .product_list .product_name h6 {
+    font-size: 12px;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 310px) {
+  .filters {
+    display: none;
+  }
+}
+
+@media (min-width: 792px) {
+  .new_button_mobile .new_button_link{
+    display: none;
+  }
+}
+
+/* --- 1200px min --- */
+@media (min-width: 1200px) {
+  /* Productos: nombre e info más grandes en pantallas grandes */
+  .product_list .product_name h6 {
+    font-size: 20px;
+  }
+  .product_label .product_info {
+    font-size: 20px;
+  }
+}
