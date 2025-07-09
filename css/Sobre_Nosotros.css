@@ -1,0 +1,258 @@
+
+* {
+  box-sizing: border-box;
+}
+
+/* Create two equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 50%;
+  padding: 10px;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+body {
+  background-color: #F8F8F8;
+}
+
+  /* Valores titulos*/
+.valores-titulo {
+  min-height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.valores-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
+
+   /* Image Columns */
+        
+        /* * Enfoque Artesanal */ 
+        .col1 {
+            position: relative;
+            background-position: center;
+            background-image: url(/assets/img/Artesanal.jpg);
+            background-repeat:none;
+            background-size:cover;
+            height:300px;
+            overflow:hidden;
+            color: white;
+        }
+
+        /* * Originalidad */ 
+        .col2 {
+            position: relative;
+            background-position: center;
+            background-image: url(/assets/img/Originalidad.jpg);
+            background-repeat:none;
+            background-size:cover; 
+            height:300px;
+            overflow:hidden;
+            color: white;
+        }
+
+        /* * Sostenibilidad */
+        .col3 {
+            position: relative;
+            background-position: center;
+            background-image: url(/assets/img/Sostenibilidad.jpg);
+            background-repeat:none;
+            background-size:cover;
+            height:300px;
+            overflow:hidden;
+            color: white;
+        }
+
+        /* * conciencia */
+        .col4 {
+            position: relative;
+            background-position: center;
+            background-image: url(/assets/img/Conciencia.JPG);;
+            background-repeat:none;
+            background-size:cover;
+            height:300px;
+            overflow:hidden;
+            color: white;
+        }
+        
+      /* image To Drop Down Text */
+        
+        .drptxt {
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+          opacity: 0;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          transition: opacity 0.5s ease-in-out;
+          padding: 20px;
+          text-align: center;
+        }
+        
+        .drptxt:hover {
+        opacity: 1;
+        }
+
+
+  /* ! Section of Navbar */
+  /* Fondo de la navbar */
+.navbar {
+  background-color: #1A1A1D;
+}
+
+/* 1) Buscador escritorio */
+.barraBusqueda {
+  max-width: 220px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+.barraBusqueda .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+.barraBusqueda .form-control::placeholder {
+  color: #ccc;
+}
+.barraBusqueda .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 1.1) Buscador móvil */
+.barraBusquedaMobile {
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+.barraBusquedaMobile .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+.barraBusquedaMobile .form-control::placeholder {
+  color: #ccc;
+}
+.barraBusquedaMobile .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 2) Botón Login */
+.botonLogin {
+  background-color: #D28E5F;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/* 3) Carrito */
+.botonCarrito {
+  border: 1px solid white;
+  color: white;
+}
+.botonCarrito i {
+  font-size: 20px;
+}
+
+/* 4) Link activo */
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* 5) Forzar collapse oculto en desktop */
+@media (min-width: 992px) {
+  #contenidoNavbar {
+    display: none !important;
+  }
+}
+
+
+/* FOR MISION AND VISION */
+
+/* Estilos base de las tarjetas */
+.animada {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff; /* ← color de fondo base */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Efecto al hacer hover o cuando está visible */
+.nosotros:hover .animada,
+.animada.es-visible {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    background-color: #f0f0f0; /* ← color al hacer hover */
+    position: relative;
+    z-index: 10;
+}
+
+/* Responsive para tarjetas en pantallas pequeñas */
+@media (max-width: 767.98px) {
+    .animada {
+        padding: 15px;
+        font-size: 16px;
+    }
+
+    .nosotros {
+        margin-bottom: 16px;
+    }
+
+
+
+    p {
+        
+        width: 100% !important; /* Asegurar que el texto se ajuste al contenedor */
+        padding: 0.5rem;
+    }
+}
+
+
+
+/* SOCIAL MEDIA */
+
+/* Clase para acomodar logos de redes sociales */
+.flex_xllogo {
+    display: flex; /* Habilita Flexbox */
+    justify-content: center; /* Centra los logos horizontalmente */
+    gap: 15px; /* Añade un espacio de 15px entre cada logo */
+}
+
+/* Estilo para los logos de redes sociales */
+.xl_logo {
+    width: 200px;
+    height: auto; /* La altura se ajusta para mantener la proporción */
+}

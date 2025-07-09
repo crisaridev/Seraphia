@@ -1,0 +1,31 @@
+    /* 
+  =====================================================
+  -----------------------Navbar-----------------------
+  =====================================================    
+*/
+
+.statistics_card_dark {
+  background-color: #1a1a1d;
+  color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.statistics_card {
+  background-color: #EBEBEB;
+  color: #1a1a1d;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.statistics_graph {
+  background-color: #EBEBEB;
+}
+
+.statistics_label {
+  /* height: 20vh; */
+}
+
+.statistics_graph {
+  /* height: 50vh; */
+}
