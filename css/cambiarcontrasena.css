@@ -201,16 +201,19 @@ button:hover {
       margin-left: 5%;
       margin-right: 5%;
     }
-    button {
+    .save {
       width: 150px;
     }
   input {
     width: 65%;
   }
+    .navbar-toggler d-lg-none botonToggle {
+      width: 150px;
+    }
 
-  body {
-    flex-direction: column;
-  }
+    .container-content {
+      flex-direction: column;
+    }
   .mi-cuenta {
     width: 90%;
     margin: 0 auto;
