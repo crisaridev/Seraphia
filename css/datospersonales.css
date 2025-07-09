@@ -1,0 +1,134 @@
+body {
+  font-family: sans-serif;
+  display: flex;
+}
+hr {
+  margin-bottom: 25px;
+}
+.hero {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.form-datos-personales {
+  display: flex;
+  flex-direction: column;
+}
+.form-datos-personales__container, .form-datos-envio__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+input {
+  width: 70%;
+  border: 2px solid rgb(152, 152, 152);
+  border-radius: 4px;
+}
+ul {
+  list-style-type: none;
+  padding: 0px 15px 15px 15px;
+  margin: 0px;
+}
+
+.opciones-container ul a {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.opciones-container ul a img{
+  margin-right: 15px;
+}
+.opciones-container ul a li{
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+ul a:first-child{
+  text-decoration: none;
+  outline: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+a:active {
+  color: #0777FF;
+}
+a li:active {
+  color: #0777FF;
+}
+
+a:focus {
+  color: #0777FF;
+}
+.opciones-container{
+  padding: 20px;
+  background-color: #d9d9d927;
+}
+.mi-cuenta{
+  margin-right: 15px;
+}
+.mi-cuenta h2 {
+  text-align: center;
+}
+
+button {
+  all:unset;
+  padding: 10px;
+  border: 1px solid black;
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 720px) {
+  .hero {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+  input {
+    width: 65%;
+  }
+    .form-datos-personales__container label {
+      width: min-content;
+      text-align: center;
+    }
+        .form-datos-envio__container label {
+          width: min-content;
+          text-align: center;
+        }
+  button{
+    width: 150px;
+  }
+  body {
+    flex-direction: column;
+  }
+  .mi-cuenta {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 1283px) {
+  .form-datos-personales__container label {
+    width: min-content;
+    text-align: center;
+  }
+}

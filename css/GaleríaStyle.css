@@ -5,56 +5,7 @@ body {
   padding: 0;
 }
 
-/* Navbar */
-.navbar {
-  background-color: #1a1a1a;
-  height: 69px; /* 15% más alto que el estándar */
-  padding-top: 12px;
-  padding-bottom: 12px;
-}
 
-.navbar-brand {
-  font-weight: bold;
-  color: white !important;
-  font-size: 1.3rem;
-}
-
-.navbar-nav .nav-link {
-  color: white !important;
-  padding: 0 20px;
-  font-weight: 500;
-}
-
-.navbar-nav .dropdown-menu {
-  background-color: #1a1a1a;
-}
-
-.navbar-nav .dropdown-item {
-  color: white;
-}
-
-.navbar-nav .dropdown-item:hover {
-  background-color: #333;
-}
-
-/* Botones de navbar */
-.btn-carrito {
-  background-color: #cb946b;
-  color: black;
-  border: none;
-  font-weight: 500;
-}
-
-.btn-outline-light {
-  border-color: white;
-  color: white;
-  font-weight: 500;
-}
-
-.btn-outline-light:hover {
-  background-color: white;
-  color: #1a1a1a;
-}
 
 /* Galería de productos */
 h2 {
