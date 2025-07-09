@@ -10,11 +10,11 @@ hr {
   margin: 0 auto;
 }
 
-.form-datos-personales {
+.form-datos-contrasena {
   display: flex;
   flex-direction: column;
 }
-.form-datos-personales__container, .form-datos-envio__container {
+.form-datos-contrasena__container, .form-datos-envio__container {
     display: flex;
     justify-content: space-between;
     flex-direction: row;
@@ -52,6 +52,11 @@ a {
 }
 a:hover {
   text-decoration: none;
+  color: blue;
+}
+ul a:first-child {
+  text-decoration: none;
+  outline: none;
   color: blue;
 }
 
@@ -97,17 +102,24 @@ button:hover {
       margin-left: 5%;
       margin-right: 5%;
     }
+    button {
+      width: 150px;
+    }
   input {
     width: 65%;
   }
-  /* label{
-    width: 25%;
-  } */
+
   body {
     flex-direction: column;
   }
   .mi-cuenta {
     width: 90%;
     margin: 0 auto;
+  }
+}
+@media (max-width: 1174px) {
+  .form-datos-contrasena__container label{
+    width: min-content;
+    text-align: center;
   }
 }
