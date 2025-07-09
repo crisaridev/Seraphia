@@ -85,6 +85,11 @@ body {
 
 /* !  SHOPPING CART */
 
-
+@media (max-width: 576px) {
+  .cart-product-image {
+    width: 50px;
+    height: auto;
+  }
+}
 
 /* ! FOOTER */
