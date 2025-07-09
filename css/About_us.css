@@ -23,12 +23,30 @@ body {
   background-color: #F8F8F8;
 }
 
+  /* Valores titulos*/
+.valores-titulo {
+  min-height: 60px; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+.valores-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  height: 100%;
+}
+
 
    /* Image Columns */
         
         /* * Enfoque Artesanal */ 
         .col1 {
             position: relative;
+            background-position: center;
             background-image: url(/assets/img/Artesanal.jpg);
             background-repeat:none;
             background-size:cover;
@@ -40,6 +58,7 @@ body {
         /* * Originalidad */ 
         .col2 {
             position: relative;
+            background-position: center;
             background-image: url(/assets/img/Originalidad.jpg);
             background-repeat:none;
             background-size:cover; 
@@ -51,6 +70,7 @@ body {
         /* * Sostenibilidad */
         .col3 {
             position: relative;
+            background-position: center;
             background-image: url(/assets/img/Sostenibilidad.jpg);
             background-repeat:none;
             background-size:cover;
@@ -62,6 +82,7 @@ body {
         /* * conciencia */
         .col4 {
             position: relative;
+            background-position: center;
             background-image: url(/assets/img/Conciencia.JPG);;
             background-repeat:none;
             background-size:cover;
@@ -219,3 +240,19 @@ body {
     }
 }
 
+
+
+/* SOCIAL MEDIA */
+
+/* Clase para acomodar logos de redes sociales */
+.flex_xllogo {
+    display: flex; /* Habilita Flexbox */
+    justify-content: center; /* Centra los logos horizontalmente */
+    gap: 15px; /* Añade un espacio de 15px entre cada logo */
+}
+
+/* Estilo para los logos de redes sociales */
+.xl_logo {
+    width: 200px;
+    height: auto; /* La altura se ajusta para mantener la proporción */
+}
