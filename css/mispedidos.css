@@ -2,46 +2,87 @@ body {
   font-family: sans-serif;
   display: flex;
 }
+
 hr {
   margin-bottom: 25px;
 }
+h2 {
+  margin-top: 50px;
+}
 .hero {
-  width: 60%;
+  width: 74%;
   margin: 0 auto;
 }
+table {
+  border-collapse: collapse;
+  font-size: .9rem;
+  width: 100%;
+}
 
-.form-datos-personales {
-  display: flex;
-  flex-direction: column;
+tr {
+  text-align: center;
 }
-.form-datos-personales__container, .form-datos-envio__container {
-    display: flex;
-    justify-content: space-between;
-    flex-direction: row;
-    align-content: space-between;
-    align-items: center;
-    margin-bottom: 30px;
+
+tr:nth-child(odd) {
+  background: rgb(255, 255, 255);
 }
-input {
-  width: 70%;
-  border: 2px solid rgb(152, 152, 152);
-  border-radius: 4px;
+
+th {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(160, 160, 160);
+  color: rgb(0, 0, 0);
+  padding: .8rem;
 }
+
+td {
+  border: 1px solid rgb(160, 160, 160);
+  padding: .8rem;
+}
+
+table tr:hover {
+  background: rgb(255, 235, 185);
+}
+
+.table-container {
+  margin: 0 0 1rem;
+  overflow: auto;
+  overflow-y: auto;
+  width: 100%;
+}
+
+
+/*  Estilos para que las barras de desplazamiento horizontal se vean en los dispositivos IOS */
+
+.table-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 8px;
+  border: 3px solid #fff;
+}
+/*  */
 ul {
   list-style-type: none;
   padding: 0px 15px 15px 15px;
   margin: 0px;
 }
 
+
 .opciones-container ul a {
   display: flex;
   align-items: center;
   margin-top: 20px;
 }
-.opciones-container ul a img{
+
+.opciones-container ul a img {
   margin-right: 15px;
 }
-.opciones-container ul a li{
+
+.opciones-container ul a li {
   text-align: center;
 }
 
@@ -50,14 +91,22 @@ a {
   outline: none;
   color: black;
 }
+
 a:hover {
   text-decoration: none;
+  color: blue;
+}
+
+ul a:nth-child(3) {
+  text-decoration: none;
+  outline: none;
   color: blue;
 }
 
 a:active {
   color: #0777FF;
 }
+
 a li:active {
   color: #0777FF;
 }
@@ -65,19 +114,22 @@ a li:active {
 a:focus {
   color: #0777FF;
 }
-.opciones-container{
+
+.opciones-container {
   padding: 20px;
   background-color: #d9d9d927;
 }
-.mi-cuenta{
+
+.mi-cuenta {
   margin-right: 15px;
 }
+
 .mi-cuenta h2 {
   text-align: center;
 }
 
 button {
-  all:unset;
+  all: unset;
   padding: 10px;
   border: 1px solid black;
   width: 40%;
@@ -86,6 +138,7 @@ button {
   transition-duration: 0.4s;
   cursor: pointer;
 }
+
 button:hover {
   background-color: black;
   color: white;
@@ -93,21 +146,42 @@ button:hover {
 
 @media (max-width: 720px) {
   .hero {
-      width: 90%;
-      margin-left: 5%;
-      margin-right: 5%;
-    }
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  button {
+    width: 150px;
+  }
+
   input {
     width: 65%;
   }
-  /* label{
-    width: 25%;
-  } */
+
   body {
     flex-direction: column;
   }
+
   .mi-cuenta {
     width: 90%;
     margin: 0 auto;
   }
+}
+
+@media (max-width: 1174px) {
+  .form-datos-contrasena__container label {
+    width: min-content;
+    text-align: center;
+  }
+    body {
+      flex-direction: column;
+    }
+    .opciones-container{
+      margin: 0 auto;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+
 }
