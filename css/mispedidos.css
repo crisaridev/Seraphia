@@ -239,6 +239,7 @@ button:hover {
     margin-right: 5%;
   }
 
+
   button {
     width: 150px;
   }
@@ -247,9 +248,9 @@ button:hover {
     width: 65%;
   }
 
-  body {
-    flex-direction: column;
-  }
+    .container-content {
+      flex-direction: column;
+    }
 
   .mi-cuenta {
     width: 90%;
@@ -262,7 +263,7 @@ button:hover {
     width: min-content;
     text-align: center;
   }
-    body {
+    .container-content {
       flex-direction: column;
     }
     .opciones-container{
