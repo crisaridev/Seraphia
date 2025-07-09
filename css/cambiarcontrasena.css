@@ -54,7 +54,7 @@ a:hover {
   text-decoration: none;
   color: blue;
 }
-ul a:first-child {
+ul a:nth-child(2) {
   text-decoration: none;
   outline: none;
   color: blue;
@@ -116,7 +116,7 @@ button:hover {
     width: 90%;
     margin: 0 auto;
   }
-}
+
 @media (max-width: 1174px) {
   .form-datos-contrasena__container label{
     width: min-content;
