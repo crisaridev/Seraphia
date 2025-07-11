@@ -7,7 +7,7 @@
 .barraBusqueda {
   max-width: 220px;
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 .barraBusqueda .form-control {
   border: 1px solid #D28E5F;
@@ -28,7 +28,7 @@
 .barraBusquedaMobile {
   max-width: 100%;
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 .barraBusquedaMobile .form-control {
   border: 1px solid #D28E5F;
@@ -68,8 +68,22 @@
 .nav-link.active {
   font-weight: 500;
 }
+/* 5) Le coloca la fuente Lato a los elementos del navbar*/
+body,
+.navbar,
+.navbar .nav-link,
+.navbar .navbar-brand,
+.navbar .btn {
+  font-family: "Lato", sans-serif !important;
+}
+/* 6) Se hereda la fuente Lato a todos los elementos*/
+.navbar .navbar-brand,
+.navbar .nav-link,
+.navbar .btn {
+  font-family: inherit;
+}
 
-/* 5) Forzar collapse oculto en desktop */
+/* 7) Forzar collapse oculto en desktop */
 @media (min-width: 992px) {
   #contenidoNavbar {
     display: none !important;
