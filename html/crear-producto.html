@@ -26,25 +26,24 @@
 	</head>
 	<body>
 		<!-- <nav>NavBar</nav> -->
-		<!-- ? Barra de navegación principal  "Arath"-->
 		<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-			<div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+			<div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 				<!-- Sección 1: LOGO + NOMBRE -->
-				<a class="navbar-brand d-flex align-items-center" href="/index.html">
-					<img src="/assets/images/404/product/LOGO-BLANCO-SIN-FONDO (1).png" alt="Seraphia" width="52" height="52" class="me-2" />
-					<span class="fs-4 d-none d-sm-inline">Seraphia</span>
+				<a class="navbar-brand d-flex align-items-center" href="/html/index.html">
+					<img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" width="52" height="52" class="me-2" />
+					<span class="fs-4">Seraphia</span>
 				</a>
 
 				<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
 				<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
 					<li class="nav-item">
-						<a class="nav-link" href="/index.html">Inicio</a>
+						<a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
 					</li>
-					<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/404_info_Seraphia.html">Nosotros</a></li>
 					<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-					<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
 					<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
-					<li class="nav-item"><a class="nav-link" href="/html/pedidosdetalles.html">Mi cuenta</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 				</ul>
 
 				<!-- Sección 3: ACCIONES DERECHA -->
@@ -59,9 +58,10 @@
 					<a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
 						<i class="bi bi-cart3"></i>
 					</a>
+
 					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
 					<a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block"> Iniciar sesión </a>
-					<!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+					<!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
 					<button
 						class="navbar-toggler d-lg-none botonToggle"
 						type="button"
@@ -79,14 +79,12 @@
 				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
 					<ul class="navbar-nav w-100">
 						<!-- Enlaces móviles -->
-						<li class="nav-item">
-							<a class="nav-link" href="/index.html">Inicio</a>
-						</li>
-						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/404_info_Seraphia.html">Nosotros</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-						<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/Contacto.html">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
-						<li class="nav-item"><a class="nav-link" href="/html/pedidosdetalles.html">Mi cuenta</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
 						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
 						<li class="nav-item px-3 my-3">
@@ -96,7 +94,7 @@
 							</form>
 						</li>
 
-						<!-- Botón de inicio de sesión al final -->
+						<!-- Botón de inicio de sesión version mobile -->
 						<li class="nav-item px-3 mt-3">
 							<a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
 						</li>
@@ -107,12 +105,14 @@
 
 		<main>
 			<form id="form-container" class="needs-validation" novalidate>
+				<!-- Select de titulo -->
 				<div class="mb-3">
 					<label for="title-input" class="form-label">Titulo</label>
 					<input type="text" class="form-control" id="title-input" name="title-input" aria-describedby="title-input" value="" required />
 				</div>
 				<div class="container">
 					<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4">
+						<!-- Select de precio -->
 						<div class="mb-3">
 							<label for="price-input" class="form-label">Precio</label>
 							<div class="input-group">
@@ -121,6 +121,7 @@
 								<div class="invalid-feedback">Ingresa un precio minimo de 10 pesos</div>
 							</div>
 						</div>
+						<!-- Select de color -->
 						<div class="mb-3">
 							<label for="color-input" class="form-label">Color</label>
 							<select type="text" class="form-select" name="color-input" id="color-input" aria-label="color-input" required>
@@ -130,6 +131,7 @@
 								<option value="Azul">Azul</option>
 							</select>
 						</div>
+						<!-- Select de talla -->
 						<div class="mb-3">
 							<label for="size-input" class="form-label">Talla</label>
 							<select type="text" class="form-select" name="size-input" id="size-input" aria-label="size-input" required>
@@ -139,6 +141,7 @@
 								<option value="Grande">Grande</option>
 							</select>
 						</div>
+						<!-- Select de categoria -->
 						<div class="mb-3">
 							<label for="category-input" class="form-label">Categoria</label>
 							<select type="text" class="form-select" name="category-input" id="category-input" aria-label="Default select example" required>
@@ -150,6 +153,7 @@
 						</div>
 					</div>
 				</div>
+				<!-- Text area de descripcion -->
 				<div class="mb-3">
 					<label for="description-input" class="form-label">Descripcion</label>
 					<textarea type="text" class="form-control" id="description-input" name="description-input" aria-describedby="description-input" required></textarea>
@@ -161,13 +165,17 @@
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
 				</div>
+				<!-- Alerta que se muestra en caso de intentar cargar mas de 6 imagenes -->
 				<div class="alert alert-danger alert-img-max hidden" role="alert">Puedes cargar un maximo de 6 imagenes por producto, borra una imagen e intenta nuevamente</div>
+				<!-- Contenedor de carga de imagenes -->
 				<label for="file-upload" class="custom-upload" id="file-drop-area">
 					<img src="../assets/images/crear-producto/upload-cloud-icon.svg" />
 					<span class="required-file" id="chosen-file">Cargar Imagenes</span>
 				</label>
 				<input type="file" id="file-upload" name="file-upload" accept="image/*" multiple />
+				<!-- Alerta que se muestra en caso de intentar hacer submit al formulario mientras se tienen campos vacios en el formulario o bien, no se cuenta con imagenes en el swiper -->
 				<div class="alert alert-danger alert-submit hidden" role="alert"><br /></div>
+				<!-- Boton para hacer submit al formulario -->
 				<button type="submit" class="btn btn-primary submit-btn">Cargar Producto</button>
 			</form>
 		</main>
@@ -194,6 +202,7 @@
 						</div>
 					</div>
 				</div>
+
 				<!-- Area de Menu secundario -->
 				<div class="col-12 col-md-4 col-lg-6">
 					<div class="row">
@@ -201,12 +210,13 @@
 						<div class="col-12 col-lg-6">
 							<h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
 							<ul class="footer-links">
-								<li><a href="#">Nosotros</a></li>
-								<li><a href="#">Galería</a></li>
-								<li><a href="Contacto.html">Contacto</a></li>
+								<li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+								<li><a href="/html/Galeria.html">Galería</a></li>
+								<li><a href="/html/Contacto.html">Contacto</a></li>
 								<li><a href="#">FAQ’s</a></li>
 							</ul>
 						</div>
+
 						<!-- Links Cuidamos de ti -->
 						<div class="col-12 col-lg-6">
 							<h3 class="footer-toggle">CUIDAMOS DE TI</h3>
@@ -219,6 +229,7 @@
 						</div>
 					</div>
 				</div>
+
 				<div class="col-12 col-md-6 col-lg-4">
 					<div class="row">
 						<form class="flex_new">
@@ -233,11 +244,16 @@
 				</div>
 			</div>
 		</footer>
-
 		<!-- BootStrap Script -->
 		<script
 			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
 			integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+			crossorigin="anonymous"
+		></script>
+		<!-- BootStrap popper script (footer) -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
 			crossorigin="anonymous"
 		></script>
 		<!-- Swiper script -->
@@ -246,11 +262,5 @@
 		<script src="../javascript/crear-producto.js"></script>
 		<!-- navbar/footer script -->
 		<script src="../javascript/Seraphia/navbar_footer.js"></script>
-		<!-- BootStrap popper script (footer) -->
-		<script
-			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-			crossorigin="anonymous"
-		></script>
 	</body>
 </html>
