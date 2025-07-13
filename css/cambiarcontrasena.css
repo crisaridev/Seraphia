@@ -1,3 +1,6 @@
+body {
+  font-family: "Lato";
+}
 /* Fondo de la navbar */
 .navbar {
   background-color: #1A1A1D;
@@ -7,7 +10,7 @@
 .barraBusqueda {
   max-width: 220px;
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .barraBusqueda .form-control {
@@ -31,7 +34,7 @@
 .barraBusquedaMobile {
   max-width: 100%;
   width: 100%;
-  font-family: 'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 .barraBusquedaMobile .form-control {
@@ -83,11 +86,6 @@
   }
 }
 
-body {
-  font-family: sans-serif;
-  /* display: flex; */
-}
-
 hr {
   margin-bottom: 25px;
 }
@@ -95,9 +93,7 @@ hr {
 .container-content {
   margin-top: 50px;
 }
-body {
-  font-family: sans-serif;
-}
+
 hr {
   margin-bottom: 25px;
 }
