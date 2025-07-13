@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<!-- google fonts -->
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+		<!-- bootstrap -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+			crossorigin="anonymous"
+		/>
+		<!-- icons -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+		<!-- swiper -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+		<!-- navbar/footer -->
+		<link rel="stylesheet" href="../css/Navbar_footer.css" />
+		<!-- crear producto -->
+		<link rel="stylesheet" href="../css/crear-producto.css" />
+		<title>Document</title>
+	</head>
+	<body>
+		<!-- <nav>NavBar</nav> -->
+		<!-- ? Barra de navegación principal  "Arath"-->
+		<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+			<div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+				<!-- Sección 1: LOGO + NOMBRE -->
+				<a class="navbar-brand d-flex align-items-center" href="/index.html">
+					<img src="/assets/images/404/product/LOGO-BLANCO-SIN-FONDO (1).png" alt="Seraphia" width="52" height="52" class="me-2" />
+					<span class="fs-4 d-none d-sm-inline">Seraphia</span>
+				</a>
+
+				<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+				<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+					<li class="nav-item">
+						<a class="nav-link" href="/index.html">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+					<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/pedidosdetalles.html">Mi cuenta</a></li>
+				</ul>
+
+				<!-- Sección 3: ACCIONES DERECHA -->
+				<div class="d-flex align-items-center gap-2 ms-auto">
+					<!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+					<form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+						<input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
+						<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+					</form>
+
+					<!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+					<a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+						<i class="bi bi-cart3"></i>
+					</a>
+					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+					<a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block"> Iniciar sesión </a>
+					<!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+					<button
+						class="navbar-toggler d-lg-none botonToggle"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#contenidoNavbar"
+						aria-controls="contenidoNavbar"
+						aria-expanded="false"
+						aria-label="Mostrar navegación móvil"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+
+				<!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+					<ul class="navbar-nav w-100">
+						<!-- Enlaces móviles -->
+						<li class="nav-item">
+							<a class="nav-link" href="/index.html">Inicio</a>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+						<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/Contacto.html">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/pedidosdetalles.html">Mi cuenta</a></li>
+
+						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+						<li class="nav-item px-3 my-3">
+							<form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+								<input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Buscar" />
+								<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+							</form>
+						</li>
+
+						<!-- Botón de inicio de sesión al final -->
+						<li class="nav-item px-3 mt-3">
+							<a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<main>
+			<form id="form-container" class="needs-validation" novalidate>
+				<div class="mb-3">
+					<label for="title-input" class="form-label">Titulo</label>
+					<input type="text" class="form-control" id="title-input" name="title-input" aria-describedby="title-input" value="" required />
+				</div>
+				<div class="container">
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-xl-4">
+						<div class="mb-3">
+							<label for="price-input" class="form-label">Precio</label>
+							<div class="input-group">
+								<span class="input-group-text">$</span>
+								<input type="number" class="form-control" id="price-input" name="price-input" aria-describedby="price-input" value="" min="10" required />
+								<div class="invalid-feedback">Ingresa un precio minimo de 10 pesos</div>
+							</div>
+						</div>
+						<div class="mb-3">
+							<label for="color-input" class="form-label">Color</label>
+							<select type="text" class="form-select" name="color-input" id="color-input" aria-label="color-input" required>
+								<option value="" selected hidden>Selecciona un color</option>
+								<option value="Rojo">Rojo</option>
+								<option value="Verde">Verde</option>
+								<option value="Azul">Azul</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="size-input" class="form-label">Talla</label>
+							<select type="text" class="form-select" name="size-input" id="size-input" aria-label="size-input" required>
+								<option value="" selected hidden>Selecciona una talla</option>
+								<option value="Chica">Chica</option>
+								<option value="Mediana">Mediana</option>
+								<option value="Grande">Grande</option>
+							</select>
+						</div>
+						<div class="mb-3">
+							<label for="category-input" class="form-label">Categoria</label>
+							<select type="text" class="form-select" name="category-input" id="category-input" aria-label="Default select example" required>
+								<option value="" selected hidden>Selecciona una categoria</option>
+								<option value="Pantalon">Pantalon</option>
+								<option value="Blusa">Blusa</option>
+								<option value="Vestido">Vestido</option>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="mb-3">
+					<label for="description-input" class="form-label">Descripcion</label>
+					<textarea type="text" class="form-control" id="description-input" name="description-input" aria-describedby="description-input" required></textarea>
+				</div>
+				<!-- Swiper -->
+				<label for="description-input" class="form-label">Imagenes</label>
+				<div class="swiper mySwiper">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide">
+							<div class="card">
+								<img src="../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-perfil-fondo.jpg" class="card-img" alt="..." />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-1-selector" id="card-1-id" aria-label="Default select example" required>
+										<option value="" hidden>Selecciona Orden</option>
+										<option value="1" selected>1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card">
+								<img src="../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-frente-fondo.jpg" class="card-img" alt="..." />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-2-selector" id="card-2-id" aria-label="Default select example" required>
+										<option value="" selected hidden>Selecciona Orden</option>
+										<option value="1">1</option>
+										<option value="2" selected>2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>
+						<div class="swiper-slide">
+							<div class="card">
+								<img src="../assets/images/crear-producto/blusa-amarilla/Copia de blusa-amarilla-con-bordado-detalle-fondo.jpg" class="card-img" alt="..." />
+								<div class="card-footer">
+									<select class="form-select card-select" name="card-3-selector" id="card-3-id" aria-label="Default select example" required>
+										<option value="" selected hidden>Selecciona Orden</option>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3" selected>3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+									</select>
+									<button type="button" class="btn btn-warning card-btn">Borrar</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="swiper-button-next"></div>
+					<div class="swiper-button-prev"></div>
+				</div>
+				<div class="alert alert-danger alert-img-max hidden" role="alert">Puedes cargar un maximo de 6 imagenes por producto, borra una imagen e intenta nuevamente</div>
+				<label for="file-upload" class="custom-upload" id="file-drop-area">
+					<img src="../assets/images/crear-producto/upload-cloud-icon.svg" />
+					<span class="required-file" id="chosen-file">Cargar Imagenes</span>
+				</label>
+				<input type="file" id="file-upload" name="file-upload" accept="image/*" multiple />
+				<div class="alert alert-danger alert-submit hidden" role="alert">Error al intentar cargar el producto, <br /></div>
+				<!-- <div class="alert alert-danger alert-missing-data hidden" role="alert">
+					Error al cargar la imagen <br />
+					Solo puedes cargar un maximo de 6 imagenes por producto
+				</div> -->
+				<button type="submit" class="btn btn-primary submit-btn">Cargar Producto</button>
+			</form>
+		</main>
+
+		<!-- Footer -->
+		<footer>
+			<div class="row align">
+				<div class="col-12 col-md-2 col-lg-2 space">
+					<div class="row">
+						<!-- Area de informacion y redes sociales -->
+						<div class="col-6 col-md-12 flex_smlogo">
+							<img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer" />
+						</div>
+						<div class="col-6 col-md-12 flex_col">
+							<div class="col-6 col-md-12 flex_smlogo">
+								<p>Queretaro, Mexico</p>
+							</div>
+							<div class="col-6 col-md-12 flex_smlogo">
+								<!-- Instagram -->
+								<a href="https://www.instagram.com/seraphiamx/" target="_blank"><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo" /></a>
+								<!-- Facebook Seraphia -->
+								<a href="https://www.facebook.com/Seraphiamexico/" target="_blank"><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- Area de Menu secundario -->
+				<div class="col-12 col-md-4 col-lg-6">
+					<div class="row">
+						<!-- Links menu secundario -->
+						<div class="col-12 col-lg-6">
+							<h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
+							<ul class="footer-links">
+								<li><a href="#">Nosotros</a></li>
+								<li><a href="#">Galería</a></li>
+								<li><a href="Contacto.html">Contacto</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
+						<!-- Links Cuidamos de ti -->
+						<div class="col-12 col-lg-6">
+							<h3 class="footer-toggle">CUIDAMOS DE TI</h3>
+							<ul class="footer-links">
+								<li><a href="#">Política de privacidad</a></li>
+								<li><a href="#">Términos de servicio</a></li>
+								<li><a href="#">Configuración de Cookies</a></li>
+								<li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="row">
+						<form class="flex_new">
+							<div class="mb-3">
+								<p>Conoce lo nuevo</p>
+								<input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+								<button type="button" class="btn btn_footer">Enviar</button>
+								<div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</footer>
+
+		<!-- BootStrap Script -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+			crossorigin="anonymous"
+		></script>
+		<!-- Swiper script -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<!-- crear producto script -->
+		<script src="../javascript/crear-producto.js"></script>
+		<!-- navbar/footer script -->
+		<script src="../javascript/Seraphia/navbar_footer.js"></script>
+		<!-- BootStrap popper script (footer) -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+			integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

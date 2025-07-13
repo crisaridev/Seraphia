@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos detalles</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/pedidosdetalles.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+    <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+
+      <!-- Sección 1: LOGO + NOMBRE -->
+      <a class="navbar-brand d-flex align-items-center" href="/index.html">
+        <img
+          src="/assets/img/LOGO-BLANCO-SIN-FONDO.png"
+          alt="Seraphia"
+          width="52" height="52"
+          class="me-2"
+        >
+        <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+      </a>
+
+      <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+        <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+        <li class="nav-item">
+          <a class="nav-link" href="/index.html">Inicio</a>
+        </li>
+        <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      </ul>
+
+      <!-- Sección 3: ACCIONES DERECHA -->
+      <div class="d-flex align-items-center gap-2 ms-auto">
+
+        <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+       <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+         <input
+           class="form-control"
+           type="search"
+           placeholder="Buscar"
+           aria-label="Buscar"
+         >
+         <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+       </form>
+
+        <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+        <a href="#" class="btn btn-outline-light botonCarrito">
+          <i class="bi bi-cart3"></i>
+        </a>
+
+        <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+        <button
+          class="navbar-toggler d-lg-none botonToggle"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#contenidoNavbar"
+          aria-controls="contenidoNavbar"
+          aria-expanded="false"
+          aria-label="Mostrar navegación móvil"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+
+      <!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+      <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+        <ul class="navbar-nav w-100">
+          <!-- Enlaces móviles -->
+          <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3"" href="#">Nosotros</a></li>
+          <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+          <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+
+          <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+          <li class="nav-item px-3 my-3">
+            <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+              <input class="form-control me-1"
+                     type="search"
+                     placeholder="Buscar"
+                     aria-label="Buscar">
+              <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+            </form>
+          </li>
+
+          <!-- Botón de inicio de sesión al final -->
+          <li class="nav-item px-3 mt-3">
+            <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+  <div class="container-content">
+    <div class="hero">
+      <h2>Mis pedidos</h2>
+      <hr>
+      <h3>Información del pedido</h3>
+      <div class="name">
+        <p>Nombre</p>
+        <p>Cristian</p>
+      </div>
+      <div class="last-name">
+        <p>Apellidos</p>
+        <p>Arias</p>
+      </div>
+      <div class="email">
+        <p>Email</p>
+        <p>example@gmail.com</p>
+      </div>
+      <div class="table-container">
+        <table>
+          <tr>
+            <th>Imagen</th>
+            <th>Descripción del producto</th>
+            <th>Cantidad</th>
+            <th>Precio unitario</th>
+            <th>Precio total</th>
+          </tr>
+          <tr>
+            <td><img src="https://seraphia.vercel.app/assets/galer%C3%ADa/BLUSA-AZUL-RETAZOS.jpg" alt="Blusa Azul"></td>
+            <td>Elegante y artesanal, esta blusa bordada combina tradición y estilo contemporáneo. Confeccionada en tela ligera y fresca, presenta un diseño meticulosamente bordado a mano que resalta en cada detalle. Su corte cómodo y femenino la convierte en una prenda versátil que puedes combinar con jeans, faldas o pantalones formales. Perfecta para quienes valoran la moda con identidad y detalle artesanal.</td>
+            <td>1</td>
+            <td>$450.99</td>
+            <td>$450.99</td>
+          </tr>
+
+        </table>
+      </div>
+    </div>
+
+
+    <section class="mi-cuenta">
+      <h2>Mi cuenta</h2>
+      <div class="opciones-container">
+        <ul>
+          <a href="/html/datospersonales.html"><img src="/assets/images/Seraphia/utils/Vector.svg" alt="Flecha hacia la izquierda"><li>Editar mi perfil</li></a>
+          <a href="/html/cambiarcontrasena.html"><img src="/assets/images/Seraphia/utils/Vector.svg" alt="Flecha hacia la izquierda"><li>Cambiar contraseña</li></a>
+          <a href="#"><img src="/assets/images/Seraphia/utils/Vector.svg" alt="Flecha hacia la izquierda"><li>Mis pedidos</li></a>
+          <a href="/html/login.html"><img src="/assets/images/Seraphia/utils/Vector.svg" alt="Flecha hacia la izquierda"><li>Cerrar sesión</li></a>
+        </ul>
+
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>

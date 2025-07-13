@@ -1,0 +1,228 @@
+/* Fondo de la navbar */
+.navbar {
+  background-color: #1A1A1D;
+}
+
+/* 1) Buscador escritorio */
+.barraBusqueda {
+  max-width: 220px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.barraBusqueda .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusqueda .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusqueda .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 1.1) Buscador móvil */
+.barraBusquedaMobile {
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.barraBusquedaMobile .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusquedaMobile .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusquedaMobile .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 2) Botón Login */
+.botonLogin {
+  background-color: #D28E5F;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/* 3) Carrito */
+.botonCarrito {
+  border: 1px solid white;
+  color: white;
+}
+
+.botonCarrito i {
+  font-size: 20px;
+}
+
+/* 4) Link activo */
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* 5) Forzar collapse oculto en desktop */
+@media (min-width: 992px) {
+  #contenidoNavbar {
+    display: none !important;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  /* display: flex; */
+}
+
+hr {
+  margin-bottom: 25px;
+}
+
+.container-content {
+  margin-top: 50px;
+}
+body {
+  font-family: sans-serif;
+}
+hr {
+  margin-bottom: 25px;
+}
+.hero {
+  width: 60%;
+  margin: 0 auto;
+}
+.container-content {
+  display: flex;
+}
+
+.form-datos-contrasena {
+  display: flex;
+  flex-direction: column;
+}
+.form-datos-contrasena__container, .form-datos-envio__container {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+input {
+  width: 70%;
+  border: 2px solid rgb(152, 152, 152);
+  border-radius: 4px;
+}
+ul {
+  list-style-type: none;
+  padding: 0px 15px 15px 15px;
+  margin: 0px;
+}
+
+.opciones-container ul a {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+.opciones-container ul a img{
+  margin-right: 15px;
+}
+.opciones-container ul a li{
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+a:hover {
+  text-decoration: none;
+  color: blue;
+}
+ul a:nth-child(2) {
+  text-decoration: none;
+  outline: none;
+  color: blue;
+}
+
+a:active {
+  color: #0777FF;
+}
+a li:active {
+  color: #0777FF;
+}
+
+a:focus {
+  color: #0777FF;
+}
+.opciones-container{
+  padding: 20px;
+  background-color: #d9d9d927;
+}
+.mi-cuenta{
+  margin-right: 15px;
+}
+.mi-cuenta h2 {
+  text-align: center;
+}
+
+button {
+  all:unset;
+  padding: 10px;
+  border: 1px solid black;
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 720px) {
+  .hero {
+      width: 90%;
+      margin-left: 5%;
+      margin-right: 5%;
+    }
+    .save {
+      width: 150px;
+    }
+  input {
+    width: 65%;
+  }
+    .navbar-toggler d-lg-none botonToggle {
+      width: 150px;
+    }
+
+    .container-content {
+      flex-direction: column;
+    }
+  .mi-cuenta {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+@media (max-width: 1174px) {
+  .form-datos-contrasena__container label{
+    width: min-content;
+    text-align: center;
+  }
+}
+}

@@ -1,0 +1,307 @@
+/* Fondo de la navbar */
+.navbar {
+  background-color: #1A1A1D;
+}
+
+/* 1) Buscador escritorio */
+.barraBusqueda {
+  max-width: 220px;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.barraBusqueda .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusqueda .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusqueda .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 1.1) Buscador móvil */
+.barraBusquedaMobile {
+  max-width: 100%;
+  width: 100%;
+  font-family: 'Lato', sans-serif;
+}
+
+.barraBusquedaMobile .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusquedaMobile .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusquedaMobile .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 2) Botón Login */
+.botonLogin {
+  background-color: #D28E5F;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/* 3) Carrito */
+.botonCarrito {
+  border: 1px solid white;
+  color: white;
+}
+
+.botonCarrito i {
+  font-size: 20px;
+}
+
+/* 4) Link activo */
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* 5) Forzar collapse oculto en desktop */
+@media (min-width: 992px) {
+  #contenidoNavbar {
+    display: none !important;
+  }
+}
+
+body {
+  font-family: sans-serif;
+  /* display: flex; */
+}
+
+hr {
+  margin-bottom: 25px;
+}
+h2 {
+  margin-top: 50px;
+}
+.name{
+    display: flex;
+}
+.last-name {
+    display: flex;
+}
+
+.email{
+    display: flex;
+}
+
+.name p:last-child{
+  margin-left: 50px;
+}
+
+.last-name p:last-child {
+  margin-left: 50px;
+}
+
+.email p:last-child {
+  margin-left: 50px;
+}
+
+.container-content {
+  display: flex;
+}
+
+.hero {
+  width: 74%;
+  margin: 0 auto;
+}
+table {
+  min-width: 900px;
+  border-collapse: collapse;
+}
+table td img {
+  min-width: 250px;
+  max-height: 250px;
+}
+
+tr {
+  text-align: center;
+}
+
+tr:nth-child(odd) {
+  background: rgb(255, 255, 255);
+}
+
+th {
+  background: rgb(255, 255, 255);
+  border: 1px solid rgb(160, 160, 160);
+  color: rgb(0, 0, 0);
+  padding: .8rem;
+}
+
+td {
+  border: 1px solid rgb(160, 160, 160);
+  padding: .8rem;
+}
+
+table tr:hover {
+  background: rgb(255, 235, 185);
+}
+
+.table-container {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+
+/*  Estilos para que las barras de desplazamiento horizontal se vean en los dispositivos IOS */
+
+.table-container::-webkit-scrollbar {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+}
+
+.table-container::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, .3);
+  border-radius: 8px;
+  border: 3px solid #fff;
+}
+/*  */
+ul {
+  list-style-type: none;
+  padding: 0px 15px 15px 15px;
+  margin: 0px;
+}
+
+
+.opciones-container ul a {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.opciones-container ul a img {
+  margin-right: 15px;
+}
+
+.opciones-container ul a li {
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  outline: none;
+  color: black;
+}
+
+a:hover {
+  text-decoration: none;
+  color: blue;
+}
+
+ul a:nth-child(3) {
+  text-decoration: none;
+  outline: none;
+  color: blue;
+}
+
+a:active {
+  color: #0777FF;
+}
+
+a li:active {
+  color: #0777FF;
+}
+
+a:focus {
+  color: #0777FF;
+}
+
+.opciones-container {
+  padding: 20px;
+  background-color: #d9d9d927;
+}
+
+.mi-cuenta {
+  margin-right: 15px;
+}
+
+.mi-cuenta h2 {
+  text-align: center;
+}
+
+button {
+  all: unset;
+  padding: 10px;
+  border: 1px solid black;
+  width: 40%;
+  text-align: center;
+  font-weight: bold;
+  transition-duration: 0.4s;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+  color: white;
+}
+
+@media (max-width: 720px) {
+  .save {
+      width: 150px;
+    }
+
+    input {
+      width: 65%;
+    }
+
+    .navbar-toggler d-lg-none botonToggle {
+      width: 150px;
+    }
+
+    .container-content {
+      flex-direction: column;
+    }
+
+  input {
+    width: 65%;
+  }
+
+  body {
+    flex-direction: column;
+  }
+
+  .mi-cuenta {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 1174px) {
+  .form-datos-contrasena__container label {
+    width: min-content;
+    text-align: center;
+  }
+    .container-content {
+      flex-direction: column;
+    }
+    .opciones-container{
+      margin: 0 auto;
+      width: 80%;
+      margin: 0 auto;
+    }
+
+
+}
