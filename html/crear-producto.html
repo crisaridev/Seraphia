@@ -157,59 +157,7 @@
 				<!-- Swiper -->
 				<label for="description-input" class="form-label">Imagenes</label>
 				<div class="swiper mySwiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="card">
-								<img src="../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-perfil-fondo.jpg" class="card-img" alt="..." />
-								<div class="card-footer">
-									<select class="form-select card-select" name="card-1-selector" id="card-1-id" aria-label="Default select example" required>
-										<option value="" hidden>Selecciona Orden</option>
-										<option value="1" selected>1</option>
-										<option value="2">2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-									</select>
-									<button type="button" class="btn btn-warning card-btn">Borrar</button>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="card">
-								<img src="../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-frente-fondo.jpg" class="card-img" alt="..." />
-								<div class="card-footer">
-									<select class="form-select card-select" name="card-2-selector" id="card-2-id" aria-label="Default select example" required>
-										<option value="" selected hidden>Selecciona Orden</option>
-										<option value="1">1</option>
-										<option value="2" selected>2</option>
-										<option value="3">3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-									</select>
-									<button type="button" class="btn btn-warning card-btn">Borrar</button>
-								</div>
-							</div>
-						</div>
-						<div class="swiper-slide">
-							<div class="card">
-								<img src="../assets/images/crear-producto/blusa-amarilla/Copia de blusa-amarilla-con-bordado-detalle-fondo.jpg" class="card-img" alt="..." />
-								<div class="card-footer">
-									<select class="form-select card-select" name="card-3-selector" id="card-3-id" aria-label="Default select example" required>
-										<option value="" selected hidden>Selecciona Orden</option>
-										<option value="1">1</option>
-										<option value="2">2</option>
-										<option value="3" selected>3</option>
-										<option value="4">4</option>
-										<option value="5">5</option>
-										<option value="6">6</option>
-									</select>
-									<button type="button" class="btn btn-warning card-btn">Borrar</button>
-								</div>
-							</div>
-						</div>
-					</div>
+					<div class="swiper-wrapper"></div>
 					<div class="swiper-button-next"></div>
 					<div class="swiper-button-prev"></div>
 				</div>
@@ -219,11 +167,7 @@
 					<span class="required-file" id="chosen-file">Cargar Imagenes</span>
 				</label>
 				<input type="file" id="file-upload" name="file-upload" accept="image/*" multiple />
-				<div class="alert alert-danger alert-submit hidden" role="alert">Error al intentar cargar el producto, <br /></div>
-				<!-- <div class="alert alert-danger alert-missing-data hidden" role="alert">
-					Error al cargar la imagen <br />
-					Solo puedes cargar un maximo de 6 imagenes por producto
-				</div> -->
+				<div class="alert alert-danger alert-submit hidden" role="alert"><br /></div>
 				<button type="submit" class="btn btn-primary submit-btn">Cargar Producto</button>
 			</form>
 		</main>
