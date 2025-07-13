@@ -19,6 +19,60 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
+/**CSS PARA PODER EDITAR LAS IMA*/
+.imagen-contenedor {
+  width: 100%;
+  max-width: 500px;  /* o lo que desees como tope en desktop */
+  aspect-ratio: 1 / 1;  /* Cuadro perfectamente cuadrado */
+  background-color: #f5f5f5;  /* opcional */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 auto; /* centrado horizontal */
+  border-radius: 8px; /* opcional */
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+.imagen-contenedor:hover img {
+  transform: scale(1.05);
+  opacity: 0.95;
+}
+.img-ajustada {
+  max-width: 130%;
+  max-height: 130%;
+  object-fit: cover; /* puedes probar cover también */
+}
+.img-ajustada-sin-zoom {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* evita que se recorte */
+  transform: scale(0.8); /* controla cuánto "llena" el cuadro */
+}
+
+
+
+/**CSS PARA EL BANNER*/
+.imagen-banner {
+  width: 100%;
+  max-width: 1200px; /* controla el ancho máximo del banner */
+  margin: 0 auto;
+  overflow: hidden;
+  border-radius: 8px; /* opcional para estilo pulido */
+}
+
+.img-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.banner-imagen:hover .img-banner {
+  transform: scale(1.02); /* leve zoom sutil */
+}
+
+
 
 /* Buscador escritorio */
 .barraBusqueda {
@@ -238,3 +292,5 @@ footer a {
         padding-inline: 25px; /* Aumenta el espaciado horizontal para tablets */
     }
 }
+
+
