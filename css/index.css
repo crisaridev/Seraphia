@@ -11,40 +11,108 @@ section {
 /* *Ajustes para pantallas pequeñas */
 /*Muy importante para responsive*/
 @media (max-width: 768px) {
-  .hero-overlay {
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
+  .hero-img {
+    height: 60vh !important;
+    max-height: none !important;
+    /* Ajuste de hero en pantallas pequeñas*/
+
+  }
+
+  .mision-block {
+    padding: 1rem 1rem;
+    /* Reduce el espacio interno */
+    margin-bottom: 0rem;
+    /* Opcional: reduce espacio inferior */
+  }
+
+  .mision-block h2 {
+    font-size: 1.3rem;
+    /* Ajusta el título */
+    margin-bottom: 0.5rem;
+  }
+
+  .mision-block p {
+    font-size: 0.95rem;
+    /* Reduce el tamaño del párrafo */
+    line-height: 1.4;
+    /* Ajusta el espaciado entre líneas */
+  }
+
+  .hero-texto-derecha {
+    right: 2%;
+    max-width: 90%;
+    text-align: center;
   }
 }
 
-.hero-overlay {
-  /**Esta clase controla como y donde se verá el texto dentro de las imagenes de la seccion hero*/
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  color: white;
-  text-align: center;
-  background-color: rgba(0, 0, 0, 0.336);
-  /* semitransparente para que no sea dominante en la imagen*/
-  padding: 1rem 2rem;
+.marquee {
+  animation: scroll-left 20s linear infinite;
+  width: max-content;
+  white-space: nowrap;
 }
 
-.mision-block {
-  /**para agregar estilo a la seccion de la mision, fondo con transparencia para destacar pero que no desentone entre las demas secciones*/
-  background-color: #614b3e3f;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+@keyframes scroll-left {
+  0% {
+    transform: translateX(100%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.hero-texto-derecha {
+  max-width: 400px;
+  text-align: right;
+  background-color: #1a1a1d5d;
 }
 
 .hero-img {
   /**esta clase sirve para mantener el tamaño de las imagenes y que el carrusel no salte por los tamaños diferentes*/
   width: 100%;
-  height: 100vh;
+  max-height: 70vh;
   /* altura del viewport */
   object-fit: cover;
   /* para que la imagen llene sin distorsionarse */
   object-position: center;
+}
+
+.carousel-item {
+  position: relative;
+}
+
+.btn-tienda {
+  background-color: #d28f5f;
+  color: rgb(7, 7, 7);
+  border: 1px;
+  font-weight: bold;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.5rem;
+  font-family: 'Lato', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.btn-tienda:hover {
+  background-color: #5e534e;
+}
+
+
+.mision-block {
+  /**para agregar estilo a la seccion de la mision, fondo con transparencia para destacar pero que no desentone entre las demas secciones*/
+  background-color: #614b3e3b;
+  padding: 1.5rem 1rem;
+
+}
+
+.mision-block p {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.texto-justificado {
+  text-align: justify;
+  font-weight: 350;
+  font-family: 'lato', serif;
 }
 
 .text-hover {
@@ -58,13 +126,59 @@ section {
 
 .galeria-imagen {
   position: relative;
-  border: #1a1a1d91 solid 1px;
 }
 
-.img-card {
-  background-color: #8c7b7375;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
+.tarjeta-inspiracion {
+  margin-bottom: 0;
+  border-radius: 0;
+  padding: 0;
+  /* sin padding interno */
+}
+
+.img-inspiracion {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+.tarjeta-der {
+  background-color: #fbdcfc;
+}
+
+.img-card h4 {
+  color: #1a1a1a;
+  /* Más oscuro que el gris predeterminado */
+  font-weight: 500;
+  font-family: 'lato', serif;
+}
+
+.img-card p {
+  color: #333333;
+  /* Gris oscuro pero más suave que el h4 */
+  font-weight: 350;
+  font-family: 'Lato', sans-serif;
+  text-align: justify;
+}
+
+.img-card-2 h4 {
+  color: #1a1a1a;
+  /* Más oscuro que el gris predeterminado */
+  font-weight: 500;
+  font-family: 'lato', serif;
+}
+
+.img-card-2 p {
+  color: #333333;
+  /* Gris oscuro pero más suave que el h4 */
+  font-weight: 350;
+  font-family: 'Lato', sans-serif;
+  text-align: justify;
+}
+
+.instagram-media {
+  border-radius: 12px !important;
 }
 
 .btn-conocela {
