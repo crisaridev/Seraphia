@@ -134,6 +134,10 @@ button:hover {
     width: 90%;
     margin: 0 auto;
   }
+  .save {
+    width: 150px;
+    margin-bottom: 30px;
+  }
 }
 @media (max-width: 1283px) {
   .form-datos-personales__container label {
