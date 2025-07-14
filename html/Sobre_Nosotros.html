@@ -16,36 +16,47 @@
   <!-- * Include CSS -->
   <link rel="stylesheet" href="/css/Sobre_Nosotros.css">
 
-  <!-- *FOOTER -->
+  <!-- * FOOTER -->
   <link rel="stylesheet" href="/css/Navbar_footer.css">
+  <!-- * NAVBAR -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- *  Estilos personalizados -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- * FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- ! Section of Navbar-->
 <!-- Barra de navegación principal -->
+<!-- Barra de navegación principal -->
 <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-  <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="/index.html">
+    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
       <img
-        src="/assets/img/LOGO-BLANCO-SIN-FONDO.png"
+        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
         width="52" height="52"
         class="me-2"
       >
-      <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+      <span class="fs-4">Seraphia</span>
     </a>
 
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
-      <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
       <li class="nav-item">
-        <a class="nav-link" href="/index.html">Inicio</a>
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
       </li>
-      <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
     </ul>
 
     <!-- Sección 3: ACCIONES DERECHA -->
@@ -63,11 +74,15 @@
      </form>
 
       <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="#" class="btn btn-outline-light botonCarrito">
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
         <i class="bi bi-cart3"></i>
       </a>
 
-      <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
+       Iniciar sesión
+        </a>
+      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
       <button
         class="navbar-toggler d-lg-none botonToggle"
         type="button"
@@ -85,11 +100,12 @@
     <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3"" href="#">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
         <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
         <li class="nav-item px-3 my-3">
@@ -102,7 +118,7 @@
           </form>
         </li>
 
-        <!-- Botón de inicio de sesión al final -->
+        <!-- Botón de inicio de sesión version mobile -->
         <li class="nav-item px-3 mt-3">
           <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
         </li>
@@ -111,7 +127,6 @@
 
   </div>
 </nav>
-
 
 <!-- ! Mision and Section -->
 
@@ -214,24 +229,28 @@
 
 <br><br>
 
-<!-- ! Section of Social Media-->
- 
-<h1 class="text-center py-4" style="background-color:#8C7B73; color:#DBCCC1; " > Redes Sociales </h1>
-<br>
-<br>
+<!-- !  Section of Social Media -->
+<h1 class="text-center py-4" style="background-color:#8C7B73; color:#DBCCC1;">Redes Sociales</h1>
+<br><br>
 
-<div class="col-6 col-md-12 flex_xllogo">
-<!-- Instagram -->
-<a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="xl_logo"></a>
-<!-- Facebook Seraphia -->
-<a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="xl_logo"></a>
+<!-- Remove col-6 and col-md-12 to avoid layout conflicts -->
+<div class="flex_xllogo">
+  <!-- Instagram -->
+  <a href="https://www.instagram.com/seraphiamx/" target="_blank">
+    <img src="/assets/images/Seraphia_img/logos/instagram.png" alt="Instagram" class="xl_logo">
+  </a>
+  <!-- Facebook -->
+  <a href="https://www.facebook.com/Seraphiamexico/" target="_blank">
+    <img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="xl_logo">
+  </a>
 </div>
 
 <br><br>
 
 <!-- ! FOOTER -->
 
- <footer>
+
+<footer>
         <div class="row align">
 
             <div class="col-12 col-md-2 col-lg-2 space">
@@ -254,7 +273,7 @@
                     </div>
                 </div>
              </div>
-
+            
                 <!-- Area de Menu secundario -->
                 <div class="col-12 col-md-4 col-lg-6">
                 <div class="row">
@@ -278,15 +297,12 @@
                         <li><a href="#">Política de privacidad</a></li>
                         <li><a href="#">Términos de servicio</a></li>
                         <li><a href="#">Configuración de Cookies</a></li>
-                        <li><a href="/html/404_info_page.html">404 - Desarrollo web</a></li>
+                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
                     </ul>
                     </div>
 
                 </div>
                 </div>
-
-
-
 
 
             <div class="col-12 col-md-6 col-lg-4">
@@ -305,10 +321,12 @@
 
 
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
     <script src="/javascript/Seraphia/navbar_footer.js"></script>
     <script src="/javascript/404_acerca/404_info_java.js"></script>
+    
 
 </body>
 </html>

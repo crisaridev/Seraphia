@@ -4,7 +4,7 @@
   <!-- Metadatos -->
   <meta charset="utf-8">
   <meta name="author" content="Seraphia">
-  <!--description se utilizará para describir brevemente el contenido de la página web, puede ayudar con el posicionamiento SEO y a decirle a google de que trata la pagina-->
+  <!--description se utilizará para describir brevemente el contenido de la página web-->
   <meta name="description" content="E-commerce de Seraphia: ropa artesanal con diseños únicos, bordados a mano y confeccionados con telas rescatadas. Moda ética y única.">
   <!--keywords ayuda en la busqueda SEO, aunque ya no son tan relevantes actualmente-->
   <meta name="keywords" content="moda artesanal, ropa única, bordados a mano, telas rescatadas, e-commerce sustentable, Seraphia">
@@ -16,12 +16,8 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
 <!--? CSS-->
-<!--CSS
--styles.css es mi hoja de estilos
--preconect sirve para pre cargar las fuentes que voy a importar de google y esto puede ayudar a que el sitio cargue mas rapido
--https://fonts.googleapis.com/css2?family=Lato esta importando la tipografia lato desde google-->
-
-<link rel="stylesheet" href="/css/index.css" >
+<!--CSS-->
+<link rel="stylesheet" href="/css/home.css" >
 <link href="/css/Navbar_footer.css" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -117,46 +113,50 @@
  <!-- todo: Desarrollo para vista HOME "Abril"-->
 
   <!--? Parte correspondiente al HERO DESLIZABLE-->
-  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
-  <!--data-bs-ride es para que el carrusel avance de forma automatica/position relative es para poder poner texto arriba funcionaria junto con hero-overlay, revisar si es funcional a futuro.-->
-    <div class="carousel-inner">
-<div class="carousel-item active position-relative">
-  <img src="../assets/Portada.jpg" class="d-block w-100 hero-img" alt="Portada  presentando blusa rosa con estampado">
-  <div class="hero-overlay">
-    <h2>#Amantes de lo auténtico</h2>
-    <p>Disfruta expresando la mejor versión de ti</p>
-    <!--revisar si esto se puede agregar de otra forma en la vista de administrador-->
-  </div>
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+  <div class="carousel-inner">
+  <!--Item del carrusel-->
+    <div class="carousel-item active position-relative">
+      <img src="../assets/Portada.jpg" class="d-block w-100 hero-img" alt="Portada  presentando blusa rosa con estampado">
+  <!--Boton en el hero que envia a tienda-->
+         <!--La configuracion de este boton es importante-->   
+<div class="position-absolute top-50 end-0 translate-middle-y me-4 text-light d-flex flex-column align-items-center text-center hero-texto-derecha p-2">
+        <h2 class="mb-3 fs-2">#Amantes de lo auténtico</h2>
+        <p class="fs-4">Descubre prendas con alma</p>
+       <a href="/html/404_info_products.html" class="btn btn-tienda">Ir a la tienda</a>
+      </div>
+    </div>
+  <!--Item del carrusel-->
+    <div class="carousel-item position-relative">
+      <img src="../assets/Portada-blusa-rosa.jpg" class="d-block w-100 hero-img" alt="Portada presentando el detalle de una blusa asimetrica en color rosa brillante">
+  <!--Boton en el hero que envia a tienda-->
+         <!--La configuracion de este boton es importante-->  
+<div class="position-absolute top-50 end-0 translate-middle-y me-4 text-light d-flex flex-column align-items-center text-center hero-texto-derecha p-2">
+        <h2 class="mb-3 fs-2">#Amantes de lo auténtico</h2>
+        <p class="fs-4">Descubre prendas con alma</p>
+        <a href="/html/404_info_products.html" class="btn btn-tienda">Ir a la tienda</a>
+      </div>
 </div>
-<div class="carousel-item active position-relative">
-        <img src="../assets/Portada-blusa-mao-perfil.jpg" class="d-block w-100 hero-img" alt="Portada presentado blusa con cuello mao">
-  <div class="hero-overlay">
-    <h2>#Amantes de lo auténtico</h2>
-    <p>Disfruta siento la mejor versión de ti</p>
-  </div>
 </div>
-<div class="carousel-item active position-relative">
-        <img src="../assets/Portada-blusa-rosa.jpg" class="d-block w-100 hero-img" alt="Portada presentando el detalle de una blusa asimetrica en color rosa brillante">
-  <div class="hero-overlay">
-    <h2>#Amantes de lo auténtico</h2>
-    <p>Disfruta siento la mejor versión de ti</p>
-  </div>
 </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon"></span>
-    </button>
-   <!--tengo pensado cambiar el tipo de boton-->
-    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-      <span class="carousel-control-next-icon"></span>
-    </button>
   </div>
 <!-----------------------------Aqui termina la seccion de Hero deslizable-------------------------------------------->
 
+  <!--? Parte correspondiente a la seccion marquee-->
+<section class="text-ligth py-2 overflow-hidden position-relative">
+  <div class="marquee d-flex align-items-center gap-4">
+    <span class="fw-semibold fs-5">✅ Aceptamos pagos en línea</span>
+    <span class="fw-semibold fs-5">📦 Envíos a todo México</span>
+    <span class="fw-semibold fs-5">✅ Aceptamos pagos en línea</span>
+    <span class="fw-semibold fs-5">📦 Envíos a todo México</span>
+  </div>
+</section>
+<!-----------------------------Aqui termina la seccion de marquee-------------------------------------------->
+
   <!--? MISIÓN -->
-  <!-- mision-block es para agregar estilo a la seccion de mision, aun me gustaria cambiar para que sea mas llamativa sin desentonar , container text-center my-4 es de bootstrap, considero que con my-4 los margenes quedan bien sin empalmarse y sin estar tan separados-->
-  <section class="container text-center my-4 mision-block">
-    <h2 class="mb-3">Nuestra Misión</h2>
-    <p class="lead">
+<section class="container-fluid text-center my-0 mision-block">
+    <h2 class="mb-3 fs-3">NUESTRA MISIÓN</h2>
+    <p class="lead fs-4">
         En Seraphia, creemos que la moda puede fluir en sintonía con el entorno y
         evolucionar con conciencia.
         Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que
@@ -169,54 +169,72 @@
   <!--? Tarjetas para la parte de  INSPIRACIÓN DE LA TEMPORADA-->
   <!--quiero cambiar esta parte para que se actualice de forma automatica cuando se agregen nuevos productos a la ecommerce, usara la foto, el titulo del producto y la descripcion del producto-->
   <section class="container my-5">
-    <h3 class="text-center mb-4">INSPIRACION DE LA TEMPORADA</h3>
-  <!-- uso row  para que mis cards se acomoden en filas, bootstrap lo necesita para que las cards  se ajusten como lo necesito en el grid, imagen fluid es necesario para que bootstrap funcione como responsive, shadow añade sombra a la card-->
- <div class="row mb-5 align-items-center img-card  bg-light p-4 rounded shadow">
+    <h3 class="text-center mb-4 fs-3">INSPIRACIÓN DE LA TEMPORADA</h3>
+    <p class="lead fs-4 texto-justificado">
+      Creemos que cada prenda puede contar una historia distinta según cómo se use.
+      Por eso, compartimos ejemplos de estilo que invitan a redescubrir nuestras creaciones desde distintas miradas. Nos inspira la idea de vestir con propósito, combinando lo artesanal con lo cotidiano, y dando vida a atuendos que reflejan autenticidad, creatividad y respeto por el entorno.
+  <!-- uso row  para que mis cards se acomoden en filas-->
+ <div class="row mb-0 align-items-center img-card-2  tarjeta-inspiracion bg-light p-0 rounded">
       <div class="col-md-6">
         <img src="../assets/blusa-corta-triangulos-frente.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa tipo top diseño de triangulos">
       </div>
       <div class="col-md-6"> <!-- lo uso para dividir en dos mi espacio en la tarjeta, en un lado tengo la fotografia y en el otro el titulo y la descripcion-->
-        <h4>Resalta tu feminidad y belleza</h4>
-        <p>
+        <h4 class="lead fs-3">Resalta tu feminidad y belleza</h4>
+        <p class="fs-4">
           Top corto confeccionado en algodón ligero con un llamativo patrón de líneas en zigzag color azul. Su diseño halter incorpora un cordón que se anuda detrás del cuello, dejando la espalda al descubierto para un acabado fresco y elegante. Como sugerencia puedes combinarlo con unos mom jeans de mezclilla deslavada.
         </p>
       </div>
     </div>
- <div class="row mb-5 align-items-center  flex-md-row-reverse img-card rounded text-dark shadow p-4">
+ <div class="row mb-0 align-items-center  flex-md-row-reverse img-card  tarjeta-der  tarjeta-inspiracion rounded text-dark p-0">
  <!-- aqui agrego flex-md-row-reverse para que la fotografia este a la derecha y el texto a la izquierda  -->
       <div class="col-md-6">
         <img src="../assets/blusa-corta-bordado.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa corta con bordado de flores">
       </div>
       <div class="col-md-6">
-        <h4>Tranquilidad y naturalidad</h4>
-        <p>Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo con unos jeans para un look relajado.</p>
+        <h4 class="lead fs-3">Tranquilidad y naturalidad</h4>
+        <p class="fs-4">Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo con unos jeans para un look relajado.</p>
       </div>
     </div>
   <!-- aqui  solo copie la parte de la primera tarjeta -->
-    <div class="row mb-5 align-items-center img-card   bg-light p-4 rounded shadow">
+ <div class="row mb-0 align-items-center img-card-2 tarjeta-inspiracion bg-light p-0 rounded">
       <div class="col-md-6">
         <img src="../assets/Blusa-negra-portada.jpg" class="img-fluid rounded" alt="Sugerencia de estilo para blusa estilo camiseta con bordado de flores a crochet">
       </div>
       <div class="col-md-6">
-        <h4>Elegancia en negro</h4>
-        <p>Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino. </p>
+        <h4 class="lead fs-3">Elegancia en negro</h4>
+        <p class="fs-4">Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino. </p>
       </div>
     </div>
   </section>
   <!------------------------------Aqui termina la seccion de Inspiracion de la temporada------------------------------>
 
+<!--? Seccion para mostrar un video destacado de Instagram -->
+<section class="container my-5 text-center">
+  <h3 class="mb-4 fs-3">VIVE OTROS INSTANTES DE SERAPHIA</h3>
+  <p class="fs-4 texto-justificado">
+    En Seraphia, también queremos mostrarte cómo se ven nuestros proyectos mas recientes. Este video te permite apreciar el detalle y la esencia de nuestras telas rescatadas. Queremos compartir contigo el proceso de selección de nuestras telas.
+  </p>
+
+  <!-- Bloque de Instagram responsivo y centrado -->
+  <div class="d-flex justify-content-center">
+    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DG1BBEJysCf/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px rgba(0,0,0,0.5),0 1px 10px rgba(0,0,0,0.15); max-width:540px; width:100%; padding:0; margin: 1rem auto;">
+    </blockquote>
+  </div>
+</section>
+ <!------------------------------Aqui termina la seccion para mostrar un video destacado de Instagram ------------------------------>
+
   <!--? GALERÍA -->
   <!--planeo cambiar la galeria para que se actualice de forma automatica cuando se agregen nuevos productos  al catalogo-->
 <section class="container my-5">
-  <h3 class="text-center mb-4">Galería de Productos</h3>
+  <h3 class="text-center mb-4 fs-3">GALERIA DE PRODUCTOS</h3>
   <div class="row g-4">
   <div class="col-6 col-md-3">
    <div class="galeria-imagen  overflow-hidden shadow">
-  <!--agregue la clase galeria-imagen para poner un borde un poco transparente a la imagen para que destacara más, es una opcion, la otra es quitarle el borde-->
+  <!--agregue la clase galeria-imagen para poner un borde un poco transparente a la imagen para que destacara más-->
     <img src="../assets/blusa-roja-sin-mangas.jpg" class="img-fluid rounded" alt="Blusa corta sin mangas color rojo">
       <!--img-fluid sirve para mantener  la imagen sin desbordarse de su contenedor en la galeria-->
   </div>
-  <a href="galeriaproducto.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold">
+  <a href="/detalles_del_producto/index.html"  class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold fs-5">
         Blusa roja sin mangas
   </a>
     </div>
@@ -224,7 +242,7 @@
    <div class="galeria-imagen  overflow-hidden shadow">
     <img src="../assets/blusa-estilo-vaquero-portada.jpg" class="img-fluid rounded" alt="Blusa estilo vaquero">
   </div>
-  <a href="galeriaproducto.html" class="d-block mt-2 text-hover  text-decoration-none text-dark fw-semibold">
+  <a href="/detalles_del_producto/index.html"  class="d-block mt-2 text-hover  text-decoration-none text-dark fw-semibold fs-5">
         Blusa estilo vaquero
   </a>
   </div>
@@ -232,7 +250,7 @@
    <div class="galeria-imagen  overflow-hidden shadow">
     <img src="../assets/blusa-rosa-sin-magas-portada.jpg" class="img-fluid rounded" alt="Blusa rosa con espalda descubierta">
   </div>
-  <a href="galeriaproducto.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold">
+  <a href="/detalles_del_producto/index.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold fs-5">
         Blusa rosa con espalda descubierta
   </a>
   </div>
@@ -240,27 +258,27 @@
    <div class="galeria-imagen  overflow-hidden shadow">
     <img src="../assets/blusa-corta-triangulos.jpg" class="img-fluid rounded" alt="Blusa tipo top diseño de triangulos">
   </div>
-  <a href="galeriaproducto.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold">
+  <a href="/detalles_del_producto/index.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold fs-5">
         Blusa tipo top diseño de triangulos
   </a>
   </div>
   <div class="text-center mt-4">
-    <a href="tienda.html" class="btn btn-outline-dark">Ver prendas disponibles</a>
+    <a href="/html/404_info_products.html"  class="btn btn-outline-dark fs-4">Ver prendas disponibles</a>
   </div>
 </section>
-<!------------------------Aqui termina galeria, esta seccion puede mejorarse----------->
+<!------------------------Aqui termina galeria----------->
 
 
   <!--? Parte para mostrar una breve historia acerca de la creadora de Seraphia, manda a la pagina sobre nosotros-->
   <section class="container my-5 text-center diseñadora-block">
-    <h3>Conoce a la mente brillante detras de Seraphia</h3>
+    <h3 class="text-center mb-4 fs-3">CONOCE A LA MENTE BRILLANTE DETRÁS DE SERAPHIA</h3>
     <div class="card mx-auto" style="max-width: 500px;">
       <img src="../assets/WuendyT.jpg" class="card-img-top " alt="Diseñadora principal Wuendy Tarache">
       <div class="card-body">
-        <h5 class="card-title">Wuendy Tarache</h5>
-        <p>Wuendy Tarache, es la diseñadora y artista textil detrás de Seraphia, con 35 años de experiencia.
+        <h5 class="card-title text-center mb-4 fs-4">Wuendy Tarache</h5>
+        <p CLASS="fs-5">Wuendy Tarache es la diseñadora y artista textil detrás de Seraphia, con 35 años de experiencia.
         Todo es hecho a mano éticamente por ella.</p>
-        <a href="nosotros.html" class="btn btn-conocela">Conócela</a>
+        <a href="/html/Sobre_Nosotros.html" class="btn btn-conocela fs-5">Conócela</a>
       </div>
     </div>
   </section>
@@ -335,9 +353,11 @@
     </footer>
 
   <!--? Scripts -->
+  <script async src="//www.instagram.com/embed.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/scrollreveal"></script>
-<script src="../javascript/index.js"></script>
+<!--<script src="../javascript/index.js"></script>-->
+<script src="../javascript/home.js"></script>
      </body>
 </html>
 
