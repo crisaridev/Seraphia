@@ -1,7 +1,7 @@
-
-body { /**Para toda la pagina*/
+body {
+  /**Para toda la pagina*/
   font-family: 'Lato', sans-serif;
-  background-color: #F8F8F8; 
+  background-color: #F8F8F8;
 }
 
 section {
@@ -16,27 +16,34 @@ section {
     font-size: 0.9rem;
   }
 }
-.hero-overlay { /**Esta clase controla como y donde se verá el texto dentro de las imagenes de la seccion hero*/
-  position:absolute;
+
+.hero-overlay {
+  /**Esta clase controla como y donde se verá el texto dentro de las imagenes de la seccion hero*/
+  position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   color: white;
   text-align: center;
-  background-color: rgba(0, 0, 0, 0.336); /* semitransparente para que no sea dominante en la imagen*/
+  background-color: rgba(0, 0, 0, 0.336);
+  /* semitransparente para que no sea dominante en la imagen*/
   padding: 1rem 2rem;
 }
 
-.mision-block{ /**para agregar estilo a la seccion de la mision, fondo con transparencia para destacar pero que no desentone entre las demas secciones*/
+.mision-block {
+  /**para agregar estilo a la seccion de la mision, fondo con transparencia para destacar pero que no desentone entre las demas secciones*/
   background-color: #614b3e3f;
   padding: 1.5rem;
-  border-radius: 0.5rem;  
+  border-radius: 0.5rem;
 }
 
-.hero-img { /**esta clase sirve para mantener el tamaño de las imagenes y que el carrusel no salte por los tamaños diferentes*/
+.hero-img {
+  /**esta clase sirve para mantener el tamaño de las imagenes y que el carrusel no salte por los tamaños diferentes*/
   width: 100%;
-  height: 100vh; /* altura del viewport */
-  object-fit: cover; /* para que la imagen llene sin distorsionarse */
+  height: 100vh;
+  /* altura del viewport */
+  object-fit: cover;
+  /* para que la imagen llene sin distorsionarse */
   object-position: center;
 }
 
@@ -48,9 +55,10 @@ section {
   opacity: 0.6;
   transform: scale(1.02);
 }
+
 .galeria-imagen {
   position: relative;
-border:#1a1a1d91 solid 1px;
+  border: #1a1a1d91 solid 1px;
 }
 
 .img-card {
@@ -60,8 +68,222 @@ border:#1a1a1d91 solid 1px;
 }
 
 .btn-conocela {
-    width: fit-content; /* El ancho del botón se ajusta a su contenido */
-    background-color: #D28E5F; /* Color de fondo personalizado */
+  width: fit-content;
+  /* El ancho del botón se ajusta a su contenido */
+  background-color: #D28E5F;
+  /* Color de fondo personalizado */
+}
+
+
+/**Parte correspondiente al Navbar Arath*/
+/* Fondo de la navbar */
+.navbar {
+  background-color: #1A1A1D;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+/* 1) Buscador escritorio */
+.barraBusqueda {
+  max-width: 220px;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.barraBusqueda .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusqueda .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusqueda .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 1.1) Buscador móvil */
+.barraBusquedaMobile {
+  max-width: 100%;
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.barraBusquedaMobile .form-control {
+  border: 1px solid #D28E5F;
+  background-color: transparent;
+  color: white;
+}
+
+.barraBusquedaMobile .form-control::placeholder {
+  color: #ccc;
+}
+
+.barraBusquedaMobile .btn {
+  background-color: transparent;
+  border: 1px solid #D28E5F;
+  color: #D28E5F;
+  padding: 0 10px;
+}
+
+/* 2) Botón Login */
+.botonLogin {
+  background-color: #D28E5F;
+  color: white;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+}
+
+/* 3) Carrito */
+.botonCarrito {
+  border: 1px solid white;
+  color: white;
+}
+
+.botonCarrito i {
+  font-size: 20px;
+}
+
+/* 4) Link activo */
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* 5) Forzar collapse oculto en desktop */
+@media (min-width: 992px) {
+  #contenidoNavbar {
+    display: none !important;
+  }
+}
+
+/**Parte correspondiente al Footer de Miguel*/
+/* Cuerpo del footer*/
+/* --- ESTILOS GENERALES DEL FOOTER --- */
+
+/* Estilo para el contenedor principal del footer */
+footer {
+  background-color: #1a1a1d;
+  /* Color de fondo oscuro */
+  color: #fff;
+  /* Color del texto principal blanco */
+  padding-top: 25px;
+  /* Espaciado superior */
+  padding-bottom: 15px;
+  /* Espaciado inferior */
+}
+
+/* Estilo para los enlaces (links) dentro del footer */
+footer a {
+  color: #fff;
+  /* Color de texto blanco para los enlaces */
+  list-style: none;
+  /* Elimina viñetas si los enlaces están en una lista */
+  text-decoration: none;
+  /* Elimina el subrayado por defecto de los enlaces */
+}
+
+/* --- CLASES DE UTILIDAD FLEXBOX --- */
+
+/* Clase para alinear contenido */
+.align {
+  width: 100%;
+  /* Ocupa todo el ancho disponible */
+  display: flex;
+  /* Habilita Flexbox */
+  align-items: center;
+  /* Centra los ítems verticalmente */
+}
+
+/* Clase para acomodar logos de redes sociales */
+.flex_smlogo {
+  display: flex;
+  /* Habilita Flexbox */
+  justify-content: center;
+  /* Centra los logos horizontalmente */
+  gap: 15px;
+  /* Añade un espacio de 15px entre cada logo */
+}
+
+/* Clase para organizar elementos en una columna vertical */
+.flex_col {
+  display: flex;
+  /* Habilita Flexbox */
+  flex-direction: column;
+  /* Apila los elementos verticalmente */
+}
+
+/* Clase específica para el contenedor del newsletter */
+.flex_new {
+  display: flex;
+  /* Habilita Flexbox */
+  flex-direction: column;
+  /* Apila los elementos verticalmente */
+  justify-content: center;
+  /* Centra el contenido horizontalmente (en el eje principal de la columna) */
+}
+
+/* --- ESTILOS DE ELEMENTOS ESPECÍFICOS --- */
+
+/* Estilo para el logo del footer */
+#logo_footer {
+  height: auto;
+  /* La altura se ajusta automáticamente */
+  width: 100px;
+  /* Ancho fijo para el logo */
+}
+
+/* Estilo para los logos de redes sociales */
+.sm_logo {
+  width: 45px;
+  /* Ancho fijo para los logos */
+  height: auto;
+  /* La altura se ajusta para mantener la proporción */
+}
+
+/* Estilo para el botón del footer */
+.btn_footer {
+  width: fit-content;
+  /* El ancho del botón se ajusta a su contenido */
+  background-color: #D28E5F;
+  /* Color de fondo personalizado */
+}
+
+/* Estilo para el texto de ayuda en el formulario del newsletter */
+.form-text {
+  color: #fff;
+  /* Color de texto blanco */
+}
+
+/* --- ESTILOS PARA EL ACORDEÓN DEL FOOTER (MENÚ DESPLEGABLE) --- */
+
+/* Lista de enlaces que se oculta/muestra */
+.footer-links {
+  overflow: hidden;
+  /* Oculta el contenido que excede la altura definida */
+  transition: height 0.4s ease-out;
+  /* Anima el cambio de altura para un efecto suave */
+  padding-left: 0;
+  /* Elimina el espaciado izquierdo por defecto */
+  list-style: none;
+  /* Elimina las viñetas de la lista */
+}
+
+/* Contenedor del título que activa el acordeón */
+.footer-toggle {
+  display: flex;
+  /* Habilita Flexbox */
+  justify-content: space-between;
+  /* Coloca el título y la flecha en extremos opuestos */
+  align-items: center;
+  /* Centra los elementos verticalmente */
+  cursor: pointer;
+  /* Cambia el cursor a una mano para indicar que es interactivo */
 }
 
 
@@ -70,37 +292,47 @@ border:#1a1a1d91 solid 1px;
 /* Estilos para pantallas pequeñas (móviles, hasta 640px) */
 @media (max-width: 640px) {
 
-    /* Crea un ícono de flecha para el menú desplegable */
-    .footer-toggle::after {
-        content: ''; /* Necesario para que el pseudo-elemento se muestre */
-        display: inline-block;
-        width: 8px; /* Ancho del ícono */
-        height: 8px; /* Alto del ícono */
-        border-bottom: 2px solid white; /* Crea la forma de la flecha */
-        border-right: 2px solid white; /* Crea la forma de la flecha */
-        transform: rotate(45deg); /* Gira el ícono para que apunte hacia abajo (cerrado) */
-        transition: transform 0.4s ease-out; /* Anima la rotación de la flecha */
-    }
+  /* Crea un ícono de flecha para el menú desplegable */
+  .footer-toggle::after {
+    content: '';
+    /* Necesario para que el pseudo-elemento se muestre */
+    display: inline-block;
+    width: 8px;
+    /* Ancho del ícono */
+    height: 8px;
+    /* Alto del ícono */
+    border-bottom: 2px solid white;
+    /* Crea la forma de la flecha */
+    border-right: 2px solid white;
+    /* Crea la forma de la flecha */
+    transform: rotate(45deg);
+    /* Gira el ícono para que apunte hacia abajo (cerrado) */
+    transition: transform 0.4s ease-out;
+    /* Anima la rotación de la flecha */
+  }
 
-    /* Estilo de la flecha cuando el menú está abierto */
-    .footer-toggle.active::after {
-        transform: rotate(-135deg); /* Gira la flecha para que apunte hacia arriba (abierto) */
-    }
+  /* Estilo de la flecha cuando el menú está abierto */
+  .footer-toggle.active::after {
+    transform: rotate(-135deg);
+    /* Gira la flecha para que apunte hacia arriba (abierto) */
+  }
 
-    /* Ajuste del padding para el footer en móviles */
-    footer {
-        padding-inline: 10px; /* Reduce el espaciado horizontal */
-    }
+  /* Ajuste del padding para el footer en móviles */
+  footer {
+    padding-inline: 10px;
+    /* Reduce el espaciado horizontal */
+  }
 
-    /* Clase de utilidad para añadir espacio inferior en móviles */
-    .space {
-        margin-bottom: 20px;
-    }
+  /* Clase de utilidad para añadir espacio inferior en móviles */
+  .space {
+    margin-bottom: 20px;
+  }
 }
 
 /* Estilos para pantallas medianas (tablets, de 641px a 1023px) */
 @media (min-width: 641px) and (max-width: 1023px) {
-    footer {
-        padding-inline: 25px; /* Aumenta el espaciado horizontal para tablets */
-    }
+  footer {
+    padding-inline: 25px;
+    /* Aumenta el espaciado horizontal para tablets */
+  }
 }
