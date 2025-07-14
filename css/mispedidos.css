@@ -163,8 +163,8 @@ button:hover {
   }
 
 
-  button {
-    width: 150px;
+  td a button {
+    width: 100px;
   }
 
   input {
