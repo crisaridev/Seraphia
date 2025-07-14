@@ -28,7 +28,7 @@ function addItemCard(item) {
     "</div>" +
     "</td>" +
     '<td class="button_hide fw-bolder edit_btn">' +
-    '<a href="#" class="text-primary-emphasis d-none d-lg-table-cell">Editar</a>' +
+    '<a href="./crear-producto.html" class="text-primary-emphasis d-none d-lg-table-cell">Editar</a>' +
     "</td>" +
     '<td class="d-none d-sm-table-cell">' +
     item.stock +

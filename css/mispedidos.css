@@ -1,13 +1,24 @@
 body {
-  font-family: sans-serif;
-  display: flex;
+  font-family: "Lato";
+  /* display: flex; */
 }
+
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+
 
 hr {
   margin-bottom: 25px;
 }
 h2 {
   margin-top: 50px;
+}
+.container-content {
+  display: flex;
 }
 .hero {
   width: 74%;
@@ -128,7 +139,7 @@ a:focus {
   text-align: center;
 }
 
-button {
+.save, td a button {
   all: unset;
   padding: 10px;
   border: 1px solid black;
@@ -151,17 +162,18 @@ button:hover {
     margin-right: 5%;
   }
 
-  button {
-    width: 150px;
+
+  td a button {
+    width: 100px;
   }
 
   input {
     width: 65%;
   }
 
-  body {
-    flex-direction: column;
-  }
+    .container-content {
+      flex-direction: column;
+    }
 
   .mi-cuenta {
     width: 90%;
@@ -174,7 +186,7 @@ button:hover {
     width: min-content;
     text-align: center;
   }
-    body {
+    .container-content {
       flex-direction: column;
     }
     .opciones-container{
