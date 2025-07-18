@@ -8,20 +8,14 @@ document.addEventListener('DOMContentLoaded', function () {
     easing: 'ease-in-out'
   });
 
-  ScrollReveal().reveal('.img-card', {
-    duration: 1000,
-    distance: '40px',
-    origin: 'left',
-    easing: 'ease-in-out',
-    interval: 200
-  });
-    ScrollReveal().reveal('.img-card-2', {
-    duration: 1000,
-    distance: '40px',
-    origin: 'left',
-    easing: 'ease-in-out',
-    interval: 200
-  });
+ScrollReveal().reveal('.tarjeta-inspiracion', {
+  duration: 1000,
+  distance: '40px',
+  origin: 'bottom',
+  easing: 'ease-in-out',
+  reset: false, // solo una vez
+  viewFactor: 0.2 // empieza cuando 20% es visible
+});
 
   ScrollReveal().reveal('.galeria-imagen', {
     duration: 1000,

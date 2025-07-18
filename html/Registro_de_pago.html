@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Metadatos -->
+  <meta charset="utf-8">
+  <meta name="author" content="Seraphia">
+  <!--description se utilizará para describir brevemente el contenido de la página web-->
+  <meta name="description" content="E-commerce de Seraphia: ropa artesanal con diseños únicos, bordados a mano y confeccionados con telas rescatadas. Moda ética y única.">
+  <!--keywords ayuda en la busqueda SEO, aunque ya no son tan relevantes actualmente-->
+  <meta name="keywords" content="moda artesanal, ropa única, bordados a mano, telas rescatadas, e-commerce sustentable, Seraphia">
+  <!--meta name "robots" permite a google guardar la ecommerce (indexar) y luego encontrarla mas facilmente-->
+  <meta name="robots" content="index, follow">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!--? Bootstrap CSS y Bootstrap Icons-->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+<!--? CSS-->
+<link rel="stylesheet" href="/css/Registro_de_pago.css" >
+<link href="/css/Navbar_footer.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<!--Titulo-->
+<title>Registro de pago</title>
+</head>
+<body>
+
+ <!-- ? Barra de navegación principal  "Arath"-->
+<!-- Barra de navegación principal -->
+<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
+
+    <!-- Sección 1: LOGO + NOMBRE -->
+    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
+      <img
+        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
+        alt="Seraphia"
+        width="52" height="52"
+        class="me-2"
+      >
+      <span class="fs-4">Seraphia</span>
+    </a>
+
+    <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+      <li class="nav-item">
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
+      </li>
+      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+    </ul>
+
+    <!-- Sección 3: ACCIONES DERECHA -->
+    <div class="d-flex align-items-center gap-2 ms-auto">
+
+      <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+     <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+       <input
+         class="form-control"
+         type="search"
+         placeholder="Buscar"
+         aria-label="Buscar"
+       >
+       <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+     </form>
+
+      <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+        <i class="bi bi-cart3"></i>
+      </a>
+
+      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
+       Iniciar sesión
+        </a>
+      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
+      <button
+        class="navbar-toggler d-lg-none botonToggle"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#contenidoNavbar"
+        aria-controls="contenidoNavbar"
+        aria-expanded="false"
+        aria-label="Mostrar navegación móvil"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+
+    <!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+    <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+      <ul class="navbar-nav w-100">
+        <!-- Enlaces móviles -->
+        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+
+        <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+        <li class="nav-item px-3 my-3">
+          <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+            <input class="form-control me-1"
+                   type="search"
+                   placeholder="Buscar"
+                   aria-label="Buscar">
+            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
+          </form>
+        </li>
+
+        <!-- Botón de inicio de sesión version mobile -->
+        <li class="nav-item px-3 mt-3">
+          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+
+<!--?Seccion del formulario de pago-->
+
+<div class="container py-5">
+  <div class="row align-items-center">
+    
+    <!-- Columna izquierda: Imagen -->
+    <div class="col-md-6 mb-4 mb-md-0 text-center">
+      <img src="/assets/logos/LOGO-NEGRO-SIN-FONDO.png" alt="Seraphia logo" class="img-fluid img-logo " >
+    </div>
+
+    <!-- Columna derecha: Formulario -->
+    <div class="col-md-6">
+      <h2 class="mb-4 text-center fw-bold">REGISTRO DE PAGO</h2>
+          <p class="fs-5 text-center text-md-start">
+              Completa este formulario con los datos solicitados. Muy pronto, alguien de nuestro equipo se pondrá en contacto por correo para compartir el enlace de pago, confirmar tu compra y enviarte los detalles del envío de tus prendas. 
+              <br>
+          <p class="fs-5 text-center text-md-start">
+            ¡No olvides revisar tu bandeja de Spam!
+          </p>
+          </p>
+          <br>
+   <form id="registroForm">
+        <div class="mb-3">
+          <label for="email" class="form-label">Correo electronico asociado a tu cuenta</label>
+          <input type="email" id="email" class="form-control form-control-lg" placeholder="usuario@example.com" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="nombreCompleto" class="form-label">Nombre completo</label>
+          <input type="text" id="nombreCompleto" name="nombreCompleto" class="form-control" placeholder="Nombre completo" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="telefono" class="form-label">Número de teléfono</label>
+          <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ej. 5551234567" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="comentario" class="form-label">Comentario adicional</label>
+          <textarea id="comentario" name="comentario" class="form-control" rows="3" placeholder="Escribe un comentario si lo deseas."></textarea>
+        </div>
+
+        <input type="hidden" name="_subject" value="Nuevo Registro de Pago desde Seraphia">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_next" value="https://seraphia.com/html/gracias.html">
+
+        <div class="d-grid mb-3">
+          <button type="submit" class="btn btn-dark btn-lg rounded-pill shadow">Enviar</button>
+        </div>
+
+        <p class="text-center mt-3">
+          ¿Olvidaste algo? <a href="/html/cart_shopping.html" class="fw-semibold text-decoration-none">Regresar a tienda</a>
+        </p>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!--? Mensaje de confirmación para el envio del formulario -->
+  <div id="mensajeGracias" class="alert alert-success d-none text-center">
+      ¡Gracias! Hemos recibido tus datos. Nos pondremos en contacto pronto. 
+  </div>
+
+
+  <!--? Parte para el FOOTER de Miguel-->
+         <footer>
+        <div class="row align">
+
+            <div class="col-12 col-md-2 col-lg-2 space">
+                <div class="row">
+
+                    <!-- Area de informacion y redes sociales -->
+                    <div class="col-6 col-md-12 flex_smlogo">
+                        <img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer">
+                    </div>
+                    <div class="col-6 col-md-12 flex_col">
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <p>Queretaro, Mexico</p>
+                        </div>
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo"></a>
+                            <!-- Facebook Seraphia -->
+                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo"></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            
+                <!-- Area de Menu secundario -->
+                <div class="col-12 col-md-4 col-lg-6">
+                <div class="row">
+
+
+                    <!-- Links menu secundario -->
+                    <div class="col-12 col-lg-6 ">
+                    <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
+                    <ul class="footer-links">
+                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+                        <li><a href="/html/Galeria.html">Galería</a></li>
+                        <li><a href="/html/Contacto.html">Contacto</a></li>
+                        <li><a href="#">FAQ’s</a></li>
+                    </ul>
+                    </div>
+
+                    <!-- Links Cuidamos de ti -->
+                    <div class="col-12 col-lg-6">
+                    <h3 class="footer-toggle">CUIDAMOS DE TI</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Configuración de Cookies</a></li>
+                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+                    </ul>
+                    </div>
+
+                </div>
+                </div>
+
+
+            
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="row  ">
+                <form class="flex_new">
+                <div class="mb-3">
+                    <p>Conoce lo nuevo</p>
+                    <input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <button type="button" class="btn btn_footer">Enviar</button>
+                    <div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
+                </div>
+                </form>
+            </div></div>
+
+        </div>
+</footer>
+
+
+<!-- Ignorar,  este comentario se realiza para forzar la actualizacion de PR -->
+    <!--? Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://unpkg.com/scrollreveal"></script>
+<script src="/javascript/Registro_de_pago.js"></script>
+<script src="/javascript/Seraphia/navbar_footer.js"></script>
+     </body>
+</html>
