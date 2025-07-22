@@ -1,4 +1,4 @@
-//js de 9 de julio para filtro
+//js de 14 de julio para filtro
 document.addEventListener('DOMContentLoaded', function() {
     const filterToggleButton = document.getElementById('filterToggleButton');
     const filterPanel = document.getElementById('filterPanel');
@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const applyFilterButton = document.getElementById('appliedfilter');
     const clearFilterButton = document.getElementById('clearFilterButton');
     const allProducts = document.querySelectorAll('.product-item'); // Selecciona todos los elementos de producto
+    const noProductMessage = document.getElementById('noProductMessage'); //mensaje de "no disponible"
 
     // Alternar la visibilidad del panel de filtro para pantallas pequeñas
     if (filterToggleButton && filterPanel) {
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Función para aplicar los filtros
+    // Función para aplicar filtros
     function applyFilters() {
         const selectedSizes = Array.from(sizeCheckboxes)
                                 .filter(checkbox => checkbox.checked)
@@ -27,7 +28,9 @@ document.addEventListener('DOMContentLoaded', function() {
                                 .filter(checkbox => checkbox.checked)
                                 .map(checkbox => checkbox.value.toLowerCase());
 
-        allProducts.forEach(product => {
+        let visibleCount = 0; //contador para saber cuantos productos quedan visibles
+                                
+            allProducts.forEach(product => {
             const productSize = product.dataset.size ? product.dataset.size.toLowerCase() : '';
             const productType = product.dataset.type ? product.dataset.type.toLowerCase() : '';
 
@@ -39,10 +42,20 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (matchesSize && matchesType) {
                 product.style.display = 'block'; // Muestra el producto
+                visibleCount++;
             } else {
                 product.style.display = 'none'; // Oculta el producto
             }
         });
+
+            //si no hay productos visibles, mostrar mensaje
+            if(noProductMessage){
+                if(visibleCount === 0){
+                    noProductMessage.style.display = 'block';
+                } else {
+                    noProductMessage.style.display = 'none';
+                }
+            }
     }
 
     // Escucha el evento click del botón "Aplicar"
@@ -58,11 +71,14 @@ document.addEventListener('DOMContentLoaded', function() {
             typeCheckboxes.forEach(checkbox => checkbox.checked = false);
             // Muestra todos los productos
             allProducts.forEach(product => product.style.display = 'block');
+            //oculta mensaje de "producto no disponible"
+            if (noProductMessage){
+                noProductMessage.style.display = 'none';
+            }
         });
     }
 
-    // Opcional: no entiendo esta checar
-    // applyFilters();
+    
 });
 
 //js de productos este no se deja pero no lo borres bc aún no se a donde se va a mover
