@@ -16,33 +16,37 @@
   >
   <!-- Estilos personalizados -->
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- Barra de navegación principal -->
 <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-  <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
       <img
-        src="/assets/LOGO-BLANCO-SIN-FONDO.png"
+        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
         width="52" height="52"
         class="me-2"
       >
-      <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+      <span class="fs-4">Seraphia</span>
     </a>
 
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
     <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
       <li class="nav-item">
-        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Inicio</a>
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
       </li>
-      <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
     </ul>
 
     <!-- Sección 3: ACCIONES DERECHA -->
@@ -60,11 +64,15 @@
      </form>
 
       <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="#" class="btn btn-outline-light botonCarrito">
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
         <i class="bi bi-cart3"></i>
       </a>
 
-      <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
+       Iniciar sesión
+        </a>
+      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
       <button
         class="navbar-toggler d-lg-none botonToggle"
         type="button"
@@ -82,11 +90,12 @@
     <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
         <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
         <li class="nav-item px-3 my-3">
@@ -99,9 +108,9 @@
           </form>
         </li>
 
-        <!-- Botón de inicio de sesión al final -->
+        <!-- Botón de inicio de sesión version mobile -->
         <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
         </li>
       </ul>
     </div>
@@ -113,3 +122,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
+
+
+

@@ -1,11 +1,11 @@
 console.log("Dashboard Admin Page Loaded");
 const expandIcon = document.getElementById("icon")
 const expandButton = document.querySelector(".toggle-btn");
-const expandedSidebar = document.getElementById("sidebar");
+const expandedSidebar = document.getElementById("sidebar_expand_btn");
 const screenSize = window.matchMedia("(min-width: 768px)");
 
 const checkScreenSize = () => {
-  if (window.matchMedia('(min-width: 768px)').matches) {
+  if (window.matchMedia('(min-width: 792px)').matches) {
   document.querySelector("#sidebar").classList.toggle("expanded");
   expandIcon.classList.toggle("bx-caret-right");
   expandIcon.classList.toggle("bx-caret-left")

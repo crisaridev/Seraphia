@@ -1,13 +1,30 @@
 body {
-  font-family: sans-serif;
-  display: flex;
+  font-family: "Lato";
 }
+
+.navbar-nav {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+hr {
+  margin-bottom: 25px;
+}
+
+.container-content {
+  margin-top: 50px;
+}
+
 hr {
   margin-bottom: 25px;
 }
 .hero {
   width: 60%;
   margin: 0 auto;
+}
+.container-content {
+  display: flex;
 }
 
 .form-datos-contrasena {
@@ -81,7 +98,7 @@ a:focus {
   text-align: center;
 }
 
-button {
+.save {
   all:unset;
   padding: 10px;
   border: 1px solid black;
@@ -102,16 +119,19 @@ button:hover {
       margin-left: 5%;
       margin-right: 5%;
     }
-    button {
+    .save {
       width: 150px;
     }
   input {
     width: 65%;
   }
+    .navbar-toggler d-lg-none botonToggle {
+      width: 150px;
+    }
 
-  body {
-    flex-direction: column;
-  }
+    .container-content {
+      flex-direction: column;
+    }
   .mi-cuenta {
     width: 90%;
     margin: 0 auto;
@@ -122,4 +142,5 @@ button:hover {
     width: min-content;
     text-align: center;
   }
+}
 }

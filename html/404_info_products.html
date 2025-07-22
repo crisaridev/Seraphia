@@ -13,30 +13,31 @@
 </head>
 <body>
     <header>
-        <!-- Barra de navegación principal -->
+      <!-- Barra de navegación principal -->
 <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-  <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="/">
       <img
-        src="/assets/images/404/product/LOGO-BLANCO-SIN-FONDO (1).png"
+        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
         width="52" height="52"
         class="me-2"
       >
-      <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+      <span class="fs-4">Seraphia</span>
     </a>
 
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
     <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
       <li class="nav-item">
-        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Inicio</a>
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/">Inicio</a>
       </li>
-      <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
     </ul>
 
     <!-- Sección 3: ACCIONES DERECHA -->
@@ -54,11 +55,15 @@
      </form>
 
       <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="#" class="btn btn-outline-light botonCarrito">
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
         <i class="bi bi-cart3"></i>
       </a>
 
-      <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
+       Iniciar sesión
+        </a>
+      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
       <button
         class="navbar-toggler d-lg-none botonToggle"
         type="button"
@@ -76,11 +81,12 @@
     <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
         <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
         <li class="nav-item px-3 my-3">
@@ -93,9 +99,9 @@
           </form>
         </li>
 
-        <!-- Botón de inicio de sesión al final -->
+        <!-- Botón de inicio de sesión version mobile -->
         <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
         </li>
       </ul>
     </div>
@@ -142,16 +148,16 @@
                         <div class="col-12 mb-3"> <!--* TIPO DE PRENDA -->
                             <h5 class="fw-semibold fs-5 mb-2">Tipo de Prenda</h5>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="shirt" id="typeShirt" data-filter-type="type">
-                                <label class="form-check-label" for="typeShirt">Camisa</label>
+                                <input class="form-check-input" type="checkbox" value="camisa" id="typeCamisa" data-filter-type="type">
+                                <label class="form-check-label" for="typeCamisa">Camisa</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="pants" id="typePants" data-filter-type="type">
-                                <label class="form-check-label" for="typePants">Blusa</label>
+                                <input class="form-check-input" type="checkbox" value="blusa" id="typeBlusa" data-filter-type="type">
+                                <label class="form-check-label" for="typeBlusa">Blusa</label>
                             </div>
                             <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="dress" id="typeDress" data-filter-type="type">
-                                <label class="form-check-label" for="typeDress">Vestido</label>
+                                <input class="form-check-input" type="checkbox" value="vestido" id="typeVestido" data-filter-type="type">
+                                <label class="form-check-label" for="typeVestido">Vestido</label>
                             </div>
                         </div>
                     </div>
@@ -170,122 +176,197 @@
             <div class="col-12 col-md-9 col-lg-10"> <!--ancho products-->
                 <div id="productsContainer" class="row row-cols-sm-2 row-cols-xl-4 g-4">
 
+                    <div id="noProductMessage" class="col-12 text-center" style="display: none;">
+                        <p class="fs-4 text-muted">Lo sentimos, prenda no disponible.</p>
+                    </div>
+
+
                     <!--?1-->
-                     <div class="col">
+                    <div class="col product-item" data-size="L" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/1.jpg" class="img-fluid" alt="Blusa Amarilla con Bordado Floral">
                             <div class="product-info">
                                 <p class="product-name">Blusa Amarilla con Bordado Floral</p>
                                 <p class="product-price">$400.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/blusa-amarilla-con-bordado.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?2-->
-                    <div class="col">
+                    <div class="col product-item" data-size="M" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/2.jpg" class="img-fluid" alt="Blusa Azul con Bordado Huipil">
                             <div class="product-info">
                                 <p class="product-name">Blusa Azul con Bordado Huipil</p>
                                 <p class="product-price">$450.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?3-->
-                    <div class="col">
+                    <div class="col product-item" data-size="M" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/3.jpg" class="img-fluid" alt="Blusa azul con Bordado de Peces">
                             <div class="product-info">
                                 <p class="product-name">Blusa azul con Bordado de Peces</p>
                                 <p class="product-price">$450.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?4-->
-                    <div class="col">
+                    <div class="col product-item" data-size="S" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/4.jpg" class="img-fluid" alt="Blusa tipo top diseño de triangulos">
                             <div class="product-info">
                                 <p class="product-name">Blusa tipo top diseño de triangulos</p>
                                 <p class="product-price">$400.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?5-->
-                    <div class="col">
+                    <div class="col product-item" data-size="M" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/5.jpg" class="img-fluid" alt="BLusa corta sin mangas color rojo">
                             <div class="product-info">
                                 <p class="product-name">Blusa corta sin mangas color rojo</p>
                                 <p class="product-price">$450.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?6-->
-                    <div class="col">
+                    <div class="col product-item" data-size="L" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/6.jpg" class="img-fluid" alt="Blusa abierta estilo kimono">
                             <div class="product-info">
                                 <p class="product-name">Blusa abierta estilo kimono</p>
                                 <p class="product-price">$500.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?7-->
-                    <div class="col">
+                    <div class="col product-item" data-size="M" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/7.jpg" class="img-fluid" alt="Blusa rosa con espalda descubierta">
                             <div class="product-info">
                                 <p class="product-name">Blusa rosa con espalda descubierta</p>
                                 <p class="product-price">$400.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?8-->
-                    <div class="col">
+                    <div class="col product-item" data-size="M" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/8.jpg" class="img-fluid" alt="Blusa Negra Asimétrica con Encaje Floral">
                             <div class="product-info">
                                 <p class="product-name">Blusa Negra Asimétrica con Encaje Floral</p>
                                 <p class="product-price">$400.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?9-->
-                    <div class="col">
+                    <div class="col product-item" data-size="L" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/9.jpg" class="img-fluid" alt="Blusa estilo vaquero">
                             <div class="product-info">
                                 <p class="product-name">Blusa estilo vaquero</p>
                                 <p class="product-price">$500.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
 
                     <!--?10-->
-                    <div class="col">
+                    <div class="col product-item" data-size="M" data-type="blusa">
                         <div class="product-card">
                             <img src="/assets/images/404/product/10.jpg" class="img-fluid" alt="Blusa negra con bordado de crochet">
                             <div class="product-info">
                                 <p class="product-name">Blusa negra con bordado de crochet</p>
                                 <p class="product-price">$450.00</p>
-                                <a href="#" class="btn-conozca-mas">Conozca más</a>
+                                <div class="product-actions">
+                                    <a href="/detalles_del_producto/index.html" class="btn-conozca-mas">Conozca más</a>
+                                    <a href="/html/cart_shopping.html" class="btn-shop">
+                                        <svg  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart-fill" viewBox="0 0 16 16">
+                                            <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+                                        </svg>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -329,9 +410,9 @@
                     <div class="col-12 col-lg-6 ">
                     <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Galería</a></li>
-                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+                        <li><a href="/html/Galeria.html">Galería</a></li>
+                        <li><a href="/html/Contacto.html">Contacto</a></li>
                         <li><a href="#">FAQ’s</a></li>
                     </ul>
                     </div>
@@ -343,7 +424,7 @@
                         <li><a href="#">Política de privacidad</a></li>
                         <li><a href="#">Términos de servicio</a></li>
                         <li><a href="#">Configuración de Cookies</a></li>
-                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+                        <li><a href="/html/404_info_page.html">404 - Desarrollo web</a></li>
                     </ul>
                     </div>
 

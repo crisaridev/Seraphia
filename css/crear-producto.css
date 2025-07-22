@@ -1,20 +1,8 @@
 * {
 	margin: 0;
 	padding: 0;
+	box-sizing: border-box;
 }
-
-body {
-	/**Para toda la pagina*/
-	font-family: 'Lato', sans-serif;
-	background-color: #f8f8f8;
-}
-
-/* html,
-body,
-main {
-	position: relative;
-	height: 100%;
-} */
 
 /* hide number input arrows/spinners */
 /* Chrome, Safari, Edge, Opera */
@@ -31,8 +19,8 @@ input[type='number'] {
 }
 
 body {
-	/* background: #000; */
-	font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+	background-color: #f8f8f8;
+	font-family: 'Lato', sans-serif;
 	font-size: 14px;
 	margin: 0;
 	padding: 0;
@@ -44,7 +32,7 @@ main {
 	max-width: 1200px;
 }
 
-form {
+#form-container {
 	display: flex;
 	flex-flow: column nowrap;
 }
@@ -54,9 +42,15 @@ form {
 	text-align: start;
 }
 
+label {
+	font-size: 1.25rem;
+	font-weight: 550;
+}
+
 .swiper {
 	width: 100%;
-	height: 40rem;
+
+	height: 30rem;
 	margin: 1rem 0 1rem 0;
 	box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px inset;
 }
@@ -68,7 +62,7 @@ form {
 .swiper-slide {
 	text-align: center;
 	font-size: 18px;
-	background: #444;
+	/* background: #444; */
 	height: 100%;
 	width: 100%;
 }
@@ -137,4 +131,23 @@ input[type='file'] {
 	margin: 0;
 	padding: 0;
 	max-width: 100%;
+}
+
+.submit-btn,
+.card-btn {
+	background-color: #d28e5f;
+	border-color: transparent;
+	color: black;
+}
+
+.submit-btn {
+	font-size: 1.25rem;
+	font-weight: 500;
+}
+
+.submit-btn:hover,
+.card-btn:hover {
+	background-color: #ff8c3bd7; /* un tono más oscuro o simbólico */
+	border-color: transparent;
+	color: black;
 }

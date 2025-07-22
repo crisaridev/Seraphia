@@ -1,33 +1,90 @@
- //js de responsive y filtro pero solo visualización
- document.addEventListener('DOMContentLoaded', function() {
-            const filterToggleButton = document.getElementById('filterToggleButton');
-            const filterPanel = document.getElementById('filterPanel');
+//js de 14 de julio para filtro
+document.addEventListener('DOMContentLoaded', function() {
+    const filterToggleButton = document.getElementById('filterToggleButton');
+    const filterPanel = document.getElementById('filterPanel');
+    const productsContainer = document.getElementById('productsContainer'); //checar que parte es me falta checar pero ya sirve el filtro
+    const sizeCheckboxes = document.querySelectorAll('input[data-filter-type="size"]');
+    const typeCheckboxes = document.querySelectorAll('input[data-filter-type="type"]');
+    const applyFilterButton = document.getElementById('appliedfilter');
+    const clearFilterButton = document.getElementById('clearFilterButton');
+    const allProducts = document.querySelectorAll('.product-item'); // Selecciona todos los elementos de producto
+    const noProductMessage = document.getElementById('noProductMessage'); //mensaje de "no disponible"
 
-            if (filterToggleButton && filterPanel) {
-                filterToggleButton.addEventListener('click', function() {
-                    filterPanel.classList.toggle('d-none'); // Alternar la clase d-none de Bootstrap
-                    filterPanel.classList.toggle('d-md-block'); // Asegurarse de que d-md-block se mantenga
-                });
+    // Alternar la visibilidad del panel de filtro para pantallas pequeñas
+    if (filterToggleButton && filterPanel) {
+        filterToggleButton.addEventListener('click', function() {
+            filterPanel.classList.toggle('d-none');
+            filterPanel.classList.toggle('d-md-block'); // visible en pantallas medianas y grandes
+        });
+    }
+
+    // Función para aplicar filtros
+    function applyFilters() {
+        const selectedSizes = Array.from(sizeCheckboxes)
+                                .filter(checkbox => checkbox.checked)
+                                .map(checkbox => checkbox.value.toLowerCase());
+
+        const selectedTypes = Array.from(typeCheckboxes)
+                                .filter(checkbox => checkbox.checked)
+                                .map(checkbox => checkbox.value.toLowerCase());
+
+        let visibleCount = 0; //contador para saber cuantos productos quedan visibles
+                                
+            allProducts.forEach(product => {
+            const productSize = product.dataset.size ? product.dataset.size.toLowerCase() : '';
+            const productType = product.dataset.type ? product.dataset.type.toLowerCase() : '';
+
+            // Verifica si el producto coincide con los filtros seleccionados
+            // Si no se selecciona ningún filtro de talla, todos los productos de cualquier talla coinciden.
+            const matchesSize = selectedSizes.length === 0 || selectedSizes.includes(productSize);
+            // Si no se selecciona ningún filtro de tipo, todos los productos de cualquier tipo coinciden.
+            const matchesType = selectedTypes.length === 0 || selectedTypes.includes(productType);
+
+            if (matchesSize && matchesType) {
+                product.style.display = 'block'; // Muestra el producto
+                visibleCount++;
+            } else {
+                product.style.display = 'none'; // Oculta el producto
             }
-
-            // Opcional: Funcionalidad del botón Borrar Filtro
-            const clearFilterButton = document.getElementById('clearFilterButton');
-            if (clearFilterButton) {
-                clearFilterButton.addEventListener('click', function() {
-                    const checkboxes = filterPanel.querySelectorAll('input[type="checkbox"]');
-                    checkboxes.forEach(checkbox => {
-                        checkbox.checked = false;
-                    });
-                    console.log('Filtros borrados.');
-                });
-            }
-
         });
 
-//js de productos
+            //si no hay productos visibles, mostrar mensaje
+            if(noProductMessage){
+                if(visibleCount === 0){
+                    noProductMessage.style.display = 'block';
+                } else {
+                    noProductMessage.style.display = 'none';
+                }
+            }
+    }
+
+    // Escucha el evento click del botón "Aplicar"
+    if (applyFilterButton) {
+        applyFilterButton.addEventListener('click', applyFilters);
+    }
+
+    // Escucha el evento click del botón "Borrar"
+    if (clearFilterButton) {
+        clearFilterButton.addEventListener('click', function() {
+            // Desmarca todas las casillas de verificación
+            sizeCheckboxes.forEach(checkbox => checkbox.checked = false);
+            typeCheckboxes.forEach(checkbox => checkbox.checked = false);
+            // Muestra todos los productos
+            allProducts.forEach(product => product.style.display = 'block');
+            //oculta mensaje de "producto no disponible"
+            if (noProductMessage){
+                noProductMessage.style.display = 'none';
+            }
+        });
+    }
+
+    
+});
+
+//js de productos este no se deja pero no lo borres bc aún no se a donde se va a mover
 
 // --- 1. DATOS DE PRODUCTOS DE MUESTRA ---
-// definir de donde vienen los datos AAAAAA
+// definir de donde vienen los datos AAAAAA de la base de datos
 const allProducts = [
     {
         id: '1',

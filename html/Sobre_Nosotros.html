@@ -8,6 +8,7 @@
 
   <!-- * Include Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.4/components/authors/author-2/assets/css/author-2.css">
   <!-- ? Bootstrap Icons -->
   <link
     rel="stylesheet"
@@ -16,36 +17,47 @@
   <!-- * Include CSS -->
   <link rel="stylesheet" href="/css/Sobre_Nosotros.css">
 
-  <!-- *FOOTER -->
+  <!-- * FOOTER -->
   <link rel="stylesheet" href="/css/Navbar_footer.css">
+  <!-- * NAVBAR -->
+  <link rel="stylesheet" href="/css/styles.css">
+
+  <!-- *  Estilos personalizados -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- * FUENTE -->
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
 </head>
 <body>
 
 <!-- ! Section of Navbar-->
 <!-- Barra de navegación principal -->
+<!-- Barra de navegación principal -->
 <nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-  <div class="container-fluid d-flex align-items-center flex-wrap justify-content-between">
+  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
+    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
       <img
-        src="/assets/img/LOGO-BLANCO-SIN-FONDO.png"
+        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
         width="52" height="52"
         class="me-2"
       >
-      <span class="fs-4 d-none d-sm-inline">Seraphia</span>
+      <span class="fs-4">Seraphia</span>
     </a>
 
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
     <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
       <li class="nav-item">
-        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="#">Inicio</a>
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
       </li>
-      <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
     </ul>
 
     <!-- Sección 3: ACCIONES DERECHA -->
@@ -63,11 +75,15 @@
      </form>
 
       <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="#" class="btn btn-outline-light botonCarrito">
+      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
         <i class="bi bi-cart3"></i>
       </a>
 
-      <!-- 3.3) BOTÓN TOGGLE (tablet/móvil) -->
+      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
+       Iniciar sesión
+        </a>
+      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
       <button
         class="navbar-toggler d-lg-none botonToggle"
         type="button"
@@ -85,11 +101,12 @@
     <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="#">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
         <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
         <li class="nav-item px-3 my-3">
@@ -102,9 +119,9 @@
           </form>
         </li>
 
-        <!-- Botón de inicio de sesión al final -->
+        <!-- Botón de inicio de sesión version mobile -->
         <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="#">Iniciar sesión</a>
+          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
         </li>
       </ul>
     </div>
@@ -112,95 +129,198 @@
   </div>
 </nav>
 
+<!-- ! Mision and Section -->
 
-<div class="row justify-content-center">
-  <!-- ! Section of Mission-->
+    <section id="nosotros" class="scroll-section">
 
-      <div class="col-md-6 p-4 " style="background-color:#CDC1CB; min-height: 250px;">
-      <h2 class="text-center fs-1 fw-bold" >Misión</h2>
-      <p class="text-center mx-auto p-2" style="width: 200px;">Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que buscan explorar su autenticidad y personalidad.</p>
-    </div>
-    <!-- ! Section of Vision-->
-    <div class="col-md-6 p-4 " style="background-color:#EBA56A; " class="text-center">
-      <h2 class="text-center fs-1 fw-bold">Visión</h2>
-      <p class= " text-center mx-auto p-2" style="width: 200px;" >Demostrar que es posible crear autenticidad de forma sostenible y artesanal. Aspiramos a ser un referente de moda consciente en México.</p>
-    </div>
-  </div>
+        <div class="container">
+            <div class="row justify-content-center">
 
-</div>
+                <!-- ! Section of Mission-->
+                <div class="col-md-6 p-4 nosotros">
+                <div class="animada" style="background-color:#CDC1CB;" >
+                    <h3 class="text-center fs-1 fw-bold" >Misión</h3>
+                    <p class="text-center mx-auto p-2 parrafo-ligero w-100" style="max-width: 300px;">Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que buscan explorar su autenticidad y personalidad.</p> </p>
+                </div>
+                </div>
+
+                    <!-- ! Section of Vision-->
+                <div class="col-md-6 p-4 nosotros">
+                 <div class="animada" style="background-color:#EBA56A; ">
+                    <h3 class="text-center fs-1 fw-bold">Visión</h3>
+                    <p class="text-center mx-auto p-2 parrafo-ligero w-100" style="max-width: 300px;">Demostrar que es posible crear autenticidad de forma sostenible y artesanal. Aspiramos a ser un referente de moda consciente en México.</p>
+                </div>
+                </div>
+               
+
+            </div> </div>
+    </section>
 
 <br>
 <br>
+
 <!-- ! Section of Values-->
+
 <h1 class="text-center py-4" style="background-color:#8C7B73; color:#DBCCC1; " > Valores </h1>
 <br>
 <br>
 
 <!-- ! Images with hoover :) -->
 
-<div class="container" style="padding: top 150px;">
 
+<div class="container">
   <div class="row">
     <!-- * Enfoque Artesanal -->
-     <div class="col-12 col-sm-6 col-lg-3">
-         <div class="text-center mb-2">
-          <h3 class="fw-bold">Enfoque artesanal</h3>
+    <div class="col-12 col-sm-6 col-lg-3 d-flex">
+      <div class="valores-card w-100">
+        <div class="text-center mb-2 valores-titulo">
+          <h3 class="fw-bold m-0">Enfoque artesanal</h3>
         </div>
         <div class="col1 m-2">
           <div class="drptxt p-5 text-center text-light">
-
-          <p> Creamos con dedicación y atención a los detalles,
-            rescatando técnicas tradicionales. </p>
+            <p>Creamos con dedicación y atención a los detalles, rescatando técnicas tradicionales.</p>
           </div>
         </div>
-     </div>
-    <!-- * Originalidad -->
-     <div class="col-12 col-sm-6 col-lg-3">
-        <div class="text-center mb-2">
-          <h3 class="fw-bold">Originalidad </h3>
-        </div>
+      </div>
+    </div>
 
+    <!-- * Originalidad -->
+    <div class="col-12 col-sm-6 col-lg-3 d-flex">
+      <div class="valores-card w-100">
+        <div class="text-center mb-2 valores-titulo">
+          <h3 class="fw-bold m-0">Originalidad</h3>
+        </div>
         <div class="col2 m-2">
           <div class="drptxt p-5 text-center text-light">
-          <p> Valoramos lo irrepetible y lo que refleja la verdadera identidad de
-las personas. </p>
+            <p>Valoramos lo irrepetible y lo que refleja la verdadera identidad de las personas.</p>
           </div>
         </div>
-     </div>
-  <!-- * Sostenibilidad  -->
-     <div class="col-12 col-sm-6 col-lg-3">
+      </div>
+    </div>
 
-        <div class="text-center mb-2">
-          <h3 class="fw-bold">Sostenibilidad  </h3>
+    <!-- * Sostenibilidad -->
+    <div class="col-12 col-sm-6 col-lg-3 d-flex">
+      <div class="valores-card w-100">
+        <div class="text-center mb-2 valores-titulo">
+          <h3 class="fw-bold m-0">Sostenibilidad</h3>
         </div>
-
         <div class="col3 m-2">
           <div class="drptxt p-5 text-center text-light">
-          <p> Nos comprometemos a reducir el desperdicio textil rescatando
-materiales existentes. </p>
+            <p>Nos comprometemos a reducir el desperdicio textil rescatando materiales existentes.</p>
           </div>
         </div>
-     </div>
-   <!-- * Conciencia -->
-     <div class="col-12 col-sm-6 col-lg-3">
-        <div class="text-center mb-2">
-          <h3 class="fw-bold">Conciencia </h3>
+      </div>
+    </div>
+
+    <!-- * Conciencia -->
+    <div class="col-12 col-sm-6 col-lg-3 d-flex">
+      <div class="valores-card w-100">
+        <div class="text-center mb-2 valores-titulo">
+          <h3 class="fw-bold m-0">Conciencia</h3>
         </div>
         <div class="col4 m-2">
           <div class="drptxt p-5 text-center text-light">
-          <p> Creamos con responsabilidad ambiental y fomentamos un consumo responsable. </p>
+            <p>Creamos con responsabilidad ambiental y fomentamos un consumo responsable.</p>
           </div>
         </div>
-     </div>
-
+      </div>
+    </div>
   </div>
-
-
 </div>
+
+<br><br>
+
+<!-- !  Diseñadora -->
+<h1 class="text-center py-4" style="background-color:#8C7B73; color:#DBCCC1;">Diseñadora </h1>
+<br><br>
+
+
+<!-- Author 2 - Bootstrap Brain Component -->
+<section class="bsb-author-2 py-3 bg-light">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-12 col-lg-10 col-xl-8 col-xxl-7">
+        <div class="card border-light-subtle p-4">
+          <div class="row gy-3 align-items-center">
+            <div class="col-md-4">
+              <a href="#!" class="bsb-hover-image d-block rounded overflow-hidden">
+                <img class="img-fluid author-avatar bsb-scale bsb-hover-scale-up" loading="Diseñadora" src=/assets/images/404/media/DSC_0041.JPG alt="Wendy">
+              </a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h6 class="card-subtitle mb-2 text-body-secondary"> La creadora de la marca </h6>
+                <h3 class="card-title mb-2">
+                  <a class="card-link link-dark text-decoration-none" href="#!">Wuendy Tarache</a>
+                </h3>
+                <p class="card-text mb-3">Wuendy Tarache es la diseñadora y artista textil detrás de Seraphia, con 35 años de experiencia.
+                Todo es hecho a mano éticamente por ella.</p>
+
+                <p>
+                        En un contexto global
+                        donde se producen 100 mil millones de prendas al año y se desechan más de 92
+                        millones de toneladas de textiles (de los cuales solo se recicla el 13%), Seraphia
+                        propone un modelo de moda ético, artístico y sustentable.
+      
+                </p>
+
+                <ul class="bsb-social-media nav m-0">
+                  <li class="nav-item">
+                    <a href="https://web.facebook.com/Seraphiamexico/?_rdc=1&_rdr#" class="nav-link link-dark" href="#!">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16">
+                        <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://www.threads.com/@seraphiamx"  class="nav-link link-dark" href="#!">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-twitter" viewBox="0 0 16 16">
+                        <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="https://www.linkedin.com/in/wuendy-tarache-29bb5556/" class="nav-link link-dark" href="#!">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16">
+                        <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<br><br>
+
+<!-- !  Section of Social Media -->
+<h1 class="text-center py-4" style="background-color:#8C7B73; color:#DBCCC1;">Redes Sociales</h1>
+<br><br>
+
+<!-- Remove col-6 and col-md-12 to avoid layout conflicts -->
+<div class="flex_xllogo">
+  <!-- ? Instagram -->
+  <a href="https://www.instagram.com/seraphiamx/" target="_blank">
+    <img src="/assets/images/Seraphia_img/logos/instagram.png" alt="Instagram" class="xl_logo">
+  </a>
+  <!-- ? Facebook -->
+  <a href="https://www.facebook.com/Seraphiamexico/" target="_blank">
+    <img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="xl_logo">
+  </a>
+</div>
+
+
+<br><br>
 
 <!-- ! FOOTER -->
 
- <footer>
+
+<footer>
         <div class="row align">
 
             <div class="col-12 col-md-2 col-lg-2 space">
@@ -223,7 +343,7 @@ materiales existentes. </p>
                     </div>
                 </div>
              </div>
-
+            
                 <!-- Area de Menu secundario -->
                 <div class="col-12 col-md-4 col-lg-6">
                 <div class="row">
@@ -233,9 +353,9 @@ materiales existentes. </p>
                     <div class="col-12 col-lg-6 ">
                     <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
                     <ul class="footer-links">
-                        <li><a href="#">Nosotros</a></li>
-                        <li><a href="#">Galería</a></li>
-                        <li><a href="Contacto.html">Contacto</a></li>
+                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+                        <li><a href="/html/Galeria.html">Galería</a></li>
+                        <li><a href="/html/Contacto.html">Contacto</a></li>
                         <li><a href="#">FAQ’s</a></li>
                     </ul>
                     </div>
@@ -255,9 +375,6 @@ materiales existentes. </p>
                 </div>
 
 
-
-
-
             <div class="col-12 col-md-6 col-lg-4">
                 <div class="row  ">
                 <form class="flex_new">
@@ -274,9 +391,12 @@ materiales existentes. </p>
 
 
     </footer>
+
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js" integrity="sha384-7qAoOXltbVP82dhxHAUje59V5r2YsVfBafyUDxEdApLPmcdhBPg1DKg1ERo0BZlK" crossorigin="anonymous"></script>
     <script src="/javascript/Seraphia/navbar_footer.js"></script>
+    <script src="/javascript/404_acerca/404_info_java.js"></script>
+    
 
 </body>
 </html>
