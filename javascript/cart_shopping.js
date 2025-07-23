@@ -91,3 +91,20 @@ function deleteItem(button) {
         button.closest("div.well").remove(); // Example for removing a "well"
   }
 }
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btnConfirmar = document.getElementById('btnConfirmar');
+
+  if (btnConfirmar) {
+    btnConfirmar.addEventListener('click', function () {
+      // Agrega animación
+      btnConfirmar.classList.add('boton-pulse');
+
+      // Espera a que termine la animación y luego redirige
+      setTimeout(() => {
+        window.location.href = '/html/Registro_de_Pago.html';
+      }, 600);
+    });
+  }
+});
