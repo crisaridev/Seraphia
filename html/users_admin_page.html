@@ -84,7 +84,6 @@
     <button class="toggle-btn" id="toggle-btn"><i class='bx  bx-caret-left' id="icon"></i></button>
     <!--! Fin de sidebar -->
 
-
     <!--
   * =====================================================
   * -----------------------Navbar-----------------------
@@ -104,12 +103,6 @@
         </li>
       </ul>
       <!--! Fin de navbar -->
-
-            <!--
-  * =====================================================
-  * ----------------Contenido principal------------------
-  * =====================================================    
--->
 
       <!--? Contenedor para cards -->
       <div class="product_label m-lg-4 p-lg-4 m-md-2 p-md-3 m-2 p-2">
@@ -131,23 +124,11 @@
           <!--? Filtros y busqueda -->
 
           <div class=" justify-content-lg-end justify-content-center filters d-flex">
-            
-              <div class="dropdown filter_btn justify-content-center d-flex py-3 me-1 me-lg-3">
-              <button class="dropdown-toggle filter px-lg-3 px-1  filter_btn py-0" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Perfil
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Administrador</a></li>
-                <li><a class="dropdown-item" href="#">Cliente</a></li>
-              </ul>
-            </div>
-
             <div class="search py-3 me-1 me-lg-3 filter_btn">
-              <form class="d-flex filter_btn justify-content-center search_bar d-none d-sm-block" role="search">
-                <input class="ms-2 me-2 search_bar_btn search_bar_focus" type="search" placeholder="Buscar" id="search-bar" onkeyup="searchItems()"
+              <form class="d-flex filter_btn_search justify-content-center search_bar d-none d-sm-block" id="searchForm" role="search">
+                <input class="ms-2 me-2 search_bar_btn search_bar_focus" type="search" placeholder="Buscar" id="search-bar"
                   aria-label="Search" />
-                <button class="search_bar_btn px-2 px-lg-3 opacity-0" type="submit"><i class='bx  bx-search-big'></i></button>
+                <button class="search_bar_btn px-2 px-lg-3" type="submit" onclick="searchItems()"><i class='bx  bx-search-big'></i></button>
               </form>
             </div>
             
@@ -159,31 +140,33 @@
             <thead class="fs-4">
               <tr>
                 <th scope="col" id="checkAllCheckboxContainer"><input type="checkbox" class="checkbox align-items-center" id="checkAllCheckbox"></th>
-                <th scope="col" class=""><i class='bx bx-image-landscape'></i></th>
-                <th scope="col" class="text-start">Nombre</th>
-                <th scope="col" class="d-none d-sm-table-cell">Correo Electronico</th>
-                <th scope="col" class="button_hide">Perfil</th>
+                <th scope="col" class="ps-lg-4"><i class='bx bx-image-landscape'></i></th>
+                <th scope="col" class="text-start">Cliente</th>
+                <th scope="col" class="d-none d-sm-table-cell text-nowrap">Correo electronico</th>
+                <th scope="col" class="d-none d-sm-table-cell">Perfil</th>
               </tr>
             </thead>
             <tbody class="fw-bold product_label" id="list-items">
             
 
-              <tr>
+              <tr class="hide-filter">
                 <th scope="col"><input type="checkbox" class="checkbox"></th>
 
-                <td class="product-img"><img src="../assets/img/placeholder.jpg" alt=""></td>
-                <td class="product_label text-start">Cliente anonimo
+                <td class="product-img"><img src="../assets/images/Products/1.jpg" alt=""></td>
+                <td class="product_label text-start">Vestido amarillo con bordado de tal
                   <div class="stock_price_mobile d-flex d-sm-none mt-2">
-                    <p class="me-3">clienteanonoimo@gmail.com</p>
+                    <p class="me-3">Disponible</p>
                     <p>•</p>
-                    <p class="mx-3">Cliente</p>
+                    <p class="mx-3">$400</p>
                   </div>
                 </td>
-              
-                <td class="d-none d-sm-table-cell">clientemisterioso@gmail.com</td>
-                <td class="button_hide">Cliente</td>
+                <td class="button_hide fw-bolder"><a href="#"
+                    class="text-primary-emphasis d-none d-lg-table-cell">Editar</a></td>
+                <td class="d-none d-sm-table-cell">Disponible</td>
+                <td class="d-none d-sm-table-cell">$400</td>
+                <td class="button_hide">06/07/2025</td>
               </tr>
-              
+
             </tbody>
           </table>
 
@@ -192,17 +175,20 @@
         </div>
       </div>
 
-
+  <!--! Fin de contenido principal -->
 
 
 
     </div>
   </main>
-
-
+  <script src="/javascript/Admin/admin_users_userController.js"></script>
+  <script src="/javascript/Admin/admin_users_page.js"></script>
+  <script src="/javascript/Admin/admin_general_functions.js"></script>
+  <!-- <script src="/javascript/Admin/admin_products_page.js"></script> -->
   <script src="../javascript/Admin/admin_sidebar_navbar_js.js"></script>
   <!-- <script src="../javascript/Admin/admin_page_productController.js"></script> -->
-  <script src="../javascript/Admin/admin_page_items.js"></script>
+  <!-- <script src="../javascript/Admin/admin_page_items.js"></script> -->
+
 
   <!-- Bootstrap -->
   <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

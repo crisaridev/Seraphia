@@ -96,7 +96,7 @@
           <a class="nav_notification" href="#"><i id="notification_icon" class='bx  bx-bell'></i></a>
         </li>
         <li class="nav-item nav_button nav_button_hide mx-2">
-          <a class="nav-link active nav_home navbar_element" aria-current="page" href="/indexPrincipal.html">Ir a
+          <a class="nav-link active nav_home navbar_element" aria-current="page" href="/index.html">Ir a
             Seraphia </a>
         </li>
         <li class="nav-item nav_button nav_button_hide mx-2">
@@ -137,33 +137,36 @@
             </span>
             
               <div class="dropdown filter_btn justify-content-center d-flex py-3 me-1 me-lg-3">
-              <button class="dropdown-toggle filter px-lg-3 px-1  filter_btn py-0" type="button" data-bs-toggle="dropdown"
+              <button class="dropdown-toggle filter px-lg-3 px-1  filter_btn py-0 size_filter" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 Talla
               </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">S</a></li>
-                <li><a class="dropdown-item" href="#">M</a></li>
-                <li><a class="dropdown-item" href="#">L</a></li>
+              <ul class="dropdown-menu dropdown_list text-start">
+                <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#" onclick="setSizeFilter('Talla')">Todas</a></li>
+                <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#" onclick="setSizeFilter('S')">S</a></li>
+                <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#" onclick="setSizeFilter('M')">M</a></li>
+                <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#" onclick="setSizeFilter('L')">L</a></li>
+
               </ul>
             </div>
 
             <div class="dropdown dropdown_btn filter_btn justify-content-center d-flex py-3 me-1 me-lg-3">
-              <button class="dropdown-toggle filter_btn px-2 px-lg-3" type="button" data-bs-toggle="dropdown"
+              <button class="dropdown-toggle filter_btn px-2 px-lg-3 type_filter" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
                 Tipo de prenda
               </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Camisa</a></li>
-                <li><a class="dropdown-item" href="#">Blusa</a></li>
-                <li><a class="dropdown-item" href="#">Vestido</a></li>
+              <ul class="dropdown-menu dropdown_list">
+                <li><a class="dropdown-item fw-bolder filter-buttons-type filter-buttons" href="#" onclick="setTypeFilter('Tipo de prenda')">Todos</a></li>
+                <li><a class="dropdown-item fw-bolder filter-buttons-type filter-buttons" href="#" onclick="setTypeFilter('Camisa')">Camisa</a></li>
+                <li><a class="dropdown-item fw-bolder filter-buttons-type filter-buttons" href="#" onclick="setTypeFilter('Blusa')">Blusa</a></li>
+                <li><a class="dropdown-item fw-bolder filter-buttons-type filter-buttons" href="#" onclick="setTypeFilter('Vestido')">Vestido</a></li>
               </ul>
             </div>
             <div class="search py-3 me-1 me-lg-3 filter_btn">
-              <form class="d-flex filter_btn justify-content-center search_bar d-none d-sm-block" role="search">
-                <input class="ms-2 me-2 search_bar_btn search_bar_focus" type="search" placeholder="Buscar" id="search-bar" onkeyup="searchItems()"
+              <form class="d-flex filter_btn_search justify-content-center search_bar d-none d-sm-block" id="searchForm" role="search">
+                <input class="ms-2 me-2 search_bar_btn search_bar_focus" type="search" placeholder="Buscar" id="search-bar"
                   aria-label="Search" />
-                <button class="search_bar_btn px-2 px-lg-3 opacity-0" type="submit"><i class='bx  bx-search-big'></i></button>
+                <button class="search_bar_btn px-2 px-lg-3" type="submit" onclick="searchItems()"><i class='bx  bx-search-big'></i></button>
               </form>
             </div>
             
@@ -186,7 +189,7 @@
             <tbody class="fw-bold product_label" id="list-items">
             
 
-              <!-- <tr>
+              <tr class="hide-filter">
                 <th scope="col"><input type="checkbox" class="checkbox"></th>
 
                 <td class="product-img"><img src="../assets/images/Products/1.jpg" alt=""></td>
@@ -202,7 +205,7 @@
                 <td class="d-none d-sm-table-cell">Disponible</td>
                 <td class="d-none d-sm-table-cell">$400</td>
                 <td class="button_hide">06/07/2025</td>
-              </tr> -->
+              </tr>
 
             </tbody>
           </table>
@@ -218,7 +221,8 @@
   </main>
 
 
-
+  <script src="/javascript/Admin/admin_general_functions.js"></script>
+  <script src="/javascript/Admin/admin_products_page.js"></script>
   <script src="../javascript/Admin/admin_sidebar_navbar_js.js"></script>
   <script src="../javascript/Admin/admin_page_productController.js"></script>
   <script src="../javascript/Admin/admin_page_items.js"></script>
