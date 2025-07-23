@@ -13,7 +13,7 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
   >
   <!-- * Include CSS -->
-  <link rel="stylesheet" href="cart_shopping.css">
+  <link rel="stylesheet" href="/css/cart_shopping.css">
 
     <!-- * FOOTER -->
   <link rel="stylesheet" href="/css/Navbar_footer.css">
@@ -139,76 +139,70 @@
           <h3 class="fw-normal mb-0">Mi carrito</h3>
         </div>
 
-        <!-- ? PRODUCTO 1 -->
-        <div class="card rounded-3 mb-4">
-          <div class="card-body p-4">
-            <div class="row d-flex justify-content-between align-items-center">
+    <!-- ? PRODUCTO 1 -->
+    <div class="card rounded-3 mb-4">
+      <div class="card-body p-4">
+        <div class="row d-flex justify-content-between align-items-center">
 
-              <div class="col-md-2 col-lg-2 col-xl-2">
-                <img
-                  src="/assets/img/blusa-amarilla-con-bordado-fondo.jpg"
-                  class="img-fluid rounded-3 cart-product-image"
-                  alt="blusa-amarilla-con-bordado-fondo">
-              </div>
+          <!-- Imagen del producto -->
+          <div class="col-md-2 col-lg-2 col-xl-2">
+            <img
+              src="/assets/img/blusa-amarilla-con-bordado-fondo.jpg"
+              class="img-fluid rounded-3 cart-product-image"
+              alt="blusa-amarilla-con-bordado-fondo">
+          </div>
 
-              <div class="col-md-3 col-lg-3 col-xl-3">
-                <p class="lead fw-normal mb-2">Blusa Amarilla con Bordado Floral</p>
-                <p><span class="text-muted">Talla: </span>S</p>
-              </div>
-
-              <div class="col-md-2 col-lg-2 col-xl-2">
-                <h5 class="mb-0 precio-producto">$400.00</h5>
-              </div>
-
-              <div class="col-md-2 col-lg-2 col-xl-2 text-end">
-                <a href="#!" class="text-primary me-3 btn-modificar">Modificar</a>
-                <a href="#!" class="text-danger btn-eliminar">Eliminar</a>
-              </div>
-
+          <!-- Nombre del producto + Precio alineado -->
+          <div class="col-md-5 col-lg-5 col-xl-5">
+            <div class="d-flex align-items-baseline justify-content-between">
+              <p class="lead fw-normal mb-2 mb-md-0">Blusa Amarilla con Bordado Floral</p>
+              <h5 class="mb-0 precio-producto ms-3">$400.00</h5>
             </div>
+            <p><span class="text-muted">Talla: </span>S</p>
+          </div>
+
+          <!-- Botones de acción -->
+          <div class="col-md-3 col-lg-3 col-xl-3 text-end">
+            <a href="#!" class="text-primary me-3 btn-modificar">Modificar</a>
+            <button class="btn btn-danger btn-sm btn-eliminar" onclick="deleteItem(this)" data-item-id="{{ item.id }}">Eliminar</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+      <!-- ? PRODUCTO 2 -->
+      <div class="card rounded-3 mb-4">
+        <div class="card-body p-4">
+          <div class="row d-flex justify-content-between align-items-center">
+
+            <!-- Imagen del producto -->
+            <div class="col-md-2 col-lg-2 col-xl-2">
+              <img
+                src="/assets/img/Blusa Azul con Bordado Huipil-detalle.jpg"
+                class="img-fluid rounded-3 cart-product-image"
+                alt="Blusa Azul con Bordado Huipil-detalle">
+            </div>
+
+            <!-- Nombre del producto + Precio alineado -->
+            <div class="col-md-5 col-lg-5 col-xl-5">
+              <div class="d-flex align-items-baseline justify-content-between">
+                <p class="lead fw-normal mb-2 mb-md-0">Blusa Azul con Bordado Huipil</p>
+                <h5 class="mb-0 precio-producto ms-3">$450.00</h5>
+              </div>
+              <p><span class="text-muted">Talla: </span>M</p>
+            </div>
+
+            <!-- Botones de acción -->
+            <div class="col-md-3 col-lg-3 col-xl-3 text-end">
+              <a href="#!" class="text-primary me-3 btn-modificar">Modificar</a>
+              <button class="btn btn-danger btn-sm btn-eliminar" onclick="deleteItem(this)" data-item-id="{{ item.id }}">Eliminar</button>
+            </div>
+
           </div>
         </div>
+      </div>
 
-        <!-- ? PRODUCTO 2 -->
-        <div class="card rounded-3 mb-4">
-          <div class="card-body p-4">
-            <div class="row d-flex justify-content-between align-items-center">
-
-              <div class="col-md-2 col-lg-2 col-xl-2">
-                <img
-                  src="/assets/img/Blusa Azul con Bordado Huipil-detalle.jpg"
-                  class="img-fluid rounded-3 cart-product-image"
-                  alt="Blusa Azul con Bordado Huipil-detalle">
-              </div>
-
-              <div class="col-md-3 col-lg-3 col-xl-3">
-                <p class="lead fw-normal mb-2">Blusa Azul con Bordado Huipil</p>
-                <p><span class="text-muted">Talla: </span>M</p>
-              </div>
-
-              <div class="col-md-2 col-lg-2 col-xl-2">
-                <h5 class="mb-0 precio-producto">$450.00</h5>
-              </div>
-
-              <div class="col-md-2 col-lg-2 col-xl-2 text-end">
-                <a href="#!" class="text-primary me-3 btn-modificar">Modificar</a>
-                <a href="#!" class="text-danger btn-eliminar">Eliminar</a>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <!-- ? CÓDIGO DE DESCUENTO -->
-        <div class="card mb-4">
-          <div class="card-body p-4 d-flex flex-row">
-            <div class="form-outline flex-fill">
-              <input type="text" id="form1" class="form-control form-control-lg" />
-              <label class="form-label" for="form1">Código de descuento</label>
-            </div>
-            <button type="button" class="btn btn-outline-warning btn-lg ms-3 btn-aplicar-descuento">Aplicar</button>
-          </div>
-        </div>
 
         <!-- ? TOTAL DEL PRODUCTO -->
         <div class="card mb-5">
