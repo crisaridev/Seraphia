@@ -47,4 +47,38 @@ document.addEventListener('DOMContentLoaded', function () {
             }
         });
     });
-});
+
+
+
+const isLoggedIn = localStorage.getItem("loggedIn") === "true";
+
+  const loginBtnDesktop = document.getElementById("loginBtnDesktop");
+  const loginBtnMobile = document.getElementById("loginBtnMobile");
+
+  if (isLoggedIn) {
+    const userPageURL = "/html/datospersonales.html";
+
+    if (loginBtnDesktop) {
+      loginBtnDesktop.textContent = "Mi cuenta";
+      loginBtnDesktop.href = userPageURL;
+    }
+
+    if (loginBtnMobile) {
+      loginBtnMobile.textContent = "Mi cuenta";
+      loginBtnMobile.href = userPageURL;
+    }
+
+    const logoutBtn = document.createElement("button");
+    logoutBtn.textContent = "Cerrar sesión";
+    logoutBtn.classList.add("btn", "btn-outline-light", "ms-2", "d-none", "d-lg-inline-block");
+    logoutBtn.onclick = () => {
+      localStorage.removeItem("loggedIn");
+      location.reload();
+    };
+
+    const navbarRight = document.querySelector(".d-flex.align-items-center.gap-2.ms-auto");
+    if (navbarRight) {
+      navbarRight.appendChild(logoutBtn);
+    }
+      }
+    });
