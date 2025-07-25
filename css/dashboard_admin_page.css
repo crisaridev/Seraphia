@@ -56,14 +56,14 @@
   min-width: 330px;
   width: 93%;
   min-height: 300px;
-  height: 50vw;
-  max-height: 500px;
-  background-color: #EBEBEB;
-  border-radius: 5px;
+  height: 35vw;
+  /* max-height: 500px; */
+  background-color: #ebebeb;
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  border: 3px solid #1a1a1d56;
+  /* border: 5px solid #1a1a1d; */
 }
 
 .chart canvas {
@@ -107,6 +107,10 @@
 
   .statistics_cards .statistics_cards_general p{
     font-size: 15px;
+  }
+  
+  .chart {
+    height: 50vw;
   }
 }
 
@@ -182,6 +186,10 @@
   .statistics_cards .statistics_cards_general p{
     font-size: 15px;
   }
+
+  .chart {
+  height: 60vw;
+  }
 }
 
 @media (max-width: 840px) {
@@ -231,6 +239,10 @@
 
   .statistics_cards .statistics_cards_general p{
     font-size: 11px;
+  }
+
+  .chart {
+  height: 80vw;
   }
 }
 

@@ -32,11 +32,6 @@ body {
   font-weight: 600;
 }
 
-/* Línea divisoria entre cards de producto */
-.product_label .product_hr {
-  width: 97%;
-}
-
 /* Contenedor de la lista de cards de producto */
 .product_list {
   min-height: 70vh;
@@ -183,7 +178,7 @@ body {
    =====================================================
 **/
 
-@media (max-width: 1090px) {
+@media (max-width: 1400px) {
   .product_list .product-img img {
     width: 45px;
     height: auto;

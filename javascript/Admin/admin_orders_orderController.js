@@ -14,7 +14,7 @@
     productName,
     createdAt,
   }
-    this.items.push();
+    this.items.push(order);
   }
 
 loadItemsFromLocalStorage() {

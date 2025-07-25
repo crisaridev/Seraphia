@@ -63,7 +63,6 @@ if (document.readyState === 'loading') {
   setUpDeleteTextOnCheckbox();
 }
 
-// Mostrar texto "Borrar" al seleccionar al menos un checkbox
 function setUpDeleteTextOnCheckbox() {
   // Función para mostrar/ocultar el texto
   function toggleDeleteText() {
@@ -139,9 +138,8 @@ function handleDeleteCheckedRows() {
       row.remove();
     }
   });
-  // Actualizar el estado del botón "Borrar"
+  // Actualizar el estado de borrar
   setTimeout(() => {
-    // Esperar a que el DOM se actualice antes de volver a chequear
     const event = new Event('change');
     document.dispatchEvent(event);
   }, 50);

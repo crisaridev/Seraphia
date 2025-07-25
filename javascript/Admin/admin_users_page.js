@@ -4,9 +4,6 @@ const usersController = new userController(0);
 function addItemCard(item) {
   const itemHTML =
     '<tr class="selected_table product">' +
-    '<th scope="col">' +
-    '<input type="checkbox" class="checkbox">' +
-    "</th>" +
     '<td class="product-img">' +
     '<img src="' +
     item.img +
