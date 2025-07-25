@@ -206,3 +206,18 @@ footer a {
     padding-inline: 25px;
   }
 }
+
+/* Mostrar overlay siempre en móvil */
+@media (max-width: 767px) {
+  .overlay {
+    transform: translateY(0) !important;
+  }
+}
+@media (max-width: 767px) {
+  .overlay h5 {
+    font-size: 1rem;
+  }
+  .overlay p {
+    font-size: 0.85rem;
+  }
+}
