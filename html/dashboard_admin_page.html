@@ -18,7 +18,6 @@
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,600,0,0&icon_names=home" />
   <!-- CSS del sidebar y navbar -->
-  <link rel="stylesheet" href="../css/table_admin_pages.css">
   <link rel="stylesheet" href="../css/admin_sidebar_navbar_css.css">
   <link rel="stylesheet" href="../css/dashboard_admin_page.css">
 </head>
@@ -39,43 +38,35 @@
           <img src="../assets/images/Seraphia_img/logos/LOGO-CIRCULO.png"
               alt="Seraphia logo" class="seraphia_logo">
         </li>
-          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon active_page">
-            <a class="d-flex text-decoration-none" href="/html/dashboard_admin_page.html">
+          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon active_page" id="dashboard-sidebar">
+            <a class="d-flex text-decoration-none">
             <i class='bx  bx-dashboard'></i>
             <div class="sidebar_hide">
               <p class="dashboard_label my-0">Escritorio</p>
             </div>
             </a>
           </li>
-          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon ">
-            <a class="d-flex text-decoration-none" href="/html/products_admin_page.html">
+          <li id="products-sidebar" class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
+            <a class="d-flex text-decoration-none">
             <i class='bx bx-dress'></i>
             <div class="sidebar_hide">
               <p class="dashboard_label my-0">Productos</p>
             </div>
             </a>
           </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
-          <a class="d-flex text-decoration-none" href="/html/orders_admin_page.html">
+        <li id="orders-sidebar" class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
+          <a class="d-flex text-decoration-none">
           <i class='bx  bx-list-ul-square'></i>
           <div class="sidebar_hide p-0">
             <p class="dashboard_label my-0">Pedidos</p>
           </div>
           </a>
         </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
-          <a class="d-flex text-decoration-none" href="/html/users_admin_page.html">
+        <li id="users-sidebar" class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
+          <a class="d-flex text-decoration-none">
           <i class='bx  bx-group'></i>
           <div class="sidebar_hide p-0">
             <p class="dashboard_label my-0">Usuarios</p>
-          </div>
-          </a>
-        </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon sidebar_icon_logout">
-          <a class="d-flex text-decoration-none" href="#">
-          <i class='bx  bx-arrow-out-left-square-half'></i>
-          <div class="sidebar_hide p-0 sidebar_label_logout">
-            <p class="dashboard_label my-0">Cerrar Sesion</p>
           </div>
           </a>
         </li>
@@ -93,9 +84,6 @@
 -->
     <div class="main-content">
       <ul class="nav justify-content-end navbar pe-4">
-        <li class="nav-item nav_button nav_notification mx-3">
-          <a class="nav_notification" href="#"><i id="notification_icon" class='bx  bx-bell'></i></a>
-        </li>
         <li class="nav-item nav_button nav_button_hide mx-2">
           <a class="nav-link active nav_home navbar_element" aria-current="page" href="/indexPrincipal.html">Ir a
             Seraphia </a>
@@ -106,56 +94,69 @@
       </ul>
       <!--! Fin de navbar -->
 
-    <!--
-  * =====================================================
-  * -----------------Contenido principal-----------------
-  * =====================================================    
+      <!--
+  ? =====================================================
+  ? -----------------Contenido principal-----------------
+  ? =====================================================    
 -->
 
-        <div class="dashboard_content mx-3">
-          <div class="statistics_label">
-            <h2 class="mx-5 my-4">Ultimo mes</h2>
-
-            <div class="cards_row row mx-3">
-            <div class="statistics_card_dark col mx-5">
-              <div class="card_name_icon row d-flex">
-                <h5 class="col justify-content-center fw-medium">Ventas</h5>
-                <i class='col text-end bx  bx-chart-spline'  ></i>
+      <div class="col container-fluid">
+        <h2 class="fw-bold m-2 m-md-4">Estadisticas</h2>
+        <div class="row row-cols-2 justify-content-center gap-xl-4 gap-3 statistics_cards mx-xxl-5" id="cardsContainer">
+          <div class="pb-lg-5 pb-3 card sales_card col-xxl statistics_cards_general p-0 col" style="width: 20rem;">
+            <div class="card-body">
+              <div class="row">
+                <h5 class="col card-title fw-bold ">Ventas</h5>
+                <i class='col text-end bx  bx-chart-spline'></i>
               </div>
-              <h3 class="fw-bolder">$6970</h4>
-              <p class="">+7% desde el ultimo mes</p>
-            </div>
-
-            <div class="statistics_card col mx-5 align-items-center">
-              <div class="card_name_icon row">
-                <h5 class="col">Visitantes</h5>
-                <i class='col text-end bx  bx-group'></i>
-              </div>
-              <h3 class="fw-bolder">$6970</h3>
-              <p>+7% desde el ultimo mes</p>
-            </div>       
-
-            <div class="statistics_card col mx-5">
-              <div class="card_name_icon row">
-               <h5 class="col">Pedidos</h5>
-                <i class='col text-end card_icon bx  bx-list-ul-square'></i>
-              </div>
-              <h3 class="fw-bolder">$6970</h3>
-              <p>+7% desde el ultimo mes</p>
-            </div>
-
-            <div class="statistics_card col mx-5">
-              <div class="card_name_icon row">
-              <h5 class="col card_title">Pedidos pendientes</h5>
-                <i class='col-3 text-end card_icon bx  bx-checklist'  ></i> 
-              </div>
-              <h3 class="fw-bolder">$6970</h3>
-              <p>+7% desde el ultimo mes</p>
-            </div>
+              <h2 class="col card-title fw-bolder">$6970</h2>
+              <p class="card-text fw-medium"></p>
             </div>
           </div>
 
-          <!-- <div class="statistics_graph mt-5 mx-5 p-5">
+          <div class="pb-lg-5 pb-3 card col-xxl statistics_cards_general p-0" style="width: 20rem;">
+            <div class="card-body ">
+              <div class="row">
+                <h5 class="col card-title fw-bold">Usuarios</h5>
+                <i class='col text-end bx  bx-group'></i>
+
+              </div>
+              <h2 class="col card-title fw-bolder">354</h2>
+              <p class="card-text fw-medium"></p>
+            </div>
+          </div>
+
+          <div class="pb-lg-5 pb-3 col card col-xxl statistics_cards_general p-0 col" style="width: 20rem;">
+            <div class="card-body ">
+              <div class="row">
+                <h5 class="col card-title fw-bold">Pedidos</h5>
+                <i class='col text-end card_icon bx  bx-list-ul-square'></i>
+
+              </div>
+              <h2 class="col card-title fw-bolder">34</h2>
+              <p class="card-text fw-medium"></p>
+            </div>
+          </div>
+          
+          <div class="pb-lg-5 pb-3 col card col-xxl statistics_cards_general p-0 col" style="width: 20rem;">
+            <div class="card-body ">
+              <div class="row">
+                <h5 class="col card-title fw-bold">Pendientes</h5>
+                <i class='col text-end card_icon bx  bx-checklist'></i>
+
+              </div>
+              <h2 class="col card-title fw-bolder">9</h2>
+              <p class="card-text fw-medium"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- <div class="statistics_graph mt-5 mx-5 p-5">
             <div class="graph_title d-flex row">
             <h3 class="col">Estadisticas</h3>
             <div class=" col-3 dropdown filter_btn justify-content-center d-flex py-3 me-1 me-lg-3">
@@ -170,12 +171,67 @@
               </ul>
             </div>
             </div> -->
+      <div class="col chart mt-5 mx-5 p-md-5 px-2 py-5 mx-auto">
+        <div class=" title-dropdown row">
+          <h2 class=" col fw-bolder ">Ventas</h2>
+          <div class="col dropdown d-flex justify-content-end ">
+            <!-- <button class="fw-bolder dropdown-toggle px-lg-3 px-1 justify-content-end" type="button"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Una semana
+            </button> -->
+            <!-- <ul class="dropdown-menu dropdown_list text-start">
+              <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#"
+                  onclick="setSizeFilter('Talla')">Todas</a></li>
+              <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#"
+                  onclick="setSizeFilter('S')">S</a></li>
+              <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#"
+                  onclick="setSizeFilter('M')">M</a></li>
+              <li><a class="dropdown-item fw-bolder filter-buttons-size filter-buttons" href="#"
+                  onclick="setSizeFilter('L')">L</a></li> -->
 
+            <!-- </ul> -->
           </div>
+          </div>
+              <canvas class="" id="myChart"></canvas>
+</div>
+
+
 
         </div>
 
 
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+      <script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['Lunes', 'Martes', 'Miercoles', 'Jueves', 'Viernes', 'Sabado', 'Domingo'],
+      datasets: [{
+        label: '# de Ventas',
+        data: [3000, 3500, 4000, 6000, 6900, 3900, 5600],
+        backgroundColor: ['rgb(26, 26, 29)', 'rgb(47, 47, 55)'],
+        borderWidth: 2,
+    
+      }]
+    },
+    options: { responsive: true,
+    maintainAspectRatio: false,
+    aspectRatio: 4,
+      scales: {
+        y: {
+          beginAtZero: true
+        },
+        
+
+      }
+    }
+  });
+
+</script>
 
 
 
@@ -184,8 +240,8 @@
 
 
   <script src="../javascript/Admin/admin_sidebar_navbar_js.js"></script>
-  <script src="../javascript/Admin/admin_page_productController.js"></script>
-  <script src="../javascript/Admin/admin_page_items.js"></script>
+  <!-- <script src="../javascript/Admin/admin_page_productController.js"></script> -->
+  <!-- <script src="../javascript/Admin/admin_page_items.js"></script> -->
 
   <!-- Bootstrap -->
   <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
@@ -194,6 +250,7 @@
   <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
     crossorigin="anonymous"></script>
+
 </body>
 
 </html>

@@ -2,7 +2,7 @@ const productsController = new ProductsController(0);
 
 function addItemCard(item) {
   const itemHTML =
-    '<tr class="selected_table product">' +
+    '<tr class="selected_table product ' + item.sizes.join(' ') + ' ' + item.type + '">' +
     '<th scope="col">' +
     '<input type="checkbox" class="checkbox">' +
     "</th>" +
@@ -46,9 +46,7 @@ function addItemCard(item) {
   itemsContainer.innerHTML += itemHTML;
 }
 
-function sampleDataLocalStorage() {
-  if (!localStorage.getItem("items")) {
-    const sampleProducts = [
+var sampleProducts = [
       {
         id: "1",
         name: "Blusa Amarilla con Bordado Floral",
@@ -60,6 +58,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "2",
@@ -72,6 +72,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "3",
@@ -84,6 +86,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "4",
@@ -96,6 +100,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "5",
@@ -108,6 +114,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "6",
@@ -120,6 +128,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "7",
@@ -132,6 +142,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "8",
@@ -144,6 +156,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "9",
@@ -156,6 +170,8 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
       {
         id: "10",
@@ -168,8 +184,12 @@ function sampleDataLocalStorage() {
         type: "Blusa",
         stock: "Disponible",
         createdAt: "05/07/2025",
+        type: "Blusa"
+
       },
     ];
+function sampleDataLocalStorage() {
+  if (!localStorage.getItem("items")) {
     localStorage.setItem("items", JSON.stringify(sampleProducts));
   }
 }
@@ -181,74 +201,6 @@ function loadProductController() {
   }
 }
 
-
-function toggleCheckboxes() {
-  let checkbox = document.querySelectorAll("input[type='checkbox']");
-  let checkAllCheckbox = document.getElementById("checkAllCheckbox");
-  for (let i = 0; i < checkbox.length; i++) {
-    checkbox[i].checked = checkAllCheckbox.checked;
-  }
-}
-
-let selectedTable = document.querySelectorAll(".selected_table");
-let checkbox = document.querySelectorAll("input[type='checkbox']");
-checkbox.forEach((cb) => {
-  cb.addEventListener("click", function () {
-    // Encuentra la fila (tr) más cercana
-    let row = cb.closest("tr");
-    if (cb.checked) {
-      row.classList.add("table-active");
-    } else {
-      row.classList.remove("table-active");
-    }
-  });
-});
-
-// checkbox.addEventListener("click", () => {
-//     for (let i = 0 ; i < checkbox.length ; i++) {
-//         if(checkbox[i].checked == true) {
-//             selectedTable.classList.toggle("table-active")
-//         } else {
-//             console.log("La checkbox " + checkbox[i] + " no estaba seleccionado")
-//         }
-//     }
-// });
-
-// function activeTable() {
-//   selectedTable.classList.toggle("table-active");
-// }
-
-const searchItems = () => {
-  if (window.matchMedia("(min-width: 793px)").matches) {
-    var searchBar = document
-      .getElementById("search-bar")
-      .value.trim()
-      .toUpperCase();
-  } else {
-    var searchBar = document
-      .getElementById("search-bar-mobile")
-      .value.trim()
-      .toUpperCase();
-  }
-
-  const product = document.querySelectorAll(".product");
-
-  for (let i = 0; i < product.length; i++) {
-    let match = product[i].getElementsByTagName("p")[0];
-    if (match) {
-      let text = match.textContent || match.innerHTML;
-
-      if (text.trim().toUpperCase().indexOf(searchBar) > -1) {
-        product[i].style.display = "";
-      } else {
-        product[i].style.display = "none";
-      }
-    }
-  }
-};
-
-checkAllCheckbox.removeEventListener("click", toggleCheckboxes);
-checkAllCheckbox.addEventListener("click", toggleCheckboxes);
 
 sampleDataLocalStorage();
 productsController.loadItemsFromLocalStorage();

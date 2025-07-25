@@ -38,43 +38,35 @@
           <img src="../assets/images/Seraphia_img/logos/LOGO-CIRCULO.png"
               alt="Seraphia logo" class="seraphia_logo">
         </li>
-          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
-            <a class="d-flex text-decoration-none" href="/html/dashboard_admin_page.html">
+          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon" id="dashboard-sidebar">
+            <a class="d-flex text-decoration-none">
             <i class='bx  bx-dashboard'></i>
             <div class="sidebar_hide">
               <p class="dashboard_label my-0">Escritorio</p>
             </div>
             </a>
           </li>
-          <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon ">
-            <a class="d-flex text-decoration-none" href="/html/products_admin_page.html">
+          <li id="products-sidebar" class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
+            <a class="d-flex text-decoration-none">
             <i class='bx bx-dress'></i>
             <div class="sidebar_hide">
               <p class="dashboard_label my-0">Productos</p>
             </div>
             </a>
           </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
-          <a class="d-flex text-decoration-none" href="/html/orders_admin_page.html">
+        <li id="orders-sidebar" class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon">
+          <a class="d-flex text-decoration-none">
           <i class='bx  bx-list-ul-square'></i>
           <div class="sidebar_hide p-0">
             <p class="dashboard_label my-0">Pedidos</p>
           </div>
           </a>
         </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon active_page">
-          <a class="d-flex text-decoration-none" href="/html/users_admin_page.html">
+        <li id="users-sidebar" class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon active_page">
+          <a class="d-flex text-decoration-none">
           <i class='bx  bx-group'></i>
           <div class="sidebar_hide p-0">
             <p class="dashboard_label my-0">Usuarios</p>
-          </div>
-          </a>
-        </li>
-        <li class="sidebar_element sidebar_element-menu sidebar_menu sidebar_icon sidebar_icon_logout">
-          <a class="d-flex text-decoration-none" href="#">
-          <i class='bx  bx-arrow-out-left-square-half'></i>
-          <div class="sidebar_hide p-0 sidebar_label_logout">
-            <p class="dashboard_label my-0">Cerrar Sesion</p>
           </div>
           </a>
         </li>
@@ -84,7 +76,6 @@
     <button class="toggle-btn" id="toggle-btn"><i class='bx  bx-caret-left' id="icon"></i></button>
     <!--! Fin de sidebar -->
 
-
     <!--
   * =====================================================
   * -----------------------Navbar-----------------------
@@ -92,9 +83,9 @@
 -->
     <div class="main-content">
       <ul class="nav justify-content-end navbar pe-4">
-        <li class="nav-item nav_button nav_notification mx-3">
+        <!-- <li class="nav-item nav_button nav_notification mx-3">
           <a class="nav_notification" href="#"><i id="notification_icon" class='bx  bx-bell'></i></a>
-        </li>
+        </li> -->
         <li class="nav-item nav_button nav_button_hide mx-2">
           <a class="nav-link active nav_home navbar_element" aria-current="page" href="/indexPrincipal.html">Ir a
             Seraphia </a>
@@ -104,12 +95,6 @@
         </li>
       </ul>
       <!--! Fin de navbar -->
-
-            <!--
-  * =====================================================
-  * ----------------Contenido principal------------------
-  * =====================================================    
--->
 
       <!--? Contenedor para cards -->
       <div class="product_label m-lg-4 p-lg-4 m-md-2 p-md-3 m-2 p-2">
@@ -131,23 +116,11 @@
           <!--? Filtros y busqueda -->
 
           <div class=" justify-content-lg-end justify-content-center filters d-flex">
-            
-              <div class="dropdown filter_btn justify-content-center d-flex py-3 me-1 me-lg-3">
-              <button class="dropdown-toggle filter px-lg-3 px-1  filter_btn py-0" type="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Perfil
-              </button>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Administrador</a></li>
-                <li><a class="dropdown-item" href="#">Cliente</a></li>
-              </ul>
-            </div>
-
             <div class="search py-3 me-1 me-lg-3 filter_btn">
-              <form class="d-flex filter_btn justify-content-center search_bar d-none d-sm-block" role="search">
-                <input class="ms-2 me-2 search_bar_btn search_bar_focus" type="search" placeholder="Buscar" id="search-bar" onkeyup="searchItems()"
+              <form class="d-flex filter_btn_search justify-content-center search_bar d-none d-sm-block" id="searchForm" role="search">
+                <input class="ms-2 me-2 search_bar_btn search_bar_focus" type="search" placeholder="Buscar" id="search-bar"
                   aria-label="Search" />
-                <button class="search_bar_btn px-2 px-lg-3 opacity-0" type="submit"><i class='bx  bx-search-big'></i></button>
+                <button class="search_bar_btn px-2 px-lg-3" type="submit" onclick="searchItems()"><i class='bx  bx-search-big'></i></button>
               </form>
             </div>
             
@@ -158,32 +131,15 @@
           <table class="text-center table table-hover align-middle fs-5">
             <thead class="fs-4">
               <tr>
-                <th scope="col" id="checkAllCheckboxContainer"><input type="checkbox" class="checkbox align-items-center" id="checkAllCheckbox"></th>
-                <th scope="col" class=""><i class='bx bx-image-landscape'></i></th>
-                <th scope="col" class="text-start">Nombre</th>
-                <th scope="col" class="d-none d-sm-table-cell">Correo Electronico</th>
-                <th scope="col" class="button_hide">Perfil</th>
+                <th scope="col"><i class='bx bx-image-landscape'></i></th>
+                <th scope="col" class="text-start">Cliente</th>
+                <th scope="col" class="d-none d-sm-table-cell text-nowrap">Correo electronico</th>
+                <th scope="col" class="d-none d-sm-table-cell">Perfil</th>
               </tr>
             </thead>
             <tbody class="fw-bold product_label" id="list-items">
-            
+          
 
-              <tr>
-                <th scope="col"><input type="checkbox" class="checkbox"></th>
-
-                <td class="product-img"><img src="../assets/img/placeholder.jpg" alt=""></td>
-                <td class="product_label text-start">Cliente anonimo
-                  <div class="stock_price_mobile d-flex d-sm-none mt-2">
-                    <p class="me-3">clienteanonoimo@gmail.com</p>
-                    <p>•</p>
-                    <p class="mx-3">Cliente</p>
-                  </div>
-                </td>
-              
-                <td class="d-none d-sm-table-cell">clientemisterioso@gmail.com</td>
-                <td class="button_hide">Cliente</td>
-              </tr>
-              
             </tbody>
           </table>
 
@@ -192,17 +148,20 @@
         </div>
       </div>
 
-
+  <!--! Fin de contenido principal -->
 
 
 
     </div>
   </main>
-
-
+  <script src="/javascript/Admin/admin_users_userController.js"></script>
+  <script src="/javascript/Admin/admin_users_page.js"></script>
+  <script src="/javascript/Admin/admin_general_functions.js"></script>
+  <!-- <script src="/javascript/Admin/admin_products_page.js"></script> -->
   <script src="../javascript/Admin/admin_sidebar_navbar_js.js"></script>
   <!-- <script src="../javascript/Admin/admin_page_productController.js"></script> -->
-  <script src="../javascript/Admin/admin_page_items.js"></script>
+  <!-- <script src="../javascript/Admin/admin_page_items.js"></script> -->
+
 
   <!-- Bootstrap -->
   <script defer src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
