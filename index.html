@@ -1,390 +1,355 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <!-- Metadatos -->
-  <meta charset="utf-8">
-  <meta name="author" content="Seraphia">
-  <!--description se utilizará para describir brevemente el contenido de la página web-->
-  <meta name="description" content="E-commerce de Seraphia: ropa artesanal con diseños únicos, bordados a mano y confeccionados con telas rescatadas. Moda ética y única.">
-  <!--keywords ayuda en la busqueda SEO, aunque ya no son tan relevantes actualmente-->
-  <meta name="keywords" content="moda artesanal, ropa única, bordados a mano, telas rescatadas, e-commerce sustentable, Seraphia">
-  <!--meta name "robots" permite a google guardar la ecommerce (indexar) y luego encontrarla mas facilmente-->
-  <meta name="robots" content="index, follow">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<!-- Metadatos -->
+		<meta charset="utf-8" />
+		<meta name="author" content="Seraphia" />
+		<!--description se utilizará para describir brevemente el contenido de la página web-->
+		<meta name="description" content="E-commerce de Seraphia: ropa artesanal con diseños únicos, bordados a mano y confeccionados con telas rescatadas. Moda ética y única." />
+		<!--keywords ayuda en la busqueda SEO, aunque ya no son tan relevantes actualmente-->
+		<meta name="keywords" content="moda artesanal, ropa única, bordados a mano, telas rescatadas, e-commerce sustentable, Seraphia" />
+		<!--meta name "robots" permite a google guardar la ecommerce (indexar) y luego encontrarla mas facilmente-->
+		<meta name="robots" content="index, follow" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!-- <meta name="referrer" content="unsafe-url" /> -->
+		<!--? Bootstrap CSS y Bootstrap Icons-->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" />
+		<!--? CSS-->
+		<!--CSS-->
+		<link rel="stylesheet" href="/css/home.css" />
+		<link href="/css/Navbar_footer.css" rel="stylesheet" />
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet" />
+		<!--Favicon-->
+		<link rel="icon" type="image/x-icon" href="../assets/LOGO-BLANCO-seraphia.png" />
+		<!--Titulo-->
+		<title>Seraphia</title>
+	</head>
+	<body>
+		<!-- ? Barra de navegación principal  "Arath"-->
+		<!-- Barra de navegación principal -->
+		<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+			<div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
+				<!-- Sección 1: LOGO + NOMBRE -->
+				<a class="navbar-brand d-flex align-items-center" href="/html/index.html">
+					<img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" width="52" height="52" class="me-2" />
+					<span class="fs-4">Seraphia</span>
+				</a>
 
-<!--? Bootstrap CSS y Bootstrap Icons-->
-<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-<!--? CSS-->
-<!--CSS-->
-<link rel="stylesheet" href="/css/home.css" >
-<link href="/css/Navbar_footer.css" rel="stylesheet">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
-<!--Favicon-->
-<link rel="icon" type="image/x-icon" href="../assets/Logo-seraphia.png">
-<!--Titulo-->
-<title>Seraphia</title>
-</head>
-<body>
+				<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+				<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+					<li class="nav-item">
+						<a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+				</ul>
 
- <!-- ? Barra de navegación principal  "Arath"-->
-<!-- Barra de navegación principal -->
-<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
+				<!-- Sección 3: ACCIONES DERECHA -->
+				<div class="d-flex align-items-center gap-2 ms-auto">
+					<!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+					<form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+						<input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
+						<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+					</form>
 
-    <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
-      <img
-        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
-        alt="Seraphia"
-        width="52" height="52"
-        class="me-2"
-      >
-      <span class="fs-4">Seraphia</span>
-    </a>
+					<!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+					<a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+						<i class="bi bi-cart3"></i>
+					</a>
 
-    <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
-    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
-      <li class="nav-item">
-        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
-      </li>
-      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
-    </ul>
+					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+					<a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block"> Iniciar sesión </a>
+					<!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
+					<button
+						class="navbar-toggler d-lg-none botonToggle"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#contenidoNavbar"
+						aria-controls="contenidoNavbar"
+						aria-expanded="false"
+						aria-label="Mostrar navegación móvil"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
 
-    <!-- Sección 3: ACCIONES DERECHA -->
-    <div class="d-flex align-items-center gap-2 ms-auto">
+				<!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+					<ul class="navbar-nav w-100">
+						<!-- Enlaces móviles -->
+						<li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
-      <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
-     <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
-       <input
-         class="form-control"
-         type="search"
-         placeholder="Buscar"
-         aria-label="Buscar"
-       >
-       <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-     </form>
+						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+						<li class="nav-item px-3 my-3">
+							<form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+								<input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Buscar" />
+								<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+							</form>
+						</li>
 
-      <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
-        <i class="bi bi-cart3"></i>
-      </a>
+						<!-- Botón de inicio de sesión version mobile -->
+						<li class="nav-item px-3 mt-3">
+							<a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<!-- todo: Desarrollo para vista HOME "Abril"-->
 
-      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
-      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
-       Iniciar sesión
-        </a>
-      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
-      <button
-        class="navbar-toggler d-lg-none botonToggle"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#contenidoNavbar"
-        aria-controls="contenidoNavbar"
-        aria-expanded="false"
-        aria-label="Mostrar navegación móvil"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
+		<!--? Parte correspondiente al HERO DESLIZABLE-->
+		<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+			<div class="carousel-inner">
+				<!--Item del carrusel-->
+				<div class="carousel-item active position-relative">
+					<img src="../assets/Portada.jpg" class="d-block w-100 hero-img" alt="Portada  presentando blusa rosa con estampado" />
+					<!--Boton en el hero que envia a tienda-->
+					<!--La configuracion de este boton es importante-->
+					<div class="position-absolute top-50 end-0 translate-middle-y me-4 text-light d-flex flex-column align-items-center text-center hero-texto-derecha p-2">
+						<h2 class="mb-3 fs-2">#Amantes de lo auténtico</h2>
+						<p class="fs-4">Descubre prendas con alma</p>
+						<a href="/html/404_info_products.html" class="btn btn-tienda">Ir a la tienda</a>
+					</div>
+				</div>
+				<!--Item del carrusel-->
+				<div class="carousel-item position-relative">
+					<img src="../assets/Portada-blusa-rosa.jpg" class="d-block w-100 hero-img" alt="Portada presentando el detalle de una blusa asimetrica en color rosa brillante" />
+					<!--Boton en el hero que envia a tienda-->
+					<!--La configuracion de este boton es importante-->
+					<div class="position-absolute top-50 end-0 translate-middle-y me-4 text-light d-flex flex-column align-items-center text-center hero-texto-derecha p-2">
+						<h2 class="mb-3 fs-2">#Amantes de lo auténtico</h2>
+						<p class="fs-4">Descubre prendas con alma</p>
+						<a href="/html/404_info_products.html" class="btn btn-tienda">Ir a la tienda</a>
+					</div>
+				</div>
+			</div>
+		</div>
 
-    <!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
-    <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
-      <ul class="navbar-nav w-100">
-        <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+		<!-----------------------------Aqui termina la seccion de Hero deslizable-------------------------------------------->
 
-        <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
-        <li class="nav-item px-3 my-3">
-          <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
-            <input class="form-control me-1"
-                   type="search"
-                   placeholder="Buscar"
-                   aria-label="Buscar">
-            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-          </form>
-        </li>
+		<!--? Parte correspondiente a la seccion marquee-->
+		<section class="text-ligth py-2 overflow-hidden position-relative">
+			<div class="marquee d-flex align-items-center gap-4">
+				<span class="fw-semibold fs-5">✅ Aceptamos pagos en línea</span>
+				<span class="fw-semibold fs-5">📦 Envíos a todo México</span>
+				<span class="fw-semibold fs-5">✅ Aceptamos pagos en línea</span>
+				<span class="fw-semibold fs-5">📦 Envíos a todo México</span>
+			</div>
+		</section>
+		<!-----------------------------Aqui termina la seccion de marquee-------------------------------------------->
 
-        <!-- Botón de inicio de sesión version mobile -->
-        <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
-        </li>
-      </ul>
-    </div>
+		<!--? MISIÓN -->
+		<section class="container-fluid text-center my-0 mision-block">
+			<h2 class="mb-3 fs-3">NUESTRA MISIÓN</h2>
+			<p class="lead fs-4">
+				En Seraphia, creemos que la moda puede fluir en sintonía con el entorno y evolucionar con conciencia. Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que buscan
+				explorar su autenticidad y personalidad. Imaginamos un mundo donde la moda no genera desperdicio, sino que se expresa a través de lo que otros descartan.
+			</p>
+		</section>
+		<!---------------------Aqui termina la seccion de mision, aun puede mejorarse----------------------------------------->
 
-  </div>
-</nav>
- <!-- todo: Desarrollo para vista HOME "Abril"-->
+		<!--? Tarjetas para la parte de  INSPIRACIÓN DE LA TEMPORADA-->
+		<!--quiero cambiar esta parte para que se actualice de forma automatica cuando se agregen nuevos productos a la ecommerce, usara la foto, el titulo del producto y la descripcion del producto-->
+		<section class="container-xxl px-5">
+			<h3 class="text-center mb-4 fs-3">INSPIRACIÓN DE LA TEMPORADA</h3>
+			<div class="mb-4">
+				<p class="lead fs-4 texto-justificado">
+					Creemos que cada prenda puede contar una historia distinta según cómo se use. Por eso, compartimos ejemplos de estilo que invitan a redescubrir nuestras creaciones desde distintas miradas.
+					Nos inspira la idea de vestir con propósito, combinando lo artesanal con lo cotidiano, y dando vida a atuendos que reflejan autenticidad, creatividad y respeto por el entorno.
+				</p>
+			</div>
+			<!-- uso row  para que mis cards se acomoden en filas-->
+			<div class="row g-0 align-items-center tarjeta-inspiracion mb-0">
+				<div class="col-md-6 px-0">
+					<img src="../assets/blusa-corta-triangulos-frente.jpg" class="img-inspiracion" alt="Blusa tipo top con diseño de triángulos" />
+				</div>
+				<div class="col-md-6 px-4 py-4">
+					<h4 class="fs-3">Resalta tu feminidad y belleza</h4>
+					<p class="lead fs-4">
+						Top corto confeccionado en algodón ligero con un llamativo patrón de líneas en zigzag color azul. Su diseño halter incorpora un cordón que se anuda detrás del cuello, dejando la espalda al
+						descubierto para un acabado fresco y elegante.
+					</p>
+				</div>
+			</div>
+			<div class="row g-0 align-items-center flex-md-row-reverse tarjeta-inspiracion tarjeta-der mb-0">
+				<!-- aqui agrego flex-md-row-reverse para que la fotografia este a la derecha y el texto a la izquierda  -->
+				<div class="col-md-6 px-0">
+					<img src="../assets/blusa-corta-bordado.jpg" class="img-inspiracion" alt="Blusa bordado flores" />
+				</div>
+				<div class="col-md-6 px-4 py-4">
+					<h4 class="fs-3">Tranquilidad y naturalidad</h4>
+					<p class="lead fs-4">
+						Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo
+						con unos jeans para un look relajado.
+					</p>
+				</div>
+			</div>
+			<!-- aqui  solo copie la parte de la primera tarjeta -->
+			<div class="row g-0 align-items-center tarjeta-inspiracion">
+				<div class="col-md-6 px-0">
+					<img src="../assets/Blusa-negra-portada.jpg" class="img-inspiracion" alt="Blusa negra crochet" />
+				</div>
+				<div class="col-md-6 px-4 pt-4">
+					<h4 class="fs-3">Elegancia en negro</h4>
+					<p class="lead fs-4">
+						Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a
+						crochet en el pecho, que aporta un toque artesanal y femenino.
+					</p>
+				</div>
+			</div>
+		</section>
+		<!------------------------------Aqui termina la seccion de Inspiracion de la temporada------------------------------>
 
-  <!--? Parte correspondiente al HERO DESLIZABLE-->
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-  <div class="carousel-inner">
-  <!--Item del carrusel-->
-    <div class="carousel-item active position-relative">
-      <img src="../assets/Portada.jpg" class="d-block w-100 hero-img" alt="Portada  presentando blusa rosa con estampado">
-  <!--Boton en el hero que envia a tienda-->
-         <!--La configuracion de este boton es importante-->   
-<div class="position-absolute top-50 end-0 translate-middle-y me-4 text-light d-flex flex-column align-items-center text-center hero-texto-derecha p-2">
-        <h2 class="mb-3 fs-2">#Amantes de lo auténtico</h2>
-        <p class="fs-4">Descubre prendas con alma</p>
-       <a href="/html/404_info_products.html" class="btn btn-tienda">Ir a la tienda</a>
-      </div>
-    </div>
-  <!--Item del carrusel-->
-    <div class="carousel-item position-relative">
-      <img src="../assets/Portada-blusa-rosa.jpg" class="d-block w-100 hero-img" alt="Portada presentando el detalle de una blusa asimetrica en color rosa brillante">
-  <!--Boton en el hero que envia a tienda-->
-         <!--La configuracion de este boton es importante-->  
-<div class="position-absolute top-50 end-0 translate-middle-y me-4 text-light d-flex flex-column align-items-center text-center hero-texto-derecha p-2">
-        <h2 class="mb-3 fs-2">#Amantes de lo auténtico</h2>
-        <p class="fs-4">Descubre prendas con alma</p>
-        <a href="/html/404_info_products.html" class="btn btn-tienda">Ir a la tienda</a>
-      </div>
-</div>
-</div>
-</div>
-  </div>
-<!-----------------------------Aqui termina la seccion de Hero deslizable-------------------------------------------->
+		<!--? Seccion para mostrar un video destacado de Instagram -->
+		<section class="container my-0 text-center">
+			<h3 class="mb-4 fs-3">VIVE OTROS INSTANTES DE SERAPHIA</h3>
+			<p class="fs-4 texto-justificado">
+				En Seraphia, también queremos mostrarte cómo se ven nuestros proyectos mas recientes. Este video te permite apreciar el detalle y la esencia de nuestras telas rescatadas. Queremos compartir
+				contigo el proceso de selección de nuestras telas.
+			</p>
+		</section>
+		<!------------------------------Aqui termina la seccion para mostrar un video destacado de Instagram ------------------------------>
 
-  <!--? Parte correspondiente a la seccion marquee-->
-<section class="text-ligth py-2 overflow-hidden position-relative">
-  <div class="marquee d-flex align-items-center gap-4">
-    <span class="fw-semibold fs-5">✅ Aceptamos pagos en línea</span>
-    <span class="fw-semibold fs-5">📦 Envíos a todo México</span>
-    <span class="fw-semibold fs-5">✅ Aceptamos pagos en línea</span>
-    <span class="fw-semibold fs-5">📦 Envíos a todo México</span>
-  </div>
-</section>
-<!-----------------------------Aqui termina la seccion de marquee-------------------------------------------->
+		<!--? GALERÍA -->
+		<section class="container my-0">
+			<h3 class="text-center mb-4 fs-3">GALERIA DE PRODUCTOS</h3>
+			<div class="row g-4">
+				<div class="col-6 col-md-3 text-center">
+					<div class="galeria-imagen overflow-hidden shadow">
+						<img src="../assets/blusa-roja-sin-mangas.jpg" class="img-fluid rounded" alt="Blusa corta sin mangas color rojo" />
+						<!--img-fluid sirve para mantener  la imagen sin desbordarse de su contenedor en la galeria-->
+					</div>
+					<a href="/detalles_del_producto/blusa-corta-sin-mangas-color-rojo.html" class="d-block mt-2 text-hover text-decoration-none text-dark fw-semibold fs-5"> Blusa roja sin mangas </a>
+				</div>
+				<div class="col-6 col-md-3 text-center">
+					<div class="galeria-imagen overflow-hidden shadow">
+						<img src="../assets/blusa-estilo-vaquero-portada.jpg" class="img-fluid rounded" alt="Blusa estilo vaquero" />
+					</div>
+					<a href="/detalles_del_producto/blusa-estilo-vaquero.html" class="d-block mt-2 text-hover text-decoration-none text-dark fw-semibold fs-5"> Blusa estilo vaquero </a>
+				</div>
+				<div class="col-6 col-md-3 text-center">
+					<div class="galeria-imagen overflow-hidden shadow">
+						<img src="../assets/blusa-rosa-sin-magas-portada.jpg" class="img-fluid rounded" alt="Blusa rosa con espalda descubierta" />
+					</div>
+					<a href="/detalles_del_producto/blusa-rosa-con-espalda-descubierta.html" class="d-block mt-2 text-hover text-decoration-none text-dark fw-semibold fs-5">
+						Blusa rosa con espalda descubierta
+					</a>
+				</div>
+				<div class="col-6 col-md-3 text-center">
+					<div class="galeria-imagen overflow-hidden shadow">
+						<img src="../assets/blusa-corta-triangulos.jpg" class="img-fluid rounded" alt="Blusa tipo top diseño de triangulos" />
+					</div>
+					<a href="/detalles_del_producto/blusa-tipo-top-diseno-de-triangulos.html" class="d-block mt-2 text-hover text-decoration-none text-dark fw-semibold fs-5">
+						Blusa tipo top diseño de triangulos
+					</a>
+				</div>
+			</div>
+			<div class="text-center mt-4">
+				<!--<a href="/html/404_info_products.html"  class="btn btn-outline-dark > -->
+				<a href="/html/404_info_products.html" class="btn btn-outline-dark fs-4">Ver prendas disponibles</a>
+			</div>
+		</section>
+		<!------------------------Aqui termina galeria----------->
 
-  <!--? MISIÓN -->
-<section class="container-fluid text-center my-0 mision-block">
-    <h2 class="mb-3 fs-3">NUESTRA MISIÓN</h2>
-    <p class="lead fs-4">
-        En Seraphia, creemos que la moda puede fluir en sintonía con el entorno y
-        evolucionar con conciencia.
-        Nuestra misión es crear prendas únicas, diseñadas para ayudar a personas que
-        buscan explorar su autenticidad y personalidad.
-        Imaginamos un mundo donde la moda no genera desperdicio, sino que se expresa a través de lo que otros descartan.
-</p>
-  </section>
-<!---------------------Aqui termina la seccion de mision, aun puede mejorarse----------------------------------------->
+		<!--? Parte para mostrar una breve historia acerca de la creadora de Seraphia, manda a la pagina sobre nosotros-->
+		<section class="container my-0 text-center diseñadora-block">
+			<h3 class="text-center mb-4 fs-3">CONOCE A LA MENTE BRILLANTE DETRÁS DE SERAPHIA</h3>
+			<div class="card mx-auto" style="max-width: 500px">
+				<img src="../assets/WuendyT.jpg" class="card-img-top" alt="Diseñadora principal Wuendy Tarache" />
+				<div class="card-body">
+					<h5 class="card-title text-center mb-4 fs-4">Wuendy Tarache</h5>
+					<p class="fs-5">Wuendy Tarache es la diseñadora y artista textil detrás de Seraphia, con 35 años de experiencia. Todo es hecho a mano éticamente por ella.</p>
+					<a href="/html/Sobre_Nosotros.html" class="btn btn-conocela fs-5">Conócela</a>
+				</div>
+			</div>
+		</section>
 
-  <!--? Tarjetas para la parte de  INSPIRACIÓN DE LA TEMPORADA-->
-  <!--quiero cambiar esta parte para que se actualice de forma automatica cuando se agregen nuevos productos a la ecommerce, usara la foto, el titulo del producto y la descripcion del producto-->
-<section class="container my-5">
-  <h3 class="text-center mb-4 fs-3">INSPIRACIÓN DE LA TEMPORADA</h3>
-   <div class="mb-5">
-    <p class="lead fs-4 texto-justificado">
-      Creemos que cada prenda puede contar una historia distinta según cómo se use.
-      Por eso, compartimos ejemplos de estilo que invitan a redescubrir nuestras creaciones desde distintas miradas. Nos inspira la idea de vestir con propósito, combinando lo artesanal con lo cotidiano, y dando vida a atuendos que reflejan autenticidad, creatividad y respeto por el entorno.
-     </p>
-  </div>
-  <!-- uso row  para que mis cards se acomoden en filas-->
-    <div class="row g-0 align-items-center tarjeta-inspiracion mb-4">
-    <div class="col-md-6 px-0">
-      <img src="../assets/blusa-corta-triangulos-frente.jpg" class="img-inspiracion" alt="Blusa tipo top con diseño de triángulos">
-    </div>
-  <div class="col-md-6 p-4">
-    <h4 class="lead fs-3">Resalta tu feminidad y belleza</h4>
-    <p class="fs-4">
-      Top corto confeccionado en algodón ligero con un llamativo patrón de líneas en zigzag color azul. Su diseño halter incorpora un cordón que se anuda detrás del cuello, dejando la espalda al descubierto para un acabado fresco y elegante. Como sugerencia puedes combinarlo con unos mom jeans de mezclilla deslavada.
-    </p>
-  </div>
-</div>
-  <div class="row g-0 align-items-center flex-md-row-reverse tarjeta-inspiracion mb-4">
- <!-- aqui agrego flex-md-row-reverse para que la fotografia este a la derecha y el texto a la izquierda  -->
-    <div class="col-md-6 px-0">
-      <img src="../assets/blusa-corta-bordado.jpg" class="img-inspiracion" alt="Blusa bordado flores">
-    </div>
-    <div class="col-md-6 px-4 py-4">
-    <h4 class="fs-3">Tranquilidad y naturalidad</h4>
-    <p class="fs-4">
-      Blusa corta confeccionada en algodón, diseño sin mangas y con un bello bordado de flores que incluye en su confección retazos de otras telas rescatadas. Como sugerencia puedes combinarlo con unos jeans para un look relajado.
-    </p>
-  </div>
-</div>
-  <!-- aqui  solo copie la parte de la primera tarjeta -->
-  <div class="row g-0 align-items-center tarjeta-inspiracion">
-    <div class="col-md-6 px-0">
-      <img src="../assets/Blusa-negra-portada.jpg" class="img-inspiracion" alt="Blusa negra crochet">
-    </div>
-    <div class="col-md-6 px-4 py-4">
-    <h4 class="lead fs-3">Elegancia en negro</h4>
-    <p class="fs-4">
-      Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino.
-    </p>
-  </div>
-</div>
-  </section>
-  <!------------------------------Aqui termina la seccion de Inspiracion de la temporada------------------------------>
+		<!--? Parte para el FOOTER de Miguel-->
+		<footer>
+			<div class="row align">
+				<div class="col-12 col-md-2 col-lg-2 space">
+					<div class="row">
+						<!-- Area de informacion y redes sociales -->
+						<div class="col-6 col-md-12 flex_smlogo">
+							<img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer" />
+						</div>
+						<div class="col-6 col-md-12 flex_col">
+							<div class="col-6 col-md-12 flex_smlogo">
+								<p>Queretaro, Mexico</p>
+							</div>
+							<div class="col-6 col-md-12 flex_smlogo">
+								<!-- Instagram -->
+								<a href="https://www.instagram.com/seraphiamx/" target="_blank"><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo" /></a>
+								<!-- Facebook Seraphia -->
+								<a href="https://www.facebook.com/Seraphiamexico/" target="_blank"><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo" /></a>
+							</div>
+						</div>
+					</div>
+				</div>
 
-<!--? Seccion para mostrar un video destacado de Instagram -->
-<section class="container my-5 text-center">
-  <h3 class="mb-4 fs-3">VIVE OTROS INSTANTES DE SERAPHIA</h3>
-  <p class="fs-4 texto-justificado">
-    En Seraphia, también queremos mostrarte cómo se ven nuestros proyectos mas recientes. Este video te permite apreciar el detalle y la esencia de nuestras telas rescatadas. Queremos compartir contigo el proceso de selección de nuestras telas.
-  </p>
+				<!-- Area de Menu secundario -->
+				<div class="col-12 col-md-4 col-lg-6">
+					<div class="row">
+						<!-- Links menu secundario -->
+						<div class="col-12 col-lg-6">
+							<h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
+							<ul class="footer-links">
+								<li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+								<li><a href="/html/Galeria.html">Galería</a></li>
+								<li><a href="/html/Contacto.html">Contacto</a></li>
+								<li><a href="#">FAQ’s</a></li>
+							</ul>
+						</div>
 
-  <!-- Bloque de Instagram responsivo y centrado -->
-  <div class="d-flex justify-content-center">
-    <blockquote class="instagram-media" data-instgrm-captioned data-instgrm-permalink="https://www.instagram.com/reel/DG1BBEJysCf/?utm_source=ig_embed&amp;utm_campaign=loading" data-instgrm-version="14" style="background:#FFF; border:0; border-radius:12px; box-shadow:0 0 1px rgba(0,0,0,0.5),0 1px 10px rgba(0,0,0,0.15); max-width:540px; width:100%; padding:0; margin: 1rem auto;">
-    </blockquote>
-  </div>
-</section>
- <!------------------------------Aqui termina la seccion para mostrar un video destacado de Instagram ------------------------------>
+						<!-- Links Cuidamos de ti -->
+						<div class="col-12 col-lg-6">
+							<h3 class="footer-toggle">CUIDAMOS DE TI</h3>
+							<ul class="footer-links">
+								<li><a href="#">Política de privacidad</a></li>
+								<li><a href="#">Términos de servicio</a></li>
+								<li><a href="#">Configuración de Cookies</a></li>
+								<li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+							</ul>
+						</div>
+					</div>
+				</div>
 
-  <!--? GALERÍA -->
-<section class="container my-5">
-  <h3 class="text-center mb-4 fs-3">GALERIA DE PRODUCTOS</h3>
-  <div class="row g-4">
-  <div class="col-6 col-md-3 text-center">
-   <div class="galeria-imagen  overflow-hidden shadow">
-    <img src="../assets/blusa-roja-sin-mangas.jpg" class="img-fluid rounded" alt="Blusa corta sin mangas color rojo">
-      <!--img-fluid sirve para mantener  la imagen sin desbordarse de su contenedor en la galeria-->
-  </div>
-  <a href="/detalles_del_producto/blusa-corta-sin-mangas-color-rojo.html"  class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold fs-5">
-        Blusa roja sin mangas
-  </a>
-    </div>
-  <div class="col-6 col-md-3 text-center">
-   <div class="galeria-imagen  overflow-hidden shadow">
-    <img src="../assets/blusa-estilo-vaquero-portada.jpg" class="img-fluid rounded" alt="Blusa estilo vaquero">
-  </div>
-  <a href="/detalles_del_producto/blusa-estilo-vaquero.html"  class="d-block mt-2 text-hover  text-decoration-none text-dark fw-semibold fs-5">
-        Blusa estilo vaquero
-  </a>
-  </div>
-  <div class="col-6 col-md-3 text-center">
-   <div class="galeria-imagen  overflow-hidden shadow">
-    <img src="../assets/blusa-rosa-sin-magas-portada.jpg" class="img-fluid rounded" alt="Blusa rosa con espalda descubierta">
-  </div>
-  <a href="/detalles_del_producto/blusa-rosa-con-espalda-descubierta.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold fs-5">
-        Blusa rosa con espalda descubierta
-  </a>
-  </div>
-  <div class="col-6 col-md-3 text-center">
-   <div class="galeria-imagen  overflow-hidden shadow">
-    <img src="../assets/blusa-corta-triangulos.jpg" class="img-fluid rounded" alt="Blusa tipo top diseño de triangulos">
-  </div>
-  <a href="/detalles_del_producto/blusa-tipo-top-diseno-de-triangulos.html" class="d-block mt-2  text-hover text-decoration-none text-dark fw-semibold fs-5">
-        Blusa tipo top diseño de triangulos
-  </a>
-  </div>
-  <div class="text-center mt-4">
-   <!--<a href="/html/404_info_products.html"  class="btn btn-outline-dark > -->
-    <a href="/html/404_info_products.html" class="btn btn-outline-dark >
-    <fs-4">Ver prendas disponibles</a>
-  </div>
-</section>
-<!------------------------Aqui termina galeria----------->
+				<div class="col-12 col-md-6 col-lg-4">
+					<div class="row">
+						<form class="flex_new">
+							<div class="mb-3">
+								<p>Conoce lo nuevo</p>
+								<input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+								<button type="button" class="btn btn_footer">Enviar</button>
+								<div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</footer>
 
-
-  <!--? Parte para mostrar una breve historia acerca de la creadora de Seraphia, manda a la pagina sobre nosotros-->
-  <section class="container my-5 text-center diseñadora-block">
-    <h3 class="text-center mb-4 fs-3">CONOCE A LA MENTE BRILLANTE DETRÁS DE SERAPHIA</h3>
-    <div class="card mx-auto" style="max-width: 500px;">
-      <img src="../assets/WuendyT.jpg" class="card-img-top " alt="Diseñadora principal Wuendy Tarache">
-      <div class="card-body">
-        <h5 class="card-title text-center mb-4 fs-4">Wuendy Tarache</h5>
-        <p CLASS="fs-5">Wuendy Tarache es la diseñadora y artista textil detrás de Seraphia, con 35 años de experiencia.
-        Todo es hecho a mano éticamente por ella.</p>
-        <a href="/html/Sobre_Nosotros.html" class="btn btn-conocela fs-5">Conócela</a>
-      </div>
-    </div>
-  </section>
-
-  <!--? Parte para el FOOTER de Miguel-->
-         <footer>
-        <div class="row align">
-
-            <div class="col-12 col-md-2 col-lg-2 space">
-                <div class="row">
-
-                    <!-- Area de informacion y redes sociales -->
-                    <div class="col-6 col-md-12 flex_smlogo">
-                        <img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer">
-                    </div>
-                    <div class="col-6 col-md-12 flex_col">
-                        <div class="col-6 col-md-12 flex_smlogo">
-                            <p>Queretaro, Mexico</p>
-                        </div>
-                        <div class="col-6 col-md-12 flex_smlogo">
-                            <!-- Instagram -->
-                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo"></a>
-                            <!-- Facebook Seraphia -->
-                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo"></a>
-                        </div>
-                    </div>
-                </div>
-             </div>
-            
-                <!-- Area de Menu secundario -->
-                <div class="col-12 col-md-4 col-lg-6">
-                <div class="row">
-
-
-                    <!-- Links menu secundario -->
-                    <div class="col-12 col-lg-6 ">
-                    <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
-                    <ul class="footer-links">
-                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-                        <li><a href="/html/Galeria.html">Galería</a></li>
-                        <li><a href="/html/Contacto.html">Contacto</a></li>
-                        <li><a href="#">FAQ’s</a></li>
-                    </ul>
-                    </div>
-
-                    <!-- Links Cuidamos de ti -->
-                    <div class="col-12 col-lg-6">
-                    <h3 class="footer-toggle">CUIDAMOS DE TI</h3>
-                    <ul class="footer-links">
-                        <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Términos de servicio</a></li>
-                        <li><a href="#">Configuración de Cookies</a></li>
-                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
-                    </ul>
-                    </div>
-
-                </div>
-                </div>
-
-
-            
-
-
-            <div class="col-12 col-md-6 col-lg-4">
-                <div class="row  ">
-                <form class="flex_new">
-                <div class="mb-3">
-                    <p>Conoce lo nuevo</p>
-                    <input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    <button type="button" class="btn btn_footer">Enviar</button>
-                    <div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
-                </div>
-                </form>
-            </div></div>
-
-        </div>
-</footer>
-
-  <!--? Scripts -->
-  <script async src="//www.instagram.com/embed.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
-<script src="https://unpkg.com/scrollreveal"></script>
-<script src="../javascript/home.js"></script>
-<script src="/javascript/Seraphia/navbar_footer.js"></script>
-     </body>
+		<!--? Scripts -->
+		<script async src="//www.instagram.com/embed.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+		<script src="https://unpkg.com/scrollreveal"></script>
+		<script src="../javascript/home.js"></script>
+		<script src="/javascript/Seraphia/navbar_footer.js"></script>
+	</body>
 </html>
-

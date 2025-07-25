@@ -148,9 +148,28 @@ const createSwiperCard = (cardNumber, cardPos, img) => {
 		}
 	};
 
+	const toBase64 = imgData => {
+		const reader = new FileReader();
+		reader.onloadend = () => {
+			// Use a regex to remove data url part
+			// const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
+			const base64String = reader.result;
+			// console.log(base64String);
+			imgTracker.push({ position: imgData.position, img: base64String });
+			// console.log(imgTracker);
+			// Logs wL2dvYWwgbW9yZ...
+		};
+
+		base64Img = reader.readAsDataURL(imgData.img);
+	};
+
 	const updateImgTracker = (action, imgData) => {
 		if (action === 'add') {
-			imgTracker.push(imgData);
+			if (typeof imgData.img == 'string') {
+				imgTracker.push(imgData);
+			} else {
+				toBase64(imgData);
+			}
 		} else if (action === 'delete') {
 			const toDeleteIndex = imgTracker.findIndex(trackerData => trackerData.position == imgData.position);
 			imgTracker.splice(toDeleteIndex, 1);
@@ -214,7 +233,11 @@ const createSwiperCard = (cardNumber, cardPos, img) => {
 	};
 
 	let imgURL;
-	typeof img === 'object' ? (imgURL = URL.createObjectURL(img)) : (imgURL = img);
+	if (typeof img === 'object') {
+		imgURL = URL.createObjectURL(img);
+	} else {
+		imgURL = img;
+	}
 	createAndAppendCard(cardNumber, cardPos, imgURL);
 	updateImgTracker('add', { position: cardPos, img: img });
 	swiper.update();
@@ -518,6 +541,9 @@ const handleSubmit = () => {
 
 	const sendRequestToServer = formData => {
 		console.log(formData);
+		// Agregar hasta tener el maximo de 6 imagenes, la 6ta imagen codificada en base64 se va a colocar en el div con id testImg
+		// testImgBase64 = document.querySelector('#testImg');
+		// testImgBase64.setAttribute('src', formData.images[5].img);
 	};
 
 	const formData = getFormData();
