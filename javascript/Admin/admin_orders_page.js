@@ -25,7 +25,7 @@ function filterProductsCard() {
     }
   });
 }
-
+// hi
 function setSizeFilter(size) {
   actualSizeSelected = size;
   sizeFilterBtn.innerText   = size;
