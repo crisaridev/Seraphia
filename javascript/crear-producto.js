@@ -1,3 +1,4 @@
+const URLBASE = 'http://localhost:8080/api';
 const submitBtn = document.querySelector('.submit-btn');
 
 /*
@@ -6,7 +7,7 @@ This is necessary because if you upload 2 images, one at a time, the first one w
 If the position of an image is updated or an image is deleted from the html, those changes will be reflected on the imgTracker variable as well
 */
 const imgTracker = [];
-
+let urlProductId = null;
 /*
 Dummy data, pretend this comes from the server
 */
@@ -18,7 +19,7 @@ const productOneImg = [
 	{ position: 1, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-perfil-fondo.jpg' },
 	{ position: 4, img: '../assets/images/crear-producto/blusa-amarilla/Copia de blusa-amarilla-con-bordado-detalle-fondo.jpg' },
 ];
-const dataFromServer = { title: 'Blusa Amarilla Con Bordado', price: 500, color: 'Azul', size: 'Grande', category: 'Pantalon', description: productOneDesc, images: productOneImg };
+const dataFromServer = { title: 'Blusa Amarilla Con Bordado', price: 500, color: 'Rojo', size: 'Chica', category: 'Blusa', description: productOneDesc, images: productOneImg };
 
 /*
 Initialize swiper carousel
@@ -294,9 +295,7 @@ Populate the swiper inputs and populate the form swiper with one card per each i
 	Take the data from the server and format it the way we want to use it
 
 */
-const getDBData = dataFromServer => {
-	if (!dataFromServer) return;
-
+const getDBData = async productId => {
 	const populateFormData = (title, price, color, size, category, description) => {
 		const formTitle = document.querySelector('#title-input');
 		const formPrice = document.querySelector('#price-input');
@@ -319,21 +318,29 @@ const getDBData = dataFromServer => {
 		}
 	};
 
-	const formatDataFromServer = dataFromServer => {
-		const title = dataFromServer.title;
-		const price = dataFromServer.price;
-		const color = dataFromServer.color;
-		const size = dataFromServer.size;
-		const category = dataFromServer.category;
-		const description = dataFromServer.description;
-		const images = [...dataFromServer.images];
+	const formatDataFromServer = responseProductJson => {
+		const title = responseProductJson.name;
+		const price = responseProductJson.price;
+		const color = responseProductJson.color.colorName;
+		const size = responseProductJson.size.sizeName;
+		const category = responseProductJson.category.categoryName;
+		const description = responseProductJson.description;
+
+		const images = responseProductJson.imagesList.map(imageElement => ({ position: imageElement.imageOrder, img: imageElement.imageUrl }));
 		return [title, price, color, size, category, description, images];
 	};
 
-	[title, price, color, size, category, description, images] = formatDataFromServer(dataFromServer);
-
-	populateFormData(title, price, color, size, category, description);
-	populateSwiper(images);
+	try {
+		const responseProduct = await fetch(`${URLBASE}/products/${productId}`);
+		if (!responseProduct.ok) throw new Error(`No se encontro el producto solicitado`);
+		const responseProductJson = await responseProduct.json();
+		[title, price, color, size, category, description, images] = formatDataFromServer(responseProductJson);
+		populateFormData(title, price, color, size, category, description);
+		populateSwiper(images);
+		urlProductId = productId;
+	} catch (error) {
+		console.log(error);
+	}
 };
 
 /*
@@ -520,16 +527,26 @@ const handleSubmit = () => {
 		};
 
 		const formatFormData = formData => {
-			const formattedFormData = {
-				title: formData.get('title-input'),
-				price: formData.get('price-input'),
-				color: formData.get('color-input'),
-				size: formData.get('size-input'),
-				category: formData.get('category-input'),
+			const productBasicData = {
+				name: formData.get('title-input'),
 				description: formData.get('description-input'),
-				images: [...imgTracker],
+				price: formData.get('price-input'),
 			};
-			return formattedFormData;
+
+			const productColorSizeCategory = {
+				colorName: formData.get('color-input'),
+				sizeName: formData.get('size-input'),
+				categoryName: formData.get('category-input'),
+			};
+
+			const images = [];
+			imgTracker.forEach(image => {
+				images.push({ imageUrl: image.img, imageOrder: image.position });
+			});
+
+			// const imagesformatted = ;
+
+			return [productBasicData, productColorSizeCategory, { images: [...images] }];
 		};
 
 		const formElement = document.querySelector('#form-container');
@@ -539,15 +556,76 @@ const handleSubmit = () => {
 		return formatFormData(formData);
 	};
 
-	const sendRequestToServer = formData => {
+	const sendNewProductToServer = async formData => {
+		[productBasicData, productColorSizeCategory, images] = formData;
+		try {
+			const responseBasicData = await fetch(`${URLBASE}/products`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(productBasicData),
+			});
+			if (!responseBasicData) console.log('Error al agregar informacion basica del producto');
+			const responseBasicDataJson = await responseBasicData.json();
+			const productId = responseBasicDataJson.id;
+
+			const responseColorSizeCategory = await fetch(`${URLBASE}/products/${productId}/add-color-size-category`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(productColorSizeCategory),
+			});
+			if (!responseColorSizeCategory) console.log('Error al agregar color, tamaño y categoria del producto');
+
+			const responseImages = await fetch(`${URLBASE}/products/${productId}/add-images`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(images),
+			});
+			const responseProduct = await responseImages.json();
+			console.log(responseProduct);
+		} catch (error) {
+			console.error('Hubo un error: ', error);
+		}
+	};
+
+	const sendUpdateProductToServer = async formData => {
+		[productBasicData, productColorSizeCategory, images] = formData;
 		console.log(formData);
-		// Agregar hasta tener el maximo de 6 imagenes, la 6ta imagen codificada en base64 se va a colocar en el div con id testImg
-		// testImgBase64 = document.querySelector('#testImg');
-		// testImgBase64.setAttribute('src', formData.images[5].img);
+		console.log(urlProductId);
+		try {
+			const responseBasicData = await fetch(`${URLBASE}/products/${urlProductId}/change-product`, {
+				method: 'PUT',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(productBasicData),
+			});
+			if (!responseBasicData) console.log('Error al agregar informacion basica del producto');
+			const responseBasicDataJson = await responseBasicData.json();
+			const productId = responseBasicDataJson.id;
+
+			const responseColorSizeCategory = await fetch(`${URLBASE}/products/${productId}/add-color-size-category`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(productColorSizeCategory),
+			});
+			if (!responseColorSizeCategory) console.log('Error al agregar color, tamaño y categoria del producto');
+
+			const responseImages = await fetch(`${URLBASE}/products/${productId}/add-images`, {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(images),
+			});
+			const responseProduct = await responseImages.json();
+			console.log(responseProduct);
+		} catch (error) {
+			console.log('Hubo un error: ', error);
+		}
 	};
 
 	const formData = getFormData();
-	sendRequestToServer(formData);
+	if (urlProductId == null) {
+		sendNewProductToServer(formData);
+	} else {
+		sendUpdateProductToServer(formData);
+	}
 };
 
 /*
@@ -556,11 +634,7 @@ If there is an error, displays the error
 */
 submitBtn.addEventListener('click', event => {
 	// event.preventDefault();
-	try {
-		handleSubmit();
-	} catch (error) {
-		console.log(error);
-	}
+	handleSubmit();
 });
 
 /*
@@ -588,7 +662,13 @@ Bootstrap form validation
 	});
 })();
 
-/*
-Initiate the server call
-*/
-getDBData(dataFromServer);
+const getUrlParams = () => {
+	const queryString = window.location.search;
+	const urlParams = new URLSearchParams(queryString);
+	const productId = urlParams.get('productid');
+	console.log(productId);
+	if (productId) getDBData(productId);
+};
+
+// getDBData(dataFromServer);
+getUrlParams();
