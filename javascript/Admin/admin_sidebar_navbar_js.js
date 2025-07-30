@@ -40,3 +40,23 @@ expandButton.addEventListener("click",() => {
   expandIcon.classList.toggle("bx-caret-left")
   console.log("Hola mundo cambio de icono")
 });
+
+// Full block url
+
+document.getElementById('dashboard-sidebar').addEventListener( 'click', () => {
+  window.location.href = '/html/dashboard_admin_page.html'
+  console.log('boton presionado')
+});
+document.getElementById('products-sidebar').addEventListener( 'click', () => {
+  window.location.href = '/html/products_admin_page.html'
+  console.log('boton presionado')
+});
+document.getElementById('orders-sidebar').addEventListener( 'click', () => {
+  window.location.href = '/html/orders_admin_page.html'
+  console.log('boton presionado')
+});
+document.getElementById('users-sidebar').addEventListener( 'click', () => {
+  window.location.href = '/html/users_admin_page.html'
+  console.log('boton presionado')
+})
+

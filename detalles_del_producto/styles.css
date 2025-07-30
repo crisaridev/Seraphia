@@ -19,35 +19,98 @@
   left: 50%;
   transform: translate(-50%, -50%);
 }
-/**CSS PARA PODER EDITAR LAS IMA*/
+/** 📦 ESTILO GENERAL PARA IMÁGENES Y CARRUSEL **/
+
+/* Contenedor visual del carrusel (con padding superior y fondo claro para destacar) */
+#carouselProducto {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+}
+
+/* Contenedor cuadrado si se usa por separado */
 .imagen-contenedor {
   width: 100%;
-  max-width: 500px;  /* o lo que desees como tope en desktop */
-  aspect-ratio: 1 / 1;  /* Cuadro perfectamente cuadrado */
-  background-color: #f5f5f5;  /* opcional */
+  max-width: 500px;
+  aspect-ratio: 1 / 1;
+  background-color: #f5f5f5;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
-  margin: 0 auto; /* centrado horizontal */
-  border-radius: 8px; /* opcional */
-    transition: transform 0.3s ease, opacity 0.3s ease;
+  margin: 0 auto;
+  border-radius: 8px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
+
+/* Efecto hover */
 .imagen-contenedor:hover img {
   transform: scale(1.05);
   opacity: 0.95;
 }
+
+/* Imagen principal del carrusel */
 .img-ajustada {
-  max-width: 130%;
-  max-height: 130%;
-  object-fit: cover; /* puedes probar cover también */
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 8px;
 }
+
+/* Variante si quieres mostrar imagen sin recorte */
 .img-ajustada-sin-zoom {
   width: 100%;
-  height: auto;
-  object-fit: contain; /* evita que se recorte */
-  transform: scale(0.8); /* controla cuánto "llena" el cuadro */
+  height: 600px;
+  object-fit: contain;
+  transform: scale(0.95);
 }
+
+/* Miniaturas debajo del carrusel */
+.miniatura {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.3s;
+  border-radius: 6px;
+  margin-top: 1rem;
+}
+
+.miniatura:hover {
+  border: 2px solid #D28E5F;
+}
+
+/* Tarjeta de la derecha con información del producto */
+.card {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Responsivo: reduce alturas e íconos en móvil */
+@media (max-width: 768px) {
+  .img-ajustada,
+  .img-ajustada-sin-zoom {
+    height: 320px;
+  }
+
+  .miniatura {
+    width: 60px;
+    height: 60px;
+  }
+
+  #carouselProducto {
+    margin-top: 2rem;
+    padding: 0.5rem;
+  }
+}
+
+
+
 
 
 

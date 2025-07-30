@@ -72,3 +72,39 @@ function aplicarDescuento(porcentaje) {
     totalElement.textContent = `$${totalConDescuento.toFixed(2)}`; // Actualiza el texto con el nuevo total
   }
 }
+
+
+// ! BOTON DE ELIMINAR
+
+function deleteItem(button) {
+  const itemId = button.dataset.itemId; // Retrieve the item ID
+  // Confirmation modal (optional)
+
+  // Perform deletion logic
+  if (confirm("¿Seguro quieres eliminar este producto?")) {
+        // Delete from local storage
+        let bookmarks = JSON.parse(localStorage.getItem("bookmarks"));
+        bookmarks = bookmarks.filter(bookmark => bookmark.id !== itemId);
+        localStorage.setItem("bookmarks", JSON.stringify(bookmarks));
+
+        // Remove from the UI
+        button.closest("div.well").remove(); // Example for removing a "well"
+  }
+}
+
+
+document.addEventListener('DOMContentLoaded', function () {
+  const btnConfirmar = document.getElementById('btnConfirmar');
+
+  if (btnConfirmar) {
+    btnConfirmar.addEventListener('click', function () {
+      // Agrega animación
+      btnConfirmar.classList.add('boton-pulse');
+
+      // Espera a que termine la animación y luego redirige
+      setTimeout(() => {
+        window.location.href = '/html/Registro_de_Pago.html';
+      }, 600);
+    });
+  }
+});

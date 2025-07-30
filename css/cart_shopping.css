@@ -1,4 +1,6 @@
-/* ! FUENTE GLOBAL */
+/* ================================
+   FUENTE GLOBAL Y CONFIGURACIÓN
+================================== */
 * {
   font-family: 'Lato', sans-serif;
   box-sizing: border-box;
@@ -6,48 +8,120 @@
 
 body {
   background-color: #F8F8F8;
-  font-family: 'Lato', sans-serif;
   margin: 0;
   padding: 0;
+  font-family: 'Lato', sans-serif;
 }
 
+/* ================================
+   PRODUCTO: IMAGENES Y TARJETA
+================================== */
 
-/* ! SECCIÓN: SHOPPING CART */
-
-/* Imagen del producto */
+/* Imagen del producto en el carrito */
 .cart-product-image {
-  width: 100px;
+  width: 150px;
   height: auto;
 }
+
 @media (max-width: 576px) {
   .cart-product-image {
-    width: 50px;
+    width: 80px; /* Para pantallas pequeñas */
   }
 }
 
-/* Tarjeta del producto */
+/* Contenedor del producto */
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
   background-color: white;
 }
 
-/* Total y precios */
+/* ================================
+   PRECIO Y TEXTO
+================================== */
+
 .total-price {
   font-size: 1.5rem;
   font-weight: bold;
 }
 
-/* Botones de carrito */
-.btn-discount,
-.btn-confirmar {
-  background-color: #EBA56A;
-  color: white;
-  border: none;
+.precio-producto {
+  font-size: 1.2rem;
 }
 
-.btn-discount:hover,
+/* Para alinear precio con el nombre del producto */
+.alinear-precio {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+/* ================================
+   BOTONES BASE Y VARIACIONES
+================================== */
+
+/* Base común para todos los botones de carrito */
+.btn-base {
+  color: white;
+  font-weight: 700; /* Texto más grueso */
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out,
+              transform 0.2s ease,
+              box-shadow 0.3s ease;
+}
+
+/* Botón: Confirmar compra */
+.btn-confirmar {
+  background-color: #EBA56A;
+}
+
 .btn-confirmar:hover {
   background-color: #d4915d;
 }
 
+/* Botón: Aplicar descuento */
+.btn-discount {
+  background-color: #EBA56A;
+}
+
+.btn-discount:hover {
+  background-color: #d4915d;
+}
+
+/* Botón: Agregar al carrito (ejemplo específico si se usa) */
+.btn-carrito {
+  background-color: #d28e5f;
+}
+
+.btn-carrito:hover {
+  background-color: #ba672cd7;
+}
+
+/* ================================
+   BOTÓN ANIMADO AL CLIC
+================================== */
+
+/* Animación tipo "pulse" al confirmar */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(235, 165, 106, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 10px rgba(235, 165, 106, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(235, 165, 106, 0);
+  }
+}
+
+/* Clase que se aplica temporalmente al botón al hacer clic */
+.boton-pulse {
+  animation: pulse 0.6s ease;
+}

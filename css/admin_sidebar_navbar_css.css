@@ -19,14 +19,33 @@ body {
   min-height: 100vh;
   transition: width 300ms ease-in-out;
   width: 300px;
-  display: flex;
-  flex-direction: column;
   overflow: hidden;
   height: 100%;
   position: sticky;
   top: 0;
   z-index: 4;
+  user-select: none;
+  display: flex;
+  flex-direction: column;
+  min-width: 100px;
+  width: 150px;
 }
+
+.sidebar .sidebar_hide {
+  opacity: 0;
+  max-width: 0;
+  transition:
+    opacity 300ms ease-in-out,
+    max-width 0ms 300ms; 
+}
+
+.sidebar .sidebar_hide .dashboard_label {
+  /* Oculta el texto al colapsar */
+  transition: all .3s ease-in-out;
+  max-width: 0;
+  margin-left: 0;
+}
+
 
 
 
@@ -73,8 +92,8 @@ body {
 
 /* Texto oculto al colapsar sidebar*/
 .expanded .sidebar_hide {
-  opacity: 0;
-  max-width: 0;
+  opacity: 1;
+  max-width: 200px;
   transition:
     opacity 300ms ease-in-out,
     max-width 0ms 300ms; 
@@ -83,16 +102,18 @@ body {
 .expanded .sidebar_hide .dashboard_label {
   /* Oculta el texto al colapsar */
   transition: all .3s ease-in-out;
-  max-width: 0;
-  margin-left: 0;
+  max-width: 200px;
+  margin-left: 10px;
 }
 
 /* Sidebar colapsado */
 .expanded {
   transition: all .3s ease-in-out;
-  min-width: 100px;
-  width: 150px;
+  
 
+  width: 300px;
+  overflow: hidden;
+  height: 100%;
 }
 
 .seraphia_logo {
@@ -129,8 +150,6 @@ body {
   cursor: pointer;
   transform: translateX(0px) translateY(-4px);
 }
-
-
 
 /* Pagina activa mostrada en sidebar */
 .active_page a{
@@ -291,10 +310,13 @@ body {
 **/
 
 @media (max-width: 912px) {
-  .expanded {
+  .sidebar {
     transition: all .3s ease-in-out;
     min-width: 50px;
     width: 100px;
+  }
+  .expanded {
+    width: 230px;
   }
   .sidebar .sidebar_element {
     margin: 10px;
@@ -303,6 +325,8 @@ body {
   .sidebar.expanded .toggle-btn {
     left: 100px;
   }
+
+
 } 
 
 

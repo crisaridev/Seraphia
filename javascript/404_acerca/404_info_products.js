@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productsContainer = document.getElementById('productsContainer'); //checar que parte es me falta checar pero ya sirve el filtro
     const sizeCheckboxes = document.querySelectorAll('input[data-filter-type="size"]');
     const typeCheckboxes = document.querySelectorAll('input[data-filter-type="type"]');
+    const colorCheckboxes = document.querySelectorAll('input[data-filter-type="color"]');
     const applyFilterButton = document.getElementById('appliedfilter');
     const clearFilterButton = document.getElementById('clearFilterButton');
     const allProducts = document.querySelectorAll('.product-item'); // Selecciona todos los elementos de producto
@@ -27,20 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
         const selectedTypes = Array.from(typeCheckboxes)
                                 .filter(checkbox => checkbox.checked)
                                 .map(checkbox => checkbox.value.toLowerCase());
+        
+        const selectedColors = Array.from(colorCheckboxes)
+                                .filter(checkbox => checkbox.checked)
+                                .map (checkbox => checkbox.value.toLowerCase());
 
         let visibleCount = 0; //contador para saber cuantos productos quedan visibles
                                 
             allProducts.forEach(product => {
             const productSize = product.dataset.size ? product.dataset.size.toLowerCase() : '';
             const productType = product.dataset.type ? product.dataset.type.toLowerCase() : '';
+            const productColor = product.dataset.color ? product.dataset.color.toLowerCase() : '';
 
             // Verifica si el producto coincide con los filtros seleccionados
             // Si no se selecciona ningún filtro de talla, todos los productos de cualquier talla coinciden.
             const matchesSize = selectedSizes.length === 0 || selectedSizes.includes(productSize);
             // Si no se selecciona ningún filtro de tipo, todos los productos de cualquier tipo coinciden.
             const matchesType = selectedTypes.length === 0 || selectedTypes.includes(productType);
+            const matchesColor = selectedColors.length === 0 || selectedColors.includes(productColor);
 
-            if (matchesSize && matchesType) {
+            if (matchesSize && matchesType && matchesColor) {
                 product.style.display = 'block'; // Muestra el producto
                 visibleCount++;
             } else {
@@ -69,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Desmarca todas las casillas de verificación
             sizeCheckboxes.forEach(checkbox => checkbox.checked = false);
             typeCheckboxes.forEach(checkbox => checkbox.checked = false);
+            colorCheckboxes.forEach(checkbox => checkbox.checked = false);
             // Muestra todos los productos
             allProducts.forEach(product => product.style.display = 'block');
             //oculta mensaje de "producto no disponible"
