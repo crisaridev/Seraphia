@@ -202,6 +202,13 @@ function loadProductController() {
 }
 
 
+// Cargar productos desde la API Java y renderizarlos
+// async function cargarYRenderizarProductos() {
+//   await productsController.loadItemsFromAPI();
+//   loadProductController();
+// }
+
 sampleDataLocalStorage();
 productsController.loadItemsFromLocalStorage();
-loadProductController();
+
+cargarYRenderizarProductos();

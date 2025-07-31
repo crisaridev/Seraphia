@@ -86,7 +86,7 @@
     <div class="main-content">
       <ul class="nav justify-content-end navbar pe-4">
         <li class="nav-item nav_button nav_button_hide mx-2">
-          <a class="nav-link active nav_home navbar_element" aria-current="page" href="/indexPrincipal.html">Ir a
+          <a class="nav-link active nav_home navbar_element" aria-current="page" href="/">Ir a
             Seraphia </a>
         </li>
         <li class="nav-item nav_button nav_button_hide mx-2">
@@ -109,7 +109,7 @@
       <div class="container-fluid row m-auto p-lg-5 p-md-3 p-2 pt-lg-5 pt-md-5 pt-4 gap-xxl-4 gap-2">
 
         <div class="container_titles col-12 row d-flex ">
-        <a href="./orders_admin_page.html" class="col go_back fs-5 text-decoration-none text-black"><i class='bx  bx-arrow-from-right-stroke fs-1 go_back_icon'  ></i>  Regresar a pedidos</a>
+        <a href="./orders_admin_page.html" class="col go_back fs-5 text-decoration-none text-black"><i class='bx  bx-arrow-from-right-stroke fs-2 go_back_icon'  ></i>  Regresar a pedidos</a>
 
         <div class="col dropdown">
         
@@ -194,11 +194,11 @@
             <img src="${order.img}" alt="preview del producto" width="50px" class="">
             ${order.name}
           </th>
-          <td class="text-center py-4">${order.netSalesValue}</td>
+          <td class="text-center py-4">$${order.netSalesValue}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Total</th>
-          <td class="text-center py-4">${order.netSalesValue}</td>
+          <td class="text-center py-4">$${order.netSalesValue}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Num. de pedido</th>
@@ -207,6 +207,10 @@
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Fecha de la venta</th>
           <td class="text-center py-4">${order.orderDate}</td>
+        </tr>
+        <tr>
+          <th scope="row" class="py-4 fw-medium fs-3">Estado del pedido</th>
+          <td class="text-center py-4">${order.orderStatus}</td>
         </tr>
       `;
       document.getElementById('order-products-tbody').innerHTML = productsHtml;
