@@ -165,7 +165,7 @@ const createAndAppendProductCard = product => {
 	productAgregarACarrito.appendChild(AgregarACarritoIconContainer);
 
 	const productConozcaMas = document.createElement('a');
-	//Modificar con back
+	//Informacion del back
 	productConozcaMas.setAttribute('href', url);
 	productConozcaMas.classList.add('btn-conozca-mas');
 	productConozcaMas.textContent = 'Conozca más';
@@ -177,12 +177,12 @@ const createAndAppendProductCard = product => {
 
 	const productPrice = document.createElement('p');
 	productPrice.classList.add('product-price');
-	//Modificar con back
+	//Informacion del back
 	productPrice.textContent = '$' + price;
 
 	const productName = document.createElement('p');
 	productName.classList.add('product-name');
-	//Modificar con back
+	//Informacion del back
 	productName.textContent = name;
 
 	const productInfo = document.createElement('div');
@@ -192,7 +192,7 @@ const createAndAppendProductCard = product => {
 	productInfo.appendChild(productActions);
 
 	const productImage = document.createElement('img');
-	//Modificar con back
+	//Informacion del back
 	productImage.setAttribute('src', image);
 	productImage.setAttribute('alt', alt);
 	productImage.classList.add('img-fluid');
@@ -203,11 +203,11 @@ const createAndAppendProductCard = product => {
 	productCard.appendChild(productInfo);
 
 	const productItem = document.createElement('div');
-	//Modificar con back
+	//Informacion del back
 	productItem.setAttribute('data-size', localSize);
-	//Modificar con back
+	//Informacion del back
 	productItem.setAttribute('data-type', type);
-	//Modificar con back
+	//Informacion del back
 	productItem.setAttribute('data-color', color);
 	productItem.classList.add('col', 'product-item');
 	productItem.append(productCard);

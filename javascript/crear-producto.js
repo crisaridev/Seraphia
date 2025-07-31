@@ -143,16 +143,10 @@ const createSwiperCard = (cardNumber, cardPos, img) => {
 	const toBase64 = imgData => {
 		const reader = new FileReader();
 		reader.onloadend = () => {
-			// Use a regex to remove data url part
-			// const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
 			const base64String = reader.result;
-			// console.log(base64String);
 			imgTracker.push({ position: imgData.position, img: base64String });
-			// console.log(imgTracker);
-			// Logs wL2dvYWwgbW9yZ...
 		};
-
-		base64Img = reader.readAsDataURL(imgData.img);
+		const base64Img = reader.readAsDataURL(imgData.img);
 	};
 
 	const updateImgTracker = (action, imgData) => {
@@ -534,8 +528,6 @@ const handleSubmit = () => {
 			imgTracker.forEach(image => {
 				images.push({ imageUrl: image.img, imageOrder: image.position });
 			});
-
-			// const imagesformatted = ;
 
 			return [productBasicData, productColorSizeCategory, { images: [...images] }];
 		};
