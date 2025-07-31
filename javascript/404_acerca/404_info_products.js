@@ -221,7 +221,7 @@ Estructura a seguir. Reemplazar informacion dinamica con informacion del back
 const createAndAppendProductCard = product => {
 	const formatData = product => {
 		console.log(product);
-		const url = './detalles_del_producto.html?id=' + product.id;
+		const url = './detalles-del-producto.html?id=' + product.id;
 		const size = product.size.sizeName;
 		const type = product.category.categoryName;
 		const color = product.color.colorName;
