@@ -340,6 +340,8 @@ const getDBData = async productId => {
 		urlProductId = productId;
 	} catch (error) {
 		console.log(error);
+		alert('No se encontró producto. Se redireccionara a pagina de administrador');
+		location.replace('./products_admin_page.html');
 	}
 };
 
@@ -581,7 +583,10 @@ const handleSubmit = () => {
 				body: JSON.stringify(images),
 			});
 			const responseProduct = await responseImages.json();
-			console.log(responseProduct);
+			// console.log(responseProduct);
+			alert('Se agregó producto con éxito');
+			document.getElementById('form-container').reset();
+			location.reload();
 		} catch (error) {
 			console.error('Hubo un error: ', error);
 		}
@@ -589,8 +594,8 @@ const handleSubmit = () => {
 
 	const sendUpdateProductToServer = async formData => {
 		[productBasicData, productColorSizeCategory, images] = formData;
-		console.log(formData);
-		console.log(urlProductId);
+		// console.log(formData);
+		// console.log(urlProductId);
 		try {
 			const responseBasicData = await fetch(`${URLBASE}/products/${urlProductId}/change-product`, {
 				method: 'PUT',
@@ -614,7 +619,9 @@ const handleSubmit = () => {
 				body: JSON.stringify(images),
 			});
 			const responseProduct = await responseImages.json();
-			console.log(responseProduct);
+			alert('Se modificó producto con éxito');
+			document.getElementById('form-container').reset();
+			location.replace('./products_admin_page.html');
 		} catch (error) {
 			console.log('Hubo un error: ', error);
 		}
@@ -666,8 +673,11 @@ const getUrlParams = () => {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 	const productId = urlParams.get('productid');
-	console.log(productId);
-	if (productId) getDBData(productId);
+	// console.log(productId);
+	if (productId) {
+		getDBData(productId);
+		submitBtn.textContent = 'Modificar Producto';
+	}
 };
 
 // getDBData(dataFromServer);
