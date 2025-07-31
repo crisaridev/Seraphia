@@ -1,6 +1,6 @@
 import { getProductById, addItemToCart } from "../javascript/api.js";
 
-let producto = null; // Variable global para usar en la función del carrito
+let producto = null; // 
 
 document.addEventListener("DOMContentLoaded", async () => {
   const params = new URLSearchParams(window.location.search);
@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", async () => {
 
   try {
     producto = await getProductById(productId);
-    console.log("📦 Producto recibido desde la API:", producto);
+    console.log("Producto recibido desde la API:", producto);
 
     if (!producto || Object.keys(producto).length === 0 || !producto.name) {
       alert("Este producto no está disponible. Serás redirigido.");
@@ -88,10 +88,16 @@ document.addEventListener("DOMContentLoaded", async () => {
       miniaturas?.appendChild(mini);
     }
 
-    // 🎯 Conectar botón "Agregar al carrito"
+    // Botón Agregar al carrito
     const btnAgregar = document.querySelector(".btn-carrito");
     if (btnAgregar) {
       btnAgregar.addEventListener("click", sendProductToCart);
+    }
+
+    // Botón Comprar ahora
+    const btnComprar = document.querySelector(".btn-outline-dark");
+    if (btnComprar) {
+      btnComprar.addEventListener("click", comprarAhora);
     }
 
   } catch (error) {
@@ -101,7 +107,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   }
 });
 
-// 🛒 Función para agregar al carrito
+// Función para agregar al carrito
 const sendProductToCart = async () => {
   try {
     const cartFromSS = JSON.parse(sessionStorage.getItem("cart"));
@@ -130,7 +136,37 @@ const sendProductToCart = async () => {
   }
 };
 
-// 🎞️ Carrusel
+// Función para comprar ahora (agrega al carrito y redirige)
+const comprarAhora = async () => {
+  try {
+    const cartFromSS = JSON.parse(sessionStorage.getItem("cart"));
+    if (!producto?.id || !cartFromSS?.cart?.id) {
+      alert("No se puede comprar el producto. Verifica tu sesión.");
+      return;
+    }
+
+    const cartItem = {
+      cartId: cartFromSS.cart.id,
+      productId: producto.id,
+    };
+
+    const response = await addItemToCart(cartItem);
+    if (!response.ok) {
+      console.error("⚠️ Error al agregar producto:", response);
+      alert("No se pudo procesar la compra.");
+      return;
+    }
+
+    // Redirigir al carrito para completar compra
+    window.location.href = "/html/cart_shopping.html";
+
+  } catch (error) {
+    console.error("❌ Error en comprar ahora:", error);
+    alert("Error inesperado al procesar tu compra.");
+  }
+};
+
+// Carrusel
 function seleccionarSlide(index) {
   const carousel = bootstrap.Carousel.getOrCreateInstance(document.querySelector("#carouselProducto"));
   carousel.to(index);
