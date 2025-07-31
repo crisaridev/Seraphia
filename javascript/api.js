@@ -55,14 +55,20 @@ export const updateProductById = async (productId, productBasicData) => {
 	const responseBasicDataJson = await responseBasicData.json();
 	return responseBasicDataJson.id;
 };
-// add a product to the cart
-export const addItemToCart = async (cartItem) => {
-	const response = await fetch(`${URLBASE}/cart-items`, {
+
+/*
+cartItem contiene
+{
+	"cartId": 1,
+	"productId": 1
+}
+*/
+export const addItemToCart = async cartItem => {
+	const responseItem = await fetch(`${URLBASE}/cart-items`, {
 		method: 'POST',
-		headers: {
-			'Content-Type': 'application/json'
-		},
-		body: JSON.stringify(cartItem)
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(cartItem),
 	});
-	return response; 
+	const responseItemJson = await responseItem.json();
+	return responseItemJson;
 };
