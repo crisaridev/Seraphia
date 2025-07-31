@@ -1,17 +1,17 @@
-const URLBASE = 'http://localhost:8080/api';
+import { getAllProductsWithStock, addItemToCart } from '../api.js';
+
 const noProductCard = document.querySelector('#no-product-card');
 //js de 14 de julio para filtro
 document.addEventListener('DOMContentLoaded', function () {
 	const filterToggleButton = document.getElementById('filterToggleButton');
 	const filterPanel = document.getElementById('filterPanel');
 	const productsContainer = document.getElementById('productsContainer'); //checar que parte es me falta checar pero ya sirve el filtro
+	const clearFilterButton = document.getElementById('clearFilterButton');
+	const applyFilterButton = document.getElementById('appliedfilter');
+	const noProductMessage = document.getElementById('noProductMessage'); //mensaje de "no disponible"
 	const sizeCheckboxes = document.querySelectorAll('input[data-filter-type="size"]');
 	const typeCheckboxes = document.querySelectorAll('input[data-filter-type="type"]');
 	const colorCheckboxes = document.querySelectorAll('input[data-filter-type="color"]');
-	const applyFilterButton = document.getElementById('appliedfilter');
-	const clearFilterButton = document.getElementById('clearFilterButton');
-	const allProducts = document.querySelectorAll('.product-item'); // Selecciona todos los elementos de producto
-	const noProductMessage = document.getElementById('noProductMessage'); //mensaje de "no disponible"
 
 	// Alternar la visibilidad del panel de filtro para pantallas pequeñas
 	if (filterToggleButton && filterPanel) {
@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	// Función para aplicar filtros
 	function applyFilters() {
+		const allProducts = document.querySelectorAll('.product-item'); // Selecciona todos los elementos de producto
 		const selectedSizes = Array.from(sizeCheckboxes)
 			.filter(checkbox => checkbox.checked)
 			.map(checkbox => checkbox.value.toLowerCase());
@@ -75,6 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	// Escucha el evento click del botón "Borrar"
 	if (clearFilterButton) {
 		clearFilterButton.addEventListener('click', function () {
+			const allProducts = document.querySelectorAll('.product-item'); // Selecciona todos los elementos de producto
 			// Desmarca todas las casillas de verificación
 			sizeCheckboxes.forEach(checkbox => (checkbox.checked = false));
 			typeCheckboxes.forEach(checkbox => (checkbox.checked = false));
@@ -91,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 /*
 Estructura a seguir. Reemplazar informacion dinamica con informacion del back
+
 <div class="col product-item" data-size="L" data-type="blusa" data-color="blanco">
     <div class="product-card">
         <img src="/assets/images/404/product/9.jpg" class="img-fluid" alt="Blusa estilo vaquero" />
@@ -113,8 +116,31 @@ Estructura a seguir. Reemplazar informacion dinamica con informacion del back
 */
 
 const createAndAppendProductCard = product => {
+	const sendProductToCart = async event => {
+		try {
+			//Crear, añadir y extraer informacion de session storage
+			const cart = { id: 1, name: 'Test Name', email: 'testmail@gmail.com', cart: { id: 1, items: [] } };
+			sessionStorage.setItem('cart', JSON.stringify(cart));
+			const cartFromSS = JSON.parse(sessionStorage.getItem('cart'));
+			console.log(cartFromSS);
+
+			//Validar que exista product.id y cart.id
+			if (!(product.id && cartFromSS.cart.id)) return;
+			//Crear elemento que se va a enviar al back
+			const cartItem = {
+				cartId: cartFromSS.cart.id,
+				productId: product.id,
+			};
+			//Hacer peticion al back
+			const answerAddItemToCart = await addItemToCart(cartItem);
+			if (!answerAddItemToCart.ok) console.log('Error al agregar producto a carrito');
+		} catch (error) {
+			console.log('Error: ' + error);
+		}
+	};
+
 	const formatData = product => {
-		// console.log(product);
+		if (product.length == 0) return;
 		const url = './detalles-del-producto.html?id=' + product.id;
 		const size = product.size.sizeName;
 		const type = product.category.categoryName;
@@ -123,7 +149,7 @@ const createAndAppendProductCard = product => {
 		const name = product.name;
 		const price = product.price.toFixed(2);
 		let image = '';
-		for (imageElement of product.imagesList) {
+		for (const imageElement of product.imagesList) {
 			if (imageElement.imageOrder === 1) {
 				image = imageElement.imageUrl;
 			}
@@ -141,7 +167,7 @@ const createAndAppendProductCard = product => {
 		return [url, localSize, type, color, image, alt, name, price];
 	};
 
-	[url, localSize, type, color, image, alt, name, price] = formatData(product);
+	const [url, localSize, type, color, image, alt, name, price] = formatData(product);
 
 	const AgregarACarritoIconPath = document.createElement('path');
 	AgregarACarritoIconPath.setAttribute(
@@ -160,11 +186,13 @@ const createAndAppendProductCard = product => {
 
 	//Agregar event listener para agregar a carrito
 	const productAgregarACarrito = document.createElement('button');
+	productAgregarACarrito.setAttribute('type', 'button');
 	productAgregarACarrito.classList.add('btn-shop');
+	productAgregarACarrito.addEventListener('click', sendProductToCart);
 	productAgregarACarrito.appendChild(AgregarACarritoIconContainer);
 
 	const productConozcaMas = document.createElement('a');
-	//Modificar con back
+	//Informacion del back
 	productConozcaMas.setAttribute('href', url);
 	productConozcaMas.classList.add('btn-conozca-mas');
 	productConozcaMas.textContent = 'Conozca más';
@@ -176,12 +204,12 @@ const createAndAppendProductCard = product => {
 
 	const productPrice = document.createElement('p');
 	productPrice.classList.add('product-price');
-	//Modificar con back
+	//Informacion del back
 	productPrice.textContent = '$' + price;
 
 	const productName = document.createElement('p');
 	productName.classList.add('product-name');
-	//Modificar con back
+	//Informacion del back
 	productName.textContent = name;
 
 	const productInfo = document.createElement('div');
@@ -191,7 +219,7 @@ const createAndAppendProductCard = product => {
 	productInfo.appendChild(productActions);
 
 	const productImage = document.createElement('img');
-	//Modificar con back
+	//Informacion del back
 	productImage.setAttribute('src', image);
 	productImage.setAttribute('alt', alt);
 	productImage.classList.add('img-fluid');
@@ -202,26 +230,23 @@ const createAndAppendProductCard = product => {
 	productCard.appendChild(productInfo);
 
 	const productItem = document.createElement('div');
-	//Modificar con back
+	//Informacion del back
 	productItem.setAttribute('data-size', localSize);
-	//Modificar con back
+	//Informacion del back
 	productItem.setAttribute('data-type', type);
-	//Modificar con back
+	//Informacion del back
 	productItem.setAttribute('data-color', color);
 	productItem.classList.add('col', 'product-item');
 	productItem.append(productCard);
 
 	productsContainer.appendChild(productItem);
-	// console.log(productItem);
 };
 
 const getProducts = async () => {
 	try {
-		const responseProduct = await fetch(`${URLBASE}/products/all/products-with-stock`);
-		if (!responseProduct.ok) throw new Error(`No se encontro el producto solicitado`);
-		const responseProductJson = await responseProduct.json();
-		if (responseProductJson.length == 0) noProductCard.classList.remove('d-none');
-		responseProductJson.forEach(product => createAndAppendProductCard(product));
+		const responseProductsWithStock = await getAllProductsWithStock();
+		if (responseProductsWithStock.length == 0) noProductCard.classList.remove('d-none');
+		responseProductsWithStock.forEach(product => createAndAppendProductCard(product));
 	} catch (error) {
 		noProductCard.classList.remove('d-none');
 		console.log('Ocurrio un error: ' + error);
