@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Blusa negra con bordado de crochet</title>
+  <title>Detalles del producto</title>
   <!-- Bootstrap CSS -->
   <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
@@ -15,7 +15,8 @@
     href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
   >
   <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="/css/Navbar_footer.css">
+  <link rel="stylesheet" href="/css/detalles-del-producto.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
@@ -27,7 +28,7 @@
   <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
+    <a class="navbar-brand d-flex align-items-center" href="/">
       <img
         src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
@@ -40,12 +41,12 @@
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
     <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
       <li class="nav-item">
-        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
+        <a class="nav-link" href="/">Inicio</a>
       </li>
       <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+      <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/404_info_products.html">Tienda</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
     </ul>
 
@@ -120,69 +121,71 @@
   <!-- Contenido principal -->
   <main class="container py-5">
     <div class="row g-5">
-      <!-- Galería -->
-      <div class="col-md-6">
-        <div class="mb-4 imagen-contenedor">
-          <img src="/detalles_del_producto/assets/Blusa negra con bordado de crochet/Blusa-negra-portada.jpg" alt="Blusa negra con bordado de crochet" class= "img-ajustada">
-
+      <div class="col-lg-6">
+        <div id="carouselProducto" class="carousel slide" data-bs-ride="carousel">
+          <div class="carousel-inner" id="carousel-inner"></div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducto" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselProducto" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+          </button>
         </div>
-        <div class="mb-4 imagen-contenedor">
-          <img src="/detalles_del_producto/assets/Blusa negra con bordado de crochet/Blusa-negra-perfil.jpg" alt="blusa negra con bordado de crocher de perfil" class="img-ajustada">
-        </div>
+        <div class="mt-3 d-flex justify-content-center gap-2" id="miniaturas"></div>
       </div>
-      <!-- Información del producto -->
-      <div class="col-md-6">
-        <nav class="mb-3 text-muted small">Ver todo > blusas > Blusa negra con bordado de crochet</nav>
-        <h1 class="h3 fw-bold">Blusa negra con bordado de crochet</h1>
-        <p class="h5 fw-semibold">$450.00</p>
-        <p>Blusa de corte amplio confeccionada en suave algodón negro, ideal para un estilo relajado y contemporáneo. El diseño presenta cuello redondo y destaca por un delicado bordado de flores a crochet en el pecho, que aporta un toque artesanal y femenino.</p>
-        <button class="btn btn-carrito w-100 mb-2">Agregar al carrito</button>
-        <button class="btn btn-outline-dark w-100">Comprar ahora</button>
-        <!-- Pestañas -->
-        <ul class="nav nav-tabs mt-4" id="productTab" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="detalles-tab" data-bs-toggle="tab" data-bs-target="#detalles" type="button" role="tab">Detalles</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="envio-tab" data-bs-toggle="tab" data-bs-target="#envio" type="button" role="tab">Envío</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="devoluciones-tab" data-bs-toggle="tab" data-bs-target="#devoluciones" type="button" role="tab">Devoluciones</button>
-          </li>
-        </ul>
-        <div class="tab-content border p-3" id="productTabContent">
-          <div class="tab-pane fade show active" id="detalles" role="tabpanel"><b>Talla:</b> M <br><b>Materiales:</b> Tela algodón.</div>
-          <div class="tab-pane fade" id="envio" role="tabpanel"><b>El envío </b>de esta prenda se coordina directamente con la vendedora. Para más información, contáctanos por WhatsApp o redes sociales.</div>
-          <div class="tab-pane fade" id="devoluciones" role="tabpanel"><b>Las devoluciones </b>se manejan caso por caso a través de contacto directo. Por favor, comunícate con la vendedora para revisar tu situación.</div>
-        </div>
+     <div class="col-lg-6 d-flex align-items-center">
+  <div class="card shadow-sm p-4 border-0 w-100">
+    <nav class="mb-2 text-muted small" id="ruta-producto"></nav>
+    <h1 class="h4 fw-bold" id="titulo-producto"></h1>
+    <p class="h5 text-muted" id="precio-producto"></p>
+    <p id="descripcion-producto"></p>
+
+    <button class="btn btn-carrito w-100 mb-2">Agregar al carrito</button>
+    <button class="btn btn-outline-dark w-100">Comprar ahora</button>
+
+    <!-- Tabs -->
+    <ul class="nav nav-tabs mt-4" id="productTab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="detalles-tab" data-bs-toggle="tab" data-bs-target="#detalles" type="button" role="tab">Detalles</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="envio-tab" data-bs-toggle="tab" data-bs-target="#envio" type="button" role="tab">Envío</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="devoluciones-tab" data-bs-toggle="tab" data-bs-target="#devoluciones" type="button" role="tab">Devoluciones</button>
+      </li>
+    </ul>
+
+    <!-- Contenido de tabs -->
+    <div class="tab-content border p-3" id="productTabContent">
+      <div class="tab-pane fade show active" id="detalles" role="tabpanel">
+        <div id="contenido-detalles"></div> 
+      </div>
+
+      <div class="tab-pane fade" id="envio" role="tabpanel">
+        <b>El envío</b> de esta prenda se coordina directamente con la vendedora. Para más información, contáctanos por WhatsApp o redes sociales.
+      </div>
+
+      <div class="tab-pane fade" id="devoluciones" role="tabpanel">
+        <b>Las devoluciones</b> se manejan caso por caso a través de contacto directo. Por favor, comunícate con la vendedora para revisar tu situación.
+      </div>
+    </div> 
+
+  </div> 
+</div> 
+
+        
+    <!-- Beneficios -->
+    <div class="row mt-5 justify-content-center text-center">
+      <div class="col-md-10 col-lg-8">
+        <h2 class="fw-bold">Viste con intención, cuida con estilo.</h2>
+        <p class="mt-3">Cada prenda de Seraphia honra la tradición textil mexicana y respeta al planeta. Hecha para durar, pensada para lucirse.</p>
       </div>
     </div>
-    <!-- Beneficios -->
-    <!-- Beneficios -->
-<div class="row mt-5 justify-content-center text-center">
-  <div class="col-md-10 col-lg-8">
-    <h2 class="fw-bold">Viste con intención, cuida con estilo.</h2>
-    <p class="mt-3">Cada prenda de Seraphia honra la tradición textil mexicana y respeta al planeta. Hecha para durar, pensada para lucirse.</p>
-  </div>
-</div>
-
     <div class="mt-4 imagen-banner">
-      <img src="/detalles_del_producto/assets/Banner/Portada-detalle-bordado.jpg" alt="Blusa blanca bordada" class="img-banner">
-    </div>
-    <!-- CTA -->
-    <div class="row mt-5 align-items-center">
-      <div class="col-md-6">
-        <h2 class="h4 fw-bold">Añade tu producto al carrito</h2>
-        <p>No pierdas la oportunidad de adquirir este producto...</p>
-        <div class="d-flex gap-3">
-          <button class="btn btn-carrito">Agregar</button>
-          <button class="btn btn-outline-dark">Más tarde</button>
-        </div>
-      </div>
-      <div class="col-md-6">
-      <div class="">
-        <div class="imagen-contenedor">
-          <img src="/detalles_del_producto/assets/Blusa negra con bordado de crochet/Blusa-negra-perfil-izquierdo.jpg" alt="Blusa negra estilo crochet" class="img-ajustada">
+      <img src="/assets/Portada-detalle-bordado.jpg" alt="Blusa blanca bordada" class="img-banner">
     </div>
     <!-- Footer -->
 
@@ -232,7 +235,7 @@
                     <h3 class="footer-toggle">CUIDAMOS DE TI</h3>
                     <ul class="footer-links">
                         <li><a href="#">Política de privacidad</a></li>
-                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Términos de servicio</a></ßli>
                         <li><a href="#">Configuración de Cookies</a></li>
                         <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
                     </ul>
@@ -240,9 +243,6 @@
 
                 </div>
                 </div>
-
-
-
 
 
             <div class="col-12 col-md-6 col-lg-4">
@@ -261,5 +261,7 @@
     </footer>
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="/javascript/404_detalles_producto.js"></script>
+  <script src="/javascript/navbar_footer.js"></script>
 </body>
 </html>

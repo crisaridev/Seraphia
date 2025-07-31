@@ -27,7 +27,7 @@
   <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
     <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="/html/index.html">
+    <a class="navbar-brand d-flex align-items-center" href="/"">
       <img
         src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
         alt="Seraphia"
@@ -40,7 +40,7 @@
     <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
     <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
       <li class="nav-item">
-        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/index.html">Inicio</a>
+        <a class="nav-link active rounded-pill bg-light text-dark px-3" href="/">Inicio</a>
       </li>
       <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
       <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
@@ -53,7 +53,7 @@
     <div class="d-flex align-items-center gap-2 ms-auto">
 
       <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
-     <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+     <form id="formBusquedaDesktop" name="formBusquedaDesktop" class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
        <input
          class="form-control"
          type="search"
@@ -69,7 +69,7 @@
       </a>
 
       <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
-      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
+      <a href="/html/login.html" id="loginBtnDesktop" class="btn botonLogin d-none d-lg-inline-block">
        Iniciar sesión
         </a>
       <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
@@ -90,7 +90,7 @@
     <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
       <ul class="navbar-nav w-100">
         <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+        <li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
         <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
@@ -99,7 +99,7 @@
 
         <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
         <li class="nav-item px-3 my-3">
-          <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+          <form id="formBusquedaMobile" name="formBusquedaMobile" class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
             <input class="form-control me-1"
                    type="search"
                    placeholder="Buscar"
@@ -110,7 +110,7 @@
 
         <!-- Botón de inicio de sesión version mobile -->
         <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+          <a id="loginBtnMobile" class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
         </li>
       </ul>
     </div>
@@ -120,6 +120,8 @@
 
 <!-- Scripts de Bootstrap -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Scripts del Botón del Login -->
+<script src="/javascript/navbar_footer.js"></script>
 </body>
 </html>
 

@@ -1,5 +1,5 @@
-document.getElementById('registroForm').addEventListener('submit', function (event) {
-  event.preventDefault(); 
+document.getElementById('registroForm').addEventListener('submit', async function (event) {
+  event.preventDefault();
 
   const nombre = document.getElementById('nombre').value.trim();
   const telefono = document.getElementById('telefono').value.trim();
@@ -7,102 +7,58 @@ document.getElementById('registroForm').addEventListener('submit', function (eve
   const password = document.getElementById('password').value;
   const confirmPassword = document.getElementById('confirm-password').value;
 
-  // Validar campos vacíos
+  // Validaciones locales
   if (!nombre || !telefono || !email || !password || !confirmPassword) {
-    mostrarAlerta('Por favor completa todos los campos.', 'danger');
-    return;
+    return mostrarAlerta('Por favor completa todos los campos.', 'danger');
   }
-
-  // Validar longitud del nombre
   if (nombre.length < 3) {
-    mostrarAlerta('El nombre debe tener al menos 3 caracteres.', 'danger');
-    return;
+    return mostrarAlerta('El nombre debe tener al menos 3 caracteres.', 'danger');
   }
-
-  // Validar email
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(email)) {
-    mostrarAlerta('El correo electrónico no es válido.', 'danger');
-    return;
+    return mostrarAlerta('El correo electrónico no es válido.', 'danger');
   }
-
-  // Validar teléfono
   const telefonoRegex = /^\d{10,15}$/;
   if (!telefonoRegex.test(telefono)) {
-    mostrarAlerta('El número de teléfono debe contener solo dígitos y tener entre 10 y 15 caracteres.', 'danger');
-    return;
+    return mostrarAlerta('El número de teléfono debe tener entre 10 y 15 dígitos.', 'danger');
   }
-
-  // Validar contraseñas
   if (password !== confirmPassword) {
-    mostrarAlerta('Las contraseñas no coinciden.', 'danger');
-    return;
+    return mostrarAlerta('Las contraseñas no coinciden.', 'danger');
   }
-
-  // Validar longitud de contraseña
   if (password.length < 8) {
-    mostrarAlerta('La contraseña debe tener al menos 8 caracteres.', 'danger');
-    return;
+    return mostrarAlerta('La contraseña debe tener al menos 8 caracteres.', 'danger');
   }
 
-  // Obtener usuarios existentes
-  let usuarios = JSON.parse(localStorage.getItem('usuariosRegistrados')) || [];
+  const usuario = { name: nombre, phone: telefono, email, password };
 
-  // Verificar si el email ya existe
-  const existeEmail = usuarios.some(u => u.email === email);
-  if (existeEmail) {
-    mostrarAlerta('El correo electrónico ya está registrado.', 'danger');
-    return;
-  }
+  try {
+    const resp = await fetch('http://localhost:8080/api/users/register', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(usuario)
+    });
 
-  // Crear objeto usuario
-  const usuario = {
-    nombre: nombre,
-    telefono: telefono,
-    email: email,
-    password: password // ⚠️ Recuerda que en producción se debería encriptar
-  };
+    const data = await resp.json();
 
-  // Agregar usuario al arreglo y guardar
-  usuarios.push(usuario);
-  localStorage.setItem('usuariosRegistrados', JSON.stringify(usuarios));
-
-  // Mostrar alerta de éxito
-  mostrarAlerta('Registro exitoso. Usuario creado correctamente.', 'success');
-
-  // Limpiar formulario
-  document.getElementById('registroForm').reset();
-
-  console.log('Usuario JSON:', JSON.stringify(usuario));
-
-  // Comentario para fetch futuro
-  /*
-  fetch('https://mi-servidor.com/api/usuarios', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify(usuario)
-  })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error('Error en el servidor');
+    if (!resp.ok) {
+      const msg = typeof data === 'string' ? data : (data.message || JSON.stringify(data));
+      throw new Error(msg);
     }
-    return response.json();
-  })
-  .then(data => {
-    console.log('Usuario registrado en el servidor:', data);
-  })
-  .catch(error => {
-    console.error('Error al enviar:', error);
-  });
-  */
+
+    localStorage.setItem('userId', data.id);
+    mostrarAlerta('Registro exitoso. Redirigiendo...', 'success');
+    setTimeout(() => { window.location.href = '/html/login.html'; }, 1500);
+
+  } catch (error) {
+    console.error('Error:', error);
+    mostrarAlerta(error.message || 'Hubo un error al registrar. Intenta más tarde.', 'danger');
+  }
 });
 
 // Función para mostrar alertas Bootstrap
 function mostrarAlerta(mensaje, tipo) {
   const alertaDiv = document.getElementById('alerta');
-  alertaDiv.className = 'alert alert-' + tipo;
+  alertaDiv.className = `alert alert-${tipo}`;
   alertaDiv.textContent = mensaje;
   alertaDiv.classList.remove('d-none');
 }
