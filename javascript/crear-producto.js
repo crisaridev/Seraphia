@@ -1,4 +1,5 @@
-const URLBASE = 'http://localhost:8080/api';
+//fetch functions
+import { addProductBasicData, addProductColorSizeCategory, addProductImages, getProductById, updateProductById } from './api.js';
 const submitBtn = document.querySelector('.submit-btn');
 
 /*
@@ -7,19 +8,9 @@ This is necessary because if you upload 2 images, one at a time, the first one w
 If the position of an image is updated or an image is deleted from the html, those changes will be reflected on the imgTracker variable as well
 */
 const imgTracker = [];
+
+//Variable used to store the product if retrieved from the url, used to fetch the api
 let urlProductId = null;
-/*
-Dummy data, pretend this comes from the server
-*/
-const productOneDesc =
-	'Blusa amarilla vibrante con delicados bordados artesanales que aportan un toque único y elegante. Ideal para destacar en cualquier ocasión, combina frescura, estilo y comodidad. Perfecta para quienes buscan moda con personalidad y detalles hechos con amor.';
-const productOneImg = [
-	{ position: 2, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-fondo.jpg' },
-	{ position: 3, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-frente-fondo.jpg' },
-	{ position: 1, img: '../assets/images/crear-producto/blusa-amarilla/blusa-amarilla-con-bordado-perfil-fondo.jpg' },
-	{ position: 4, img: '../assets/images/crear-producto/blusa-amarilla/Copia de blusa-amarilla-con-bordado-detalle-fondo.jpg' },
-];
-const dataFromServer = { title: 'Blusa Amarilla Con Bordado', price: 500, color: 'Rojo', size: 'Chica', category: 'Blusa', description: productOneDesc, images: productOneImg };
 
 /*
 Initialize swiper carousel
@@ -152,16 +143,10 @@ const createSwiperCard = (cardNumber, cardPos, img) => {
 	const toBase64 = imgData => {
 		const reader = new FileReader();
 		reader.onloadend = () => {
-			// Use a regex to remove data url part
-			// const base64String = reader.result.replace('data:', '').replace(/^.+,/, '');
 			const base64String = reader.result;
-			// console.log(base64String);
 			imgTracker.push({ position: imgData.position, img: base64String });
-			// console.log(imgTracker);
-			// Logs wL2dvYWwgbW9yZ...
 		};
-
-		base64Img = reader.readAsDataURL(imgData.img);
+		const base64Img = reader.readAsDataURL(imgData.img);
 	};
 
 	const updateImgTracker = (action, imgData) => {
@@ -318,28 +303,28 @@ const getDBData = async productId => {
 		}
 	};
 
-	const formatDataFromServer = responseProductJson => {
-		const title = responseProductJson.name;
-		const price = responseProductJson.price;
-		const color = responseProductJson.color.colorName;
-		const size = responseProductJson.size.sizeName;
-		const category = responseProductJson.category.categoryName;
-		const description = responseProductJson.description;
-
-		const images = responseProductJson.imagesList.map(imageElement => ({ position: imageElement.imageOrder, img: imageElement.imageUrl }));
+	const formatDataFromServer = responseProduct => {
+		const title = responseProduct.name;
+		const price = responseProduct.price;
+		const color = responseProduct.color.colorName;
+		const size = responseProduct.size.sizeName;
+		const category = responseProduct.category.categoryName;
+		const description = responseProduct.description;
+		const images = responseProduct.imagesList.map(imageElement => ({ position: imageElement.imageOrder, img: imageElement.imageUrl }));
 		return [title, price, color, size, category, description, images];
 	};
 
 	try {
-		const responseProduct = await fetch(`${URLBASE}/products/${productId}`);
-		if (!responseProduct.ok) throw new Error(`No se encontro el producto solicitado`);
-		const responseProductJson = await responseProduct.json();
-		[title, price, color, size, category, description, images] = formatDataFromServer(responseProductJson);
+		const responseProduct = await getProductById(productId);
+		if (!responseProduct) throw new Error(`No se encontro el producto solicitado`);
+		const [title, price, color, size, category, description, images] = formatDataFromServer(responseProduct);
 		populateFormData(title, price, color, size, category, description);
 		populateSwiper(images);
 		urlProductId = productId;
 	} catch (error) {
 		console.log(error);
+		alert('No se encontró producto. Se redireccionara a pagina de administrador');
+		location.replace('./products_admin_page.html');
 	}
 };
 
@@ -544,8 +529,6 @@ const handleSubmit = () => {
 				images.push({ imageUrl: image.img, imageOrder: image.position });
 			});
 
-			// const imagesformatted = ;
-
 			return [productBasicData, productColorSizeCategory, { images: [...images] }];
 		};
 
@@ -557,66 +540,39 @@ const handleSubmit = () => {
 	};
 
 	const sendNewProductToServer = async formData => {
-		[productBasicData, productColorSizeCategory, images] = formData;
+		const [productBasicData, productColorSizeCategory, images] = formData;
+
 		try {
-			const responseBasicData = await fetch(`${URLBASE}/products`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(productBasicData),
-			});
-			if (!responseBasicData) console.log('Error al agregar informacion basica del producto');
-			const responseBasicDataJson = await responseBasicData.json();
-			const productId = responseBasicDataJson.id;
-
-			const responseColorSizeCategory = await fetch(`${URLBASE}/products/${productId}/add-color-size-category`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(productColorSizeCategory),
-			});
+			const productId = await addProductBasicData(productBasicData);
+			if (!productId) console.log('Error al agregar informacion basica del producto');
+			const responseColorSizeCategory = await addProductColorSizeCategory(productId, productColorSizeCategory);
 			if (!responseColorSizeCategory) console.log('Error al agregar color, tamaño y categoria del producto');
+			const responseProductImages = await addProductImages(productId, images);
+			if (!responseProductImages) console.log('Error al agregar las imagenes');
 
-			const responseImages = await fetch(`${URLBASE}/products/${productId}/add-images`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(images),
-			});
-			const responseProduct = await responseImages.json();
-			console.log(responseProduct);
+			alert('Se agregó producto con éxito');
+			document.getElementById('form-container').reset();
+			location.reload();
 		} catch (error) {
 			console.error('Hubo un error: ', error);
 		}
 	};
 
 	const sendUpdateProductToServer = async formData => {
-		[productBasicData, productColorSizeCategory, images] = formData;
-		console.log(formData);
-		console.log(urlProductId);
+		const [productBasicData, productColorSizeCategory, images] = formData;
 		try {
-			const responseBasicData = await fetch(`${URLBASE}/products/${urlProductId}/change-product`, {
-				method: 'PUT',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(productBasicData),
-			});
-			if (!responseBasicData) console.log('Error al agregar informacion basica del producto');
-			const responseBasicDataJson = await responseBasicData.json();
-			const productId = responseBasicDataJson.id;
-
-			const responseColorSizeCategory = await fetch(`${URLBASE}/products/${productId}/add-color-size-category`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(productColorSizeCategory),
-			});
+			const productId = await updateProductById(urlProductId, productBasicData);
+			if (!productId) console.log('Error al agregar informacion basica del producto');
+			const responseColorSizeCategory = await addProductColorSizeCategory(urlProductId, productColorSizeCategory);
 			if (!responseColorSizeCategory) console.log('Error al agregar color, tamaño y categoria del producto');
+			const responseProductImages = await addProductImages(urlProductId, images);
+			if (!responseProductImages) console.log('Error al agregar las imagenes');
 
-			const responseImages = await fetch(`${URLBASE}/products/${productId}/add-images`, {
-				method: 'POST',
-				headers: { 'Content-Type': 'application/json' },
-				body: JSON.stringify(images),
-			});
-			const responseProduct = await responseImages.json();
-			console.log(responseProduct);
+			alert('Se modificó producto con éxito');
+			document.getElementById('form-container').reset();
+			location.replace('./products_admin_page.html');
 		} catch (error) {
-			console.log('Hubo un error: ', error);
+			console.log('Error: ', error);
 		}
 	};
 
@@ -662,13 +618,18 @@ Bootstrap form validation
 	});
 })();
 
+/*
+Get the URL parameters to extract the product id. If a product id is found then make a call to the backend.
+When a product id is found in the URL parameters is found, the data that is sent to the background will modify the product with said id
+*/
 const getUrlParams = () => {
 	const queryString = window.location.search;
 	const urlParams = new URLSearchParams(queryString);
 	const productId = urlParams.get('productid');
-	console.log(productId);
-	if (productId) getDBData(productId);
+	if (productId) {
+		getDBData(productId);
+		submitBtn.textContent = 'Modificar Producto';
+	}
 };
 
-// getDBData(dataFromServer);
 getUrlParams();
