@@ -14,6 +14,8 @@
 		<!--!Estilos de header-->
 		<link rel="stylesheet" href="/css/Navbar_footer.css" />
 		<!--!Estilos footer migue-->
+		<link rel="icon" type="image/x-icon" href="../assets/LOGO-BLANCO-seraphia.png" />
+		<!--!Favicon -->
 	</head>
 	<body>
 		<header>
@@ -28,13 +30,11 @@
 
 					<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
 					<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
-						<li class="nav-item">
-							<a class="nav-link active rounded-pill bg-light text-dark px-3" href="/">Inicio</a>
-						</li>
+						<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+						<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/404_info_products.html">Tienda</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 					</ul>
 
@@ -229,6 +229,13 @@
 					<div id="productsContainer" class="row row-cols-sm-2 row-cols-xl-4 g-4">
 						<div id="noProductMessage" class="col-12 text-center" style="display: none">
 							<p class="fs-4 text-muted">Lo sentimos, prenda no disponible.</p>
+						</div>
+
+						<div class="card text-bg-light mb-3 text-center d-none" style="width: 80%; margin-right: 10; margin-left: 10%" id="no-product-card">
+							<div class="card-body">
+								<h5 class="card-title">Lo sentimos</h5>
+								<p class="card-text">No contamos con productos en inventario</p>
+							</div>
 						</div>
 						<!--
 						<div class="col product-item" data-size="L" data-type="blusa" data-color="amarillo">
