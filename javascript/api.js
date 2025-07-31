@@ -55,3 +55,20 @@ export const updateProductById = async (productId, productBasicData) => {
 	const responseBasicDataJson = await responseBasicData.json();
 	return responseBasicDataJson.id;
 };
+
+/*
+cartItem contiene
+{
+	"cartId": 1,
+	"productId": 1
+}
+*/
+export const addItemToCart = async cartItem => {
+	const responseItem = await fetch(`${URLBASE}/cart-items`, {
+		method: 'POST',
+		headers: { 'Content-Type': 'application/json' },
+		body: JSON.stringify(cartItem),
+	});
+	const responseItemJson = await responseItem.json();
+	return responseItemJson;
+};
