@@ -1,18 +1,48 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const userId = 1; //  Reemplázalo con el ID real del usuario autenticado
-  cargarCarrito(userId);
+  const userId = localStorage.getItem("userId");
 
-  // Botón confirmar
+  if (!userId) {
+    alert("Debes iniciar sesión para ver tu carrito.");
+    window.location.href = "/html/login.html";
+    return;
+  }
+
+  inicializarCarrito(userId);
+
+  // Confirmar compra
   const btnConfirmar = document.getElementById("btnConfirmar");
   if (btnConfirmar) {
     btnConfirmar.addEventListener("click", () => {
       btnConfirmar.classList.add("boton-pulse");
-      setTimeout(() => window.location.href = '/html/Registro_de_Pago.html', 600);
+      setTimeout(() => window.location.href = "/html/Registro_de_Pago.html", 600);
     });
   }
 });
 
-// 🔄 Cargar y renderizar carrito
+function inicializarCarrito(userId) {
+  // 1. Intenta obtener el carrito existente
+  fetch(`http://localhost:8080/api/carts/user/${userId}`)
+    .then(res => {
+      if (res.ok) return res.json();
+
+      // 2. Si no existe, lo crea
+      return fetch(`http://localhost:8080/api/carts/create/${userId}`, {
+        method: "POST"
+      }).then(res => {
+        if (!res.ok) throw new Error("No se pudo crear el carrito.");
+        return res.json();
+      });
+    })
+    .then(cart => {
+      localStorage.setItem("cartId", cart.id);
+      cargarCarrito(userId);
+    })
+    .catch(err => {
+      console.error("❌ Error inicializando carrito:", err.message);
+      alert("No se pudo inicializar el carrito.");
+    });
+}
+
 function cargarCarrito(userId) {
   const cartContainer = document.getElementById("cart-items-container");
   const totalElement = document.querySelector(".precio-total");
@@ -36,7 +66,7 @@ function cargarCarrito(userId) {
 
         const img = (item.product.imagesList && item.product.imagesList.length > 0)
           ? item.product.imagesList[0].imageUrl
-          : "/img/placeholder.png"; // Asegúrate de que exista esta imagen local
+          : "/img/placeholder.png";
 
         const card = document.createElement("div");
         card.className = "card rounded-3 mb-4";
@@ -72,7 +102,6 @@ function cargarCarrito(userId) {
     .catch(err => console.error("❌ Error cargando carrito:", err.message));
 }
 
-// ✅ Agrega listeners a botones
 function addEventListeners() {
   document.querySelectorAll(".btn-eliminar").forEach(btn =>
     btn.addEventListener("click", () => eliminarItem(btn))
@@ -95,20 +124,20 @@ function addEventListeners() {
   }
 }
 
-// ❌ Eliminar producto
 function eliminarItem(button) {
   const itemId = button.dataset.itemId;
+  const userId = localStorage.getItem("userId");
+
   if (!confirm("¿Seguro que deseas eliminar este producto del carrito?")) return;
 
   fetch(`http://localhost:8080/api/cart-items/${itemId}`, { method: "DELETE" })
     .then(resp => {
       if (!resp.ok) throw new Error("No se pudo eliminar");
-      cargarCarrito(1); // 👈 Reemplaza 1 con userId dinámico si es necesario
+      cargarCarrito(userId);
     })
     .catch(err => alert("Error al eliminar producto: " + err.message));
 }
 
-// 💸 Aplicar descuento
 function aplicarDescuento(porcentaje) {
   const totalElement = document.querySelector(".precio-total");
   const totalOriginal = parseFloat(totalElement.dataset.total || "0");
@@ -116,15 +145,14 @@ function aplicarDescuento(porcentaje) {
   totalElement.textContent = `$${totalConDescuento.toFixed(2)}`;
 }
 
-// 🛒 Agregar producto desde botón de prueba
 function addItemToCartDesdeFront() {
+  const cartId = localStorage.getItem("cartId");
+  const userId = localStorage.getItem("userId");
+  if (!cartId || !userId) return alert("No hay sesión activa.");
+
   const nuevoItem = {
     productId: 1,
-    colorId: 1,
-    sizeId: 1,
-    cartId: 1, // ⚠️ Asegúrate de usar el cartId correcto
-    category: "ropa",
-    quantity: 1
+    cartId: parseInt(cartId)
   };
 
   fetch("http://localhost:8080/api/cart-items", {
@@ -134,39 +162,16 @@ function addItemToCartDesdeFront() {
   })
     .then(res => {
       if (!res.ok) {
-        return res.text().then(text => {
-          throw new Error(`Error ${res.status}: ${text}`);
-        });
+        return res.text().then(text => { throw new Error(`Error ${res.status}: ${text}`); });
       }
       return res.json();
     })
-    .then(data => {
+    .then(() => {
       alert("✅ Producto agregado al carrito.");
-      cargarCarrito(1); // 👈 Usa el ID real del usuario si es dinámico
+      cargarCarrito(userId);
     })
     .catch(err => {
       console.error("❌ Error al agregar producto:", err.message);
       alert("No se pudo agregar al carrito.");
-    });
-}
-
-// 🧺 Crear carrito desde botón
-function crearCarritoDesdeFront() {
-  const userId = 1;
-
-  fetch(`http://localhost:8080/api/carts/create/${userId}`, {
-    method: "POST"
-  })
-    .then(res => {
-      if (!res.ok) return res.text().then(text => { throw new Error(`Error ${res.status}: ${text}`); });
-      return res.json();
-    })
-    .then(cart => {
-      alert("✅ Carrito creado o recuperado correctamente.");
-      cargarCarrito(cart.userId);
-    })
-    .catch(err => {
-      console.error("❌ Error al crear carrito:", err.message);
-      alert("No se pudo crear el carrito.");
     });
 }
