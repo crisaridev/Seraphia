@@ -73,7 +73,7 @@ async function cargarCarrito(userId) {
 						</div>
 						<div class="col-md-3 d-flex justify-content-end align-items-center">
 							<button class="btn btn-danger btn-sm btn-eliminar" data-item-id="${item.id}">Eliminar</button>
-							<button class="btn btn-secondary btn-sm ms-2 btn-modificar">Modificar</button>
+							
 						</div>
 					</div>
 				</div>
