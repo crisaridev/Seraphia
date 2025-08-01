@@ -5,16 +5,16 @@ let producto = null; //
 document.addEventListener('DOMContentLoaded', async () => {
 	const params = new URLSearchParams(window.location.search);
 	const productId = params.get('id');
-
+	// console.log(productId);
 	//if (!productId) {
-		alert('No se proporcionó un ID de producto. Serás redirigido.');
-		window.location.href = '/html/index.html';
-		return;
-	}
+	// 	alert('No se proporcionó un ID de producto. Serás redirigido.');
+	// 	window.location.href = '/html/index.html';
+	// 	return;
+	// }
 
 	try {
 		const producto = await getProductById(productId);
-		console.log('Producto recibido desde la API:', producto);
+		// console.log('Producto recibido desde la API:', producto);
 
 		if (!producto || Object.keys(producto).length === 0 || !producto.name) {
 			alert('Este producto no está disponible. Serás redirigido.');
@@ -58,7 +58,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 		if (miniaturas) miniaturas.innerHTML = '';
 
 		const imagenes = producto.imagesList;
-		console.log(imagenes);
+		// console.log(imagenes);
 		const placeholder = 'https://placehold.co/500x500?text=Sin+imagen';
 
 		if (Array.isArray(imagenes) && imagenes.length > 0) {
