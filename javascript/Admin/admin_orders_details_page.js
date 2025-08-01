@@ -3,17 +3,23 @@
 import { getOrderById } from "../api.js";
 
 
-
-      const orderId = getOrderIdFromUrl();
+             const orderId = getOrderIdFromUrl();
 
       const order = await getOrderById(orderId);
-    console.log(order)
+            const orderProducts = order.products
+      const orderImges = orderProducts[0].imagesList
+    const orderImg = orderImges[0].imageUrl
+     const orderProductName  = orderProducts[0].name
+      const orderUser = order.user
+        renderOrderDetails(order);
+      console.log(orderProductName)
 
 
       document.addEventListener('DOMContentLoaded', function() {
 
       if (order) {
-        renderOrderDetails(order);
+
+
       } else {
         document.getElementById('order-products-tbody').innerHTML = '<tr><td>Pedido no encontrado</td></tr>';
       }
@@ -38,18 +44,18 @@ import { getOrderById } from "../api.js";
       productsHtml += `
         <tr>
           <th scope="row" class="py-4 fw-bold text-decoration-underline">
-            <img src="${order.img}" alt="preview del producto" width="50px" class="">
-            ${order.name}
+            <img src="${orderImg}" alt="preview del producto" width="50px" class="">
+            ${orderProductName}
           </th>
-          <td class="text-center py-4">$${order.netSalesValue}</td>
+          <td class="text-center py-4">$${order.netSale}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Total</th>
-          <td class="text-center py-4">$${order.netSalesValue}</td>
+          <td class="text-center py-4">$${order.netSale}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Num. de pedido</th>
-          <td class="text-center py-4">${order.orderNumber}</td>
+          <td class="text-center py-4">${order.idOrder}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Fecha de la venta</th>
@@ -57,7 +63,7 @@ import { getOrderById } from "../api.js";
         </tr>
         <tr>
           <th scope="row" class="py-4 fw-medium fs-3">Estado del pedido</th>
-          <td class="text-center py-4">${order.orderStatus}</td>
+          <td class="text-center py-4">${order.status}</td>
         </tr>
       `;
       document.getElementById('order-products-tbody').innerHTML = productsHtml;
@@ -66,27 +72,27 @@ import { getOrderById } from "../api.js";
       shippingHtml += `
         <tr>
           <th scope="row" class="py-4">Nombre</th>
-          <td class="text-center py-4">${order.customerName}</td>
+          <td class="text-center py-4">${orderUser.firstName} ${orderUser.lastName}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4">Email</th>
-          <td class="text-center py-4">${order.email}</td>
+          <td class="text-center py-4">${orderUser.email}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4">Teléfono</th>
-          <td class="text-center py-4">${order.phoneNumber}</td>
+          <td class="text-center py-4">${orderUser.phone}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4">Direccion</th>
-          <td class="text-center py-4">${order.street}, ${order.numInt} ${order.numExt}, ${order.suburb} </td>
+          <td class="text-center py-4">${orderUser.street}, ${orderUser.numInt} ${orderUser.numExt}, ${order.suburb} </td>
         </tr>
         <tr>
           <th scope="row" class="py-4">Codigo postal</th>
-          <td class="text-center py-4">${order.zipCode}</td>
+          <td class="text-center py-4">${orderUser.zipCode || ""}</td>
         </tr>
         <tr>
           <th scope="row" class="py-4">Ciudad y estado</th>
-          <td class="text-center py-4">${order.city}, ${order.state} </td>
+          <td class="text-center py-4">${orderUser.city}, ${orderUser.state} </td>
         </tr>
       `;
       document.getElementById('order-shipping-tbody').innerHTML = shippingHtml;
