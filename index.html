@@ -58,7 +58,7 @@
 				<!-- Sección 3: ACCIONES DERECHA -->
 				<div class="d-flex align-items-center gap-2 ms-auto">
 					<!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
-					<form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+					<form id="formBusquedaDesktop" name="formBusquedaDesktop" class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
 						<input class="form-control" type="search" placeholder="Buscar" aria-label="Buscar" />
 						<button class="btn" type="submit"><i class="bi bi-search"></i></button>
 					</form>
@@ -69,7 +69,7 @@
 					</a>
 
 					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
-					<a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block"> Iniciar sesión </a>
+					<a href="/html/login.html" id="loginBtnDesktop" class="btn botonLogin d-none d-lg-inline-block"> Iniciar sesión </a>
 					<!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
 					<button
 						class="navbar-toggler d-lg-none botonToggle"
@@ -88,7 +88,7 @@
 				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
 					<ul class="navbar-nav w-100">
 						<!-- Enlaces móviles -->
-						<li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
 						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
@@ -97,7 +97,7 @@
 
 						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
 						<li class="nav-item px-3 my-3">
-							<form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+							<form id="formBusquedaMobile" name="formBusquedaMobile" class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
 								<input class="form-control me-1" type="search" placeholder="Buscar" aria-label="Buscar" />
 								<button class="btn" type="submit"><i class="bi bi-search"></i></button>
 							</form>
@@ -105,7 +105,7 @@
 
 						<!-- Botón de inicio de sesión version mobile -->
 						<li class="nav-item px-3 mt-3">
-							<a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+							<a id="loginBtnMobile" class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
 						</li>
 					</ul>
 				</div>
@@ -335,7 +335,7 @@
 						<form class="flex_new">
 							<div class="mb-3">
 								<p>Conoce lo nuevo</p>
-								<input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp" />
+								<input type="email" class="form-control email my-3" id="exampleInputEmail1" aria-describedby="emailHelp" />
 								<button type="button" class="btn btn_footer">Enviar</button>
 								<div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
 							</div>

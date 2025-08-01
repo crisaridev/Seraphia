@@ -116,6 +116,7 @@ Estructura a seguir. Reemplazar informacion dinamica con informacion del back
 */
 
 const createAndAppendProductCard = product => {
+	//To be implemented, api call
 	const sendProductToCart = async event => {
 		try {
 			//Crear, añadir y extraer informacion de session storage
@@ -137,6 +138,21 @@ const createAndAppendProductCard = product => {
 		} catch (error) {
 			console.log('Error: ' + error);
 		}
+	};
+
+	const sendProductToSessionStorage = event => {
+		const cart = JSON.parse(sessionStorage.getItem('cart')) ?? [];
+		cart.push(Number(product.id));
+		sessionStorage.setItem('cart', JSON.stringify([...new Set(cart)]));
+		Toastify({
+			text: 'Se agrego producto al carrito',
+			duration: 3000,
+			style: {
+				background: 'linear-gradient(135deg, #D19730, #F79142)',
+			},
+		}).showToast();
+		console.log(JSON.parse(sessionStorage.getItem('cart')));
+		console.log(sessionStorage);
 	};
 
 	const formatData = product => {
@@ -188,7 +204,7 @@ const createAndAppendProductCard = product => {
 	const productAgregarACarrito = document.createElement('button');
 	productAgregarACarrito.setAttribute('type', 'button');
 	productAgregarACarrito.classList.add('btn-shop');
-	productAgregarACarrito.addEventListener('click', sendProductToCart);
+	productAgregarACarrito.addEventListener('click', sendProductToSessionStorage);
 	productAgregarACarrito.appendChild(AgregarACarritoIconContainer);
 
 	const productConozcaMas = document.createElement('a');
