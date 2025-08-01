@@ -152,7 +152,11 @@ function addItemToCartDesdeFront() {
 
   const nuevoItem = {
     productId: 1,
-    cartId: parseInt(cartId)
+    colorId: 1,
+    sizeId: 1,
+    cartId: parseInt(cartId),
+    category: "ropa",
+    quantity: 1
   };
 
   fetch("http://localhost:8080/api/cart-items", {
@@ -162,7 +166,9 @@ function addItemToCartDesdeFront() {
   })
     .then(res => {
       if (!res.ok) {
-        return res.text().then(text => { throw new Error(`Error ${res.status}: ${text}`); });
+        return res.text().then(text => {
+          throw new Error(`Error ${res.status}: ${text}`);
+        });
       }
       return res.json();
     })

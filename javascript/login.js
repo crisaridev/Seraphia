@@ -1,14 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Verifica si el usuario ya está logueado
-  const loggedUser = sessionStorage.getItem("loggedUser");
-  if (loggedUser) {
-    const user = JSON.parse(loggedUser);
-    alert(`Ya estás logueado como: ${user.name} (${user.email})`);
-    // Puedes redirigir al home automáticamente si quieres:
-    // window.location.href = "/index.html";
-    return;
-  }
-
   const form = document.querySelector("form");
   const emailInput = document.getElementById("email");
   const passwordInput = document.getElementById("password");
