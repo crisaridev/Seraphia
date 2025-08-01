@@ -3,6 +3,7 @@ body {
 	min-height: 100vh;
 	display: flex;
 	flex-direction: column;
+	font-family: 'Lato', sans-serif;
 }
 #x {
 	font-size: 15.2px;
