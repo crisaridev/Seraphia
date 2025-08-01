@@ -179,3 +179,15 @@ export const getProductsAdmin = async () => {
   const storageData = await response.json();
 	return storageData;
 }
+
+export const getOrdersAdmin = async () => {
+	const response = await fetch(`${URLBASE}/orders`);
+  const storageData = await response.json();
+	return storageData;
+}
+
+export const getOrderById = async (orderId) => {
+	const response = await fetch(`${URLBASE}/orders/${orderId}`);
+  const orderDetail = await response.json();
+	return orderDetail;
+}

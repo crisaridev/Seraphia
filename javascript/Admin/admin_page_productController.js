@@ -5,7 +5,7 @@
 //     this.currentId = currentId;
 //   }
 
-import { getProductsAdmin } from "../api";
+import { getProductsAdmin } from "../api.js";
 
 
   var items = [];
@@ -35,7 +35,7 @@ function loadItemsFromLocalStorage() {
 
 async function loadItemsFromAPI() {
   try {
-    await getProductsAdmin();
+    const storageData = await getProductsAdmin();
     items = [];
     storageData.forEach(product => {
       let productCategory = product.category;
@@ -57,7 +57,7 @@ async function loadItemsFromAPI() {
     console.log(productCategory.categoryName)
     console.log(productSize.sizeName)
     console.log(productColor.colorName)
-    console.log(productImg[0].imageUrl)
+    // console.log(productImg[0].imageUrl)
     console.log(product.description)
 
     });
@@ -117,7 +117,7 @@ function addItemCard(item) {
     "</div>" +
     "</td>" +
     '<td class="button_hide fw-bolder edit_btn">' +
-    '<a href="./crear-producto.html" class="text-primary-emphasis d-none d-lg-table-cell">Editar</a>' +
+    '<a class="text-primary-emphasis d-none d-lg-table-cell" style="cursor:pointer;" onclick="goToProductDetail(\'' + item.id + '\')">Editar</a>' +
     "</td>" +
     '<td class="d-none d-sm-table-cell">' +
     item.stock +
@@ -156,3 +156,26 @@ async function renderProduct() {
 renderProduct();
 
 console.log("El productController funciona")
+
+
+function goToProductDetail(productId) {
+  window.location.href = '/html/crear-producto.html?productid=' + productId;
+}
+window.goToProductDetail = goToProductDetail;
+
+    function getOrderIdFromUrl() {
+      const params = new URLSearchParams(window.location.search);
+      return params.get('id');
+    }
+
+    async function getOrderById(productId) {
+      const orders = await getOrdersAdmin();
+      return orders.find(o => o.id === productId);
+      console.log(orders.find(o => o.id === productId) + "asdfadsfasdf" )
+    }
+
+// // Cliclear editar lleva aqui
+// function goToOrderDetail(orderId) {
+//   window.location.href = '/html/orders_details_admin.html?id=' + orderId;
+// }
+// window.goToOrderDetail = goToOrderDetail;
