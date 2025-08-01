@@ -1,4 +1,4 @@
-const productsController = new ProductsController(0);
+// const productsController = new ProductsController(0);
 
 function addItemCard(item) {
   const itemHTML =
@@ -203,13 +203,13 @@ function loadProductController() {
 
 
 // Cargar productos desde la API Java y renderizarlos
-async function cargarYRenderizarProductos() {
-  await productsController.loadItemsFromAPI();
-  loadProductController();
-}
+// async function renderProduct() {
+//   await productsController.loadItemsFromAPI();
+//   loadProductController();
+// }
 
 // sampleDataLocalStorage();
 // productsController.loadItemsFromLocalStorage();
 // loadProductController();
 
-cargarYRenderizarProductos();
+// renderProduct();

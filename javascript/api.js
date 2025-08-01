@@ -163,3 +163,5 @@ export const deleteCartItem = async itemId => {
 //	return await res.json();
 //};
 
+// Function for api products admin
+
