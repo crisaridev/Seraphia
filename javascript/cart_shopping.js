@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 	if (btnConfirmar) {
 		btnConfirmar.addEventListener('click', () => {
 			btnConfirmar.classList.add('boton-pulse');
-			setTimeout(() => (window.location.href = '/html/Registro_de_Pago.html'), 600);
+			setTimeout(() => (window.location.href = '/html/Registro_de_pago.html'), 600);
 		});
 	}
 });
