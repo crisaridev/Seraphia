@@ -1,89 +1,257 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Carrito de Compras | Seraphia</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Carrito de Compras | Seraphia</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="/css/cart_shopping.css"/>
-  <link rel="stylesheet" href="/css/Navbar_footer.css"/>
-  <link rel="stylesheet" href="/css/styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
-</head>
-<body>
+		<!-- Estilos personalizados -->
+		<link rel="stylesheet" href="/css/cart_shopping.css" />
+		<link rel="stylesheet" href="/css/Navbar_footer.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<div class="content-wrapper d-flex flex-column min-vh-100">
+			<!-- ! PARA PRUEBA  -->
 
-  <!-- ! PARA PRUEBA  -->
-
-  
- <!-- <button onclick="addItemToCartDesdeFront()" class="btn btn-primary mt-3">
+			<!-- <button onclick="addItemToCartDesdeFront()" class="btn btn-primary mt-3">
   Probar agregar al carrito
 </button>-->
 
-<!--<button onclick="crearCarritoDesdeFront()" class="btn btn-success mt-3 ms-2">
+			<!--<button onclick="crearCarritoDesdeFront()" class="btn btn-success mt-3 ms-2">
   Crear Carrito (desde Frontend)
 </button>-->
+			<!--! NAVBAR -->
+			<!-- Barra de navegación principal -->
+		<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+			<div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
-  <!-- ! Navbar -->
-  <!-- (se mantiene sin cambios, ya está correcto) -->
-  <!-- ... TU NAVBAR AQUÍ COMO YA ESTÁ ... -->
+				<!-- Sección 1: LOGO + NOMBRE -->
+				<a class="navbar-brand d-flex align-items-center" href="/">
+					<img
+						src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
+						alt="Seraphia"
+						width="52" height="52"
+						class="me-2"
+					>
+					<span class="fs-4">Seraphia</span>
+				</a>
 
-  <!-- Carrito de compras -->
-  <section class="h-100">
-    <div class="container h-100 py-5">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-15">
+				<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+				<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+					<li class="nav-item">
+						<a class="nav-link " href="/">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link " href="/html/404_info_products.html">Tienda</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+				</ul>
 
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="fw-normal mb-0">Mi carrito</h3>
-          </div>
+				<!-- Sección 3: ACCIONES DERECHA -->
+				<div class="d-flex align-items-center gap-2 ms-auto">
 
-          <!-- Contenedor dinámico de productos -->
-          <div id="cart-items-container">
-            <!-- Aquí se cargan los productos desde el backend vía JS -->
-          </div>
+					<!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+				<form id="formBusquedaDesktop" name="formBusquedaDesktop" class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+					<input
+						class="form-control"
+						type="search"
+						placeholder="Buscar"
+						aria-label="Buscar"
+					>
+					<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+				</form>
 
-          <!-- Total del carrito -->
-          <div class="card mb-4">
-            <div class="card-body p-4">
-              <div class="float-end">
-                <p class="mb-0 me-5 d-flex align-items-center">
-                  <span class="mb-0">TOTAL: </span>
-                  <span class="fw-bold fs-4 precio-total" data-total="0">$0.00</span>
-                </p>
-              </div>
-            </div>
-          </div>
+					<!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+					<a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+						<i class="bi bi-cart3"></i>
+					</a>
+
+					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+					<a href="/html/login.html" id="loginBtnDesktop" class="btn botonLogin d-none d-lg-inline-block">
+					Iniciar sesión
+						</a>
+					<!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
+					<button
+						class="navbar-toggler d-lg-none botonToggle"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#contenidoNavbar"
+						aria-controls="contenidoNavbar"
+						aria-expanded="false"
+						aria-label="Mostrar navegación móvil"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
+
+				<!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+					<ul class="navbar-nav w-100">
+						<!-- Enlaces móviles -->
+						<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+
+						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+						<li class="nav-item px-3 my-3">
+							<form id="formBusquedaMobile" name="formBusquedaMobile" class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+								<input class="form-control me-1"
+											type="search"
+											placeholder="Buscar"
+											aria-label="Buscar">
+								<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+							</form>
+						</li>
+
+						<!-- Botón de inicio de sesión version mobile -->
+						<li class="nav-item px-3 mt-3">
+							<a id="loginBtnMobile" class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
 
 
 
-          <!-- Botón Confirmar -->
-          <div class="card">
-            <div class="card-body text-end">
-              <button id="btnConfirmar" class="btn btn-lg px-5" style="background-color: #EBA56A; color: white;">
+			<!-- Carrito de compras -->
+			<section class="h-100 flex-grow-1">
+				<div class="container h-100 py-5">
+					<div class="row d-flex justify-content-center align-items-center h-100">
+						<div class="col-15">
+							<div class="d-flex justify-content-between align-items-center mb-4">
+								<h3 class="fw-normal mb-0">Mi carrito</h3>
+							</div>
+
+							<!-- Contenedor dinámico de productos -->
+							<div id="cart-items-container">
+								<!-- Aquí se cargan los productos desde el backend vía JS -->
+							</div>
+
+							<!-- Total del carrito -->
+							<div class="card mb-4">
+								<div class="card-body p-4">
+									<div class="float-end">
+										<p class="mb-0 me-5 d-flex align-items-center">
+											<span class="mb-0">TOTAL: </span>
+											<span class="fw-bold fs-4 precio-total" data-total="0">$0.00</span>
+										</p>
+									</div>
+								</div>
+							</div>
+
+							<!-- Botón Confirmar correcto -->
+            <div class="card">
+              <div class="card-body">
+              <button type="button" 
+                      class="btn-base btn-carrito btn-confirmar"
+                      id="btnConfirmar">
                 Confirmar Carrito
               </button>
+              </div>
             </div>
-          </div>
+						</div>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<!-- ! FOOTER -->
+<!-- ! FOOTER -->
+
+
+        <footer>
+        <div class="row align">
+
+            <div class="col-12 col-md-2 col-lg-2 space">
+                <div class="row">
+
+                    <!-- Area de informacion y redes sociales -->
+                    <div class="col-6 col-md-12 flex_smlogo">
+                        <img src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png" alt="Seraphia" id="logo_footer">
+                    </div>
+                    <div class="col-6 col-md-12 flex_col">
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <p>Queretaro, Mexico</p>
+                        </div>
+                        <div class="col-6 col-md-12 flex_smlogo">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/seraphiamx/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/instagram.png" alt="instagram" class="sm_logo"></a>
+                            <!-- Facebook Seraphia -->
+                            <a href="https://www.facebook.com/Seraphiamexico/" target="_blank" ><img src="/assets/images/Seraphia_img/logos/facebook.png" alt="Facebook" class="sm_logo"></a>
+                        </div>
+                    </div>
+                </div>
+             </div>
+            
+                <!-- Area de Menu secundario -->
+                <div class="col-12 col-md-4 col-lg-6">
+                <div class="row">
+
+
+                    <!-- Links menu secundario -->
+                    <div class="col-12 col-lg-6 ">
+                    <h3 class="footer-toggle">ACERCA DE SERAPHIA</h3>
+                    <ul class="footer-links">
+                        <li><a href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+                        <li><a href="/html/Galeria.html">Galería</a></li>
+                        <li><a href="/html/Contacto.html">Contacto</a></li>
+                        <li><a href="#">FAQ’s</a></li>
+                    </ul>
+                    </div>
+
+                    <!-- Links Cuidamos de ti -->
+                    <div class="col-12 col-lg-6">
+                    <h3 class="footer-toggle">CUIDAMOS DE TI</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Política de privacidad</a></li>
+                        <li><a href="#">Términos de servicio</a></li>
+                        <li><a href="#">Configuración de Cookies</a></li>
+                        <li><a href="404_info_page.html">404 - Desarrollo web</a></li>
+                    </ul>
+                    </div>
+
+                </div>
+                </div>
+
+
+            
+
+
+            <div class="col-12 col-md-6 col-lg-4">
+                <div class="row  ">
+                <form class="flex_new">
+                <div class="mb-3">
+                    <p>Conoce lo nuevo</p>
+                    <input type="email" class="form-control email" id="exampleInputEmail1" aria-describedby="emailHelp">
+                    <button type="button" class="btn btn_footer">Enviar</button>
+                    <div id="emailHelp" class="form-text">Recibe noticias, lanzamientos y descuentos únicos. Solo lo bueno, sin spam.</div>
+                </div>
+                </form>
+            </div></div>
 
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- Footer -->
-  <!-- ... TU FOOTER COMO YA ESTÁ ... -->
 
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
-  <script src="/javascript/Seraphia/navbar_footer.js"></script>
-  <script src="/javascript/404_acerca/404_info_java.js"></script>
-  <script src="/javascript/cart_shopping.js"></script>
-  <script type="module" src="../javascript/api.js"></script>
-</body>
+    </footer>
+
+		<!-- Scripts -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+		<script src="/javascript/Seraphia/navbar_footer.js"></script>
+		<script src="/javascript/404_acerca/404_info_java.js"></script>
+		<script type="module" src="/javascript/cart_shopping.js"></script>
+		<script type="module" src="../javascript/api.js"></script>
+	</body>
 </html>

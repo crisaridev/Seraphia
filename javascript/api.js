@@ -45,6 +45,14 @@ export const addProductImages = async (productId, images) => {
 	return responseImages;
 };
 
+export const deleteProductById = async productId => {
+	const responseBasicData = await fetch(`${URLBASE}/products/${productId}`, {
+		method: 'DELETE',
+	});
+	const responseBasicDataJson = await responseBasicData.json();
+	return responseBasicDataJson;
+};
+
 //update product basic data by id
 export const updateProductById = async (productId, productBasicData) => {
 	const responseBasicData = await fetch(`${URLBASE}/products/${productId}/change-product`, {
@@ -85,7 +93,7 @@ export const registerUser = async usuario => {
 		const data = await response.json();
 
 		if (!response.ok) {
-			const msg = typeof data === 'string' ? data : (data.message || JSON.stringify(data));
+			const msg = typeof data === 'string' ? data : data.message || JSON.stringify(data);
 			throw new Error(msg);
 		}
 
@@ -163,9 +171,11 @@ export const deleteCartItem = async itemId => {
 //	return await res.json();
 //};
 
+
 // Function for api products admin
 
-export const getProductsAdmin = (`${URLBASE}/cart-items/${itemId}`) => {
-	const response = await fetch();
+export const getProductsAdmin = async () => {
+	const response = await fetch(`${URLBASE}/products`);
   const storageData = await response.json();
+	return storageData;
 }

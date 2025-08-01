@@ -5,6 +5,8 @@
 //     this.currentId = currentId;
 //   }
 
+import { getProductsAdmin } from "../api";
+
 
   var items = [];
   
@@ -32,10 +34,8 @@ function loadItemsFromLocalStorage() {
 }
 
 async function loadItemsFromAPI() {
-  const API = 'http://localhost:8080/api/products'; // Cambia esto por la URL real
   try {
-    const response = await fetch(API);
-    const storageData = await response.json();
+    await getProductsAdmin();
     items = [];
     storageData.forEach(product => {
       let productCategory = product.category;
@@ -155,3 +155,4 @@ async function renderProduct() {
 
 renderProduct();
 
+console.log("El productController funciona")
