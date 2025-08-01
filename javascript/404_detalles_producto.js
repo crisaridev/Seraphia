@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', async () => {
 	const params = new URLSearchParams(window.location.search);
 	const productId = params.get('id');
 
-	if (!productId) {
+	//if (!productId) {
 		alert('No se proporcionó un ID de producto. Serás redirigido.');
 		window.location.href = '/html/index.html';
 		return;
