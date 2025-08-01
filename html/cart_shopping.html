@@ -1,89 +1,81 @@
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Carrito de Compras | Seraphia</title>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Carrito de Compras | Seraphia</title>
 
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"/>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"/>
+		<!-- Bootstrap -->
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
 
-  <!-- Estilos personalizados -->
-  <link rel="stylesheet" href="/css/cart_shopping.css"/>
-  <link rel="stylesheet" href="/css/Navbar_footer.css"/>
-  <link rel="stylesheet" href="/css/styles.css"/>
-  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet"/>
-</head>
-<body>
+		<!-- Estilos personalizados -->
+		<link rel="stylesheet" href="/css/cart_shopping.css" />
+		<link rel="stylesheet" href="/css/Navbar_footer.css" />
+		<link rel="stylesheet" href="/css/styles.css" />
+		<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- ! PARA PRUEBA  -->
 
-  <!-- ! PARA PRUEBA  -->
-
-  
- <!-- <button onclick="addItemToCartDesdeFront()" class="btn btn-primary mt-3">
+		<!-- <button onclick="addItemToCartDesdeFront()" class="btn btn-primary mt-3">
   Probar agregar al carrito
 </button>-->
 
-<!--<button onclick="crearCarritoDesdeFront()" class="btn btn-success mt-3 ms-2">
+		<!--<button onclick="crearCarritoDesdeFront()" class="btn btn-success mt-3 ms-2">
   Crear Carrito (desde Frontend)
 </button>-->
 
-  <!-- ! Navbar -->
-  <!-- (se mantiene sin cambios, ya está correcto) -->
-  <!-- ... TU NAVBAR AQUÍ COMO YA ESTÁ ... -->
+		<!-- ! Navbar -->
+		<!-- (se mantiene sin cambios, ya está correcto) -->
+		<!-- ... TU NAVBAR AQUÍ COMO YA ESTÁ ... -->
 
-  <!-- Carrito de compras -->
-  <section class="h-100">
-    <div class="container h-100 py-5">
-      <div class="row d-flex justify-content-center align-items-center h-100">
-        <div class="col-15">
+		<!-- Carrito de compras -->
+		<section class="h-100">
+			<div class="container h-100 py-5">
+				<div class="row d-flex justify-content-center align-items-center h-100">
+					<div class="col-15">
+						<div class="d-flex justify-content-between align-items-center mb-4">
+							<h3 class="fw-normal mb-0">Mi carrito</h3>
+						</div>
 
-          <div class="d-flex justify-content-between align-items-center mb-4">
-            <h3 class="fw-normal mb-0">Mi carrito</h3>
-          </div>
+						<!-- Contenedor dinámico de productos -->
+						<div id="cart-items-container">
+							<!-- Aquí se cargan los productos desde el backend vía JS -->
+						</div>
 
-          <!-- Contenedor dinámico de productos -->
-          <div id="cart-items-container">
-            <!-- Aquí se cargan los productos desde el backend vía JS -->
-          </div>
+						<!-- Total del carrito -->
+						<div class="card mb-4">
+							<div class="card-body p-4">
+								<div class="float-end">
+									<p class="mb-0 me-5 d-flex align-items-center">
+										<span class="mb-0">TOTAL: </span>
+										<span class="fw-bold fs-4 precio-total" data-total="0">$0.00</span>
+									</p>
+								</div>
+							</div>
+						</div>
 
-          <!-- Total del carrito -->
-          <div class="card mb-4">
-            <div class="card-body p-4">
-              <div class="float-end">
-                <p class="mb-0 me-5 d-flex align-items-center">
-                  <span class="mb-0">TOTAL: </span>
-                  <span class="fw-bold fs-4 precio-total" data-total="0">$0.00</span>
-                </p>
-              </div>
-            </div>
-          </div>
+						<!-- Botón Confirmar -->
+						<div class="card">
+							<div class="card-body text-end">
+								<button id="btnConfirmar" class="btn btn-lg px-5" style="background-color: #eba56a; color: white">Confirmar Carrito</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
+		<!-- Footer -->
+		<!-- ... TU FOOTER COMO YA ESTÁ ... -->
 
-
-          <!-- Botón Confirmar -->
-          <div class="card">
-            <div class="card-body text-end">
-              <button id="btnConfirmar" class="btn btn-lg px-5" style="background-color: #EBA56A; color: white;">
-                Confirmar Carrito
-              </button>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <!-- ... TU FOOTER COMO YA ESTÁ ... -->
-
-  <!-- Scripts -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
-  <script src="/javascript/Seraphia/navbar_footer.js"></script>
-  <script src="/javascript/404_acerca/404_info_java.js"></script>
-  <script src="/javascript/cart_shopping.js"></script>
-  <script type="module" src="../javascript/api.js"></script>
-</body>
+		<!-- Scripts -->
+		<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.min.js"></script>
+		<script src="/javascript/Seraphia/navbar_footer.js"></script>
+		<script src="/javascript/404_acerca/404_info_java.js"></script>
+		<script type="module" src="/javascript/cart_shopping.js"></script>
+		<script type="module" src="../javascript/api.js"></script>
+	</body>
 </html>
