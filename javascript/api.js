@@ -165,3 +165,7 @@ export const deleteCartItem = async itemId => {
 
 // Function for api products admin
 
+export const getProductsAdmin = (`${URLBASE}/cart-items/${itemId}`) => {
+	const response = await fetch();
+  const storageData = await response.json();
+}
