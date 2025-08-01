@@ -85,7 +85,7 @@ export const registerUser = async usuario => {
 		const data = await response.json();
 
 		if (!response.ok) {
-			const msg = typeof data === 'string' ? data : (data.message || JSON.stringify(data));
+			const msg = typeof data === 'string' ? data : data.message || JSON.stringify(data);
 			throw new Error(msg);
 		}
 
@@ -162,4 +162,3 @@ export const deleteCartItem = async itemId => {
 //
 //	return await res.json();
 //};
-
