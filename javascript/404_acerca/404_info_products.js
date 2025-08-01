@@ -1,4 +1,4 @@
-import { getAllProductsWithStock, addItemToCart, deleteProductById } from '../api.js';
+import { getAllProductsWithStock, addItemToCart } from '../api.js';
 
 const noProductCard = document.querySelector('#no-product-card');
 //js de 14 de julio para filtro
