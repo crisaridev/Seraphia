@@ -27,100 +27,104 @@
 </head>
 <body>
 
-<!-- Barra de navegación principal -->
-<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
-  <div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
+  			<!--! NAVBAR -->
+			<!-- Barra de navegación principal -->
+		<nav class="navbar navbar-expand-lg navbar-dark px-4 py-2">
+			<div class="container-fluid d-flex flex-wrap flex-lg-nowrap align-items-center justify-content-between">
 
-    <!-- Sección 1: LOGO + NOMBRE -->
-    <a class="navbar-brand d-flex align-items-center" href="/">
-      <img
-        src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
-        alt="Seraphia"
-        width="52" height="52"
-        class="me-2"
-      >
-      <span class="fs-4">Seraphia</span>
-    </a>
+				<!-- Sección 1: LOGO + NOMBRE -->
+				<a class="navbar-brand d-flex align-items-center" href="/">
+					<img
+						src="/assets/images/Seraphia_img/logos/LOGO-BLANCO-SIN-FONDO.png"
+						alt="Seraphia"
+						width="52" height="52"
+						class="me-2"
+					>
+					<span class="fs-4">Seraphia</span>
+				</a>
 
-    <!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
-    <ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
-      <li class="nav-item">
-        <a class="nav-link" href="/">Inicio</a>
-      </li>
-      <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-      <li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/404_info_products.html">Tienda</a></li>
-      <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
-    </ul>
+				<!-- Sección 2: ENLACES PRINCIPALES (solo escritorio) -->
+				<ul class="navbar-nav mx-auto mb-0 d-none d-lg-flex">
+					<li class="nav-item">
+						<a class="nav-link " href="/">Inicio</a>
+					</li>
+					<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+					<li class="nav-item"><a class="nav-link active rounded-pill bg-light text-dark px-3" href="/html/404_info_products.html">Tienda</a></li>
+					<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+				</ul>
 
-    <!-- Sección 3: ACCIONES DERECHA -->
-    <div class="d-flex align-items-center gap-2 ms-auto">
+				<!-- Sección 3: ACCIONES DERECHA -->
+				<div class="d-flex align-items-center gap-2 ms-auto">
 
-      <!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
-     <form class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
-       <input
-         class="form-control"
-         type="search"
-         placeholder="Buscar"
-         aria-label="Buscar"
-       >
-       <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-     </form>
+					<!-- 3.1) FORMULARIO DE BÚSQUEDA (solo escritorio) -->
+				<form id="formBusquedaDesktop" name="formBusquedaDesktop" class="d-none d-lg-flex barraBusqueda mb-0 flex-lg-grow-1" role="search">
+					<input
+						class="form-control"
+						type="search"
+						placeholder="Buscar"
+						aria-label="Buscar"
+					>
+					<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+				</form>
 
-      <!-- 3.2) BOTÓN CARRITO (visible siempre) -->
-      <a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
-        <i class="bi bi-cart3"></i>
-      </a>
+					<!-- 3.2) BOTÓN CARRITO (visible siempre) -->
+					<a href="/html/cart_shopping.html" class="btn btn-outline-light botonCarrito">
+						<i class="bi bi-cart3"></i>
+					</a>
 
-      <!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
-      <a href="/html/login.html" class="btn botonLogin d-none d-lg-inline-block">
-       Iniciar sesión
-        </a>
-      <!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
-      <button
-        class="navbar-toggler d-lg-none botonToggle"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#contenidoNavbar"
-        aria-controls="contenidoNavbar"
-        aria-expanded="false"
-        aria-label="Mostrar navegación móvil"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-    </div>
+					<!-- 3.3) BOTÓN INICIAR SESIÓN (desktop) -->
+					<a href="/html/login.html" id="loginBtnDesktop" class="btn botonLogin d-none d-lg-inline-block">
+					Iniciar sesión
+						</a>
+					<!-- 3.4) BOTÓN TOGGLE (tablet/móvil) -->
+					<button
+						class="navbar-toggler d-lg-none botonToggle"
+						type="button"
+						data-bs-toggle="collapse"
+						data-bs-target="#contenidoNavbar"
+						aria-controls="contenidoNavbar"
+						aria-expanded="false"
+						aria-label="Mostrar navegación móvil"
+					>
+						<span class="navbar-toggler-icon"></span>
+					</button>
+				</div>
 
-    <!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
-    <div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
-      <ul class="navbar-nav w-100">
-        <!-- Enlaces móviles -->
-        <li class="nav-item"><a class="nav-link" href="/html/index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
-        <li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
+				<!-- Sección 4: MENÚ COLAPSABLE (tablet/móvil) -->
+				<div class="collapse navbar-collapse d-lg-none pt-3 w-100" id="contenidoNavbar">
+					<ul class="navbar-nav w-100">
+						<!-- Enlaces móviles -->
+						<li class="nav-item"><a class="nav-link" href="/">Inicio</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Sobre_Nosotros.html">Nosotros</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Galeria.html">Galería</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/Contacto.html">Contacto</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/404_info_products.html">Tienda</a></li>
+						<li class="nav-item"><a class="nav-link" href="/html/dashboard_admin_page.html">Administrador</a></li>
 
-        <!-- Formulario de búsqueda móvil debajo de "Tienda" -->
-        <li class="nav-item px-3 my-3">
-          <form class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
-            <input class="form-control me-1"
-                   type="search"
-                   placeholder="Buscar"
-                   aria-label="Buscar">
-            <button class="btn" type="submit"><i class="bi bi-search"></i></button>
-          </form>
-        </li>
+						<!-- Formulario de búsqueda móvil debajo de "Tienda" -->
+						<li class="nav-item px-3 my-3">
+							<form id="formBusquedaMobile" name="formBusquedaMobile" class="d-flex barraBusquedaMobile mb-0 w-100" role="search">
+								<input class="form-control me-1"
+											type="search"
+											placeholder="Buscar"
+											aria-label="Buscar">
+								<button class="btn" type="submit"><i class="bi bi-search"></i></button>
+							</form>
+						</li>
 
-        <!-- Botón de inicio de sesión version mobile -->
-        <li class="nav-item px-3 mt-3">
-          <a class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+						<!-- Botón de inicio de sesión version mobile -->
+						<li class="nav-item px-3 mt-3">
+							<a id="loginBtnMobile" class="btn botonLogin w-100 text-center" href="/html/login.html">Iniciar sesión</a>
+						</li>
+					</ul>
+				</div>
+
+			</div>
+		</nav>
+
+
 
   <!-- Contenido principal -->
   <main class="container py-5">
@@ -267,7 +271,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
   <script type="module" src="/javascript/404_detalles_producto.js"></script>
   <script type="module" src="/javascript/api.js"></script>  <!-- Se agrego el Type module -->
-  <script src="/javascript/navbar_footer.js"></script> <!-- Se agrego el Type module -->
+  <!-- <script src="/javascript/navbar_footer.js"></script> Se agrego el Type module -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>
