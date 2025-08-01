@@ -45,15 +45,19 @@ async function cargarCarrito(userId) {
 			const product = await getProductById(cart[i]);
 			items.push(product);
 		}
-		console.log(items);
+		// console.log(items);
 		cartContainer.innerHTML = '';
 		let total = 0;
 
 		items.forEach(item => {
 			const precioItem = item.price;
 			total += precioItem;
+			let imgUrl = '';
+			for (let i = 0; i < item.imagesList.length; i++) {
+				if (item.imagesList[i].imageOrder == 1) imgUrl = item.imagesList[i].imageUrl;
+			}
 
-			const img = item.imagesList && item.imagesList.length > 0 ? item.imagesList[0].imageUrl : '/img/placeholder.png';
+			const img = item.imagesList && item.imagesList.length > 0 ? imgUrl : '/img/placeholder.png';
 
 			const card = document.createElement('div');
 			card.className = 'card rounded-3 mb-4';

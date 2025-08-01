@@ -141,7 +141,9 @@ const createAndAppendProductCard = product => {
 	};
 
 	const sendProductToSessionStorage = event => {
+		// sessionStorage.clear();
 		const cart = JSON.parse(sessionStorage.getItem('cart')) ?? [];
+		// console.log(cart);
 		cart.push(Number(product.id));
 		sessionStorage.setItem('cart', JSON.stringify([...new Set(cart)]));
 		Toastify({
@@ -151,8 +153,8 @@ const createAndAppendProductCard = product => {
 				background: 'linear-gradient(135deg, #D19730, #F79142)',
 			},
 		}).showToast();
-		console.log(JSON.parse(sessionStorage.getItem('cart')));
-		console.log(sessionStorage);
+		// console.log(JSON.parse(sessionStorage.getItem('cart')));
+		// console.log(sessionStorage);
 	};
 
 	const formatData = product => {
