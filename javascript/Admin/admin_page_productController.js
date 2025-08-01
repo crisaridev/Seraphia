@@ -30,28 +30,44 @@ loadItemsFromLocalStorage() {
 
 // Nuevo: Cargar productos desde la API Java
 async loadItemsFromAPI() {
-  const API_URL = 'https://URL_DE_TU_API_JAVA/api/productos'; // Cambia esto por la URL real
+  const API = 'http://localhost:8080/api/products'; // Cambia esto por la URL real
   try {
-    const response = await fetch(API_URL);
-    const data = await response.json();
+    const response = await fetch(API);
+    const storageData = await response.json();
     this.items = [];
-    data.forEach(producto => {
-      // Ajusta los nombres de los campos según la respuesta de tu API
+    storageData.forEach(product => {
+      let productCategory = product.category;
+      let productSize = product.size;
+      let productColor = product.color;
+      let productImg = product.imagesList;
       this.items.push({
-        id: producto.id ?? null,
-        name: producto.nombre || 'Nombre',
-        img: producto.imagenUrl || '/ruta/por/defecto.png',
-        price: producto.precio ?? 0,
-        stock: producto.inventario ?? 0,
-        createdAt: producto.createdAt || null
+        id: product.id,
+        name: product.name,
+        description: product.description,
+        price: product.price,
+        stock: product.stock,
+        creationDate: product.creationDate,
+        size: productSize.sizeName,
+        color: productColor.colorName,
+        category: productCategory.categoryName,
+        imagesList: productImg[0].imageUrl
       });
+    console.log(productCategory.categoryName)
+    console.log(productSize.sizeName)
+    console.log(productColor.colorName)
+    console.log(productImg[0].imageUrl)
+    console.log(product.description)
+
     });
-  } catch (error) {
-    console.error('Error al cargar productos desde la API:', error);
+  } catch (errorCode) {
+    console.error('Error al cargar productos: ', errorCode);
     this.items = [];
   }
+  console.log(this.items)
+
 }
 }
+
 
 
 const testItems = new ProductsController();
@@ -59,3 +75,5 @@ const probando = testItems.addItem("Vestido rosa", "Vestido de color rosa", "/en
 console.log(testItems.items);
 
 console.log("Este js funciona")
+
+testItems.loadItemsFromAPI();

@@ -322,11 +322,7 @@ var sampleProducts = [
 ];
 
 
-function sampleDataLocalStorage() {
-  if (!localStorage.getItem("orders")) {
-    localStorage.setItem("orders", JSON.stringify(sampleProducts));
-  }
-}
+
 
 
   const orders = JSON.parse(localStorage.getItem('orders') || '[]');
@@ -342,6 +338,12 @@ function sampleDataLocalStorage() {
   const orderIdUrl = getOrderIdFromUrl()
   const orderObj = getOrderById(orderIdUrl)
   const statusDropdown = document.getElementById('dropdown_status')
+
+  function sampleDataLocalStorage() {
+  if (!localStorage.getItem("orders")) {
+    localStorage.setItem("orders", JSON.stringify(sampleProducts));
+  }
+}
 
 function loadProductController() {
   for (var i = 0, size = ordersController.items.length; i < size; i++) {
