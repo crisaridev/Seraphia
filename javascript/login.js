@@ -1,47 +1,40 @@
 
-  // Usuario de prueba en localStorage (solo si no existe checkk)
-  const userTest = {
-    email: "test@seraphia.com",
-    password: "12345678" // 8 caracteres bc lo especifico en html
-  };
+import { loginUser } from '../api.js';
 
-  // Guardar solo si no existe
-  if (!localStorage.getItem("users")) {
-    localStorage.setItem("users", JSON.stringify([userTest]));
-  }
+document.addEventListener("DOMContentLoaded", () => {
+	const form = document.querySelector("form");
+	const emailInput = document.getElementById("email");
+	const passwordInput = document.getElementById("password");
 
-  // Obtener formulario y campos
-  const form = document.querySelector("form");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
+	form.addEventListener("submit", async function (event) {
+		event.preventDefault();
 
-  form.addEventListener("submit", function (event) {
-    event.preventDefault(); 
+		const email = emailInput.value.trim();
+		const password = passwordInput.value.trim();
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+		if (email === "" || password === "") {
+			alert("Completa todos los campos.");
+			return;
+		}
 
-    // Validar campos vacíos
-    if (email === "" || password === "") {
-      alert("Completa todos los campos.");
-      return;
-    }
+		try {
+			const data = await loginUser(email, password);
 
-    // Usuarios desde localStorage
-    const storedUsers = JSON.parse(localStorage.getItem("users")) || [];
+			// ✅ Guarda info del usuario
+			sessionStorage.setItem("loggedUser", JSON.stringify(data));
+			localStorage.setItem("userId", data.id);
+			localStorage.setItem("cartId", data.cart?.id || "");
 
-    // Buscar usuario que coincida que haga match
-    const userFound = storedUsers.find(
-      (user) => user.email === email && user.password === password
-    );
+			if (data.token) {
+				localStorage.setItem("authToken", data.token);
+			}
 
-    if (userFound) {
-      // se guardo en storage que este logeado
-      sessionStorage.setItem("loggedUser", JSON.stringify(userFound));
+			alert(`Inicio de sesión exitoso. ¡Bienvenido/a, ${data.name}!`);
+			window.location.href = "/index.html";
 
-      // redireccionar al inicio
-      window.location.href = "/index.html";
-    } else {
-      alert("Email o contraseña incorrectos.");
-    }
-  });
+		} catch (error) {
+			console.error("Login error:", error);
+			alert(error.message || "Ocurrió un error.");
+		}
+	});
+});
