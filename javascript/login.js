@@ -1,51 +1,40 @@
+
+import { loginUser } from '../api.js';
+
 document.addEventListener("DOMContentLoaded", () => {
-  const form = document.querySelector("form");
-  const emailInput = document.getElementById("email");
-  const passwordInput = document.getElementById("password");
+	const form = document.querySelector("form");
+	const emailInput = document.getElementById("email");
+	const passwordInput = document.getElementById("password");
 
-  form.addEventListener("submit", async function (event) {
-    event.preventDefault();
+	form.addEventListener("submit", async function (event) {
+		event.preventDefault();
 
-    const email = emailInput.value.trim();
-    const password = passwordInput.value.trim();
+		const email = emailInput.value.trim();
+		const password = passwordInput.value.trim();
 
-    if (email === "" || password === "") {
-      alert("Completa todos los campos.");
-      return;
-    }
+		if (email === "" || password === "") {
+			alert("Completa todos los campos.");
+			return;
+		}
 
-    try {
-      const response = await fetch("http://localhost:8080/api/users/login", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email, password })
-      });
+		try {
+			const data = await loginUser(email, password);
 
-      const data = await response.json();
+			// ✅ Guarda info del usuario
+			sessionStorage.setItem("loggedUser", JSON.stringify(data));
+			localStorage.setItem("userId", data.id);
+			localStorage.setItem("cartId", data.cart?.id || "");
 
-      if (!response.ok) {
-        const mensaje = data.message || "Error en el inicio de sesión.";
-        throw new Error(mensaje);
-      }
+			if (data.token) {
+				localStorage.setItem("authToken", data.token);
+			}
 
-      // ✅ Guarda info del usuario
-      sessionStorage.setItem("loggedUser", JSON.stringify(data));
-      localStorage.setItem("userId", data.id); //  Guarda el ID del usuario
-      localStorage.setItem("cartId", data.cart?.id || ""); //  Guarda el ID del carrito si existe
+			alert(`Inicio de sesión exitoso. ¡Bienvenido/a, ${data.name}!`);
+			window.location.href = "/index.html";
 
-      // ✅ Guarda token si lo usas
-      if (data.token) {
-        localStorage.setItem("authToken", data.token);
-      }
-
-      alert(`Inicio de sesión exitoso. ¡Bienvenido/a, ${data.name}!`);
-      window.location.href = "/index.html";
-
-    } catch (error) {
-      console.error("Login error:", error);
-      alert(error.message || "Ocurrió un error.");
-    }
-  });
+		} catch (error) {
+			console.error("Login error:", error);
+			alert(error.message || "Ocurrió un error.");
+		}
+	});
 });
